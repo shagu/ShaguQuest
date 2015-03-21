@@ -7,6 +7,7 @@ It is based on the latest Mangos Zero Database, as well as GMDB.
 Some parts of the Addon itself are taken from the WHDB Addon.
 
 # Video
-https://www.youtube.com/watch?v=h_U3vbYcRpE
+Here is a example video, showing the most common features of ShaguQuest
+[![Youtube Video](http://img.youtube.com/vi/h_U3vbYcRpE/0.jpg)](https://www.youtube.com/watch?v=h_U3vbYcRpE)
 
 
