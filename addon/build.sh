@@ -4,7 +4,7 @@ VERSION="3.2devel"
 
 echo ":: cleaning up"
 rm -rf build
-mkdir -p build/enGB/ShaguQuest build/deDE/ShaguQuest build/frFR/ShaguQuest build/release
+mkdir -p build/enGB/ShaguQuest build/deDE/ShaguQuest build/frFR/ShaguQuest release
 
 echo ":: installing external addons"
 cp -rf resources/Cartographer build/enGB
@@ -69,15 +69,15 @@ echo " ]"
 echo ":: building release zip"
 echo "   - enGB"
 cd build/enGB
-zip -qr9 ../release/ShaguQuest-$VERSION-enGB.zip *
+zip -qr9 ../../release/ShaguQuest-$VERSION-enGB.zip *
 cd - >> /dev/null
 
 echo "   - deDE"
 cd build/deDE
-zip -qr9 ../release/ShaguQuest-$VERSION-deDE.zip *
+zip -qr9 ../../release/ShaguQuest-$VERSION-deDE.zip *
 cd - >> /dev/null
 
 echo "   - frFR"
 cd build/frFR
-zip -qr9 ../release/ShaguQuest-$VERSION-frFR.zip *
+zip -qr9 ../../release/ShaguQuest-$VERSION-frFR.zip *
 cd - >> /dev/null
