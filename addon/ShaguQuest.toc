@@ -1,0 +1,7 @@
+## Interface: 11200 
+## Title: ShaguQuest
+## Author: Eric (Shagu) Mauser, 2015
+## Notes: Display Quest-objectives on your map. Comes with an integrated Quest-, Item- and Spawn-database. Requires Cartographer and Extended QuestLog 3
+## Version: oooVersionooo-oooLocaleooo
+## RequiredDeps: Cartographer, EQL3
+ShaguQuest.xml

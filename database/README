@@ -1,0 +1,65 @@
+Devel Environment
+=================
+required packages: 
+	lighttpd, mysql (mariadb), subversion, git, wget
+host: 
+	localhost
+database: 
+	mangos
+user: 
+	root
+password: 
+	foo
+
+Mangos DB
+=========
+about:
+	the main database.
+
+source (git): 
+	https://github.com/mangoszero/database.git
+
+install: 
+	database/_tools:
+	sh make_full_db.sh
+	mysql -u root -p mangos < full_db.sql	
+	
+Zone DB
+=======
+about:
+	contains the Area Zone Coordinates to find out
+	the correct object/npc positions
+
+source (git):
+	https://github.com/mangostools/aowow.git
+
+install:
+	aowow/sql:
+	mysql -u root -p mangos < aowow.sql
+
+German DB
+=========
+about:
+	contains all german locales for NPCs, objects and quests.
+
+source (git):
+	https://github.com/mangoszero/gmdb.git
+
+install:
+	gmdb/_tools:
+	sh make_full_db.sh
+	mysql -u root -p mangos < locales_mangos.sql
+
+French DB
+=========
+about: 
+	contains all french locales for NPCs, objects and quests.
+	Some might fail during import, as this is a 3.3.5a (wotlk) db.
+	Just don't care about them.
+
+source (svn):
+	http://udbfr.googlecode.com/svn/trunk
+
+install:
+	udbfr/Annexe:
+	for i in locales*.sql; do mysql -u root -p mangos < $i; done

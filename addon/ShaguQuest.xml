@@ -1,0 +1,18 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+<script file="ShaguQuest.lua"/>
+<script file="zoneData.lua"/>
+<script file="itemData.lua"/>
+<script file="spawnData.lua"/>
+<script file="questData.lua"/>
+<Frame name="SCTFarmerFrame" parent="UIParent" hidden="false">
+	<Scripts>
+		<OnLoad>
+			ShaguQuest_Init();
+		</OnLoad>
+		<OnEvent>
+			ShaguQuest_Event(event);
+		</OnEvent>
+	</Scripts>
+</Frame>
+</Ui>
