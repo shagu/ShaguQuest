@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="3.2devel"
+VERSION="3.1.1"
 
 echo ":: cleaning up"
 rm -rf build
@@ -69,15 +69,15 @@ echo " ]"
 echo ":: building release zip"
 echo "   - enGB"
 cd build/enGB
-zip -qr9 ../../release/ShaguQuest-$VERSION-enGB.zip *
+zip -qr9 ../../release/ShaguQuest-$VERSION-enGB-complete.zip *
 cd - >> /dev/null
 
 echo "   - deDE"
 cd build/deDE
-zip -qr9 ../../release/ShaguQuest-$VERSION-deDE.zip *
+zip -qr9 ../../release/ShaguQuest-$VERSION-deDE-complete.zip *
 cd - >> /dev/null
 
 echo "   - frFR"
 cd build/frFR
-zip -qr9 ../../release/ShaguQuest-$VERSION-frFR.zip *
+zip -qr9 ../../release/ShaguQuest-$VERSION-frFR-complete.zip *
 cd - >> /dev/null
