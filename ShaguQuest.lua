@@ -65,7 +65,6 @@ function Shagu_Slash(input)
 	ShaguQuest_ShowMap();
   end
 
-
   -- argument: quests
   if (arg1 == "quests") then
     local zoneName = arg2;
@@ -92,8 +91,6 @@ function Shagu_Slash(input)
 	ShaguQuest_NextCMark();
 	ShaguQuest_ShowMap();
   end
-
-
 
   -- argument: clean
   if (arg1 == "clean") then
@@ -148,6 +145,13 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 	local numObjectives = GetNumQuestLeaderBoards();
 
 	local monsterName, zoneName, noteAdded, showMap, noteID;
+	-- quest data
+	if (questData[questTitle] ~= nil) then
+       	for monsterName, monsterDrop in pairs(questData[questTitle]) do
+			ShaguQuest_searchMonster(monsterName,questTitle,true);
+		end
+	end
+
 	for i=1, numObjectives, 1 do
 		local string = getglobal(prefix.."QuestLogObjective"..i);
 		local text;
@@ -166,15 +170,6 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 			string:SetTextColor(0, 0, 0);
 		end
 		
-		showMap = true;
-
-		-- quest data
-		if (questData[questTitle] ~= nil) then
-        	for monsterName, monsterDrop in pairs(questData[questTitle]) do
-				ShaguQuest_searchMonster(monsterName,questTitle,true);
-			end
-		end
-
 		-- spawn data
 		if (type == "monster") then
 			-- enGB
@@ -186,13 +181,6 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 
 			-- deDE
 			local i, j, monsterName = strfind(itemName, "(.*) getötet");
-			ShaguQuest_searchMonster(monsterName,questTitle);
-
-			-- frFR
-			local i, j, monsterName = strfind(itemName, "(.*) tué");
-			ShaguQuest_searchMonster(monsterName,questTitle);
-
-			local i, j, monsterName = strfind(itemName, "(.*) tués");
 			ShaguQuest_searchMonster(monsterName,questTitle);
 
 			-- whatever
@@ -214,8 +202,6 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 	for i=numObjectives + 1, MAX_OBJECTIVES, 1 do
 		getglobal(prefix.."QuestLogObjective"..i):Hide();
 	end
-
-
 
 	if ( GetQuestLogRequiredMoney() > 0 ) then
 		if ( numObjectives > 0 ) then
@@ -260,7 +246,6 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 		getglobal(prefix.."QuestLogDetailScrollChildFrame"):CreateFontString(prefix.."QuestLogMapButtonsTitle","","QuestTitleFont");
 	end
 
-
 	local r, g, b, a = getglobal(prefix.."QuestLogQuestDescription"):GetTextColor();
 	
 	getglobal(prefix.."QuestLogRewardTitleText"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 0, -15);
@@ -295,13 +280,8 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 		getglobal(prefix.."QuestLogRewardTitleText"):Hide();
 	end
 
-	if (not showMap) then
-		getglobal(prefix.."QuestLogShowMap"):Hide();
-		getglobal(prefix.."QuestLogCleanMap"):Hide();
-	else
-		getglobal(prefix.."QuestLogShowMap"):Show();
-		getglobal(prefix.."QuestLogCleanMap"):Show();
-	end
+	getglobal(prefix.."QuestLogShowMap"):Show();
+	getglobal(prefix.."QuestLogCleanMap"):Show();
 	
 	QuestFrameItems_Update("QuestLog");
 	if ( not doNotScroll ) then
@@ -373,11 +353,9 @@ end
 
 function ShaguQuest_searchMonster(monsterName,questTitle,questGiver)
     if (monsterName ~= "" and monsterName ~= nil and spawnData[monsterName] ~= nil) then
-		bestDiff = 100;
 
         for cid, cdata in pairs(spawnData[monsterName]["coords"]) do
-			local f, t, coordx, coordy, zone, zoneDiff = strfind(spawnData[monsterName]["coords"][cid], "(.*),(.*),(.*),(.*)");
-			zoneDiff = tonumber(zoneDiff);
+			local f, t, coordx, coordy, zone  = strfind(spawnData[monsterName]["coords"][cid], "(.*),(.*),(.*)");
 			zoneName = zoneData[tonumber(zone)];
 			
 			if(questTitle ~= nil) then
@@ -390,11 +368,9 @@ function ShaguQuest_searchMonster(monsterName,questTitle,questGiver)
 				table.insert(ShaguQuest_MAP_NOTES,{zoneName, coordx, coordy, monsterName, coordx..","..coordy, cMark, 0});
 			end
 
-			-- detect best map
-			if (zoneDiff <= bestDiff) then
-				bestZone = zoneData[tonumber(zone)];
-				bestDiff = zoneDiff;
-			end
+			-- set best map
+			bestZone = zoneData[tonumber(spawnData[monsterName]["zone"])];
+
 		end
 	end
 end
@@ -414,7 +390,7 @@ function ShaguQuest_searchQuests(zoneName)
 				for questGiver in pairs(questGiver) do
 					if (questGiver ~= "" and questGiver ~= nil and spawnData[questGiver] ~= nil) then
 						for cid, cdata in pairs(spawnData[questGiver]["coords"]) do
-							local f, t, coordx, coordy, zoneGiver, zoneDiff = strfind(spawnData[questGiver]["coords"][cid], "(.*),(.*),(.*),(.*)");
+							local f, t, coordx, coordy, zoneGiver = strfind(spawnData[questGiver]["coords"][cid], "(.*),(.*),(.*)");
 
 							if(tonumber(zoneGiver) == tonumber(zone)) then
 								table.insert(ShaguQuest_MAP_NOTES,{zoneName, coordx, coordy, questTitle, questGiver, "quest", 0});
@@ -428,6 +404,7 @@ function ShaguQuest_searchQuests(zoneName)
 end
 
 function ShaguQuest_searchItem(itemName,questTitle)
+	firstIsBest = false;
     if (itemName ~= "" and itemData[itemName] ~= nil) then
 		if(questTitle == nil) then
    			ShaguQuest_Print("|cff33ff88Search: |cffffffff"..itemName);
@@ -442,11 +419,9 @@ function ShaguQuest_searchItem(itemName,questTitle)
 			if (dropRate == nil) then dropRate = ""; else dropRate = string.format("%.2f", tonumber(dropRate)) .. "%"; end
 
 			if(spawnData[monsterName] ~= nil) then
-				bestDiff = 100;
 				zoneList = " "
 				for cid, cdata in pairs(spawnData[monsterName]["coords"]) do
-					local f, t, coordx, coordy, zone, zoneDiff = strfind(spawnData[monsterName]["coords"][cid], "(.*),(.*),(.*),(.*)");
-					zoneDiff = tonumber(zoneDiff);
+					local f, t, coordx, coordy, zone = strfind(spawnData[monsterName]["coords"][cid], "(.*),(.*),(.*)");
 					zoneName = zoneData[tonumber(zone)];
 
 					if(questTitle ~= nil) then
@@ -455,14 +430,10 @@ function ShaguQuest_searchItem(itemName,questTitle)
 						table.insert(ShaguQuest_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nDrop: " .. dropRate, cMark, 0});
 					end	
 
-					-- detect best map
-					if (zoneDiff <= bestDiff) then
-						bestZone = zoneData[tonumber(zone)];
-
-						if(firstIsBest ~= true) then
-							globalBestZone = bestZone;
-						end
-						bestDiff = zoneDiff;
+					-- set best map
+					bestZone = zoneData[tonumber(spawnData[monsterName]["zone"])];
+					if(firstIsBest ~= true) then
+						globalBestZone = zoneData[tonumber(spawnData[monsterName]["zone"])];
 					end
 
 					-- build zone string
@@ -494,18 +465,5 @@ function ShaguQuest_CleanMap()
 		Cartographer_Notes:UnregisterNotesDatabase("ShaguQuest");
 		ShaguQuestDB = {}; ShaguQuestDBH = {};
 		Cartographer_Notes:RegisterNotesDatabase("ShaguQuest",ShaguQuestDB,ShaguQuestDBH);
-	end
-end
-
-function ShaguQuest_PopulateZones()
-	local numEntries, numQuests = GetNumQuestLogEntries();
-	local lastZone, questLogTitleText, suggestedGroup, level, questTag, isHeader, isCollapsed, isComplete;
-	for i=1, numEntries, 1 do
-		questLogTitleText, level, questTag, suggestedGroup, isHeader, isCollapsed, isComplete = GetQuestLogTitle(i);
-		if (isHeader) then
-			lastZone = questLogTitleText;
-		else
-			ShaguQuest_QuestZoneInfo[questLogTitleText] = lastZone;
-		end
 	end
 end

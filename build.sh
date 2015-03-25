@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="3.1.1"
+VERSION="4.0"
 
 echo ":: cleaning up"
 rm -rf build
