@@ -21,7 +21,14 @@ cd - >> /dev/null
 echo ":: building ShaguQuest"
 # copy language specific zoneData
 cp -rf resources/zoneData.lua_deDE build/deDE/ShaguQuest/zoneData.lua
+cp resources/spawnData.lua_deDE build/deDE/ShaguQuest/spawnData.lua
+cp resources/itemData.lua_deDE build/deDE/ShaguQuest/itemData.lua
+cp resources/questData.lua_deDE build/deDE/ShaguQuest/questData.lua
+
 cp -rf resources/zoneData.lua_enGB build/enGB/ShaguQuest/zoneData.lua
+cp resources/spawnData.lua_enGB build/enGB/ShaguQuest/spawnData.lua
+cp resources/itemData.lua_enGB build/enGB/ShaguQuest/itemData.lua
+cp resources/questData.lua_enGB build/enGB/ShaguQuest/questData.lua
 
 # install default files
 cp ShaguQuest.lua ShaguQuest.toc ShaguQuest.xml build/deDE/ShaguQuest
@@ -34,15 +41,6 @@ sed -i "s/oooVersionooo/$VERSION/g" build/enGB/ShaguQuest/ShaguQuest.*
 # replace locale string
 sed -i "s/oooLocaleooo/deDE/g" build/deDE/ShaguQuest/ShaguQuest.*
 sed -i "s/oooLocaleooo/enGB/g" build/enGB/ShaguQuest/ShaguQuest.*
-
-# install databases
-cp resources/spawnData.lua_deDE build/deDE/ShaguQuest/spawnData.lua
-cp resources/itemData.lua_deDE build/deDE/ShaguQuest/itemData.lua
-cp resources/questData.lua_deDE build/deDE/ShaguQuest/questData.lua
-
-cp resources/spawnData.lua_enGB build/enGB/ShaguQuest/spawnData.lua
-cp resources/itemData.lua_enGB build/enGB/ShaguQuest/itemData.lua
-cp resources/questData.lua_enGB build/enGB/ShaguQuest/questData.lua
 
 echo ":: building release zip"
 echo "   - deDE"
