@@ -1,3 +1,12 @@
+25.03.2015: Version 4.0
+- The map will now open on the correct zone everytime (99.99%). The issue where a nearby map is opened instead, is now fixed.
+- Overlapping spawnpoints are removed. Only the spawns that are really on the map will now be shown.
+- The size of the addon and thus the RAM usage has been reduced.
+- Quests without questobjectives now have a "Show" button too.
+- Slashcommand /shagu item <foo> does now reliable opens the map with the most spots.
+- Slashcommand /shagu item <foo> has been cleaned up. Alot of wrong zones has been removed.
+- Some other minor fixes and code cleanups.
+
 22.03.2015: Version 3.1.1
 - Killquests on enGB Clients should now work correctly. Might impact some deDE Quests as well.
 
