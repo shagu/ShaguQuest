@@ -1,6 +1,8 @@
 ShaguQuest_MAP_NOTES = {};
 ShaguQuest_QuestZoneInfo = {};
-cMark = "Star";
+cMark = "mk1";
+
+
 
 function ShaguQuest_Init()
 	this:RegisterEvent("VARIABLES_LOADED");
@@ -12,6 +14,44 @@ function ShaguQuest_Event(event)
 	if (event == "VARIABLES_LOADED") then
 		ShaguQuestDB = {}; ShaguQuestDBH = {};
 		Cartographer_Notes:RegisterNotesDatabase("ShaguQuest",ShaguQuestDB,ShaguQuestDBH);
+		
+		-- load symbols
+		Cartographer_Notes:RegisterIcon("mk1", {
+			text = "Mark 1",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\mk1",
+		})
+		Cartographer_Notes:RegisterIcon("mk2", {
+			text = "Mark 2",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\mk2",
+		})
+		Cartographer_Notes:RegisterIcon("mk3", {
+			text = "Mark 3",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\mk3",
+		})
+		Cartographer_Notes:RegisterIcon("mk4", {
+			text = "Mark 4",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\mk4",
+		})
+		Cartographer_Notes:RegisterIcon("mk5", {
+			text = "Mark 5",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\mk5",
+		})
+		Cartographer_Notes:RegisterIcon("mk6", {
+			text = "Mark 6",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\mk6",
+		})
+		Cartographer_Notes:RegisterIcon("mk7", {
+			text = "Mark 7",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\mk7",
+		})
+		Cartographer_Notes:RegisterIcon("mk8", {
+			text = "Mark 8",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\mk8",
+		})
+		Cartographer_Notes:RegisterIcon("quest", {
+			text = "Quest",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\quest",
+		})
 	end
 	ShaguQuest_Print("|cff33ff88ShaguQuest|cffffffff oooVersionooo|caaaaaaaa [oooLocaleooo]");
 end
@@ -19,7 +59,8 @@ end
 function Shagu_Slash(input)
   local params = {}; 
   if (input == "" or input == nil) then
-    ShaguQuest_Print("|cffffff00ShaguQuest|cffffffff Commands:");
+	ShaguQuest_Print("|cff33ff88ShaguQuest|cffffffff oooVersionooo|caaaaaaaa [oooLocaleooo]");
+	ShaguQuest_Print("Available Commands:");
 	ShaguQuest_Print("/shagu spawn <mob|gameobject>");
     ShaguQuest_Print("/shagu item <item>");
 	ShaguQuest_Print("/shagu quests <map>");    
@@ -145,6 +186,7 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 	local numObjectives = GetNumQuestLeaderBoards();
 
 	local monsterName, zoneName, noteAdded, showMap, noteID;
+
 	-- quest data
 	if (questData[questTitle] ~= nil) then
        	for monsterName, monsterDrop in pairs(questData[questTitle]) do
@@ -242,32 +284,40 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 		QuestFrame_SetAsLastShown(getglobal(prefix.."QuestLogQuestDescription"));
 	end	
 	
-	if (getglobal(prefix.."QuestLogMapButtonsTitle") == nil) then
-		getglobal(prefix.."QuestLogDetailScrollChildFrame"):CreateFontString(prefix.."QuestLogMapButtonsTitle","","QuestTitleFont");
+	if (getglobal(prefix.."QuestLogMapButtonsFrame") == nil) then
+		getglobal(prefix.."QuestLogDetailScrollChildFrame"):CreateFontString(prefix.."QuestLogMapButtonsFrame","","QuestTitleFont");
 	end
 
 	local r, g, b, a = getglobal(prefix.."QuestLogQuestDescription"):GetTextColor();
 	
-	getglobal(prefix.."QuestLogRewardTitleText"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 0, -15);
+	getglobal(prefix.."QuestLogRewardTitleText"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 0, -25);
 
 	if (getglobal(prefix.."QuestLogShowMap") == nil) then
 		CreateFrame("Button", prefix.."QuestLogShowMap", getglobal(prefix.."QuestLogDetailScrollChildFrame"), "UIPanelButtonTemplate");
 		CreateFrame("Button", prefix.."QuestLogCleanMap", getglobal(prefix.."QuestLogDetailScrollChildFrame"), "UIPanelButtonTemplate");
 	end
+
+	getglobal(prefix.."QuestLogMapButtonsFrame"):SetHeight(40);
+	getglobal(prefix.."QuestLogMapButtonsFrame"):SetWidth(285);
+	getglobal(prefix.."QuestLogMapButtonsFrame"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 0, -15);
+	getglobal(prefix.."QuestLogMapButtonsFrame"):SetJustifyH("LEFT");
 	
 	getglobal(prefix.."QuestLogShowMap"):SetText("Show");
-	getglobal(prefix.."QuestLogShowMap"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 0, -10);
+	getglobal(prefix.."QuestLogShowMap"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 10, -10);
 	getglobal(prefix.."QuestLogShowMap"):SetHeight(25);
 	getglobal(prefix.."QuestLogShowMap"):SetWidth(125);
 	getglobal(prefix.."QuestLogShowMap"):RegisterForClicks("LeftButtonUp");
 	getglobal(prefix.."QuestLogShowMap"):SetScript("OnClick", ShaguQuest_ShowMap);
 	
 	getglobal(prefix.."QuestLogCleanMap"):SetText("Clean");
-	getglobal(prefix.."QuestLogCleanMap"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 155, -10);
+	getglobal(prefix.."QuestLogCleanMap"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 145, -10);
 	getglobal(prefix.."QuestLogCleanMap"):SetHeight(25);
 	getglobal(prefix.."QuestLogCleanMap"):SetWidth(125);
 	getglobal(prefix.."QuestLogCleanMap"):RegisterForClicks("LeftButtonUp");
 	getglobal(prefix.."QuestLogCleanMap"):SetScript("OnClick", ShaguQuest_CleanMap);
+
+	getglobal(prefix.."QuestLogShowMap"):Show();
+	getglobal(prefix.."QuestLogCleanMap"):Show();
 
 	local numRewards = GetNumQuestLogRewards();
 	local numChoices = GetNumQuestLogChoices();
@@ -279,9 +329,6 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 	else
 		getglobal(prefix.."QuestLogRewardTitleText"):Hide();
 	end
-
-	getglobal(prefix.."QuestLogShowMap"):Show();
-	getglobal(prefix.."QuestLogCleanMap"):Show();
 	
 	QuestFrameItems_Update("QuestLog");
 	if ( not doNotScroll ) then
@@ -292,22 +339,22 @@ end
 end
 
 function ShaguQuest_NextCMark()
-	if (cMark == "Star") then
-		cMark = "Circle";
-	elseif (cMark == "Circle") then
-		cMark = "Diamond";
-	elseif (cMark == "Diamond") then
-		cMark = "Triangle";
-	elseif (cMark == "Triangle") then
-		cMark = "Moon";
-	elseif (cMark == "Moon") then
-		cMark = "Square";
-	elseif (cMark == "Square") then
-		cMark = "Cross";
-	elseif (cMark == "Cross") then
-		cMark = "Skull";
-	elseif (cMark == "Skull") then
-		cMark = "Star";
+	if (cMark == "mk1") then
+		cMark = "mk2";
+	elseif (cMark == "mk2") then
+		cMark = "mk3";
+	elseif (cMark == "mk3") then
+		cMark = "mk4";
+	elseif (cMark == "mk4") then
+		cMark = "mk5";
+	elseif (cMark == "mk5") then
+		cMark = "mk6";
+	elseif (cMark == "mk6") then
+		cMark = "mk7";
+	elseif (cMark == "mk7") then
+		cMark = "mk8";
+	elseif (cMark == "mk8") then
+		cMark = "mk1";
 	end
 end
 

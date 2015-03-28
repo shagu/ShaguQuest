@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="4.0"
+VERSION="4.1"
 
 echo ":: cleaning up"
 rm -rf build
@@ -31,8 +31,8 @@ cp resources/itemData.lua_enGB build/enGB/ShaguQuest/itemData.lua
 cp resources/questData.lua_enGB build/enGB/ShaguQuest/questData.lua
 
 # install default files
-cp ShaguQuest.lua ShaguQuest.toc ShaguQuest.xml build/deDE/ShaguQuest
-cp ShaguQuest.lua ShaguQuest.toc ShaguQuest.xml build/enGB/ShaguQuest
+cp -rf resources/symbols ShaguQuest.lua ShaguQuest.toc ShaguQuest.xml build/deDE/ShaguQuest
+cp -rf resources/symbols ShaguQuest.lua ShaguQuest.toc ShaguQuest.xml build/enGB/ShaguQuest
 
 # replace veresion string
 sed -i "s/oooVersionooo/$VERSION/g" build/deDE/ShaguQuest/ShaguQuest.*
