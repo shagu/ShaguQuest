@@ -1,3 +1,6 @@
+28.03.2015: Version 4.1
+- Changed the appearance of the cartographer symbols. Looks now much clearer.
+
 25.03.2015: Version 4.0
 - The map will now open on the correct zone everytime (99.99%). The issue where a nearby map is opened instead, is now fixed.
 - Overlapping spawnpoints are removed. Only the spawns that are really on the map will now be shown.
