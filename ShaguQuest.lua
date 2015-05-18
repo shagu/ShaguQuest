@@ -154,6 +154,8 @@ end
 function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 	if (getglobal(prefix.."QuestLogFrame"):IsVisible()) then
 	ShaguQuest_MAP_NOTES = {};
+	local monsterName, zoneName, noteAdded, showMap, noteID;
+
 	local questID = GetQuestLogSelection();
 	local questTitle = GetQuestLogTitle(questID);
 
@@ -183,9 +185,9 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 		getglobal(prefix.."QuestLogObjective1"):SetPoint("TOPLEFT", prefix.."QuestLogObjectivesText", "BOTTOMLEFT", 0, -10);
 	end
 	
+	-- Show Quest Watch if track quest is checked
 	local numObjectives = GetNumQuestLeaderBoards();
 
-	local monsterName, zoneName, noteAdded, showMap, noteID;
 
 	-- quest data
 	if (questData[questTitle] ~= nil) then
@@ -210,10 +212,8 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 			text = text.." ("..TEXT(COMPLETE)..")";
 		else
 			string:SetTextColor(0, 0, 0);
-		end
-		
-		-- spawn data
-		if (type == "monster") then
+			-- spawn data
+			if (type == "monster") then
 			-- enGB
 			local i, j, monsterName = strfind(itemName, "(.*) killed");
 			ShaguQuest_searchMonster(monsterName,questTitle);
@@ -228,14 +228,14 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 			-- whatever
 			local i, j, monsterName = strfind(itemName, "(.*)");
 			ShaguQuest_searchMonster(monsterName,questTitle);
-		end
+			end
 
-		-- item data
-		if (type == "item") then
+			-- item data
+			if (type == "item") then
 			ShaguQuest_searchItem(itemName,questTitle);
+			end
+			ShaguQuest_NextCMark();
 		end
-
-		ShaguQuest_NextCMark();
 		string:SetText(text);
 		string:Show();
 		QuestFrame_SetAsLastShown(string);
@@ -284,40 +284,36 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 		QuestFrame_SetAsLastShown(getglobal(prefix.."QuestLogQuestDescription"));
 	end	
 	
-	if (getglobal(prefix.."QuestLogMapButtonsFrame") == nil) then
-		getglobal(prefix.."QuestLogDetailScrollChildFrame"):CreateFontString(prefix.."QuestLogMapButtonsFrame","","QuestTitleFont");
-	end
-
-	local r, g, b, a = getglobal(prefix.."QuestLogQuestDescription"):GetTextColor();
-	
-	getglobal(prefix.."QuestLogRewardTitleText"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 0, -25);
-
-	if (getglobal(prefix.."QuestLogShowMap") == nil) then
-		CreateFrame("Button", prefix.."QuestLogShowMap", getglobal(prefix.."QuestLogDetailScrollChildFrame"), "UIPanelButtonTemplate");
-		CreateFrame("Button", prefix.."QuestLogCleanMap", getglobal(prefix.."QuestLogDetailScrollChildFrame"), "UIPanelButtonTemplate");
-	end
-
-	getglobal(prefix.."QuestLogMapButtonsFrame"):SetHeight(40);
+	-- {{{ ShaguQuest EQL Integration
+	-- Button: Frame
+	if (getglobal(prefix.."QuestLogMapButtonsFrame") == nil) then getglobal(prefix.."QuestLogDetailScrollChildFrame"):CreateFontString(prefix.."QuestLogMapButtonsFrame","","QuestTitleFont"); end
+	getglobal(prefix.."QuestLogMapButtonsFrame"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 0, -20);
+	getglobal(prefix.."QuestLogMapButtonsFrame"):SetHeight(25);
 	getglobal(prefix.."QuestLogMapButtonsFrame"):SetWidth(285);
-	getglobal(prefix.."QuestLogMapButtonsFrame"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 0, -15);
-	getglobal(prefix.."QuestLogMapButtonsFrame"):SetJustifyH("LEFT");
 	
+	-- Button: Show
+	if (getglobal(prefix.."QuestLogShowMap") == nil) then CreateFrame("Button", prefix.."QuestLogShowMap", getglobal(prefix.."QuestLogDetailScrollChildFrame"), "UIPanelButtonTemplate"); end
 	getglobal(prefix.."QuestLogShowMap"):SetText("Show");
-	getglobal(prefix.."QuestLogShowMap"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 10, -10);
+	getglobal(prefix.."QuestLogShowMap"):SetPoint("TOPLEFT", prefix.."QuestLogMapButtonsFrame", "TOPLEFT", 10, 10);
 	getglobal(prefix.."QuestLogShowMap"):SetHeight(25);
 	getglobal(prefix.."QuestLogShowMap"):SetWidth(125);
 	getglobal(prefix.."QuestLogShowMap"):RegisterForClicks("LeftButtonUp");
 	getglobal(prefix.."QuestLogShowMap"):SetScript("OnClick", ShaguQuest_ShowMap);
+	getglobal(prefix.."QuestLogShowMap"):Show();
 	
+	-- Button: Clean
+	if (getglobal(prefix.."QuestLogCleanMap") == nil) then CreateFrame("Button", prefix.."QuestLogCleanMap", getglobal(prefix.."QuestLogDetailScrollChildFrame"), "UIPanelButtonTemplate");	end
 	getglobal(prefix.."QuestLogCleanMap"):SetText("Clean");
-	getglobal(prefix.."QuestLogCleanMap"):SetPoint("TOPLEFT", prefix.."QuestLogQuestDescription", "BOTTOMLEFT", 145, -10);
+	getglobal(prefix.."QuestLogCleanMap"):SetPoint("TOPLEFT", prefix.."QuestLogMapButtonsFrame", "TOPLEFT", 145, 10);
 	getglobal(prefix.."QuestLogCleanMap"):SetHeight(25);
 	getglobal(prefix.."QuestLogCleanMap"):SetWidth(125);
 	getglobal(prefix.."QuestLogCleanMap"):RegisterForClicks("LeftButtonUp");
 	getglobal(prefix.."QuestLogCleanMap"):SetScript("OnClick", ShaguQuest_CleanMap);
-
-	getglobal(prefix.."QuestLogShowMap"):Show();
 	getglobal(prefix.."QuestLogCleanMap"):Show();
+	-- }}}
+
+	getglobal(prefix.."QuestLogRewardTitleText"):SetPoint("TOPLEFT", prefix.."QuestLogShowMap", "BOTTOMLEFT", -10, -10);
+	getglobal(prefix.."QuestLogRewardTitleText"):SetHeight(25);
 
 	local numRewards = GetNumQuestLogRewards();
 	local numChoices = GetNumQuestLogChoices();
