@@ -1224,7 +1224,6 @@ questData = {
     ['Arch Druid Fandral Staghelm'] = '', 
     ['Arch Druid Fandral Staghelm'] = '', 
     ['Innkeeper Firebrew'] = '', 
-    ['Innkeeper Firebrew'] = '', 
     ['Innkeeper Saelienne'] = '', 
     ['Innkeeper Allison'] = '', 
   },
@@ -2877,7 +2876,6 @@ questData = {
     ['Corithras Moonrage'] = '', 
     ['Corithras Moonrage'] = '', 
     ['Corithras Moonrage'] = '', 
-    ['Corithras Moonrage'] = '', 
     ['Arch Druid Fandral Staghelm'] = '', 
     ['Tenaron Stormgrip'] = '', 
     ['Corithras Moonrage'] = '', 
@@ -3967,7 +3965,6 @@ questData = {
   ['Encrypted Letter'] = 
   { 
     ['Syndicate Documents'] = '', 
-    ['Syndicate Documents'] = '', 
     ['Jorik Kerridan'] = '', 
     ['Loremaster Dibbs'] = '', 
     ['Marshal McBride'] = '', 
@@ -4462,7 +4459,7 @@ questData = {
   },
   ['Find the Gems'] = 
   { 
-    ['Talvash del Kissel'] = '', 
+    ['Talvash\'s Scrying Bowl'] = '', 
     ['Remains of a Paladin'] = '', 
   },
   ['Find the Gems and Power Source'] = 
@@ -4623,7 +4620,6 @@ questData = {
   },
   ['Foreboding Plans'] = 
   { 
-    ['Syndicate Documents'] = '', 
     ['Syndicate Documents'] = '', 
     ['Magistrate Henry Maleb'] = '', 
   },
@@ -8764,6 +8760,7 @@ questData = {
   },
   ['Restoring the Necklace'] = 
   { 
+    ['Talvash\'s Scrying Bowl'] = '', 
     ['Talvash del Kissel'] = '', 
     ['Talvash del Kissel'] = '', 
   },
@@ -10670,7 +10667,6 @@ questData = {
   ['Sweet Serenity'] = 
   { 
     ['Lilith the Lithe'] = '', 
-    ['Lilith the Lithe'] = '', 
   },
   ['Swoop Hunting'] = 
   { 
@@ -11382,7 +11378,6 @@ questData = {
   },
   ['The Captain\'s Chest'] = 
   { 
-    ['Captain Hecklebury Smotts'] = '', 
     ['Captain Hecklebury Smotts'] = '', 
   },
   ['The Captain\'s Cutlass'] = 
@@ -14539,7 +14534,6 @@ questData = {
   },
   ['Wanted:  "Hogger"'] = 
   { 
-    ['Wanted Poster'] = '', 
     ['Wanted Poster'] = '', 
     ['Marshal Dughan'] = '', 
   },

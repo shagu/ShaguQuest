@@ -1224,7 +1224,6 @@ questData = {
     ['Erzdruide Fandral Hirschhaupt'] = '', 
     ['Erzdruide Fandral Hirschhaupt'] = '', 
     ['Gastwirt Feuerbräu'] = '', 
-    ['Gastwirt Feuerbräu'] = '', 
     ['Gastwirtin Saelienne'] = '', 
     ['Gastwirtin Allison'] = '', 
   },
@@ -2886,7 +2885,6 @@ questData = {
     ['Corithras Mondzorn'] = '', 
     ['Corithras Mondzorn'] = '', 
     ['Corithras Mondzorn'] = '', 
-    ['Corithras Mondzorn'] = '', 
     ['Erzdruide Fandral Hirschhaupt'] = '', 
     ['Tenaron Sturmgewalt'] = '', 
     ['Corithras Mondzorn'] = '', 
@@ -3976,7 +3974,6 @@ questData = {
   ['Verschlüsselter Brief'] = 
   { 
     ['Dokumente des Syndikats'] = '', 
-    ['Dokumente des Syndikats'] = '', 
     ['Jorik Kerridan'] = '', 
     ['Meister der Lehren Dibbs'] = '', 
     ['Marschall McBride'] = '', 
@@ -4471,7 +4468,7 @@ questData = {
   },
   ['Suche nach den Edelsteinen'] = 
   { 
-    ['Talvash del Kissel'] = '', 
+    ['Talvashs Wahrsageschale'] = '', 
     ['Überreste eines Paladins'] = '', 
   },
   ['Findet die Edelsteine und die Kraftquelle'] = 
@@ -4632,7 +4629,6 @@ questData = {
   },
   ['Furchteinflößende Pläne'] = 
   { 
-    ['Dokumente des Syndikats'] = '', 
     ['Dokumente des Syndikats'] = '', 
     ['Magistrat Henry Maleb'] = '', 
   },
@@ -8782,6 +8778,7 @@ questData = {
   },
   ['Restaurierung der Halskette'] = 
   { 
+    ['Talvashs Wahrsageschale'] = '', 
     ['Talvash del Kissel'] = '', 
     ['Talvash del Kissel'] = '', 
   },
@@ -10688,7 +10685,6 @@ questData = {
   ['Süße Beschaulichkeit'] = 
   { 
     ['Lilith die Liebliche'] = '', 
-    ['Lilith die Liebliche'] = '', 
   },
   ['Sturzfliegerjagd'] = 
   { 
@@ -11412,7 +11408,6 @@ questData = {
   },
   ['Die Truhe des Kapitäns'] = 
   { 
-    ['Kapitän Hecklebury Smotts'] = '', 
     ['Kapitän Hecklebury Smotts'] = '', 
   },
   ['Der Entersäbel des Kapitäns'] = 
@@ -14575,7 +14570,6 @@ questData = {
   },
   ['GESUCHT: "Hogger"'] = 
   { 
-    ['Steckbrief'] = '', 
     ['Steckbrief'] = '', 
     ['Marschall Dughan'] = '', 
   },
