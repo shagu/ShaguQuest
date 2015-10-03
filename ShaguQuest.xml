@@ -5,6 +5,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 <script file="itemData.lua"/>
 <script file="spawnData.lua"/>
 <script file="questData.lua"/>
+<script file="vendorData.lua"/>
 <Frame name="SCTFarmerFrame" parent="UIParent" hidden="false">
 	<Scripts>
 		<OnLoad>

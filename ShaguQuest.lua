@@ -2,10 +2,9 @@ ShaguQuest_MAP_NOTES = {};
 ShaguQuest_QuestZoneInfo = {};
 cMark = "mk1";
 
-
-
 function ShaguQuest_Init()
 	this:RegisterEvent("VARIABLES_LOADED");
+	this:RegisterEvent("PLAYER_ENTERING_WORLD");
 	SlashCmdList["SHAGU"] = Shagu_Slash;
 	SLASH_SHAGU1 = "/shagu";
 end
@@ -13,8 +12,9 @@ end
 function ShaguQuest_Event(event)
 	if (event == "VARIABLES_LOADED") then
 		ShaguQuestDB = {}; ShaguQuestDBH = {};
+		ShaguQuest_Print("|cff33ff88ShaguQuest|cffffffff oooVersionooo |cffaaaaaa [oooLocaleooo]");
 		Cartographer_Notes:RegisterNotesDatabase("ShaguQuest",ShaguQuestDB,ShaguQuestDBH);
-		
+
 		-- load symbols
 		Cartographer_Notes:RegisterIcon("mk1", {
 			text = "Mark 1",
@@ -52,17 +52,29 @@ function ShaguQuest_Event(event)
 			text = "Quest",
 			path = "Interface\\AddOns\\ShaguQuest\\symbols\\quest",
 		})
+		Cartographer_Notes:RegisterIcon("vendor", {
+			text = "Quest",
+			path = "Interface\\AddOns\\ShaguQuest\\symbols\\vendor",
+		})
 	end
-	ShaguQuest_Print("|cff33ff88ShaguQuest|cffffffff oooVersionooo|caaaaaaaa [oooLocaleooo]");
+
+	if (event == "PLAYER_ENTERING_WORLD") then
+		if (UnitFactionGroup("player") == "Horde") then
+			faction = "H"
+		else
+			faction = "A"
+		end
+	end	
 end
 
 function Shagu_Slash(input)
   local params = {}; 
   if (input == "" or input == nil) then
-	ShaguQuest_Print("|cff33ff88ShaguQuest|cffffffff oooVersionooo|caaaaaaaa [oooLocaleooo]");
+	ShaguQuest_Print("|cff33ff88ShaguQuest|cffffffff oooVersionooo |cff00ccff[" .. UnitFactionGroup("player") .. "]|cffaaaaaa [oooLocaleooo]");
 	ShaguQuest_Print("Available Commands:");
 	ShaguQuest_Print("/shagu spawn <mob|gameobject>");
     ShaguQuest_Print("/shagu item <item>");
+    ShaguQuest_Print("/shagu vendor <item>");
 	ShaguQuest_Print("/shagu quests <map>");    
     ShaguQuest_Print("/shagu quest <questname>");
     ShaguQuest_Print("/shagu clean");
@@ -93,7 +105,14 @@ function Shagu_Slash(input)
     local itemName = arg2;
     ShaguQuest_MAP_NOTES = {};
 	ShaguQuest_searchItem(itemName,nil)
-	ShaguQuest_NextCMark();
+	ShaguQuest_ShowMap();		   
+  end
+
+  -- argument: vendor
+  if (arg1 == "vendor") then
+    local itemName = arg2;
+    ShaguQuest_MAP_NOTES = {};
+	ShaguQuest_searchVendor(itemName,nil)
 	ShaguQuest_ShowMap();		   
   end
 
@@ -102,7 +121,6 @@ function Shagu_Slash(input)
     local monsterName = arg2;
     ShaguQuest_MAP_NOTES = {};
 	ShaguQuest_searchMonster(monsterName,nil)
-	ShaguQuest_NextCMark();
 	ShaguQuest_ShowMap();
   end
 
@@ -115,7 +133,6 @@ function Shagu_Slash(input)
 
     ShaguQuest_MAP_NOTES = {};
 	ShaguQuest_searchQuests(zoneName)
-	ShaguQuest_NextCMark();
 	ShaguQuest_ShowMap();
   end
 
@@ -152,8 +169,9 @@ function QuestLog_UpdateQuestDetails(doNotScroll)
 end
 
 function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
+
 	if (getglobal(prefix.."QuestLogFrame"):IsVisible()) then
-	ShaguQuest_MAP_NOTES = {};
+  ShaguQuest_MAP_NOTES = {};
 	local monsterName, zoneName, noteAdded, showMap, noteID;
 
 	local questID = GetQuestLogSelection();
@@ -188,11 +206,12 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 	-- Show Quest Watch if track quest is checked
 	local numObjectives = GetNumQuestLeaderBoards();
 
-
 	-- quest data
 	if (questData[questTitle] ~= nil) then
-       	for monsterName, monsterDrop in pairs(questData[questTitle]) do
-			ShaguQuest_searchMonster(monsterName,questTitle,true);
+    for monsterName, monsterDrop in pairs(questData[questTitle]) do
+      if (spawnData[monsterName] ~= nil and strfind(spawnData[monsterName]["faction"], faction) ~= nil) then
+			  ShaguQuest_searchMonster(monsterName,questTitle,true);
+      end
 		end
 	end
 
@@ -233,8 +252,8 @@ function ShaguQuest_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
 			-- item data
 			if (type == "item") then
 			ShaguQuest_searchItem(itemName,questTitle);
+			ShaguQuest_searchVendor(itemName,questTitle);
 			end
-			ShaguQuest_NextCMark();
 		end
 		string:SetText(text);
 		string:Show();
@@ -392,9 +411,12 @@ function ShaguQuest_ShowMap()
 			end									
 		end
 	end
+  -- enable multiclick color-change
+  -- QuestLog_UpdateQuestDetails(doNotScroll)
 end
 
 function ShaguQuest_searchMonster(monsterName,questTitle,questGiver)
+   	ShaguQuest_NextCMark()
     if (monsterName ~= "" and monsterName ~= nil and spawnData[monsterName] ~= nil) then
 
         for cid, cdata in pairs(spawnData[monsterName]["coords"]) do
@@ -431,7 +453,7 @@ function ShaguQuest_searchQuests(zoneName)
 		if(zone ~= nil) then
 			for questTitle, questGiver in pairs(questData) do
 				for questGiver in pairs(questGiver) do
-					if (questGiver ~= "" and questGiver ~= nil and spawnData[questGiver] ~= nil) then
+					if (questGiver ~= "" and questGiver ~= nil and spawnData[questGiver] ~= nil and strfind(spawnData[questGiver]["faction"], faction) ~= nil) then
 						for cid, cdata in pairs(spawnData[questGiver]["coords"]) do
 							local f, t, coordx, coordy, zoneGiver = strfind(spawnData[questGiver]["coords"][cid], "(.*),(.*),(.*)");
 
@@ -448,6 +470,7 @@ end
 
 function ShaguQuest_searchItem(itemName,questTitle)
 	firstIsBest = false;
+  ShaguQuest_NextCMark();
     if (itemName ~= "" and itemData[itemName] ~= nil) then
 		if(questTitle == nil) then
    			ShaguQuest_Print("|cff33ff88Search: |cffffffff"..itemName);
@@ -469,7 +492,7 @@ function ShaguQuest_searchItem(itemName,questTitle)
 
 					if(questTitle ~= nil) then
 						table.insert(ShaguQuest_MAP_NOTES,{zoneName, coordx, coordy, questTitle, monsterName .. "\nDrop: " ..itemName  .. "\nDropchance: " .. dropRate, cMark, 0});
-					else
+          else
 						table.insert(ShaguQuest_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nDrop: " .. dropRate, cMark, 0});
 					end	
 
@@ -499,6 +522,42 @@ function ShaguQuest_searchItem(itemName,questTitle)
 		end
 		if(questTitle == nil) then
 			bestZone = globalBestZone;
+		end
+	end
+end
+
+function ShaguQuest_searchVendor(itemName,questTitle)
+	local zoneList = ""
+    if (itemName ~= "" and vendorData[itemName] ~= nil) then
+		for id, monsterNameDrop in pairs(vendorData[itemName]) do
+			local f, t, monsterName, monsterDrop = strfind(vendorData[itemName][id], "(.*),(.*)");
+
+			local dropRate = monsterDrop;
+
+			if (dropRate == "0") then dropRate = "Infinite"; else dropRate = dropRate; end
+
+			if(spawnData[monsterName] ~= nil and strfind(spawnData[monsterName]["faction"], faction) ~= nil) then
+				for cid, cdata in pairs(spawnData[monsterName]["coords"]) do
+					local f, t, coordx, coordy, zone = strfind(spawnData[monsterName]["coords"][cid], "(.*),(.*),(.*)");
+					zoneName = zoneData[tonumber(zone)];
+
+					if(questTitle ~= nil) then
+						table.insert(ShaguQuest_MAP_NOTES,{zoneName, coordx, coordy, questTitle, monsterName .. "\nSells: " ..itemName  .. "\nCount: " .. dropRate, "vendor", 0});
+					else
+						table.insert(ShaguQuest_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nSells: " .. dropRate, "vendor", 0});
+					end	
+
+					-- build zone string
+					if (strfind(zoneList, zoneName) == nil) then
+						zoneList = zoneList .. zoneName .. ", "
+						oldZone = zoneName
+					end
+				end
+			end
+		end
+		if(questTitle == nil) then
+			ShaguQuest_Print("|cff33ff88Search: |cffffffff"..itemName);
+			ShaguQuest_Print("|caaaaaaaa" .. zoneList);
 		end
 	end
 end
