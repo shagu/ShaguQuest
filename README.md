@@ -13,6 +13,11 @@ it will display all kind of mobs, treasures and so on which the item can be obta
 
     /shagu item Black Pearl
 
+With version 5.0 a new feature was introduced. The "vendor" command.
+
+		/shagu vendor Jagged Arrow
+
+Will display all vendors selling "Jagged Arrow".
 
 Additionally ShaguQuest includes a (poor) quest integration via EQL3 (Extended QuestLog).
 On every quest you'll see a "Show" button, which will display all known questrelated stuff on your map.
@@ -33,9 +38,9 @@ If you want to test it, visit the following links:
 
 [Official Website](http://shaguquest.ericmauser.de/)
 
-[Download of enGB Client](http://shaguquest.ericmauser.de/files/ShaguQuest-4.1-enGB-complete.zip)
+[Download of enGB Client](http://shaguquest.ericmauser.de/files/ShaguQuest-5.0-enGB-complete.zip)
 
-[Download of deDE Client](http://shaguquest.ericmauser.de/files/ShaguQuest-4.1-deDE-complete.zip)
+[Download of deDE Client](http://shaguquest.ericmauser.de/files/ShaguQuest-5.0-deDE-complete.zip)
 
 # Build from git
 If you're running a Linux Machine, just execute the "./build.sh" to create a deDE and enGB release.
