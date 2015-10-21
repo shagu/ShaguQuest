@@ -1,17 +1,17 @@
 PREFIX = ~/games/nostalrius/Interface/AddOns
-VERSION = 5.0
+VERSION = $(shell git rev-parse --abbrev-ref HEAD)
 LANG = enGB
 
-all: clean addon install zip
+all: clean addon install
 
 clean: 
 	rm -rf build
 
 addon:
 	# create directories
-	install -d build/enGB/ShaguQuest
-	install -d build/deMIX/ShaguQuest
-	install -d build/deDE/ShaguQuest
+	install -d build/enGB/ShaguQuest/db
+	install -d build/deMIX/ShaguQuest/db
+	install -d build/deDE/ShaguQuest/db
 	install -d release
 
 	# install Cartographer
@@ -30,30 +30,30 @@ addon:
 
 	# copy language specific databases
 	# deDE
-	cp resources/zoneData.lua_deDE build/deDE/ShaguQuest/zoneData.lua
-	cp resources/spawnData.lua_deDE build/deDE/ShaguQuest/spawnData.lua
-	cp resources/itemData.lua_deDE build/deDE/ShaguQuest/itemData.lua
-	cp resources/questData.lua_deDE build/deDE/ShaguQuest/questData.lua
-	cp resources/vendorData.lua_deDE build/deDE/ShaguQuest/vendorData.lua
+	cp resources/zoneData.lua_deDE build/deDE/ShaguQuest/db/zoneData.lua
+	cp resources/spawnData.lua_deDE build/deDE/ShaguQuest/db/spawnData.lua
+	cp resources/itemData.lua_deDE build/deDE/ShaguQuest/db/itemData.lua
+	cp resources/questData.lua_deDE build/deDE/ShaguQuest/db/questData.lua
+	cp resources/vendorData.lua_deDE build/deDE/ShaguQuest/db/vendorData.lua
 
 	# enGB
-	cp resources/zoneData.lua_enGB build/enGB/ShaguQuest/zoneData.lua
-	cp resources/spawnData.lua_enGB build/enGB/ShaguQuest/spawnData.lua
-	cp resources/itemData.lua_enGB build/enGB/ShaguQuest/itemData.lua
-	cp resources/questData.lua_enGB build/enGB/ShaguQuest/questData.lua
-	cp resources/vendorData.lua_enGB build/enGB/ShaguQuest/vendorData.lua
+	cp resources/zoneData.lua_enGB build/enGB/ShaguQuest/db/zoneData.lua
+	cp resources/spawnData.lua_enGB build/enGB/ShaguQuest/db/spawnData.lua
+	cp resources/itemData.lua_enGB build/enGB/ShaguQuest/db/itemData.lua
+	cp resources/questData.lua_enGB build/enGB/ShaguQuest/db/questData.lua
+	cp resources/vendorData.lua_enGB build/enGB/ShaguQuest/db/vendorData.lua
 
 	# deMIX
-	cp resources/zoneData.lua_deDE build/deMIX/ShaguQuest/zoneData.lua
-	cp resources/spawnData.lua_enGB build/deMIX/ShaguQuest/spawnData.lua
-	cp resources/itemData.lua_enGB build/deMIX/ShaguQuest/itemData.lua
-	cp resources/questData.lua_enGB build/deMIX/ShaguQuest/questData.lua
-	cp resources/vendorData.lua_enGB build/deMIX/ShaguQuest/vendorData.lua
+	cp resources/zoneData.lua_deDE build/deMIX/ShaguQuest/db/zoneData.lua
+	cp resources/spawnData.lua_enGB build/deMIX/ShaguQuest/db/spawnData.lua
+	cp resources/itemData.lua_enGB build/deMIX/ShaguQuest/db/itemData.lua
+	cp resources/questData.lua_enGB build/deMIX/ShaguQuest/db/questData.lua
+	cp resources/vendorData.lua_enGB build/deMIX/ShaguQuest/db/vendorData.lua
 
 	# install default files
-	cp -rf resources/symbols ShaguQuest.lua ShaguQuest.toc ShaguQuest.xml build/deDE/ShaguQuest
-	cp -rf resources/symbols ShaguQuest.lua ShaguQuest.toc ShaguQuest.xml build/enGB/ShaguQuest
-	cp -rf resources/symbols ShaguQuest.lua ShaguQuest.toc ShaguQuest.xml build/deMIX/ShaguQuest
+	cp -rf resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/deDE/ShaguQuest
+	cp -rf resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/enGB/ShaguQuest
+	cp -rf resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/deMIX/ShaguQuest
 
 	# replace veresion string
 	sed -i "s/oooVersionooo/$(VERSION)/g" build/deDE/ShaguQuest/ShaguQuest.*
