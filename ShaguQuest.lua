@@ -339,6 +339,7 @@ function ShaguQuest_searchVendor(itemName,questTitle)
   local zoneList = ""
   showmax = 0
   if ( questTitle == nil and vendorData[itemName] ~= nil) then
+    bestZone = nil
     ShaguQuest_Print("|cffffcc33ShaguQuest: |cffffffffVendor for |cff33ff88"..itemName.."|cffffffff can be found at:" );
   end
   if (itemName ~= "" and vendorData[itemName] ~= nil) then
