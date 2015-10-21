@@ -280,15 +280,11 @@ end
 
 
 function ShaguQuest_searchItem(itemName,questTitle)
+  local runonce = false;
   firstIsBest = false;
   ShaguQuest_NextCMark();
 
   if (itemName ~= nil and itemData[itemName] ~= nil) then
-
-    if(questTitle == nil) then
-      ShaguQuest_Print("|cffffcc33ShaguQuest: |cffffffffDropchances for |cff33ff88"..itemName.."|cffffffff at:" );
-      showmax = 0;
-    end
 
     for id, monsterNameDrop in pairs(itemData[itemName]) do
       local f, t, monsterName, dropRate = strfind(itemData[itemName][id], "(.*),(.*)");
@@ -298,8 +294,15 @@ function ShaguQuest_searchItem(itemName,questTitle)
       if(spawnData[monsterName] ~= nil) then
         zoneList = " "
         for cid, cdata in pairs(spawnData[monsterName]["coords"]) do
+          hasResult = true;
           local f, t, coordx, coordy, zone = strfind(spawnData[monsterName]["coords"][cid], "(.*),(.*),(.*)");
           zoneName = zoneData[tonumber(zone)];
+
+          if(questTitle == nil and runonce == false) then
+            ShaguQuest_Print("|cffffcc33ShaguQuest: |cffffffffDropchances for |cff33ff88"..itemName.."|cffffffff at:" );
+            showmax = 0;
+            runonce = true
+          end
 
           if(questTitle ~= nil) then
             table.insert(ShaguQuest_MAP_NOTES,{zoneName, coordx, coordy, questTitle, monsterName .. "\nDrop: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
