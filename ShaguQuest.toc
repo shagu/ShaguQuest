@@ -5,4 +5,24 @@
 ## Version: oooVersionooo-oooLocaleooo
 ## RequiredDeps: Cartographer
 ## OptionalDeps: EQL3
-ShaguQuest.xml
+
+# database
+db\zoneData.lua
+db\itemData.lua
+db\spawnData.lua
+db\questData.lua
+db\vendorData.lua
+
+# addon
+ShaguQuest.lua
+
+# EQL integration
+ShaguQuest_EQL.lua
+
+# minimap icon
+ShaguQuest_Minimap.xml
+ShaguQuest_Minimap.lua
+
+# database gui
+ShaguQuest_GUI.xml
+ShaguQuest_GUI.lua
