@@ -51,9 +51,9 @@ addon:
 	cp resources/vendorData.lua_enGB build/deMIX/ShaguQuest/db/vendorData.lua
 
 	# install default files
-	cp -rf resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/deDE/ShaguQuest
-	cp -rf resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/enGB/ShaguQuest
-	cp -rf resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/deMIX/ShaguQuest
+	cp -rf resources/img resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/deDE/ShaguQuest
+	cp -rf resources/img resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/enGB/ShaguQuest
+	cp -rf resources/img resources/symbols ShaguQuest*.lua ShaguQuest.toc ShaguQuest*.xml build/deMIX/ShaguQuest
 
 	# replace veresion string
 	sed -i "s/oooVersionooo/$(VERSION)/g" build/deDE/ShaguQuest/ShaguQuest.*
