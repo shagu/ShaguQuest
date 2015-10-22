@@ -27,10 +27,10 @@ end
 -- Put your code that you want on a minimap button click here. arg1="LeftButton", "RightButton", etc
 function MyMod_MinimapButton_OnClick()
   if ( arg1 == "LeftButton" ) then
-    if (ShaguQuest_GUI:IsShown()) then
-      ShaguQuest_GUI:Hide()
+    if (SQG:IsShown()) then
+      SQG:Hide()
     else
-      ShaguQuest_GUI:Show()
+      SQG:Show()
     end
   end
 end
