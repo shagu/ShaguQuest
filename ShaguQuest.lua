@@ -215,12 +215,12 @@ function ShaguQuest_PlotNotesOnMap()
 
   for nKey, nData in ipairs(ShaguQuest_MAP_NOTES) do
     Cartographer_Notes:SetNote(nData[1], nData[2]/100, nData[3]/100, nData[6], "ShaguQuest", 'title', nData[4], 'info', nData[5]);
-
     if (nData[1] ~= nil) then
       zone = nData[1];
       title = nData[4];
     end
   end
+
   return zone, title, noteID;
 end
 
@@ -342,10 +342,10 @@ function ShaguQuest_searchVendor(itemName,questTitle)
   local zoneList = ""
   showmax = 0
   if ( questTitle == nil and vendorData[itemName] ~= nil) then
-    bestZone = nil
     ShaguQuest_Print("|cffffcc33ShaguQuest: |cffffffffVendor for |cff33ff88"..itemName.."|cffffffff can be found at:" );
   end
   if (itemName ~= "" and vendorData[itemName] ~= nil) then
+    bestZone = ""
     for id, monsterNameDrop in pairs(vendorData[itemName]) do
       local f, t, monsterName, dropRate = strfind(vendorData[itemName][id], "(.*),(.*)");
 
@@ -365,19 +365,19 @@ function ShaguQuest_searchVendor(itemName,questTitle)
           -- build zone string
           if (strfind(zoneList, zoneName) == nil) then
             zoneList = zoneList .. zoneName .. ", "
-            if (bestZone == nil) then
-              bestZone = zoneData[tonumber(zone)];
-            end
             if(questTitle == nil and showmax < 5) then
               ShaguQuest_Print(" |cffffffff (" .. coordx .. " , ".. coordy .. ")" .. " |cffffff00" .. monsterName .. "|caaaaaaaa [" .. zoneName.."]");
               showmax = showmax + 1;
             end
             oldZone = zoneName
           end
+          
+          if (strfind(zoneList,GetZoneText()) ~= nil) then
+            bestZone = GetZoneText();
+          else
+            bestZone = zoneName
+          end
         end
-      end
-      if (strfind(GetZoneText(), zoneList)) then
-        bestZone = GetZoneText();
       end
     end
   end
