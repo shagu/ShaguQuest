@@ -5,6 +5,7 @@
 ## Version: oooVersionooo-oooLocaleooo
 ## RequiredDeps: Cartographer
 ## OptionalDeps: EQL3
+## SavedVariables: ShaguMinimapPosition
 
 # database
 db\zoneData.lua

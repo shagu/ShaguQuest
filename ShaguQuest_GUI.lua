@@ -10,6 +10,11 @@ local backdrop = {
  }
 
 SQG = CreateFrame("Frame",nil,UIParent)
+SQG:RegisterEvent("PLAYER_ENTERING_WORLD");
+SQG:SetScript("OnEvent", function(self, event, ...)
+  SQG.minimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 52-(80*cos(ShaguMinimapPosition)),(80*sin(ShaguMinimapPosition))-52)
+end)
+
 SQG:Hide()
 SQG:SetFrameStrata("TOOLTIP")
 SQG:SetWidth(600) -- Set these to whatever height/width is needed 
@@ -121,7 +126,9 @@ SQG.cleanButton:SetScript("OnClick", function()
 end)
 
 SQG.minimapButton = CreateFrame('Button', nil, Minimap)
-SQG.minimapButton.MinimapPos = 135
+if (ShaguMinimapPosition == nil) then
+  ShaguMinimapPosition = 125
+end
 
 SQG.minimapButton:SetMovable(true)
 SQG.minimapButton:EnableMouse(true)
@@ -133,8 +140,8 @@ SQG.minimapButton:SetScript("OnDragStop", function()
   xpos = xmin-xpos/UIParent:GetScale()+70
   ypos = ypos/UIParent:GetScale()-ymin-70
 
-  SQG.minimapButton.MinimapPos = math.deg(math.atan2(ypos,xpos))
-  SQG.minimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 52-(80*cos(SQG.minimapButton.MinimapPos)),(80*sin(SQG.minimapButton.MinimapPos))-52)
+  ShaguMinimapPosition = math.deg(math.atan2(ypos,xpos))
+  SQG.minimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 52-(80*cos(ShaguMinimapPosition)),(80*sin(ShaguMinimapPosition))-52)
 end)
 
 SQG.minimapButton:SetFrameStrata('HIGH')
@@ -142,7 +149,7 @@ SQG.minimapButton:SetWidth(31)
 SQG.minimapButton:SetHeight(31)
 SQG.minimapButton:SetFrameLevel(9)
 SQG.minimapButton:SetHighlightTexture('Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight')
-SQG.minimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 52-(80*cos(SQG.minimapButton.MinimapPos)),(80*sin(SQG.minimapButton.MinimapPos))-52)
+SQG.minimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 52-(80*cos(ShaguMinimapPosition)),(80*sin(ShaguMinimapPosition))-52)
 
 SQG.minimapButton.overlay = SQG.minimapButton:CreateTexture(nil, 'OVERLAY')
 SQG.minimapButton.overlay:SetWidth(53)
