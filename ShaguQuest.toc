@@ -19,7 +19,3 @@ ShaguQuest_GUI.lua
 
 # EQL integration
 ShaguQuest_EQL.lua
-
-# minimap icon
-ShaguQuest_Minimap.xml
-ShaguQuest_Minimap.lua

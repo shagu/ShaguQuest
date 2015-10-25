@@ -107,10 +107,6 @@ SQG.inputField:SetHeight(20)
 SQG.inputField:SetPoint("BOTTOMLEFT", 68, 15)
 SQG.inputField:SetFontObject(GameFontNormal)
 SQG.inputField:SetAutoFocus(false)
---SQG.inputField:SetScript("OnEscapePressed", function(self) 
---  SQG.inputField:ClearFocus()
---  SQG:Hide()
---end)
 SQG.inputField:SetScript("OnTextChanged", function(self)
   SQG_Query(SQG.inputField:GetText())
 end)
@@ -122,6 +118,38 @@ SQG.cleanButton:SetPoint("BOTTOMRIGHT", -14,14)
 SQG.cleanButton:SetText("Clean")
 SQG.cleanButton:SetScript("OnClick", function()
   ShaguQuest_CleanMap()
+end)
+
+SQG.minimapButton = CreateFrame('Button', nil, Minimap)
+SQG.minimapButton.MinimapPos = 135
+SQG.minimapButton:SetFrameStrata('HIGH')
+SQG.minimapButton:SetWidth(31)
+SQG.minimapButton:SetHeight(31)
+SQG.minimapButton:SetFrameLevel(9)
+SQG.minimapButton:SetHighlightTexture('Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight')
+SQG.minimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 52-(80*cos(SQG.minimapButton.MinimapPos)),(80*sin(SQG.minimapButton.MinimapPos))-52)
+
+SQG.minimapButton.overlay = SQG.minimapButton:CreateTexture(nil, 'OVERLAY')
+SQG.minimapButton.overlay:SetWidth(53)
+SQG.minimapButton.overlay:SetHeight(53)
+SQG.minimapButton.overlay:SetTexture('Interface\\Minimap\\MiniMap-TrackingBorder')
+SQG.minimapButton.overlay:SetPoint('TOPLEFT', 0,0)
+
+SQG.minimapButton.icon = SQG.minimapButton:CreateTexture(nil, 'BACKGROUND')
+SQG.minimapButton.icon:SetWidth(20)
+SQG.minimapButton.icon:SetHeight(20)
+SQG.minimapButton.icon:SetTexture('Interface\\AddOns\\ShaguQuest\\symbols\\sq')
+SQG.minimapButton.icon:SetTexCoord(0.05, 0.95, 0.05, 0.95)
+SQG.minimapButton.icon:SetPoint('CENTER',1,1)
+
+SQG.minimapButton:SetScript("OnClick", function()
+  if ( arg1 == "LeftButton" ) then
+    if (SQG:IsShown()) then
+      SQG:Hide()
+    else
+      SQG:Show()
+    end
+  end
 end)
 
 function SQG_Query(search)
