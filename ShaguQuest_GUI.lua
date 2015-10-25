@@ -126,7 +126,7 @@ SQG.minimapButton.MinimapPos = 135
 SQG.minimapButton:SetMovable(true)
 SQG.minimapButton:EnableMouse(true)
 SQG.minimapButton:RegisterForDrag('LeftButton')
-SQG.minimapButton:SetScript("OnDragStart", function()
+SQG.minimapButton:SetScript("OnDragStop", function()
   local xpos,ypos = GetCursorPosition()
   local xmin,ymin = Minimap:GetLeft(), Minimap:GetBottom()
 
