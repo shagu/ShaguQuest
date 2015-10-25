@@ -122,6 +122,21 @@ end)
 
 SQG.minimapButton = CreateFrame('Button', nil, Minimap)
 SQG.minimapButton.MinimapPos = 135
+
+SQG.minimapButton:SetMovable(true)
+SQG.minimapButton:EnableMouse(true)
+SQG.minimapButton:RegisterForDrag('LeftButton')
+SQG.minimapButton:SetScript("OnDragStart", function()
+  local xpos,ypos = GetCursorPosition()
+  local xmin,ymin = Minimap:GetLeft(), Minimap:GetBottom()
+
+  xpos = xmin-xpos/UIParent:GetScale()+70
+  ypos = ypos/UIParent:GetScale()-ymin-70
+
+  SQG.minimapButton.MinimapPos = math.deg(math.atan2(ypos,xpos))
+  SQG.minimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 52-(80*cos(SQG.minimapButton.MinimapPos)),(80*sin(SQG.minimapButton.MinimapPos))-52)
+end)
+
 SQG.minimapButton:SetFrameStrata('HIGH')
 SQG.minimapButton:SetWidth(31)
 SQG.minimapButton:SetHeight(31)
