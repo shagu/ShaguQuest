@@ -17,8 +17,8 @@ end)
 
 SQG:Hide()
 SQG:SetFrameStrata("TOOLTIP")
-SQG:SetWidth(600) -- Set these to whatever height/width is needed 
-SQG:SetHeight(420) -- for your Texture
+SQG:SetWidth(600)
+SQG:SetHeight(425)
 
 SQG:SetBackdrop(backdrop)
 SQG:SetBackdropColor(0,0,0,0.9);
@@ -39,7 +39,14 @@ SQG.titleBar:SetHeight(40);
 SQG.titleBar.color = SQG.titleBar:CreateTexture("BACKGROUND");
 SQG.titleBar.color:SetAllPoints();
 SQG.titleBar.color:SetTexture(0.4, 0.4, 0.4, 0.1); 
--- SQG.titleBar.color:SetAlpha(1);
+
+SQG.bottomBar = CreateFrame("Frame", nil, SQG)
+SQG.bottomBar:SetPoint("BOTTOM", 0, 5); 
+SQG.bottomBar:SetWidth(590); 
+SQG.bottomBar:SetHeight(40);
+SQG.bottomBar.color = SQG.bottomBar:CreateTexture("BACKGROUND");
+SQG.bottomBar.color:SetAllPoints();
+SQG.bottomBar.color:SetTexture(0.4, 0.4, 0.4, 0.1); 
 
 SQG.titleSpawn = SQG:CreateFontString("Status", "LOW", "GameFontNormal")
 SQG.titleSpawn:SetFontObject(GameFontWhite)
