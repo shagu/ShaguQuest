@@ -1,4 +1,5 @@
 PREFIX = ~/games/nostalrius/Interface/AddOns
+PREFIX2 = ~/games/classic\ wow/Interface/AddOns
 VERSION = $(shell git rev-parse --abbrev-ref HEAD)
 LANG = enGB
 
@@ -74,6 +75,16 @@ install:
 
 	# install new addon
 	cp -rf ./build/enGB/* $(PREFIX)
+	
+	# remove deprecated addon
+	install -d $(PREFIX2)
+	rm -rf $(PREFIX2)/ShaguQuest
+	rm -rf $(PREFIX2)/Cartographer
+	rm -rf $(PREFIX2)/EQL3
+
+	# install new addon
+	cp -rf ./build/deDE/* $(PREFIX2)
+
 
 zip:
 	# building release zip"
