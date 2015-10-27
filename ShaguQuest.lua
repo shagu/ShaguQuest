@@ -199,7 +199,21 @@ function ShaguQuest_ShowMap()
     if (ShowMapZone ~= nil) then
       WorldMapFrame:Show();
       if (bestZone ~= nil) then
-        SetMapZoom(ShaguQuest_GetMapIDFromZome(bestZone));
+        cKey, zKey = ShaguQuest_GetMapIDFromZone(bestZone)
+        if (cKey == -1) then
+          showM = bestZone
+
+          -- deDE fix
+          if (GetLocale() == "deDE") then
+            local BZ = AceLibrary("Babble-Zone-2.2")      
+            showM = BZ:GetReverseTranslation(bestZone)
+          end
+
+          Cartographer_InstanceMaps:ShowInstance(showM)
+          UIErrorsFrame:AddMessage("|cffff5555Results might be wrong. Instance Notes are still experimental.|cffffffff")
+        else
+          SetMapZoom(cKey, zKey);
+        end
       end
     end
   end
@@ -225,7 +239,7 @@ function ShaguQuest_PlotNotesOnMap()
 end
 
 
-function ShaguQuest_GetMapIDFromZome(zoneText)
+function ShaguQuest_GetMapIDFromZone(zoneText)
   for cKey, cName in ipairs{GetMapContinents()} do
     for zKey,zName in ipairs{GetMapZones(cKey)} do
       if(zoneText == zName) then
@@ -233,6 +247,7 @@ function ShaguQuest_GetMapIDFromZome(zoneText)
       end
     end
   end
+
   return -1, zoneText;
 end
 
