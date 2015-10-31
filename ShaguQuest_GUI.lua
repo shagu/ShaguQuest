@@ -171,6 +171,16 @@ SQG.searchText:SetPoint("BOTTOMLEFT", 15, 20)
 SQG.searchText:SetTextColor(0.5,0.5,0.5)
 SQG.searchText:SetText("Search")
 -- }}}
+-- {{{ Text: caseSensitive
+SQG.caseSensitive = SQG:CreateFontString("Status", "LOW", "GameFontNormal")
+SQG.caseSensitive:SetFontObject(GameFontWhite)
+SQG.caseSensitive:SetFont("Fonts\\FRIZQT__.TTF", 11)
+SQG.caseSensitive:SetPoint("BOTTOM", 0, 20)
+SQG.caseSensitive:SetTextColor(0.5,0.5,0.5)
+SQG.caseSensitive:SetText("Note: Favourite editboxes are case sensitive and saved automatically.")
+SQG.caseSensitive:Hide()
+-- }}}
+
 -- {{{ Input: Search
 SQG.inputField = CreateFrame("EditBox", "InputBoxTemplate", SQG, "InputBoxTemplate")
 InputBoxTemplateLeft:SetTexture(0.4, 0.4, 0.4, 0.1);
@@ -210,6 +220,7 @@ SQG.favButton:SetScript("OnClick", function()
       SQG.searchText:Show()
       SQG.inputField:Show()
       SQG.cleanButton:Show()
+      SQG.caseSensitive:Hide()
       SQG_Query("")
     else
       SQG_EditFavourites()
@@ -440,6 +451,7 @@ function SQG_EditFavourites()
   SQG_HideButtons()
   SQG.cleanButton:Hide()
   SQG.searchText:Hide()
+  SQG.caseSensitive:Show()
   SQG.inputField:Hide()
   SQG.cleanButton:Hide()
   for i = 1,13 do
