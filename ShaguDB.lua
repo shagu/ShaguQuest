@@ -274,9 +274,9 @@ function ShaguDB_searchMonster(monsterName,questTitle,questGiver)
 
       if(questTitle ~= nil) then
         if(questGiver ~= nil) then
-          table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, questTitle, monsterName, "quest", 0});
+          table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName, "quest", 0});
         else
-          table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, questTitle, monsterName, cMark, 0});
+          table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, "Kill: "..monsterName, cMark, 0});
         end
       else
         if (zoneName ~= oldZone and strfind(zoneList, zoneName) == nil) then
@@ -320,7 +320,7 @@ function ShaguDB_searchItem(itemName,questTitle)
           end
 
           if(questTitle ~= nil) then
-            table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, questTitle, monsterName .. "\nDrop: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
+            table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. "\nLoot: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
           else
             table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nDrop: " .. dropRate, cMark, 0});
           end
@@ -372,7 +372,7 @@ function ShaguDB_searchVendor(itemName,questTitle)
           zoneName = zoneDB[tonumber(zone)];
 
           if(questTitle ~= nil) then
-            table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, questTitle, monsterName .. "\nSells: " ..itemName .. "\nCount: " .. dropRate, "vendor", 0});
+            table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. "\nBuy: " ..itemName .. "\nCount: " .. dropRate, "vendor", 0});
           else
             table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nSells: " .. dropRate, "vendor", 0});
           end
