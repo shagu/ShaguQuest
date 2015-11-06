@@ -1,0 +1,22 @@
+## Interface: 11200 
+## Title: |cff33ffccShagu|cffffffffDB
+## Author: Eric (Shagu) Mauser, 2015
+## Notes: A Quest-, Item- and Spawn-database. Requires Cartographer.
+## Version: oooVersionooo-oooLocaleooo
+## RequiredDeps: Cartographer
+## OptionalDeps: ShaguQuest
+## SavedVariables: ShaguMinimapPosition SDBG_Favourites
+
+# database
+db\zoneDB.lua
+db\itemDB.lua
+db\spawnDB.lua
+db\questDB.lua
+db\vendorDB.lua
+
+# addon
+ShaguDB.lua
+ShaguDB_GUI.lua
+
+# EQL integration
+#ShaguDB_EQL.lua

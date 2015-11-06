@@ -10,9 +10,9 @@ clean:
 
 addon:
 	# create directories
-	install -d build/enGB/ShaguQuest/db
-	install -d build/deMIX/ShaguQuest/db
-	install -d build/deDE/ShaguQuest/db
+	install -d build/enGB/ShaguDB/db
+	install -d build/deMIX/ShaguDB/db
+	install -d build/deDE/ShaguDB/db
 	install -d release
 
 	# install Cartographer
@@ -20,10 +20,10 @@ addon:
 	cp -rf resources/Cartographer build/deMIX
 	cp -rf resources/Cartographer build/enGB
 
-	# install EQL3
-	cp -rf resources/EQL3 build/deDE
-	cp -rf resources/EQL3 build/deMIX
-	cp -rf resources/EQL3 build/enGB
+	# install ShaguQuest
+	cp -rf resources/ShaguQuest build/deDE
+	cp -rf resources/ShaguQuest build/deMIX
+	cp -rf resources/ShaguQuest build/enGB
 
 	# patch deDE cartographer
 	cd build/deDE && patch -s -p 1 < ../../resources/Cartographer_deDE.patch
@@ -31,56 +31,56 @@ addon:
 
 	# copy language specific databases
 	# deDE
-	cp resources/zoneData.lua_deDE build/deDE/ShaguQuest/db/zoneData.lua
-	cp resources/spawnData.lua_deDE build/deDE/ShaguQuest/db/spawnData.lua
-	cp resources/itemData.lua_deDE build/deDE/ShaguQuest/db/itemData.lua
-	cp resources/questData.lua_deDE build/deDE/ShaguQuest/db/questData.lua
-	cp resources/vendorData.lua_deDE build/deDE/ShaguQuest/db/vendorData.lua
+	cp resources/zoneDB.lua_deDE build/deDE/ShaguDB/db/zoneDB.lua
+	cp resources/spawnDB.lua_deDE build/deDE/ShaguDB/db/spawnDB.lua
+	cp resources/itemDB.lua_deDE build/deDE/ShaguDB/db/itemDB.lua
+	cp resources/questDB.lua_deDE build/deDE/ShaguDB/db/questDB.lua
+	cp resources/vendorDB.lua_deDE build/deDE/ShaguDB/db/vendorDB.lua
 
 	# enGB
-	cp resources/zoneData.lua_enGB build/enGB/ShaguQuest/db/zoneData.lua
-	cp resources/spawnData.lua_enGB build/enGB/ShaguQuest/db/spawnData.lua
-	cp resources/itemData.lua_enGB build/enGB/ShaguQuest/db/itemData.lua
-	cp resources/questData.lua_enGB build/enGB/ShaguQuest/db/questData.lua
-	cp resources/vendorData.lua_enGB build/enGB/ShaguQuest/db/vendorData.lua
+	cp resources/zoneDB.lua_enGB build/enGB/ShaguDB/db/zoneDB.lua
+	cp resources/spawnDB.lua_enGB build/enGB/ShaguDB/db/spawnDB.lua
+	cp resources/itemDB.lua_enGB build/enGB/ShaguDB/db/itemDB.lua
+	cp resources/questDB.lua_enGB build/enGB/ShaguDB/db/questDB.lua
+	cp resources/vendorDB.lua_enGB build/enGB/ShaguDB/db/vendorDB.lua
 
 	# deMIX
-	cp resources/zoneData.lua_deDE build/deMIX/ShaguQuest/db/zoneData.lua
-	cp resources/spawnData.lua_enGB build/deMIX/ShaguQuest/db/spawnData.lua
-	cp resources/itemData.lua_enGB build/deMIX/ShaguQuest/db/itemData.lua
-	cp resources/questData.lua_enGB build/deMIX/ShaguQuest/db/questData.lua
-	cp resources/vendorData.lua_enGB build/deMIX/ShaguQuest/db/vendorData.lua
+	cp resources/zoneDB.lua_deDE build/deMIX/ShaguDB/db/zoneDB.lua
+	cp resources/spawnDB.lua_enGB build/deMIX/ShaguDB/db/spawnDB.lua
+	cp resources/itemDB.lua_enGB build/deMIX/ShaguDB/db/itemDB.lua
+	cp resources/questDB.lua_enGB build/deMIX/ShaguDB/db/questDB.lua
+	cp resources/vendorDB.lua_enGB build/deMIX/ShaguDB/db/vendorDB.lua
 
 	# install default files
-	cp -rf resources/img resources/symbols ShaguQuest*.lua ShaguQuest.toc build/deDE/ShaguQuest
-	cp -rf resources/img resources/symbols ShaguQuest*.lua ShaguQuest.toc build/enGB/ShaguQuest
-	cp -rf resources/img resources/symbols ShaguQuest*.lua ShaguQuest.toc build/deMIX/ShaguQuest
+	cp -rf resources/img resources/symbols ShaguDB*.lua ShaguDB.toc build/deDE/ShaguDB
+	cp -rf resources/img resources/symbols ShaguDB*.lua ShaguDB.toc build/enGB/ShaguDB
+	cp -rf resources/img resources/symbols ShaguDB*.lua ShaguDB.toc build/deMIX/ShaguDB
 
 	# replace veresion string
-	sed -i "s/oooVersionooo/$(VERSION)/g" build/deDE/ShaguQuest/ShaguQuest.*
-	sed -i "s/oooVersionooo/$(VERSION)/g" build/enGB/ShaguQuest/ShaguQuest.*
-	sed -i "s/oooVersionooo/$(VERSION)/g" build/deMIX/ShaguQuest/ShaguQuest.*
+	sed -i "s/oooVersionooo/$(VERSION)/g" build/deDE/ShaguDB/ShaguDB*
+	sed -i "s/oooVersionooo/$(VERSION)/g" build/enGB/ShaguDB/ShaguDB*
+	sed -i "s/oooVersionooo/$(VERSION)/g" build/deMIX/ShaguDB/ShaguDB*
 
 	# replace locale string
-	sed -i "s/oooLocaleooo/deDE/g" build/deDE/ShaguQuest/ShaguQuest.*
-	sed -i "s/oooLocaleooo/enGB/g" build/enGB/ShaguQuest/ShaguQuest.*
-	sed -i "s/oooLocaleooo/enGB/g" build/deMIX/ShaguQuest/ShaguQuest.*
+	sed -i "s/oooLocaleooo/deDE/g" build/deDE/ShaguDB/ShaguDB*
+	sed -i "s/oooLocaleooo/enGB/g" build/enGB/ShaguDB/ShaguDB*
+	sed -i "s/oooLocaleooo/enGB/g" build/deMIX/ShaguDB/ShaguDB*
 
 install:
 	# remove deprecated addon
 	install -d $(PREFIX)
-	rm -rf $(PREFIX)/ShaguQuest
+	rm -rf $(PREFIX)/ShaguDB
 	rm -rf $(PREFIX)/Cartographer
-	rm -rf $(PREFIX)/EQL3
+	rm -rf $(PREFIX)/ShaguQuest
 
 	# install new addon
 	cp -rf ./build/enGB/* $(PREFIX)
 	
 	# remove deprecated addon
 	install -d $(PREFIX2)
-	rm -rf $(PREFIX2)/ShaguQuest
+	rm -rf $(PREFIX2)/ShaguDB
 	rm -rf $(PREFIX2)/Cartographer
-	rm -rf $(PREFIX2)/EQL3
+	rm -rf $(PREFIX2)/ShaguQuest
 
 	# install new addon
 	cp -rf ./build/deDE/* $(PREFIX2)
@@ -88,7 +88,7 @@ install:
 
 zip:
 	# building release zip"
-	cd build/deDE && zip -qr9 ../../release/ShaguQuest-$(VERSION)-deDE-complete.zip *
-	cd build/enGB && zip -qr9 ../../release/ShaguQuest-$(VERSION)-enGB-complete.zip *
-	cd build/deMIX && zip -qr9 ../../release/ShaguQuest-$(VERSION)-deMIX-complete.zip *
+	cd build/deDE && zip -qr9 ../../release/ShaguDB-$(VERSION)-deDE-complete.zip *
+	cd build/enGB && zip -qr9 ../../release/ShaguDB-$(VERSION)-enGB-complete.zip *
+	cd build/deMIX && zip -qr9 ../../release/ShaguDB-$(VERSION)-deMIX-complete.zip *
 

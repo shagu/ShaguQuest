@@ -22,7 +22,7 @@
 - Slashcommand "shagu quests" will now print all quests of the current map, if no parameters are given.
 - Slashcommand "shagu item" now opens the map on the best dropchance.
 - Slashcommand "shagu item" will now print all zones instead of one broken zone.
-- Re-designed the formatting on the ShaguQuest slashcommands.
+- Re-designed the formatting on the ShaguDB slashcommands.
 
 05.03.2015: Version 3.0
 - Alot(!) of Quests will now work better, as there was a bug in the object-database.
@@ -31,17 +31,17 @@
 - Dropchances are now sortedy by percentage. The highest droprates will now be shown, instead of 5 randoms.
 - Rewritten the algorithms to match the best map for a spot. Because of this, the map will be auto-opened again.
 - Many parts of the Code where rewritten. Merged alot of redundant code to functions.
-- Fixed parse errors in spawnData.lua for enGB clients
+- Fixed parse errors in spawnDB.lua for enGB clients
 
 18.01.2015: Version 2.1
-- Fixed NullPointer Error for enGB (issue in spawnData.lua)
+- Fixed NullPointer Error for enGB (issue in spawnDB.lua)
 - Rewritten the code of the database export scripts.
-- Changed Addon Description (Ingame), to avoid confusion with EQL3 <=> Extended Quest Log3.
+- Changed Addon Description (Ingame), to avoid confusion with ShaguQuest <=> Extended Quest Log3.
 
 20.08.2014: Version 2.0
 - The Map won't open automatically anymore. As there where alot of Issues. Instead, all spawns on every Map will now be shown.
 - Questrelations will now be shown on every Quest. For example the Questgiver and everything related to a Quest will be shown on the Map as a "Questionmark".
-- Changed the structure of questData.lua to make all this possible.
+- Changed the structure of questDB.lua to make all this possible.
 
 07.08.2014: Version 1.0
 - Initial Release. Alot of confusing Errors and Issues.
