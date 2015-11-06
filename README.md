@@ -38,9 +38,9 @@ If you want to test it, visit the following links:
 
 [Official Website](http://shaguquest.ericmauser.de/)
 
-[Download of enGB Client](http://shaguquest.ericmauser.de/files/ShaguDB-5.0-enGB-complete.zip)
+[Download of enGB Client](http://shaguquest.ericmauser.de/files/ShaguDB-6.1-enGB-complete.zip)
 
-[Download of deDE Client](http://shaguquest.ericmauser.de/files/ShaguDB-5.0-deDE-complete.zip)
+[Download of deDE Client](http://shaguquest.ericmauser.de/files/ShaguDB-6.1-deDE-complete.zip)
 
 # Build from git
 If you're running a Linux Machine, just execute the "./build.sh" to create a deDE and enGB release.
