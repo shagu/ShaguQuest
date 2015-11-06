@@ -164,7 +164,7 @@
 				</Frames>
 			</Frame>
 			
-			<Frame name="EQL3_QuestLogTrack" enableMouse="true">
+			<Frame name="EQL3_QuestLogTrack" enableMouse="true" hidden="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>

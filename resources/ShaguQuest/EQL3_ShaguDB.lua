@@ -1,3 +1,110 @@
+if ShaguQuestSettings == nil then
+	ShaguQuestSettings = {
+		["autoPlot"] = false,
+	}
+end
+
+-- Register on event for "PLAYER_ENTERING_WORLD"
+ShaguQuestAutoPlot = CreateFrame("Frame")
+ShaguQuestAutoPlot.Button = CreateFrame("Button", nil, EQL3_QuestLogFrame, "UIPanelButtonTemplate")
+ShaguQuestAutoPlot.Button:SetWidth(120)
+ShaguQuestAutoPlot.Button:SetHeight(20)
+ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cff44ff44On")
+ShaguQuestAutoPlot.Button:SetPoint("TOPLEFT", 75,-42)
+ShaguQuestAutoPlot:SetFrameStrata("TOOLTIP")
+ShaguQuestAutoPlot.Button:SetScript("OnClick", function()
+	if ShaguQuestSettings["autoPlot"] == false then
+		ShaguQuestSettings["autoPlot"] = true
+		UIErrorsFrame:AddMessage("ShaguQuest: Enabled auto track")
+		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
+		ShaguQuestAutoPlot:ShowAll()
+	else
+		ShaguQuestSettings["autoPlot"] = false
+		UIErrorsFrame:AddMessage("ShaguQuest: Disabled auto track")
+		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
+		ShaguDB_CleanMap();
+	end
+end)
+
+ShaguQuestAutoPlot.Button:Show()
+
+ShaguQuestAutoPlot:RegisterEvent("QUEST_WATCH_UPDATE");
+ShaguQuestAutoPlot:RegisterEvent("QUEST_LOG_UPDATE");
+ShaguQuestAutoPlot:RegisterEvent("UNIT_QUEST_LOG_CHANGED");
+ShaguQuestAutoPlot:SetScript("OnEvent", function(self, event, ...)
+	ShaguQuestAutoPlot:ShowAll()
+  end)
+
+function ShaguQuestAutoPlot:ShowAll()
+	if ShaguQuestSettings["autoPlot"] == false then
+		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
+	else
+		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
+	end
+
+if ShaguQuestSettings["autoPlot"] == true then
+	local questLogID=1;
+  ShaguDB_MAP_NOTES = {};
+	ShaguDB_CleanMap();
+	while (GetQuestLogTitle(questLogID) ~= nil) do
+		questLogID = questLogID + 1;
+
+
+		local questTitle, level, questTag, isHeader, isCollapsed, isComplete = GetQuestLogTitle(questLogID);
+	
+		if (not isHeader and questTitle ~= nil) then
+			local numObjectives = GetNumQuestLeaderBoards(questLogID);
+			if (numObjectives ~= nil) then
+
+    		-- quest data
+    		if (questDB[questTitle] ~= nil) then
+      		for monsterName, monsterDrop in pairs(questDB[questTitle]) do
+        		if (spawnDB[monsterName] ~= nil and strfind(spawnDB[monsterName]["faction"], faction) ~= nil) then
+          		ShaguDB_searchMonster(monsterName,questTitle,true);
+        		end
+      		end
+    		end
+
+				for i=1, numObjectives, 1 do
+					local text, type, finished = GetQuestLogLeaderBoard(i, questLogID);
+					local i, j, itemName, numItems, numNeeded = strfind(text, "(.*):%s*([%d]+)%s*/%s*([%d]+)");
+
+					if (not finished) then
+     				-- spawn data
+        		if (type == "monster") then
+          		-- enGB
+          		local i, j, monsterName = strfind(itemName, "(.*) killed");
+          		ShaguDB_searchMonster(monsterName,questTitle);
+
+          		local i, j, monsterName = strfind(itemName, "(.*) slain");
+          		ShaguDB_searchMonster(monsterName,questTitle);
+
+          		-- deDE
+          		local i, j, monsterName = strfind(itemName, "(.*) getötet");
+          		ShaguDB_searchMonster(monsterName,questTitle);
+
+          		-- whatever
+          		local i, j, monsterName = strfind(itemName, "(.*)");
+          		ShaguDB_searchMonster(monsterName,questTitle);
+        		end
+
+        		-- item data
+        		if (type == "item") then
+          		ShaguDB_searchItem(itemName,questTitle);
+     	    		ShaguDB_searchVendor(itemName,questTitle);
+     	  		end
+					end
+				end
+
+			end
+		end
+		ShaguDB_PlotNotesOnMap()
+	end
+end
+
+end
+
+
 function QuestLog_UpdateQuestDetails(doNotScroll)
   if (EQL3_QuestLogFrame ~= nil) then
     ShaguDB_QuestLog_UpdateQuestDetails("EQL3_", doNotScroll);
