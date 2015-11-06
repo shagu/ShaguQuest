@@ -6,12 +6,12 @@ This data can be used to display all kind of informations on your map (Cartograp
 The following command will display all "Gold Ores" on your map.
 This can be used for all kind of NPCs or gameobjects too.
 
-    /shagu spawn Gold Ore
+		/shagu spawn Gold Ore
 
 If you are interested in displaying some drop informations, try out the following,
 it will display all kind of mobs, treasures and so on which the item can be obtained from.
 
-    /shagu item Black Pearl
+		/shagu item Black Pearl
 
 With version 5.0 a new feature was introduced. The "vendor" command.
 
