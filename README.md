@@ -26,7 +26,7 @@ The "Clean" button removes every ShaguDB note from the map.
 Due to classic Wow-API restrictions, this Addon is only available for enGB and deDE clients.
 
 It is based on the latest Mangos Zero Database, as well as GMDB.
-Some parts of the Addon itself are taken from the WHDB Addon.
+Some parts of the Addon itself are taken from the WHDB Addon. ShaguQuest is basically EQL3 with a few modifications.
 
 # Video
 If you want to see it in Action, here is a example video, showing the most common features of ShaguDB
