@@ -1,7 +1,7 @@
 ## Interface: 11200 
 ## Title: |cff33ffccShagu|cffffffffDB
 ## Author: Eric (Shagu) Mauser, 2015
-## Notes: A Quest-, Item- and Spawn-database. Requires Cartographer.
+## Notes: A Quest-, Item-, Vendor- and Spawn-database. Notes are shown via Cartographer.
 ## Version: oooVersionooo-oooLocaleooo
 ## RequiredDeps: Cartographer
 ## OptionalDeps: ShaguQuest
