@@ -1,6 +1,6 @@
 function QuestLog_UpdateQuestDetails(doNotScroll)
-  if (ShaguQuest_QuestLogFrame ~= nil) then
-    ShaguDB_QuestLog_UpdateQuestDetails("ShaguQuest_", doNotScroll);
+  if (EQL3_QuestLogFrame ~= nil) then
+    ShaguDB_QuestLog_UpdateQuestDetails("EQL3_", doNotScroll);
   else
     ShaguDB_QuestLog_UpdateQuestDetails("", doNotScroll);
   end

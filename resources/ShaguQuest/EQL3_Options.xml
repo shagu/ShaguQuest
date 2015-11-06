@@ -1,9 +1,9 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
 	
-	<Script file="ShaguQuest_Options.lua"/>
+	<Script file="EQL3_Options.lua"/>
 	
-	<Frame name="ShaguQuest_OptionsFrame" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true">
+	<Frame name="EQL3_OptionsFrame" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true">
 		<Size>
 			<AbsDimension x="640" y="500"/>
 		</Size>
@@ -28,7 +28,7 @@
 		
 		<Layers>
 			<Layer level="ARTWORK">
-				<Texture name="ShaguQuest_OptionsFrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+				<Texture name="EQL3_OptionsFrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
 					<Size>
 						<AbsDimension x="440" y="64"/>
 					</Size>
@@ -40,9 +40,9 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<FontString inherits="GameFontNormal" text="ShaguQuest_OPTIONS_TITLE">
+				<FontString inherits="GameFontNormal" text="EQL3_OPTIONS_TITLE">
 					<Anchors>
-						<Anchor point="TOP" relativeTo="ShaguQuest_OptionsFrameHeader">
+						<Anchor point="TOP" relativeTo="EQL3_OptionsFrameHeader">
 							<Offset>
 								<AbsDimension x="0" y="-14"/>
 							</Offset>
@@ -54,9 +54,9 @@
 		
 		
 		<Frames>
-			<Button name="ShaguQuest_OptionsFrameCloseButton" inherits="UIPanelCloseButton">
+			<Button name="EQL3_OptionsFrameCloseButton" inherits="UIPanelCloseButton">
 				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="ShaguQuest_OptionsFrame" relativePoint="TOPRIGHT">
+					<Anchor point="TOPRIGHT" relativeTo="EQL3_OptionsFrame" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="-8" y="-8"/>
 						</Offset>
@@ -72,12 +72,12 @@
 				</Scripts>
 			</Button>
 			
-			<Button name="ShaguQuest_OptionsFrameLoadButton">
+			<Button name="EQL3_OptionsFrameLoadButton">
 				<Size>
 					<AbsDimension x="32" y="32"/>
 				</Size>
 				<Anchors>
-					<Anchor point="RIGHT" relativeTo="ShaguQuest_OptionsFrameCloseButton" relativePoint="LEFT">
+					<Anchor point="RIGHT" relativeTo="EQL3_OptionsFrameCloseButton" relativePoint="LEFT">
 						<Offset>
 							<AbsDimension x="0" y="0"/>
 						</Offset>
@@ -86,7 +86,7 @@
 				
 
 				<Frames>
-					<Frame name="ShaguQuest_RealmDropDown" inherits="UIDropDownMenuTemplate" id="1" hidden="true">
+					<Frame name="EQL3_RealmDropDown" inherits="UIDropDownMenuTemplate" id="1" hidden="true">
 						<Anchors>
 							<Anchor point="TOP">
 								<Offset>
@@ -96,10 +96,10 @@
 						</Anchors>
 						<Scripts>
 							<OnLoad>
-								ShaguQuest_RealmDropDown_OnLoad();
+								EQL3_RealmDropDown_OnLoad();
 							</OnLoad>
 							<OnShow>
-								ShaguQuest_RealmDropDown_OnLoad();
+								EQL3_RealmDropDown_OnLoad();
 							</OnShow>
 						</Scripts>
 					</Frame>
@@ -108,12 +108,12 @@
 				
 				<Scripts>
 					<OnClick>
-						ShaguQuest_ShowLoadDropDown(arg1);
+						EQL3_ShowLoadDropDown(arg1);
 						PlaySound("UChatScrollButton");
 					</OnClick>
 					<OnEnter>
 						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(ShaguQuest_LOAD_TIP, nil,nil, nil, nil, 1);
+						GameTooltip:SetText(EQL3_LOAD_TIP, nil,nil, nil, nil, 1);
 					</OnEnter>
 					<OnLeave>
 						GameTooltip:Hide();
@@ -128,12 +128,12 @@
 			
 			
 			
-			<Frame name="ShaguQuest_OptionsFrame_Header_Log">
+			<Frame name="EQL3_OptionsFrame_Header_Log">
 				<Size>
 					<AbsDimension x="304" y="218"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame" relativePoint="TOPLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame" relativePoint="TOPLEFT">
 						<Offset>
 							<AbsDimension x="16" y="-40"/>
 						</Offset>
@@ -154,7 +154,7 @@
 				
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Header_Log_Label" inherits="GameFontNormal" text="ShaguQuest_LOG_OPTIONS">
+						<FontString name="EQL3_OptionsFrame_Header_Log_Label" inherits="GameFontNormal" text="EQL3_LOG_OPTIONS">
 							<Anchors>
 								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
 									<Offset>
@@ -173,12 +173,12 @@
 				</Scripts>
 			</Frame>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_ShowQuestLevels" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_ShowQuestLevels" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Header_Log" relativePoint="TOPLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Header_Log" relativePoint="TOPLEFT">
 						<Offset>
 							<AbsDimension x="8" y="-8"/>
 						</Offset>
@@ -186,7 +186,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_ShowQuestLevels_Label" inherits="GameFontNormalSmall" text="ShaguQuest_SHOW_QUEST_LEVELS">
+						<FontString name="EQL3_OptionsFrame_Checkbox_ShowQuestLevels_Label" inherits="GameFontNormalSmall" text="EQL3_SHOW_QUEST_LEVELS">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -199,7 +199,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_QuestLevels();
+						EQL3_Toggle_QuestLevels();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -209,12 +209,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_QuestLevelsOnlyInLog" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_QuestLevelsOnlyInLog" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_ShowQuestLevels" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_ShowQuestLevels" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="20" y="-4"/>
 						</Offset>
@@ -222,7 +222,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_QuestLevelsOnlyInLog_Label" inherits="GameFontNormalSmall" text="ShaguQuest_LEVELS_ONLY_IN_LOG">
+						<FontString name="EQL3_OptionsFrame_Checkbox_QuestLevelsOnlyInLog_Label" inherits="GameFontNormalSmall" text="EQL3_LEVELS_ONLY_IN_LOG">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -235,7 +235,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_OnlyLevelsInLog();
+						EQL3_Toggle_OnlyLevelsInLog();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -245,12 +245,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_RestoreUponSelect" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_RestoreUponSelect" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_QuestLevelsOnlyInLog" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_QuestLevelsOnlyInLog" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="-20" y="-4"/>
 						</Offset>
@@ -258,7 +258,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_RestoreUponSelect_Label" inherits="GameFontNormalSmall" text="ShaguQuest_RESTORE_UPON_SELECT">
+						<FontString name="EQL3_OptionsFrame_Checkbox_RestoreUponSelect_Label" inherits="GameFontNormalSmall" text="EQL3_RESTORE_UPON_SELECT">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -271,7 +271,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_RestoreUponSelect();
+						EQL3_Toggle_RestoreUponSelect();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -281,12 +281,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_MinimizeUponClose" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_MinimizeUponClose" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_RestoreUponSelect" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_RestoreUponSelect" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -294,7 +294,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_MinimizeUponClose_Label" inherits="GameFontNormalSmall" text="ShaguQuest_MINIMIZE_UPON_CLOSE">
+						<FontString name="EQL3_OptionsFrame_Checkbox_MinimizeUponClose_Label" inherits="GameFontNormalSmall" text="EQL3_MINIMIZE_UPON_CLOSE">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -307,7 +307,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_MinimizeUponClose();
+						EQL3_Toggle_MinimizeUponClose();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -317,12 +317,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_AutoCompleteQuests" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_AutoCompleteQuests" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_MinimizeUponClose" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_MinimizeUponClose" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -330,7 +330,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_AutoCompleteQuests_Label" inherits="GameFontNormalSmall" text="ShaguQuest_AUTO_COMPLETE_QUESTS">
+						<FontString name="EQL3_OptionsFrame_Checkbox_AutoCompleteQuests_Label" inherits="GameFontNormalSmall" text="EQL3_AUTO_COMPLETE_QUESTS">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -343,7 +343,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_AutoCompleteQuests();
+						EQL3_Toggle_AutoCompleteQuests();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -353,12 +353,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_InfoOnQuestComplete" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_InfoOnQuestComplete" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_AutoCompleteQuests" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_AutoCompleteQuests" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -366,7 +366,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_InfoOnQuestComplete_Label" inherits="GameFontNormalSmall" text="ShaguQuest_INFO_ON_QUEST_COMPLETE">
+						<FontString name="EQL3_OptionsFrame_Checkbox_InfoOnQuestComplete_Label" inherits="GameFontNormalSmall" text="EQL3_INFO_ON_QUEST_COMPLETE">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -379,7 +379,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_InfoOnQuestComplete();
+						EQL3_Toggle_InfoOnQuestComplete();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -389,12 +389,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_LockQuestLog" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_LockQuestLog" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_InfoOnQuestComplete" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_InfoOnQuestComplete" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -402,7 +402,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_LockQuestLog_Label" inherits="GameFontNormalSmall" text="ShaguQuest_LOCK_QUESTLOG">
+						<FontString name="EQL3_OptionsFrame_Checkbox_LockQuestLog_Label" inherits="GameFontNormalSmall" text="EQL3_LOCK_QUESTLOG">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -415,7 +415,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_LockQuestLog();
+						EQL3_Toggle_LockQuestLog();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -425,12 +425,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<Button name="ShaguQuest_OptionsFrame_Button_QuestLog" inherits="UIPanelButtonTemplate" text="ShaguQuest_RESTORE">
+			<Button name="EQL3_OptionsFrame_Button_QuestLog" inherits="UIPanelButtonTemplate" text="EQL3_RESTORE">
 				<Size>
 					<AbsDimension x="128" y="24"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_LockQuestLog" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_LockQuestLog" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="140" y="2"/>
 						</Offset>
@@ -438,17 +438,17 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_RestoreQuestLog();
+						EQL3_RestoreQuestLog();
 					</OnClick>
 				</Scripts>
 			</Button>
 			
-			<Slider name="ShaguQuest_OptionsFrame_Slider_LogOpacity" inherits="OptionsSliderTemplate">
+			<Slider name="EQL3_OptionsFrame_Slider_LogOpacity" inherits="OptionsSliderTemplate">
 				<Size>
 					<AbsDimension x="288" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_LockQuestLog" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_LockQuestLog" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-16"/>
 						</Offset>
@@ -456,21 +456,21 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						getglobal(this:GetName().."Text"):SetText(ShaguQuest_OPACITY);
+						getglobal(this:GetName().."Text"):SetText(EQL3_OPACITY);
 						getglobal(this:GetName().."High"):SetText();
 						getglobal(this:GetName().."Low"):SetText();
 						this:SetMinMaxValues(0.25, 1.0);
 						this:SetValueStep(0.01);
-						this.tooltipText = ShaguQuest_OPACITY_INFO;
+						this.tooltipText = EQL3_OPACITY_INFO;
 					</OnLoad>
 					<OnShow>
-							this:SetValue(QuestlogOptions[ShaguQuest_Player].LogOpacity);
-							getglobal(this:GetName().."Text"):SetText(ShaguQuest_OPACITY.." : "..floor(this:GetValue() * 100).."%");
+							this:SetValue(QuestlogOptions[EQL3_Player].LogOpacity);
+							getglobal(this:GetName().."Text"):SetText(EQL3_OPACITY.." : "..floor(this:GetValue() * 100).."%");
 					</OnShow>
 					<OnValueChanged>
-						QuestlogOptions[ShaguQuest_Player].LogOpacity = this:GetValue();
-						getglobal(this:GetName().."Text"):SetText(ShaguQuest_OPACITY.." : "..floor(this:GetValue() * 100).."%");
-						ShaguQuest_QuestLogFrame:SetAlpha(this:GetValue());
+						QuestlogOptions[EQL3_Player].LogOpacity = this:GetValue();
+						getglobal(this:GetName().."Text"):SetText(EQL3_OPACITY.." : "..floor(this:GetValue() * 100).."%");
+						EQL3_QuestLogFrame:SetAlpha(this:GetValue());
 						GameTooltip:Hide();
 					</OnValueChanged>
 				</Scripts>
@@ -481,12 +481,12 @@
 
 
 
-			<Frame name="ShaguQuest_OptionsFrame_Header_Color">
+			<Frame name="EQL3_OptionsFrame_Header_Color">
 				<Size>
 					<AbsDimension x="304" y="210"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Header_Log" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Header_Log" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-16"/>
 						</Offset>
@@ -507,7 +507,7 @@
 				
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Header_Color_Label" inherits="GameFontNormal" text="ShaguQuest_COLOR_OPTIONS">
+						<FontString name="EQL3_OptionsFrame_Header_Color_Label" inherits="GameFontNormal" text="EQL3_COLOR_OPTIONS">
 							<Anchors>
 								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
 									<Offset>
@@ -527,12 +527,12 @@
 			</Frame>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_CustomZoneColor" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_CustomZoneColor" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Header_Color" relativePoint="TOPLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Header_Color" relativePoint="TOPLEFT">
 						<Offset>
 							<AbsDimension x="8" y="-8"/>
 						</Offset>
@@ -540,7 +540,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_CustomZoneColor_Label" inherits="GameFontNormalSmall" text="ShaguQuest_ZONE_COLOR">
+						<FontString name="EQL3_OptionsFrame_Checkbox_CustomZoneColor_Label" inherits="GameFontNormalSmall" text="EQL3_ZONE_COLOR">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -553,7 +553,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_CustomZoneColor();
+						EQL3_Toggle_CustomZoneColor();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -564,12 +564,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_CustomHeaderColor" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_CustomHeaderColor" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomZoneColor" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomZoneColor" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -577,7 +577,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_CustomHeaderColor_Label" inherits="GameFontNormalSmall" text="ShaguQuest_HEADER_COLOR">
+						<FontString name="EQL3_OptionsFrame_Checkbox_CustomHeaderColor_Label" inherits="GameFontNormalSmall" text="EQL3_HEADER_COLOR">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -590,7 +590,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_CustomHeaderColor();
+						EQL3_Toggle_CustomHeaderColor();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -601,12 +601,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_FadeHeaderColor" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_FadeHeaderColor" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomHeaderColor" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomHeaderColor" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="10" y="-4"/>
 						</Offset>
@@ -614,7 +614,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_FadeHeaderColor_Label" inherits="GameFontNormalSmall" text="ShaguQuest_FADE_HEADER">
+						<FontString name="EQL3_OptionsFrame_Checkbox_FadeHeaderColor_Label" inherits="GameFontNormalSmall" text="EQL3_FADE_HEADER">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -627,7 +627,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_FadeHeaderColor();
+						EQL3_Toggle_FadeHeaderColor();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -638,12 +638,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_CustomObjectiveColor" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_CustomObjectiveColor" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_FadeHeaderColor" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_FadeHeaderColor" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="-10" y="-4"/>
 						</Offset>
@@ -651,7 +651,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_CustomObjectiveColor_Label" inherits="GameFontNormalSmall" text="ShaguQuest_OBJECTIVE_COLOR">
+						<FontString name="EQL3_OptionsFrame_Checkbox_CustomObjectiveColor_Label" inherits="GameFontNormalSmall" text="EQL3_OBJECTIVE_COLOR">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -664,7 +664,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_CustomObjectiveColor();
+						EQL3_Toggle_CustomObjectiveColor();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -675,12 +675,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_FadeObjectiveColor" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_FadeObjectiveColor" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomObjectiveColor" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomObjectiveColor" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="10" y="-4"/>
 						</Offset>
@@ -688,7 +688,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_FadeObjectiveColor_Label" inherits="GameFontNormalSmall" text="ShaguQuest_FADE_OBJECTIVE">
+						<FontString name="EQL3_OptionsFrame_Checkbox_FadeObjectiveColor_Label" inherits="GameFontNormalSmall" text="EQL3_FADE_OBJECTIVE">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -701,7 +701,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_FadeObjectiveColor();
+						EQL3_Toggle_FadeObjectiveColor();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -712,12 +712,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_CustomTrackerBGColor" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_CustomTrackerBGColor" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_FadeObjectiveColor" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_FadeObjectiveColor" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="-10" y="-4"/>
 						</Offset>
@@ -725,7 +725,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_CustomTrackerBGColor_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_BG">
+						<FontString name="EQL3_OptionsFrame_Checkbox_CustomTrackerBGColor_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_BG">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -738,7 +738,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_CustomTrackerBGColor();
+						EQL3_Toggle_CustomTrackerBGColor();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -749,12 +749,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_CustomTooltipInfoColor" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_CustomTooltipInfoColor" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomTrackerBGColor" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomTrackerBGColor" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -762,7 +762,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_CustomTooltipInfoColor_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TOOLTIP_COLOR">
+						<FontString name="EQL3_OptionsFrame_Checkbox_CustomTooltipInfoColor_Label" inherits="GameFontNormalSmall" text="EQL3_TOOLTIP_COLOR">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -775,7 +775,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_CustomTooltipInfoColor();
+						EQL3_Toggle_CustomTooltipInfoColor();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -786,12 +786,12 @@
 			</CheckButton>
 			
 			
-			<Button name="ShaguQuest_OptionsFrame_ColorSwatch_Zone" hidden="false" virtual="true">
+			<Button name="EQL3_OptionsFrame_ColorSwatch_Zone" hidden="false" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomZoneColor" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomZoneColor" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="248" y="0"/>
 						</Offset>
@@ -816,25 +816,25 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OpenColorPicker("Zone", false, "ShaguQuest_OptionsFrame_ColorSwatch_Zone");
+						EQL3_OpenColorPicker("Zone", false, "EQL3_OptionsFrame_ColorSwatch_Zone");
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_OptionsFrame_ColorSwatch_Zone_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Zone_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_OptionsFrame_ColorSwatch_Zone_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Zone_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_OptionsFrame_ColorSwatch_Header_Empty" hidden="false" virtual="true">
+			<Button name="EQL3_OptionsFrame_ColorSwatch_Header_Empty" hidden="false" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomHeaderColor" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomHeaderColor" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="224" y="0"/>
 						</Offset>
@@ -859,25 +859,25 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OpenColorPicker("HeaderEmpty", false, "ShaguQuest_OptionsFrame_ColorSwatch_Header_Empty");
+						EQL3_OpenColorPicker("HeaderEmpty", false, "EQL3_OptionsFrame_ColorSwatch_Header_Empty");
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_OptionsFrame_ColorSwatch_Header_Empty_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Header_Empty_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_OptionsFrame_ColorSwatch_Header_Empty_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Header_Empty_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_OptionsFrame_ColorSwatch_Header_Complete" hidden="false" virtual="true">
+			<Button name="EQL3_OptionsFrame_ColorSwatch_Header_Complete" hidden="false" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomHeaderColor" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomHeaderColor" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="248" y="0"/>
 						</Offset>
@@ -902,25 +902,25 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OpenColorPicker("HeaderComplete", false, "ShaguQuest_OptionsFrame_ColorSwatch_Header_Complete");
+						EQL3_OpenColorPicker("HeaderComplete", false, "EQL3_OptionsFrame_ColorSwatch_Header_Complete");
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_OptionsFrame_ColorSwatch_Header_Complete_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Header_Complete_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_OptionsFrame_ColorSwatch_Header_Complete_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Header_Complete_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_OptionsFrame_ColorSwatch_Objective_Empty" hidden="false" virtual="true">
+			<Button name="EQL3_OptionsFrame_ColorSwatch_Objective_Empty" hidden="false" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomObjectiveColor" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomObjectiveColor" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="224" y="0"/>
 						</Offset>
@@ -945,25 +945,25 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OpenColorPicker("ObjectiveEmpty", false, "ShaguQuest_OptionsFrame_ColorSwatch_Objective_Empty");
+						EQL3_OpenColorPicker("ObjectiveEmpty", false, "EQL3_OptionsFrame_ColorSwatch_Objective_Empty");
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_OptionsFrame_ColorSwatch_Objective_Empty_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Objective_Empty_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_OptionsFrame_ColorSwatch_Objective_Empty_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Objective_Empty_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_OptionsFrame_ColorSwatch_Objective_Complete" hidden="false" virtual="true">
+			<Button name="EQL3_OptionsFrame_ColorSwatch_Objective_Complete" hidden="false" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomObjectiveColor" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomObjectiveColor" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="248" y="0"/>
 						</Offset>
@@ -988,25 +988,25 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OpenColorPicker("ObjectiveComplete", false, "ShaguQuest_OptionsFrame_ColorSwatch_Objective_Complete");
+						EQL3_OpenColorPicker("ObjectiveComplete", false, "EQL3_OptionsFrame_ColorSwatch_Objective_Complete");
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_OptionsFrame_ColorSwatch_Objective_Complete_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Objective_Complete_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_OptionsFrame_ColorSwatch_Objective_Complete_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_Objective_Complete_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_OptionsFrame_ColorSwatch_TrackerBG" hidden="false" virtual="true">
+			<Button name="EQL3_OptionsFrame_ColorSwatch_TrackerBG" hidden="false" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomTrackerBGColor" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomTrackerBGColor" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="248" y="0"/>
 						</Offset>
@@ -1031,25 +1031,25 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OpenColorPicker("TrackerBG", true, "ShaguQuest_OptionsFrame_ColorSwatch_TrackerBG");
+						EQL3_OpenColorPicker("TrackerBG", true, "EQL3_OptionsFrame_ColorSwatch_TrackerBG");
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_OptionsFrame_ColorSwatch_TrackerBG_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_TrackerBG_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_OptionsFrame_ColorSwatch_TrackerBG_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_TrackerBG_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_OptionsFrame_ColorSwatch_TooltipInfo" hidden="false" virtual="true">
+			<Button name="EQL3_OptionsFrame_ColorSwatch_TooltipInfo" hidden="false" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomTooltipInfoColor" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomTooltipInfoColor" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="248" y="0"/>
 						</Offset>
@@ -1074,24 +1074,24 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OpenColorPicker("Tooltip", false, "ShaguQuest_OptionsFrame_ColorSwatch_TooltipInfo");
+						EQL3_OpenColorPicker("Tooltip", false, "EQL3_OptionsFrame_ColorSwatch_TooltipInfo");
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_OptionsFrame_ColorSwatch_TooltipInfo_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_TooltipInfo_SwatchBg:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_OptionsFrame_ColorSwatch_TooltipInfo_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+						EQL3_OptionsFrame_ColorSwatch_TooltipInfo_SwatchBg:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
 			</Button>
 			
-			<Button name="ShaguQuest_OptionsFrame_Button_RestoreColors" inherits="UIPanelButtonTemplate" text="ShaguQuest_RESTORE_COLORS">
+			<Button name="EQL3_OptionsFrame_Button_RestoreColors" inherits="UIPanelButtonTemplate" text="EQL3_RESTORE_COLORS">
 				<Size>
 					<AbsDimension x="180" y="26"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_CustomTooltipInfoColor" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_CustomTooltipInfoColor" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="54" y="-2"/>
 						</Offset>
@@ -1099,7 +1099,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						 ShaguQuest_RestoreColors();
+						 EQL3_RestoreColors();
 					</OnClick>
 				</Scripts>
 			</Button>
@@ -1110,12 +1110,12 @@
 			
 			
 			
-			<Frame name="ShaguQuest_OptionsFrame_Header_Tracker">
+			<Frame name="EQL3_OptionsFrame_Header_Tracker">
 				<Size>
 					<AbsDimension x="304" y="368"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="ShaguQuest_OptionsFrame" relativePoint="TOPRIGHT">
+					<Anchor point="TOPRIGHT" relativeTo="EQL3_OptionsFrame" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="-16" y="-40"/>
 						</Offset>
@@ -1136,7 +1136,7 @@
 				
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Header_Tracker_Label" inherits="GameFontNormal" text="ShaguQuest_TRACKER_OPTIONS">
+						<FontString name="EQL3_OptionsFrame_Header_Tracker_Label" inherits="GameFontNormal" text="EQL3_TRACKER_OPTIONS">
 							<Anchors>
 								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
 									<Offset>
@@ -1157,12 +1157,12 @@
 
 			
 					
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_ShowObjectiveMarkers" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_ShowObjectiveMarkers" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Header_Tracker" relativePoint="TOPLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Header_Tracker" relativePoint="TOPLEFT">
 						<Offset>
 							<AbsDimension x="8" y="-8"/>
 						</Offset>
@@ -1170,7 +1170,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_ShowObjectiveMarkers_Label" inherits="GameFontNormalSmall" text="ShaguQuest_SHOW_OBJECTIVE_MARKERS">
+						<FontString name="EQL3_OptionsFrame_Checkbox_ShowObjectiveMarkers_Label" inherits="GameFontNormalSmall" text="EQL3_SHOW_OBJECTIVE_MARKERS">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1183,7 +1183,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_ShowObjectiveMarkers();
+						EQL3_Toggle_ShowObjectiveMarkers();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1195,12 +1195,12 @@
 
 			
 					
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_UseTrackerListing" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_UseTrackerListing" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_ShowObjectiveMarkers" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_ShowObjectiveMarkers" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="20" y="-4"/>
 						</Offset>
@@ -1208,7 +1208,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_UseTrackerListing_Label" inherits="GameFontNormalSmall" text="ShaguQuest_USE_TRACKER_LISTING">
+						<FontString name="EQL3_OptionsFrame_Checkbox_UseTrackerListing_Label" inherits="GameFontNormalSmall" text="EQL3_USE_TRACKER_LISTING">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1221,7 +1221,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_UseTrackerListing();
+						EQL3_Toggle_UseTrackerListing();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1233,12 +1233,12 @@
 			
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_List1" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_List1" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_UseTrackerListing" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_UseTrackerListing" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="20" y="-4"/>
 						</Offset>
@@ -1246,7 +1246,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_List1_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_LIST_1">
+						<FontString name="EQL3_OptionsFrame_Checkbox_List1_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_LIST_1">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1259,7 +1259,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Set_TrackerListing(0);
+						EQL3_Set_TrackerListing(0);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1269,12 +1269,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_List2" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_List2" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_List1" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_List1" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="20" y="0"/>
 						</Offset>
@@ -1282,7 +1282,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_List2_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_LIST_2">
+						<FontString name="EQL3_OptionsFrame_Checkbox_List2_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_LIST_2">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1295,7 +1295,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Set_TrackerListing(1);
+						EQL3_Set_TrackerListing(1);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1305,12 +1305,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_List3" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_List3" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_List2" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_List2" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="20" y="0"/>
 						</Offset>
@@ -1318,7 +1318,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_List3_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_LIST_3">
+						<FontString name="EQL3_OptionsFrame_Checkbox_List3_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_LIST_3">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1331,7 +1331,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Set_TrackerListing(2);
+						EQL3_Set_TrackerListing(2);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1341,12 +1341,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_List4" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_List4" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_List3" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_List3" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="20" y="0"/>
 						</Offset>
@@ -1354,7 +1354,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_List4_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_LIST_4">
+						<FontString name="EQL3_OptionsFrame_Checkbox_List4_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_LIST_4">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1367,7 +1367,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Set_TrackerListing(3);
+						EQL3_Set_TrackerListing(3);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1379,12 +1379,12 @@
 			
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_Symbol1" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_Symbol1" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_List1" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_List1" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1392,7 +1392,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_Symbol1_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_SYMBOL_1">
+						<FontString name="EQL3_OptionsFrame_Checkbox_Symbol1_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_SYMBOL_1">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1405,7 +1405,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Set_TrackerSymbol(0);
+						EQL3_Set_TrackerSymbol(0);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1415,12 +1415,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_Symbol2" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_Symbol2" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_Symbol1" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_Symbol1" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="20" y="0"/>
 						</Offset>
@@ -1428,7 +1428,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_Symbol2_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_SYMBOL_2">
+						<FontString name="EQL3_OptionsFrame_Checkbox_Symbol2_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_SYMBOL_2">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1441,7 +1441,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Set_TrackerSymbol(1);
+						EQL3_Set_TrackerSymbol(1);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1451,12 +1451,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_Symbol3" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_Symbol3" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_Symbol2" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_Symbol2" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="20" y="0"/>
 						</Offset>
@@ -1464,7 +1464,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_Symbol3_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_SYMBOL_3">
+						<FontString name="EQL3_OptionsFrame_Checkbox_Symbol3_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_SYMBOL_3">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1477,7 +1477,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Set_TrackerSymbol(2);
+						EQL3_Set_TrackerSymbol(2);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1487,12 +1487,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_Symbol4" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_Symbol4" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_Symbol3" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_Symbol3" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="20" y="0"/>
 						</Offset>
@@ -1500,7 +1500,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_Symbol4_Label" inherits="GameFontNormalSmall" text="ShaguQuest_TRACKER_SYMBOL_4">
+						<FontString name="EQL3_OptionsFrame_Checkbox_Symbol4_Label" inherits="GameFontNormalSmall" text="EQL3_TRACKER_SYMBOL_4">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1513,7 +1513,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Set_TrackerSymbol(3);
+						EQL3_Set_TrackerSymbol(3);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1526,12 +1526,12 @@
 	
 	
 	
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_ShowZones" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_ShowZones" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_Symbol1" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_Symbol1" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="-40" y="-4"/>
 						</Offset>
@@ -1539,7 +1539,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_ShowZones_Label" inherits="GameFontNormalSmall" text="ShaguQuest_SHOW_ZONES">
+						<FontString name="EQL3_OptionsFrame_Checkbox_ShowZones_Label" inherits="GameFontNormalSmall" text="EQL3_SHOW_ZONES">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1552,7 +1552,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_ShowZones();
+						EQL3_Toggle_ShowZones();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1562,12 +1562,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_SortTracker" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_SortTracker" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_ShowZones" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_ShowZones" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1575,7 +1575,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_SortTracker_Label" inherits="GameFontNormalSmall" text="ShaguQuest_SORT_TRACKER">
+						<FontString name="EQL3_OptionsFrame_Checkbox_SortTracker_Label" inherits="GameFontNormalSmall" text="EQL3_SORT_TRACKER">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1588,7 +1588,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_SortTracker();
+						EQL3_Toggle_SortTracker();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1599,12 +1599,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_LockTracker" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_LockTracker" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_SortTracker" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_SortTracker" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1612,7 +1612,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_LockTracker_Label" inherits="GameFontNormalSmall" text="ShaguQuest_LOCK_TRACKER">
+						<FontString name="EQL3_OptionsFrame_Checkbox_LockTracker_Label" inherits="GameFontNormalSmall" text="EQL3_LOCK_TRACKER">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1625,7 +1625,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_LockTracker();
+						EQL3_Toggle_LockTracker();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1635,12 +1635,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<Button name="ShaguQuest_OptionsFrame_Button_RestoreTracker" inherits="UIPanelButtonTemplate" text="ShaguQuest_RESTORE">
+			<Button name="EQL3_OptionsFrame_Button_RestoreTracker" inherits="UIPanelButtonTemplate" text="EQL3_RESTORE">
 				<Size>
 					<AbsDimension x="128" y="24"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_LockTracker" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_LockTracker" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="140" y="2"/>
 						</Offset>
@@ -1648,7 +1648,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_RestoreTracker();
+						EQL3_RestoreTracker();
 					</OnClick>
 				</Scripts>
 			</Button>
@@ -1656,12 +1656,12 @@
 
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_AddNew" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_AddNew" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_LockTracker" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_LockTracker" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1669,7 +1669,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_AddNew_Label" inherits="GameFontNormalSmall" text="ShaguQuest_ADD_NEW">
+						<FontString name="EQL3_OptionsFrame_Checkbox_AddNew_Label" inherits="GameFontNormalSmall" text="EQL3_ADD_NEW">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1682,7 +1682,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_AddNew();
+						EQL3_Toggle_AddNew();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1693,12 +1693,12 @@
 			</CheckButton>
 
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_RemoveFinished" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_RemoveFinished" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_AddNew" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_AddNew" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1706,7 +1706,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_RemoveFinished_Label" inherits="GameFontNormalSmall" text="ShaguQuest_REMOVE_FINISHED">
+						<FontString name="EQL3_OptionsFrame_Checkbox_RemoveFinished_Label" inherits="GameFontNormalSmall" text="EQL3_REMOVE_FINISHED">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1719,7 +1719,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_RemoveFinished();
+						EQL3_Toggle_RemoveFinished();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1729,12 +1729,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_MinimizeFinished" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_MinimizeFinished" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_RemoveFinished" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_RemoveFinished" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1742,7 +1742,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_MinimizeFinished_Label" inherits="GameFontNormalSmall" text="ShaguQuest_MINIMIZE_FINISHED">
+						<FontString name="EQL3_OptionsFrame_Checkbox_MinimizeFinished_Label" inherits="GameFontNormalSmall" text="EQL3_MINIMIZE_FINISHED">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1755,7 +1755,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_MinimizeFinished();
+						EQL3_Toggle_MinimizeFinished();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1765,12 +1765,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_HideCompletedObjectives" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_HideCompletedObjectives" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_MinimizeFinished" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_MinimizeFinished" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1778,7 +1778,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_HideCompletedObjectives_Label" inherits="GameFontNormalSmall" text="ShaguQuest_HIDE_COMPLETED_OBJECTIVES">
+						<FontString name="EQL3_OptionsFrame_Checkbox_HideCompletedObjectives_Label" inherits="GameFontNormalSmall" text="EQL3_HIDE_COMPLETED_OBJECTIVES">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1791,7 +1791,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_HideCompletedObjectives();
+						EQL3_Toggle_HideCompletedObjectives();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1801,12 +1801,12 @@
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 			</CheckButton>
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_AddUntracked" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_AddUntracked" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_HideCompletedObjectives" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_HideCompletedObjectives" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1814,7 +1814,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_AddUntracked_Label" inherits="GameFontNormalSmall" text="ShaguQuest_ADD_UNTRACKED">
+						<FontString name="EQL3_OptionsFrame_Checkbox_AddUntracked_Label" inherits="GameFontNormalSmall" text="EQL3_ADD_UNTRACKED">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1827,7 +1827,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_AddUntracked();
+						EQL3_Toggle_AddUntracked();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1838,12 +1838,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_ShowMinimizer" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_ShowMinimizer" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_AddUntracked" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_AddUntracked" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -1851,7 +1851,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_ShowMinimizer_Label" inherits="GameFontNormalSmall" text="ShaguQuest_SHOW_MINIMIZER">
+						<FontString name="EQL3_OptionsFrame_Checkbox_ShowMinimizer_Label" inherits="GameFontNormalSmall" text="EQL3_SHOW_MINIMIZER">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1864,7 +1864,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_ShowMinimizer();
+						EQL3_Toggle_ShowMinimizer();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1875,12 +1875,12 @@
 			</CheckButton>
 			
 			
-			<Slider name="ShaguQuest_OptionsFrame_Slider_TrackerFontSize" inherits="OptionsSliderTemplate">
+			<Slider name="EQL3_OptionsFrame_Slider_TrackerFontSize" inherits="OptionsSliderTemplate">
 				<Size>
 					<AbsDimension x="288" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_ShowMinimizer" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_ShowMinimizer" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-16"/>
 						</Offset>
@@ -1888,20 +1888,20 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						getglobal(this:GetName().."Text"):SetText(ShaguQuest_TRACKERFONTSIZE);
+						getglobal(this:GetName().."Text"):SetText(EQL3_TRACKERFONTSIZE);
 						getglobal(this:GetName().."High"):SetText("20");
 						getglobal(this:GetName().."Low"):SetText("8");
 						this:SetMinMaxValues(8, 20);
 						this:SetValueStep(1);
-						this.tooltipText = ShaguQuest_TRACKERFONTSIZE_INFO;
+						this.tooltipText = EQL3_TRACKERFONTSIZE_INFO;
 					</OnLoad>
 					<OnShow>
-							this:SetValue(QuestlogOptions[ShaguQuest_Player].TrackerFontHeight);
-							getglobal(this:GetName().."Text"):SetText(ShaguQuest_TRACKERFONTSIZE.." : "..this:GetValue());
+							this:SetValue(QuestlogOptions[EQL3_Player].TrackerFontHeight);
+							getglobal(this:GetName().."Text"):SetText(EQL3_TRACKERFONTSIZE.." : "..this:GetValue());
 					</OnShow>
 					<OnValueChanged>
-						QuestlogOptions[ShaguQuest_Player].TrackerFontHeight = this:GetValue();
-						getglobal(this:GetName().."Text"):SetText(ShaguQuest_TRACKERFONTSIZE.." : "..this:GetValue());
+						QuestlogOptions[EQL3_Player].TrackerFontHeight = this:GetValue();
+						getglobal(this:GetName().."Text"):SetText(EQL3_TRACKERFONTSIZE.." : "..this:GetValue());
 						
 						SetTrackerFontSize();
 						
@@ -1913,12 +1913,12 @@
 			
 			<!-- New stuff -->
 			
-			<Frame name="ShaguQuest_OptionsFrame_Header_Tooltip">
+			<Frame name="EQL3_OptionsFrame_Header_Tooltip">
 				<Size>
 					<AbsDimension x="304" y="60"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Header_Tracker" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Header_Tracker" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-16"/>
 						</Offset>
@@ -1939,7 +1939,7 @@
 				
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Header_Log_Label" inherits="GameFontNormal" text="ShaguQuest_TOOLTIP_OPTIONS">
+						<FontString name="EQL3_OptionsFrame_Header_Log_Label" inherits="GameFontNormal" text="EQL3_TOOLTIP_OPTIONS">
 							<Anchors>
 								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
 									<Offset>
@@ -1959,12 +1959,12 @@
 			</Frame>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_ShowItemTooltip" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_ShowItemTooltip" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Header_Tooltip" relativePoint="TOPLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Header_Tooltip" relativePoint="TOPLEFT">
 						<Offset>
 							<AbsDimension x="8" y="-8"/>
 						</Offset>
@@ -1972,7 +1972,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_ShowItemTooltip_Label" inherits="GameFontNormalSmall" text="ShaguQuest_SHOW_ITEM_TOOLTIP">
+						<FontString name="EQL3_OptionsFrame_Checkbox_ShowItemTooltip_Label" inherits="GameFontNormalSmall" text="EQL3_SHOW_ITEM_TOOLTIP">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -1985,7 +1985,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_ShowItemTooltip();
+						EQL3_Toggle_ShowItemTooltip();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -1996,12 +1996,12 @@
 			</CheckButton>
 			
 			
-			<CheckButton name="ShaguQuest_OptionsFrame_Checkbox_ShowMobTooltip" virtual="true">
+			<CheckButton name="EQL3_OptionsFrame_Checkbox_ShowMobTooltip" virtual="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OptionsFrame_Checkbox_ShowItemTooltip" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OptionsFrame_Checkbox_ShowItemTooltip" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-4"/>
 						</Offset>
@@ -2009,7 +2009,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_OptionsFrame_Checkbox_ShowMobTooltip_Label" inherits="GameFontNormalSmall" text="ShaguQuest_SHOW_MOB_TOOLTIP">
+						<FontString name="EQL3_OptionsFrame_Checkbox_ShowMobTooltip_Label" inherits="GameFontNormalSmall" text="EQL3_SHOW_MOB_TOOLTIP">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -2022,7 +2022,7 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_ShowMobTooltip();
+						EQL3_Toggle_ShowMobTooltip();
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>

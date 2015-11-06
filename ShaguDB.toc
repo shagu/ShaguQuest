@@ -17,6 +17,3 @@ db\vendorDB.lua
 # addon
 ShaguDB.lua
 ShaguDB_GUI.lua
-
-# EQL integration
-#ShaguDB_EQL.lua

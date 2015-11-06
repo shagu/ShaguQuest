@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 
-	<Frame name="ShaguQuest_OrganizeFrame" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true">
+	<Frame name="EQL3_OrganizeFrame" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true">
 		<Size>
 			<AbsDimension x="256" y="128"/>
 		</Size>
@@ -27,7 +27,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		<Layers>
 			<Layer level="ARTWORK">
 			
-				<Texture name="ShaguQuest_OrganizeFrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+				<Texture name="EQL3_OrganizeFrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
 					<Size>
 						<AbsDimension x="256" y="64"/>
 					</Size>
@@ -40,9 +40,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</Anchors>
 				</Texture>
 				
-				<FontString inherits="GameFontNormal" text="ShaguQuest_ORGANIZE_TITLE">
+				<FontString inherits="GameFontNormal" text="EQL3_ORGANIZE_TITLE">
 					<Anchors>
-						<Anchor point="TOP" relativeTo="ShaguQuest_OrganizeFrameHeader">
+						<Anchor point="TOP" relativeTo="EQL3_OrganizeFrameHeader">
 							<Offset>
 								<AbsDimension x="0" y="-14"/>
 							</Offset>
@@ -51,9 +51,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</FontString>
 
 			
-				<FontString inherits="GameFontNormal" text="ShaguQuest_ORGANIZE_TEXT">
+				<FontString inherits="GameFontNormal" text="EQL3_ORGANIZE_TEXT">
 					<Anchors>
-						<Anchor point="TOP" relativeTo="ShaguQuest_OrganizeFrame" relativePoint="TOP">
+						<Anchor point="TOP" relativeTo="EQL3_OrganizeFrame" relativePoint="TOP">
 							<Offset>
 								<AbsDimension x="0" y="-28"/>
 							</Offset>
@@ -64,12 +64,12 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</Layers>
 		
 		<Frames>
-			<EditBox name="ShaguQuest_OrganizeFrame_Text" autoFocus="false" inherits="InputBoxTemplate">
+			<EditBox name="EQL3_OrganizeFrame_Text" autoFocus="false" inherits="InputBoxTemplate">
 				<Size>
 					<AbsDimension x="216" y="16"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_OrganizeFrame" relativePoint="TOPLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_OrganizeFrame" relativePoint="TOPLEFT">
 						<Offset>
 							<AbsDimension x="22" y="-68"/>
 						</Offset>
@@ -80,19 +80,19 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						-- Hmm.. remove later?
 					</OnTabPressed>
 					<OnEnterPressed>
-						if ( this:GetText() ~= "!!!reset" and this:GetText() ~= "!!!resetall" and string.len(ShaguQuest_OrganizeFrame_Text:GetText()) > 0 ) then
+						if ( this:GetText() ~= "!!!reset" and this:GetText() ~= "!!!resetall" and string.len(EQL3_OrganizeFrame_Text:GetText()) > 0 ) then
 							this:ClearFocus();
 							
 							--Remove all commas
 							this:SetText(string.gsub(this:GetText(),"[,]*", ""));
 						
-							ShaguQuest_OrganizeFunctions(this:GetText());
-							ShaguQuest_OrganizeFrame:Hide();
+							EQL3_OrganizeFunctions(this:GetText());
+							EQL3_OrganizeFrame:Hide();
 						end
 					</OnEnterPressed>
 					<OnEscapePressed>
 						this:ClearFocus();
-						ShaguQuest_OrganizeFrame:Hide();
+						EQL3_OrganizeFrame:Hide();
 					</OnEscapePressed>
 					<OnTextChanged>
 						this:SetText(string.gsub(this:GetText(),"[,]*", ""));
@@ -103,12 +103,12 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			
 			
 			
-			<Button name="ShaguQuest_OrganizeFrame_Okay" inherits="UIPanelButtonTemplate" text="ShaguQuest_OKAY">
+			<Button name="EQL3_OrganizeFrame_Okay" inherits="UIPanelButtonTemplate" text="EQL3_OKAY">
 				<Size>
 					<AbsDimension x="80" y="22"/>
 				</Size>
 				<Anchors>
-					<Anchor point="BOTTOMRIGHT" relativeTo="ShaguQuest_OrganizeFrame" relativePoint="BOTTOMRIGHT">
+					<Anchor point="BOTTOMRIGHT" relativeTo="EQL3_OrganizeFrame" relativePoint="BOTTOMRIGHT">
 						<Offset>
 							<AbsDimension x="-16" y="16"/>
 						</Offset>
@@ -116,25 +116,25 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if ( ShaguQuest_OrganizeFrame_Text:GetText() ~= "!!!reset" and ShaguQuest_OrganizeFrame_Text:GetText() ~= "!!!resetall" and string.len(ShaguQuest_OrganizeFrame_Text:GetText()) > 0) then
-							ShaguQuest_OrganizeFrame_Text:ClearFocus();
+						if ( EQL3_OrganizeFrame_Text:GetText() ~= "!!!reset" and EQL3_OrganizeFrame_Text:GetText() ~= "!!!resetall" and string.len(EQL3_OrganizeFrame_Text:GetText()) > 0) then
+							EQL3_OrganizeFrame_Text:ClearFocus();
 							
 							--Remove all commas
-							ShaguQuest_OrganizeFrame_Text:SetText(string.gsub(ShaguQuest_OrganizeFrame_Text:GetText(),"[,]*", ""));
+							EQL3_OrganizeFrame_Text:SetText(string.gsub(EQL3_OrganizeFrame_Text:GetText(),"[,]*", ""));
 							
-							ShaguQuest_OrganizeFunctions(ShaguQuest_OrganizeFrame_Text:GetText());
-							ShaguQuest_OrganizeFrame:Hide();
+							EQL3_OrganizeFunctions(EQL3_OrganizeFrame_Text:GetText());
+							EQL3_OrganizeFrame:Hide();
 						end
 					</OnClick>
 				</Scripts>
 			</Button>
 
-			<Button name="ShaguQuest_OrganizeFrame_Cancel" inherits="UIPanelButtonTemplate" text="ShaguQuest_POPUP_CANCEL">
+			<Button name="EQL3_OrganizeFrame_Cancel" inherits="UIPanelButtonTemplate" text="EQL3_POPUP_CANCEL">
 				<Size>
 					<AbsDimension x="80" y="22"/>
 				</Size>
 				<Anchors>
-					<Anchor point="BOTTOMLEFT" relativeTo="ShaguQuest_OrganizeFrame" relativePoint="BOTTOMLEFT">
+					<Anchor point="BOTTOMLEFT" relativeTo="EQL3_OrganizeFrame" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="16" y="16"/>
 						</Offset>
@@ -142,8 +142,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OrganizeFrame_Text:ClearFocus();
-						ShaguQuest_OrganizeFrame:Hide();
+						EQL3_OrganizeFrame_Text:ClearFocus();
+						EQL3_OrganizeFrame:Hide();
 					</OnClick>
 				</Scripts>
 			</Button>

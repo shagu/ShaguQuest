@@ -1,9 +1,9 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
 	
-	<Script file="ShaguQuest_Log.lua"/>
+	<Script file="EQL3_Log.lua"/>
 
-	<Frame name="ShaguQuest_QuestLogFrame" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true">
+	<Frame name="EQL3_QuestLogFrame" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true">
 		<Size>
 			<AbsDimension x="384" y="512"/>
 		</Size>
@@ -19,7 +19,7 @@
 		</HitRectInsets>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<Texture file="Interface\Addons\ShaguQuest\Images\ShaguQuest_BookIcon">
+				<Texture file="Interface\Addons\EQL3\Images\EQL3_BookIcon">
 					<Size>
 						<AbsDimension x="64" y="64"/>
 					</Size>
@@ -33,7 +33,7 @@
 				</Texture>		
 			</Layer>
 			<Layer level="ARTWORK">
-				<Texture file="Interface\Addons\ShaguQuest\Images\ShaguQuest_TopLeft">
+				<Texture file="Interface\Addons\EQL3\Images\EQL3_TopLeft">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -41,7 +41,7 @@
 						<Anchor point="TOPLEFT"/>
 					</Anchors>
 				</Texture>
-				<Texture name="ShaguQuest_Top_Switch_Off" file="Interface\Addons\ShaguQuest\Images\ShaguQuest_TopSwitchOff">
+				<Texture name="EQL3_Top_Switch_Off" file="Interface\Addons\EQL3\Images\EQL3_TopSwitchOff">
 					<Size>
 						<AbsDimension x="128" y="256"/>
 					</Size>
@@ -49,7 +49,7 @@
 						<Anchor point="TOPRIGHT"/>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\Addons\ShaguQuest\Images\ShaguQuest_BottomLeft">
+				<Texture file="Interface\Addons\EQL3\Images\EQL3_BottomLeft">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -57,7 +57,7 @@
 						<Anchor point="BOTTOMLEFT"/>
 					</Anchors>
 				</Texture>
-				<Texture name="ShaguQuest_Bottom_Switch_Off" file="Interface\Addons\ShaguQuest\Images\ShaguQuest_BottomSwitchOff">
+				<Texture name="EQL3_Bottom_Switch_Off" file="Interface\Addons\EQL3\Images\EQL3_BottomSwitchOff">
 					<Size>
 						<AbsDimension x="128" y="256"/>
 					</Size>
@@ -65,7 +65,7 @@
 						<Anchor point="BOTTOMRIGHT"/>
 					</Anchors>
 				</Texture>
-				<Texture name="ShaguQuest_Top_Switch_On" file="Interface\Addons\ShaguQuest\Images\ShaguQuest_TopSwitchOn" hidden="true">
+				<Texture name="EQL3_Top_Switch_On" file="Interface\Addons\EQL3\Images\EQL3_TopSwitchOn" hidden="true">
 					<Size>
 						<AbsDimension x="128" y="256"/>
 					</Size>
@@ -73,7 +73,7 @@
 						<Anchor point="TOPRIGHT"/>
 					</Anchors>
 				</Texture>
-				<Texture name="ShaguQuest_Bottom_Switch_On" file="Interface\Addons\ShaguQuest\Images\ShaguQuest_BottomSwitchOn" hidden="true">
+				<Texture name="EQL3_Bottom_Switch_On" file="Interface\Addons\EQL3\Images\EQL3_BottomSwitchOn" hidden="true">
 					<Size>
 						<AbsDimension x="128" y="256"/>
 					</Size>
@@ -86,7 +86,7 @@
 		</Layers>
 		<Frames>
 		
-			<Frame name="ShaguQuest_QuestLogExpandButtonFrame">
+			<Frame name="EQL3_QuestLogExpandButtonFrame">
 				<Size>
 					<AbsDimension x="54" y="32"/>
 				</Size>
@@ -98,7 +98,7 @@
 					</Anchor>
 				</Anchors>
 				<Frames>
-					<Button name="ShaguQuest_QuestLogCollapseAllButton" hidden="true" inherits="QuestLogTitleButtonTemplate" text="ALL">
+					<Button name="EQL3_QuestLogCollapseAllButton" hidden="true" inherits="QuestLogTitleButtonTemplate" text="ALL">
 						<Size>
 							<AbsDimension x="40" y="22"/>
 						</Size>
@@ -111,7 +111,7 @@
 						</Anchors>
 						<Layers>
 							<Layer level="BACKGROUND">
-								<Texture name="ShaguQuest_QuestLogExpandTabLeft" file="Interface\QuestFrame\UI-QuestLogSortTab-Left">
+								<Texture name="EQL3_QuestLogExpandTabLeft" file="Interface\QuestFrame\UI-QuestLogSortTab-Left">
 									<Size>
 										<AbsDimension x="8" y="32"/>
 									</Size>
@@ -123,12 +123,12 @@
 										</Anchor>
 									</Anchors>
 								</Texture>
-								<Texture name="ShaguQuest_QuestLogExpandTabMiddle" file="Interface\QuestFrame\UI-QuestLogSortTab-Middle">
+								<Texture name="EQL3_QuestLogExpandTabMiddle" file="Interface\QuestFrame\UI-QuestLogSortTab-Middle">
 									<Size>
 										<AbsDimension x="38" y="32"/>
 									</Size>
 									<Anchors>
-										<Anchor point="LEFT" relativeTo="ShaguQuest_QuestLogExpandTabLeft" relativePoint="RIGHT">
+										<Anchor point="LEFT" relativeTo="EQL3_QuestLogExpandTabLeft" relativePoint="RIGHT">
 											<Offset>
 												<AbsDimension x="0" y="0"/>
 											</Offset>
@@ -140,15 +140,15 @@
 										<AbsDimension x="8" y="32"/>
 									</Size>
 									<Anchors>
-										<Anchor point="LEFT" relativeTo="ShaguQuest_QuestLogExpandTabMiddle" relativePoint="RIGHT"/>
+										<Anchor point="LEFT" relativeTo="EQL3_QuestLogExpandTabMiddle" relativePoint="RIGHT"/>
 									</Anchors>
 								</Texture>
 							</Layer>
 						</Layers>
 						<Scripts>
 							<OnLoad>
-								ShaguQuest_QuestLogCollapseAllButtonNormalText:SetWidth(0);
-								ShaguQuest_QuestLogExpandTabMiddle:SetWidth(this:GetTextWidth() + 24);
+								EQL3_QuestLogCollapseAllButtonNormalText:SetWidth(0);
+								EQL3_QuestLogExpandTabMiddle:SetWidth(this:GetTextWidth() + 24);
 							</OnLoad>
 							<OnClick>
 								QuestLogCollapseAllButton_OnClick();
@@ -164,12 +164,12 @@
 				</Frames>
 			</Frame>
 			
-			<Frame name="ShaguQuest_QuestLogTrack" enableMouse="true">
+			<Frame name="EQL3_QuestLogTrack" enableMouse="true">
 				<Size>
 					<AbsDimension x="20" y="20"/>
 				</Size>
 				<Anchors>
-					<Anchor point="LEFT" relativeTo="ShaguQuest_QuestLogExpandButtonFrame" relativePoint="RIGHT">
+					<Anchor point="LEFT" relativeTo="EQL3_QuestLogExpandButtonFrame" relativePoint="RIGHT">
 						<Offset>
 							<AbsDimension x="5" y="5"/>
 						</Offset>
@@ -180,7 +180,7 @@
 				</HitRectInsets>
 				<Layers>
 					<Layer level="BACKGROUND">
-						<FontString name="ShaguQuest_QuestLogTrackTitle" inherits="GameFontHighlightSmall" text="TRACK_QUEST">
+						<FontString name="EQL3_QuestLogTrackTitle" inherits="GameFontHighlightSmall" text="TRACK_QUEST">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -192,18 +192,18 @@
 						<Texture file="Interface\Buttons\UI-RadioButton">
 							<TexCoords left="0" right="0.25" top="0" bottom="1"/>
 						</Texture>
-						<Texture name="ShaguQuest_QuestLogTrackTracking" file="Interface\Buttons\UI-RadioButton">
+						<Texture name="EQL3_QuestLogTrackTracking" file="Interface\Buttons\UI-RadioButton">
 							<TexCoords left="0.25" right="0.5" top="0" bottom="1"/>
 						</Texture>
 					</Layer>
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						ShaguQuest_QuestLogTrackTracking:SetVertexColor(1, 0, 0);
+						EQL3_QuestLogTrackTracking:SetVertexColor(1, 0, 0);
 					</OnLoad>
 					<OnEnter>
 						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(ShaguQuest_QUEST_WATCH_TOOLTIP, nil,nil, nil, nil, 1);
+						GameTooltip:SetText(EQL3_QUEST_WATCH_TOOLTIP, nil,nil, nil, nil, 1);
 					</OnEnter>
 					<OnLeave>
 						GameTooltip:Hide();
@@ -211,7 +211,7 @@
 				</Scripts>
 			</Frame>
 			
-			<Frame name="ShaguQuest_EmptyQuestLogFrame" hidden="true">
+			<Frame name="EQL3_EmptyQuestLogFrame" hidden="true">
 				<Size>
 					<AbsDimension x="768" y="512"/>
 				</Size>
@@ -240,9 +240,9 @@
 				</Layers>
 			</Frame>
 			
-			<Button name="ShaguQuest_QuestLogFrameCloseButton" inherits="UIPanelCloseButton">
+			<Button name="EQL3_QuestLogFrameCloseButton" inherits="UIPanelCloseButton">
 				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="ShaguQuest_QuestLogFrame" relativePoint="TOPRIGHT">
+					<Anchor point="TOPRIGHT" relativeTo="EQL3_QuestLogFrame" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="-28" y="-8"/>
 						</Offset>
@@ -250,12 +250,12 @@
 				</Anchors>
 			</Button>
 			
-			<Button name="ShaguQuest_QuestLogFrameMaximizeButton">
+			<Button name="EQL3_QuestLogFrameMaximizeButton">
 				<Size>
 					<AbsDimension x="32" y="32"/>
 				</Size>
 				<Anchors>
-					<Anchor point="RIGHT" relativeTo="ShaguQuest_QuestLogFrameCloseButton" relativePoint="LEFT">
+					<Anchor point="RIGHT" relativeTo="EQL3_QuestLogFrameCloseButton" relativePoint="LEFT">
 						<Offset>
 							<AbsDimension x="10" y="0"/>
 						</Offset>
@@ -263,27 +263,27 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Maximize();
+						EQL3_Maximize();
 					</OnClick>
 					<OnEnter>
 						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(ShaguQuest_MAXIMIZE_TIP, nil,nil, nil, nil, 1);
+						GameTooltip:SetText(EQL3_MAXIMIZE_TIP, nil,nil, nil, nil, 1);
 					</OnEnter>
 					<OnLeave>
 						GameTooltip:Hide();
 					</OnLeave>
 				</Scripts>
-				<NormalTexture file="Interface\Addons\ShaguQuest\Images\MaximizeButton-Up"/>
-				<PushedTexture file="Interface\Addons\ShaguQuest\Images\MaximizeButton-Down"/>
+				<NormalTexture file="Interface\Addons\EQL3\Images\MaximizeButton-Up"/>
+				<PushedTexture file="Interface\Addons\EQL3\Images\MaximizeButton-Down"/>
 				<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" AlphaMode="ADD"/>
 			</Button>
 			
-			<Button name="ShaguQuest_QuestLogFrameAbandonButton" inherits="UIPanelButtonTemplate" text="ABANDON_QUEST">
+			<Button name="EQL3_QuestLogFrameAbandonButton" inherits="UIPanelButtonTemplate" text="ABANDON_QUEST">
 				<Size>
 					<AbsDimension x="125" y="21"/>
 				</Size>
 				<Anchors>
-					<Anchor point="BOTTOMLEFT" relativeTo="ShaguQuest_QuestLogFrame" relativePoint="BOTTOMLEFT">
+					<Anchor point="BOTTOMLEFT" relativeTo="EQL3_QuestLogFrame" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="16" y="5"/>
 						</Offset>
@@ -303,12 +303,12 @@
 				</Scripts>
 			</Button>
 
-			<Button name="ShaguQuest_QuestFramePushQuestButton" inherits="UIPanelButtonTemplate" text="SHARE_QUEST">
+			<Button name="EQL3_QuestFramePushQuestButton" inherits="UIPanelButtonTemplate" text="SHARE_QUEST">
 				<Size>
 					<AbsDimension x="123" y="21"/>
 				</Size>
 				<Anchors>
-					<Anchor point="LEFT" relativeTo="ShaguQuest_QuestLogFrameAbandonButton" relativePoint="RIGHT">
+					<Anchor point="LEFT" relativeTo="EQL3_QuestLogFrameAbandonButton" relativePoint="RIGHT">
 						<Offset>
 							<AbsDimension x="0" y="0"/>
 						</Offset>
@@ -327,12 +327,12 @@
 				</Scripts>
 			</Button>
 			
-			<ScrollFrame name="ShaguQuest_QuestLogListScrollFrame" inherits="FauxScrollFrameTemplate">
+			<ScrollFrame name="EQL3_QuestLogListScrollFrame" inherits="FauxScrollFrameTemplate">
 				<Size>
 					<AbsDimension x="300" y="411"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogFrame">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogFrame">
 						<Offset>
 							<AbsDimension x="20" y="-74"/>
 						</Offset>
@@ -376,7 +376,7 @@
 	</Frame>
 	
 	
-	<Frame name="ShaguQuest_QuestLogFrame_Description" toplevel="false" enableMouse="true" movable="false" parent="ShaguQuest_QuestLogFrame" hidden="true">
+	<Frame name="EQL3_QuestLogFrame_Description" toplevel="false" enableMouse="true" movable="false" parent="EQL3_QuestLogFrame" hidden="true">
 		<Size>
 			<AbsDimension x="320" y="512"/>
 		</Size>
@@ -392,7 +392,7 @@
 		</HitRectInsets>
 		<Layers>
 			<Layer level="ARTWORK">
-				<Texture file="Interface\Addons\ShaguQuest\Images\ShaguQuest_TopMiddle">
+				<Texture file="Interface\Addons\EQL3\Images\EQL3_TopMiddle">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -400,7 +400,7 @@
 						<Anchor point="TOPLEFT"/>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\Addons\ShaguQuest\Images\ShaguQuest_TopRight">
+				<Texture file="Interface\Addons\EQL3\Images\EQL3_TopRight">
 					<Size>
 						<AbsDimension x="64" y="256"/>
 					</Size>
@@ -408,7 +408,7 @@
 						<Anchor point="TOPRIGHT"/>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\Addons\ShaguQuest\Images\ShaguQuest_BottomMiddle">
+				<Texture file="Interface\Addons\EQL3\Images\EQL3_BottomMiddle">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -416,7 +416,7 @@
 						<Anchor point="BOTTOMLEFT"/>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\Addons\ShaguQuest\Images\ShaguQuest_BottomRight">
+				<Texture file="Interface\Addons\EQL3\Images\EQL3_BottomRight">
 					<Size>
 						<AbsDimension x="64" y="256"/>
 					</Size>
@@ -428,25 +428,25 @@
 		</Layers>
 		<Frames>
 		
-			<ScrollFrame name="ShaguQuest_QuestLogDetailScrollFrame" inherits="UIPanelScrollFrameTemplate">
+			<ScrollFrame name="EQL3_QuestLogDetailScrollFrame" inherits="UIPanelScrollFrameTemplate">
 				<Size>
 					<AbsDimension x="300" y="413"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogListScrollFrame" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogListScrollFrame" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="30" y="2"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<ScrollChild>
-					<Frame name="ShaguQuest_QuestLogDetailScrollChildFrame">
+					<Frame name="EQL3_QuestLogDetailScrollChildFrame">
 						<Size>
 							<AbsDimension x="300" y="413"/>
 						</Size>
 						<Layers>
 							<Layer level="BACKGROUND">
-								<FontString name="ShaguQuest_QuestLogQuestTitle" inherits="QuestTitleFont" justifyH="LEFT" text="Quest title">
+								<FontString name="EQL3_QuestLogQuestTitle" inherits="QuestTitleFont" justifyH="LEFT" text="Quest title">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
@@ -458,204 +458,204 @@
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjectivesText" inherits="QuestFont" justifyH="LEFT">
+								<FontString name="EQL3_QuestLogObjectivesText" inherits="QuestFont" justifyH="LEFT">
 									<Size>
 										<AbsDimension x="275" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogQuestTitle" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogQuestTitle" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-5"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogTimerText" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogTimerText" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjectivesText" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjectivesText" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-10"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective1" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective1" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTimerText" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTimerText" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-10"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective2" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective2" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective1" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective1" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective3" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective3" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective2" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective2" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective4" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective4" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective3" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective3" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective5" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective5" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective4" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective4" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective6" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective6" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective5" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective5" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective7" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective7" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective6" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective6" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective8" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective8" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective7" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective7" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective9" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective9" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective8" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective8" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogObjective10" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
+								<FontString name="EQL3_QuestLogObjective10" inherits="QuestFontNormalSmall" justifyH="LEFT" hidden="true">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective9" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective9" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-2"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogRequiredMoneyText" inherits="QuestFontNormalSmall" text="REQUIRED_MONEY">
+								<FontString name="EQL3_QuestLogRequiredMoneyText" inherits="QuestFontNormalSmall" text="REQUIRED_MONEY">
 									<Anchors>
 										<Anchor point="TOPLEFT"/>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogDescriptionTitle" inherits="QuestTitleFont" justifyH="LEFT" text="QUEST_DESCRIPTION">
+								<FontString name="EQL3_QuestLogDescriptionTitle" inherits="QuestTitleFont" justifyH="LEFT" text="QUEST_DESCRIPTION">
 									<Size>
 										<AbsDimension x="285" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogObjective10" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogObjective10" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-10"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogQuestDescription" inherits="QuestFont" justifyH="LEFT">
+								<FontString name="EQL3_QuestLogQuestDescription" inherits="QuestFont" justifyH="LEFT">
 									<Size>
 										<AbsDimension x="270" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogDescriptionTitle" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogDescriptionTitle" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-5"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogRewardTitleText" inherits="QuestTitleFont" text="QUEST_REWARDS" justifyH="LEFT">
+								<FontString name="EQL3_QuestLogRewardTitleText" inherits="QuestTitleFont" text="QUEST_REWARDS" justifyH="LEFT">
 									<Size>
 										<AbsDimension x="300" y="18"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogQuestDescription" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogQuestDescription" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-15"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogItemChooseText" inherits="QuestFont" text="REWARD_CHOICES" hidden="true" justifyH="LEFT">
+								<FontString name="EQL3_QuestLogItemChooseText" inherits="QuestFont" text="REWARD_CHOICES" hidden="true" justifyH="LEFT">
 									<Size>
 										<AbsDimension x="295" y="0"/>
 									</Size>
 									<Anchors>
-										<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogRewardTitleText" relativePoint="BOTTOMLEFT">
+										<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogRewardTitleText" relativePoint="BOTTOMLEFT">
 											<Offset>
 												<AbsDimension x="0" y="-5"/>
 											</Offset>
 										</Anchor>
 									</Anchors>
 								</FontString>
-								<FontString name="ShaguQuest_QuestLogItemReceiveText" inherits="QuestFont" text="Reward receive text" hidden="true" justifyH="LEFT">
+								<FontString name="EQL3_QuestLogItemReceiveText" inherits="QuestFont" text="Reward receive text" hidden="true" justifyH="LEFT">
 									<Anchors>
 										<Anchor point="TOPLEFT"/>
 									</Anchors>
@@ -663,59 +663,59 @@
 							</Layer>
 						</Layers>
 						<Frames>
-							<Button name="ShaguQuest_QuestLogItem1" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem1" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem2" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem2" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem3" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem3" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem4" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem4" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem5" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem5" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem6" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem6" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem7" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem7" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem8" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem8" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem9" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem9" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Button name="ShaguQuest_QuestLogItem10" inherits="QuestLogRewardItemTemplate" hidden="true">
+							<Button name="EQL3_QuestLogItem10" inherits="QuestLogRewardItemTemplate" hidden="true">
 								<Anchors>
 									<Anchor point="TOPLEFT"/>
 								</Anchors>
 							</Button>
-							<Frame name="ShaguQuest_QuestLogMoneyFrame" inherits="MoneyFrameTemplate">
+							<Frame name="EQL3_QuestLogMoneyFrame" inherits="MoneyFrameTemplate">
 								<Anchors>
-									<Anchor point="LEFT" relativeTo="ShaguQuest_QuestLogItemReceiveText" relativePoint="RIGHT">
+									<Anchor point="LEFT" relativeTo="EQL3_QuestLogItemReceiveText" relativePoint="RIGHT">
 										<Offset>
 											<AbsDimension x="15" y="0"/>
 										</Offset>
@@ -727,9 +727,9 @@
 									</OnLoad>
 								</Scripts>
 							</Frame>
-							<Frame name="ShaguQuest_QuestLogRequiredMoneyFrame" inherits="MoneyFrameTemplate">
+							<Frame name="EQL3_QuestLogRequiredMoneyFrame" inherits="MoneyFrameTemplate">
 								<Anchors>
-									<Anchor point="LEFT" relativeTo="ShaguQuest_QuestLogRequiredMoneyText" relativePoint="RIGHT">
+									<Anchor point="LEFT" relativeTo="EQL3_QuestLogRequiredMoneyText" relativePoint="RIGHT">
 										<Offset>
 											<AbsDimension x="10" y="0"/>
 										</Offset>
@@ -742,7 +742,7 @@
 									</OnLoad>
 								</Scripts>
 							</Frame>
-							<Frame name="ShaguQuest_QuestLogSpacerFrame">
+							<Frame name="EQL3_QuestLogSpacerFrame">
 								<Size>
 									<AbsDimension x="5" y="25"/>
 								</Size>
@@ -759,12 +759,12 @@
 				</ScrollChild>
 			</ScrollFrame>
 			
-			<Button name="ShaguQuest_QuestLogFrameCloseButton2">
+			<Button name="EQL3_QuestLogFrameCloseButton2">
 				<Size>
 					<AbsDimension x="32" y="32"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="ShaguQuest_QuestLogFrame_Description" relativePoint="TOPRIGHT">
+					<Anchor point="TOPRIGHT" relativeTo="EQL3_QuestLogFrame_Description" relativePoint="TOPRIGHT">
 						<Offset>
 							<AbsDimension x="-20" y="-8"/>
 						</Offset>
@@ -772,7 +772,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						HideUIPanel(ShaguQuest_QuestLogFrame);
+						HideUIPanel(EQL3_QuestLogFrame);
 					</OnClick>
 				</Scripts>
 				<NormalTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Up"/>
@@ -780,12 +780,12 @@
 				<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" AlphaMode="ADD"/>
 			</Button>
 			
-			<Button name="ShaguQuest_QuestLogFrameMinimizeButton">
+			<Button name="EQL3_QuestLogFrameMinimizeButton">
 				<Size>
 					<AbsDimension x="32" y="32"/>
 				</Size>
 				<Anchors>
-					<Anchor point="RIGHT" relativeTo="ShaguQuest_QuestLogFrameCloseButton2" relativePoint="LEFT">
+					<Anchor point="RIGHT" relativeTo="EQL3_QuestLogFrameCloseButton2" relativePoint="LEFT">
 						<Offset>
 							<AbsDimension x="10" y="0"/>
 						</Offset>
@@ -793,35 +793,35 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Minimize();
+						EQL3_Minimize();
 					</OnClick>
 					<OnEnter>
 						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(ShaguQuest_MINIMIZE_TIP, nil,nil, nil, nil, 1);
+						GameTooltip:SetText(EQL3_MINIMIZE_TIP, nil,nil, nil, nil, 1);
 					</OnEnter>
 					<OnLeave>
 						GameTooltip:Hide();
 					</OnLeave>
 				</Scripts>
-				<NormalTexture file="Interface\Addons\ShaguQuest\Images\RestoreButton-Up"/>
-				<PushedTexture file="Interface\Addons\ShaguQuest\Images\RestoreButton-Down"/>
+				<NormalTexture file="Interface\Addons\EQL3\Images\RestoreButton-Up"/>
+				<PushedTexture file="Interface\Addons\EQL3\Images\RestoreButton-Down"/>
 				<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" AlphaMode="ADD"/>
 			</Button>
 			
 		</Frames>
 		<Scripts>
 			<OnDragStart>
-				 ShaguQuest_QuestLogFrame:StartMoving();
+				 EQL3_QuestLogFrame:StartMoving();
 			</OnDragStart>
 			<OnDragStop>
-				 ShaguQuest_QuestLogFrame:StopMovingOrSizing();
+				 EQL3_QuestLogFrame:StopMovingOrSizing();
 				 QuestLogFrame_LockCorner();
 			</OnDragStop>
 		</Scripts>
 	</Frame>
 
 	
-	<Frame name="ShaguQuest_QuestLogFrame_Details" toplevel="false" enableMouse="false" movable="false" parent="ShaguQuest_QuestLogFrame" hidden="false">
+	<Frame name="EQL3_QuestLogFrame_Details" toplevel="false" enableMouse="false" movable="false" parent="EQL3_QuestLogFrame" hidden="false">
 		<Size>
 			<AbsDimension x="784" y="512"/>
 		</Size>
@@ -837,7 +837,7 @@
 		</HitRectInsets>
 		<Layers>
 			<Layer level="OVERLAY">
-				<FontString name="ShaguQuest_QuestLogTitleText" inherits="GameFontHighlight" text="ShaguQuest_QUEST_LOG">
+				<FontString name="EQL3_QuestLogTitleText" inherits="GameFontHighlight" text="EQL3_QUEST_LOG">
 					<Size>
 						<AbsDimension x="300" y="14"/>
 					</Size>
@@ -849,7 +849,7 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="ShaguQuest_QuestLogVersionText" inherits="GameFontDisableSmall" justifyH="RIGHT" text="ShaguQuest_QUESTLOG_VERSION">
+				<FontString name="EQL3_QuestLogVersionText" inherits="GameFontDisableSmall" justifyH="RIGHT" text="EQL3_QUESTLOG_VERSION">
 					<Size>
 						<AbsDimension x="64" y="14"/>
 					</Size>
@@ -861,7 +861,7 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<Texture name="ShaguQuest_QuestLogCountRight" file="Interface\Common\Common-Input-Border">
+				<Texture name="EQL3_QuestLogCountRight" file="Interface\Common\Common-Input-Border">
 					<Size>
 						<AbsDimension x="8" y="20"/>
 					</Size>
@@ -874,27 +874,27 @@
 					</Anchors>
 					<TexCoords left="0.9375" right="1.0" top="0" bottom="0.625"/>
 				</Texture>
-				<Texture name="ShaguQuest_QuestLogCountMiddle" file="Interface\Common\Common-Input-Border">
+				<Texture name="EQL3_QuestLogCountMiddle" file="Interface\Common\Common-Input-Border">
 					<Size>
 						<AbsDimension x="100" y="20"/>
 					</Size>
 					<Anchors>
-						<Anchor point="RIGHT" relativeTo="ShaguQuest_QuestLogCountRight" relativePoint="LEFT"/>
+						<Anchor point="RIGHT" relativeTo="EQL3_QuestLogCountRight" relativePoint="LEFT"/>
 					</Anchors>
 					<TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625"/>
 				</Texture>
-				<Texture name="ShaguQuest_QuestLogCountLeft" file="Interface\Common\Common-Input-Border">
+				<Texture name="EQL3_QuestLogCountLeft" file="Interface\Common\Common-Input-Border">
 					<Size>
 						<AbsDimension x="8" y="20"/>
 					</Size>
 					<Anchors>
-						<Anchor point="RIGHT" relativeTo="ShaguQuest_QuestLogCountMiddle" relativePoint="LEFT"/>
+						<Anchor point="RIGHT" relativeTo="EQL3_QuestLogCountMiddle" relativePoint="LEFT"/>
 					</Anchors>
 					<TexCoords left="0" right="0.0625" top="0" bottom="0.625"/>
 				</Texture>
-				<FontString name="ShaguQuest_QuestLogQuestCount" inherits="GameFontNormalSmall">
+				<FontString name="EQL3_QuestLogQuestCount" inherits="GameFontNormalSmall">
 					<Anchors>
-						<Anchor point="RIGHT" relativeTo="ShaguQuest_QuestLogCountRight">
+						<Anchor point="RIGHT" relativeTo="EQL3_QuestLogCountRight">
 							<Offset>
 								<AbsDimension x="-6" y="1"/>
 							</Offset>
@@ -904,7 +904,7 @@
 			</Layer>
 		</Layers>
 		<Frames>
-			<Button name="ShaguQuest_QuestFrameOptionsButton" inherits="UIPanelButtonTemplate" text="ShaguQuest_OPTIONS">
+			<Button name="EQL3_QuestFrameOptionsButton" inherits="UIPanelButtonTemplate" text="EQL3_OPTIONS">
 				<Size>
 					<AbsDimension x="77" y="21"/>
 				</Size>
@@ -922,7 +922,7 @@
 				</Scripts>
 			</Button>
 			
-			<Frame name="ShaguQuest_QuestLogHighlightFrame" hidden="true">
+			<Frame name="EQL3_QuestLogHighlightFrame" hidden="true">
 				<Size>
 					<AbsDimension x="293" y="16"/>
 				</Size>
@@ -931,250 +931,250 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<Texture name="ShaguQuest_QuestLogSkillHighlight" file="Interface\QuestFrame\UI-QuestLogTitleHighlight" alphaMode="ADD"/>
+						<Texture name="EQL3_QuestLogSkillHighlight" file="Interface\QuestFrame\UI-QuestLogTitleHighlight" alphaMode="ADD"/>
 					</Layer>
 				</Layers>
 			</Frame>
 			
 <!-- 27 of theese -->
 			
-			<Button name="ShaguQuest_QuestLogTitle1" inherits="QuestLogTitleButtonTemplate" id="1" hidden="true">
+			<Button name="EQL3_QuestLogTitle1" inherits="QuestLogTitleButtonTemplate" id="1" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogFrame">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogFrame">
 						<Offset>
 							<AbsDimension x="19" y="-75"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle2" inherits="QuestLogTitleButtonTemplate" id="2" hidden="true">
+			<Button name="EQL3_QuestLogTitle2" inherits="QuestLogTitleButtonTemplate" id="2" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle1" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle1" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle3" inherits="QuestLogTitleButtonTemplate" id="3" hidden="true">
+			<Button name="EQL3_QuestLogTitle3" inherits="QuestLogTitleButtonTemplate" id="3" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle2" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle2" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle4" inherits="QuestLogTitleButtonTemplate" id="4" hidden="true">
+			<Button name="EQL3_QuestLogTitle4" inherits="QuestLogTitleButtonTemplate" id="4" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle3" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle3" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle5" inherits="QuestLogTitleButtonTemplate" id="5" hidden="true">
+			<Button name="EQL3_QuestLogTitle5" inherits="QuestLogTitleButtonTemplate" id="5" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle4" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle4" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle6" inherits="QuestLogTitleButtonTemplate" id="6" hidden="true">
+			<Button name="EQL3_QuestLogTitle6" inherits="QuestLogTitleButtonTemplate" id="6" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle5" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle5" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle7" inherits="QuestLogTitleButtonTemplate" id="7" hidden="true">
+			<Button name="EQL3_QuestLogTitle7" inherits="QuestLogTitleButtonTemplate" id="7" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle6" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle6" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle8" inherits="QuestLogTitleButtonTemplate" id="8" hidden="true">
+			<Button name="EQL3_QuestLogTitle8" inherits="QuestLogTitleButtonTemplate" id="8" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle7" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle7" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle9" inherits="QuestLogTitleButtonTemplate" id="9" hidden="true">
+			<Button name="EQL3_QuestLogTitle9" inherits="QuestLogTitleButtonTemplate" id="9" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle8" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle8" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle10" inherits="QuestLogTitleButtonTemplate" id="10" hidden="true">
+			<Button name="EQL3_QuestLogTitle10" inherits="QuestLogTitleButtonTemplate" id="10" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle9" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle9" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle11" inherits="QuestLogTitleButtonTemplate" id="11" hidden="true">
+			<Button name="EQL3_QuestLogTitle11" inherits="QuestLogTitleButtonTemplate" id="11" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle10" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle10" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle12" inherits="QuestLogTitleButtonTemplate" id="12" hidden="true">
+			<Button name="EQL3_QuestLogTitle12" inherits="QuestLogTitleButtonTemplate" id="12" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle11" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle11" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle13" inherits="QuestLogTitleButtonTemplate" id="13" hidden="true">
+			<Button name="EQL3_QuestLogTitle13" inherits="QuestLogTitleButtonTemplate" id="13" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle12" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle12" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle14" inherits="QuestLogTitleButtonTemplate" id="14" hidden="true">
+			<Button name="EQL3_QuestLogTitle14" inherits="QuestLogTitleButtonTemplate" id="14" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle13" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle13" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle15" inherits="QuestLogTitleButtonTemplate" id="15" hidden="true">
+			<Button name="EQL3_QuestLogTitle15" inherits="QuestLogTitleButtonTemplate" id="15" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle14" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle14" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle16" inherits="QuestLogTitleButtonTemplate" id="16" hidden="true">
+			<Button name="EQL3_QuestLogTitle16" inherits="QuestLogTitleButtonTemplate" id="16" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle15" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle15" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle17" inherits="QuestLogTitleButtonTemplate" id="17" hidden="true">
+			<Button name="EQL3_QuestLogTitle17" inherits="QuestLogTitleButtonTemplate" id="17" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle16" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle16" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle18" inherits="QuestLogTitleButtonTemplate" id="18" hidden="true">
+			<Button name="EQL3_QuestLogTitle18" inherits="QuestLogTitleButtonTemplate" id="18" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle17" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle17" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle19" inherits="QuestLogTitleButtonTemplate" id="19" hidden="true">
+			<Button name="EQL3_QuestLogTitle19" inherits="QuestLogTitleButtonTemplate" id="19" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle18" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle18" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle20" inherits="QuestLogTitleButtonTemplate" id="20" hidden="true">
+			<Button name="EQL3_QuestLogTitle20" inherits="QuestLogTitleButtonTemplate" id="20" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle19" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle19" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle21" inherits="QuestLogTitleButtonTemplate" id="21" hidden="true">
+			<Button name="EQL3_QuestLogTitle21" inherits="QuestLogTitleButtonTemplate" id="21" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle20" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle20" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle22" inherits="QuestLogTitleButtonTemplate" id="22" hidden="true">
+			<Button name="EQL3_QuestLogTitle22" inherits="QuestLogTitleButtonTemplate" id="22" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle21" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle21" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle23" inherits="QuestLogTitleButtonTemplate" id="23" hidden="true">
+			<Button name="EQL3_QuestLogTitle23" inherits="QuestLogTitleButtonTemplate" id="23" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle22" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle22" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle24" inherits="QuestLogTitleButtonTemplate" id="24" hidden="true">
+			<Button name="EQL3_QuestLogTitle24" inherits="QuestLogTitleButtonTemplate" id="24" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle23" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle23" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle25" inherits="QuestLogTitleButtonTemplate" id="25" hidden="true">
+			<Button name="EQL3_QuestLogTitle25" inherits="QuestLogTitleButtonTemplate" id="25" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle24" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle24" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle26" inherits="QuestLogTitleButtonTemplate" id="26" hidden="true">
+			<Button name="EQL3_QuestLogTitle26" inherits="QuestLogTitleButtonTemplate" id="26" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle25" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle25" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="ShaguQuest_QuestLogTitle27" inherits="QuestLogTitleButtonTemplate" id="27" hidden="true">
+			<Button name="EQL3_QuestLogTitle27" inherits="QuestLogTitleButtonTemplate" id="27" hidden="true">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_QuestLogTitle26" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_QuestLogTitle26" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="1"/>
 						</Offset>
@@ -1195,7 +1195,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="ShaguQuest_Organize_Popup" hidden="true" parent="UIParent" toplevel="true" enableMouse="false" movable="true" frameStrata="ARTWORK">
+	<Frame name="EQL3_Organize_Popup" hidden="true" parent="UIParent" toplevel="true" enableMouse="false" movable="true" frameStrata="ARTWORK">
 		<Size>
 			<AbsDimension x="256" y="127"/>
 		</Size>
@@ -1221,7 +1221,7 @@
 		</Backdrop>
 		
 		<Frames>
-			<Button name="ShaguQuest_Organize_Popup_Move" hidden="false">
+			<Button name="EQL3_Organize_Popup_Move" hidden="false">
 				<Size>
 					<AbsDimension x="200" y="15"/>
 				</Size>
@@ -1234,7 +1234,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_Organize_Popup_Move_Text" text="ShaguQuest_POPUP_MOVE" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
+						<FontString name="EQL3_Organize_Popup_Move_Text" text="EQL3_POPUP_MOVE" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
 							<Size>
 								<AbsDimension x="0" y="13"/>
 							</Size>
@@ -1250,27 +1250,27 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						-- ShaguQuest_OrganizeFunctions("Tempy Lowlands");
-						ShaguQuest_Organize_ShowNameWindow();
-						ShaguQuest_Organize_Popup:Hide();
+						-- EQL3_OrganizeFunctions("Tempy Lowlands");
+						EQL3_Organize_ShowNameWindow();
+						EQL3_Organize_Popup:Hide();
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_Organize_Popup:Show();
-						ShaguQuest_Organize_Popup_Move_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
+						EQL3_Organize_Popup:Show();
+						EQL3_Organize_Popup_Move_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_Organize_Popup_Move_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
+						EQL3_Organize_Popup_Move_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
 					</OnLeave>
 				</Scripts>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_Organize_Popup_Reset" hidden="false">
+			<Button name="EQL3_Organize_Popup_Reset" hidden="false">
 				<Size>
 					<AbsDimension x="200" y="15"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_Organize_Popup_Move" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_Organize_Popup_Move" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-12"/>
 						</Offset>
@@ -1278,7 +1278,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_Organize_Popup_Reset_Text" text="ShaguQuest_POPUP_RESET" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
+						<FontString name="EQL3_Organize_Popup_Reset_Text" text="EQL3_POPUP_RESET" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
 							<Size>
 								<AbsDimension x="0" y="13"/>
 							</Size>
@@ -1294,26 +1294,26 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OrganizeFunctions("!!!reset");
-						ShaguQuest_Organize_Popup:Hide();
+						EQL3_OrganizeFunctions("!!!reset");
+						EQL3_Organize_Popup:Hide();
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_Organize_Popup:Show();
-						ShaguQuest_Organize_Popup_Reset_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
+						EQL3_Organize_Popup:Show();
+						EQL3_Organize_Popup_Reset_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_Organize_Popup_Reset_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
+						EQL3_Organize_Popup_Reset_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
 					</OnLeave>
 				</Scripts>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_Organize_Popup_ResetAll" hidden="false">
+			<Button name="EQL3_Organize_Popup_ResetAll" hidden="false">
 				<Size>
 					<AbsDimension x="200" y="15"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_Organize_Popup_Reset" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_Organize_Popup_Reset" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-2"/>
 						</Offset>
@@ -1321,7 +1321,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_Organize_Popup_ResetAll_Text" text="ShaguQuest_POPUP_RESETALL" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
+						<FontString name="EQL3_Organize_Popup_ResetAll_Text" text="EQL3_POPUP_RESETALL" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
 							<Size>
 								<AbsDimension x="0" y="13"/>
 							</Size>
@@ -1337,26 +1337,26 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_OrganizeFunctions("!!!resetall");
-						ShaguQuest_Organize_Popup:Hide();
+						EQL3_OrganizeFunctions("!!!resetall");
+						EQL3_Organize_Popup:Hide();
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_Organize_Popup:Show();
-						ShaguQuest_Organize_Popup_ResetAll_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
+						EQL3_Organize_Popup:Show();
+						EQL3_Organize_Popup_ResetAll_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_Organize_Popup_ResetAll_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
+						EQL3_Organize_Popup_ResetAll_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
 					</OnLeave>
 				</Scripts>
 			</Button>
 			
 			
-			<Button name="ShaguQuest_Organize_Popup_Track" hidden="false">
+			<Button name="EQL3_Organize_Popup_Track" hidden="false">
 				<Size>
 					<AbsDimension x="200" y="15"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_Organize_Popup_ResetAll" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_Organize_Popup_ResetAll" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-12"/>
 						</Offset>
@@ -1364,7 +1364,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_Organize_Popup_Track_Text" text="ShaguQuest_POPUP_TRACK" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
+						<FontString name="EQL3_Organize_Popup_Track_Text" text="EQL3_POPUP_TRACK" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
 							<Size>
 								<AbsDimension x="0" y="13"/>
 							</Size>
@@ -1380,15 +1380,15 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Toggle_Track();
-						ShaguQuest_Organize_Popup:Hide();
+						EQL3_Toggle_Track();
+						EQL3_Organize_Popup:Hide();
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_Organize_Popup:Show();
-						ShaguQuest_Organize_Popup_Track_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
+						EQL3_Organize_Popup:Show();
+						EQL3_Organize_Popup_Track_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_Organize_Popup_Track_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
+						EQL3_Organize_Popup_Track_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
 					</OnLeave>
 				</Scripts>
 			</Button>
@@ -1396,12 +1396,12 @@
 			
 			
 			
-			<Button name="ShaguQuest_Organize_Popup_Cancel" hidden="false">
+			<Button name="EQL3_Organize_Popup_Cancel" hidden="false">
 				<Size>
 					<AbsDimension x="200" y="15"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="ShaguQuest_Organize_Popup_Track" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="EQL3_Organize_Popup_Track" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="0" y="-12"/>
 						</Offset>
@@ -1409,7 +1409,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="ShaguQuest_Organize_Popup_Cancel_Text" text="ShaguQuest_POPUP_CANCEL" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
+						<FontString name="EQL3_Organize_Popup_Cancel_Text" text="EQL3_POPUP_CANCEL" hidden="false" inherits="GameFontNormal" justifyH="LEFT">
 							<Size>
 								<AbsDimension x="0" y="13"/>
 							</Size>
@@ -1425,14 +1425,14 @@
 				</Layers>
 				<Scripts>
 					<OnClick>
-						ShaguQuest_Organize_Popup:Hide();
+						EQL3_Organize_Popup:Hide();
 					</OnClick>
 					<OnEnter>
-						ShaguQuest_Organize_Popup:Show();
-						ShaguQuest_Organize_Popup_Cancel_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
+						EQL3_Organize_Popup:Show();
+						EQL3_Organize_Popup_Cancel_Text:SetTextColor(1.0, 1.0, 1.0, 1.0);
 					</OnEnter>
 					<OnLeave>
-						ShaguQuest_Organize_Popup_Cancel_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
+						EQL3_Organize_Popup_Cancel_Text:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1.0);
 					</OnLeave>
 				</Scripts>
 			</Button>
@@ -1442,36 +1442,36 @@
 		<OnLoad>
 			-- Lame method to find the longest string.. xD
 			
-			local temp = ShaguQuest_Organize_Popup_ResetAll_Text:GetWidth();
+			local temp = EQL3_Organize_Popup_ResetAll_Text:GetWidth();
 			
-			if(ShaguQuest_Organize_Popup_Reset_Text:GetWidth() > temp) then
-				temp = ShaguQuest_Organize_Popup_Reset_Text:GetWidth();
+			if(EQL3_Organize_Popup_Reset_Text:GetWidth() > temp) then
+				temp = EQL3_Organize_Popup_Reset_Text:GetWidth();
 			end
 			
-			if(ShaguQuest_Organize_Popup_Move_Text:GetWidth() > temp) then
-				temp = ShaguQuest_Organize_Popup_Move_Text:GetWidth();
+			if(EQL3_Organize_Popup_Move_Text:GetWidth() > temp) then
+				temp = EQL3_Organize_Popup_Move_Text:GetWidth();
 			end
 			
-			if(ShaguQuest_Organize_Popup_Track_Text:GetWidth() > temp) then
-				temp = ShaguQuest_Organize_Popup_Track_Text:GetWidth();
+			if(EQL3_Organize_Popup_Track_Text:GetWidth() > temp) then
+				temp = EQL3_Organize_Popup_Track_Text:GetWidth();
 			end
 			
-			ShaguQuest_Organize_Popup_Track_Text:SetText(ShaguQuest_POPUP_UNTRACK);
+			EQL3_Organize_Popup_Track_Text:SetText(EQL3_POPUP_UNTRACK);
 			
-			if(ShaguQuest_Organize_Popup_Track_Text:GetWidth() > temp) then
-				temp = ShaguQuest_Organize_Popup_Track_Text:GetWidth();
+			if(EQL3_Organize_Popup_Track_Text:GetWidth() > temp) then
+				temp = EQL3_Organize_Popup_Track_Text:GetWidth();
 			end
 			
 			
-			ShaguQuest_Organize_Popup_Move:SetWidth(temp);
-			ShaguQuest_Organize_Popup_Reset:SetWidth(temp);
-			ShaguQuest_Organize_Popup_ResetAll:SetWidth(temp);
-			ShaguQuest_Organize_Popup:SetWidth(temp+(20 / GetCVar("UIScale")));
+			EQL3_Organize_Popup_Move:SetWidth(temp);
+			EQL3_Organize_Popup_Reset:SetWidth(temp);
+			EQL3_Organize_Popup_ResetAll:SetWidth(temp);
+			EQL3_Organize_Popup:SetWidth(temp+(20 / GetCVar("UIScale")));
     	this:SetBackdropBorderColor(TOOLTIP_DEFAULT_COLOR.r, TOOLTIP_DEFAULT_COLOR.g, TOOLTIP_DEFAULT_COLOR.b);
     	this:SetBackdropColor(TOOLTIP_DEFAULT_BACKGROUND_COLOR.r, TOOLTIP_DEFAULT_BACKGROUND_COLOR.g, TOOLTIP_DEFAULT_BACKGROUND_COLOR.b, 1.0);
 		</OnLoad>
 		<OnLeave>
-			ShaguQuest_Organize_Popup:Hide();
+			EQL3_Organize_Popup:Hide();
 		</OnLeave>
 	</Scripts>
 		

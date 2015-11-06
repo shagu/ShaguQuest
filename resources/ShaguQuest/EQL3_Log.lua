@@ -1,51 +1,51 @@
 -- Log Script file for Extended Questlog 3.5
 -- Copyright © 2006 Daniel Rehn
 
-function ShaguQuest_Maximize()
-	ShaguQuest_QuestLogFrameCloseButton:Hide();
-	ShaguQuest_QuestLogFrameMaximizeButton:Hide();
-	ShaguQuest_QuestLogCountRight:SetPoint("TOPRIGHT", -28, -43);
-	ShaguQuest_QuestLogTitleText:SetPoint("TOP", 48, -16);
-	ShaguQuest_QuestLogVersionText:SetPoint("TOPRIGHT", -67, -16);
-	ShaguQuest_QuestFrameOptionsButton:SetPoint("BOTTOMRIGHT", -25, 5);
+function EQL3_Maximize()
+	EQL3_QuestLogFrameCloseButton:Hide();
+	EQL3_QuestLogFrameMaximizeButton:Hide();
+	EQL3_QuestLogCountRight:SetPoint("TOPRIGHT", -28, -43);
+	EQL3_QuestLogTitleText:SetPoint("TOP", 48, -16);
+	EQL3_QuestLogVersionText:SetPoint("TOPRIGHT", -67, -16);
+	EQL3_QuestFrameOptionsButton:SetPoint("BOTTOMRIGHT", -25, 5);
 	
-	ShaguQuest_Top_Switch_On:Show();
-	ShaguQuest_Bottom_Switch_On:Show();
-	ShaguQuest_Top_Switch_Off:Hide();
-	ShaguQuest_Bottom_Switch_Off:Hide();
-	-- ShaguQuest_Top_Switch:SetTexture("Interface\Addons\ShaguQuest\Images\ShaguQuest_TopSwitchOn.tga");
-	-- ShaguQuest_Bottom_Switch:SetTexture("Interface\Addons\ShaguQuest\Images\ShaguQuest_BottomSwitchOn.tga");
+	EQL3_Top_Switch_On:Show();
+	EQL3_Bottom_Switch_On:Show();
+	EQL3_Top_Switch_Off:Hide();
+	EQL3_Bottom_Switch_Off:Hide();
+	-- EQL3_Top_Switch:SetTexture("Interface\Addons\ShaguQuest\Images\EQL3_TopSwitchOn.tga");
+	-- EQL3_Bottom_Switch:SetTexture("Interface\Addons\ShaguQuest\Images\EQL3_BottomSwitchOn.tga");
 	
-	QuestlogOptions[ShaguQuest_Player].WindowState = 1;
-	ShowUIPanel(ShaguQuest_QuestLogFrame_Description);
+	QuestlogOptions[EQL3_Player].WindowState = 1;
+	ShowUIPanel(EQL3_QuestLogFrame_Description);
 end
 
-function ShaguQuest_Minimize()
-	ShaguQuest_QuestLogFrameCloseButton:Show();
-	ShaguQuest_QuestLogFrameMaximizeButton:Show();
-	ShaguQuest_QuestLogCountRight:SetPoint("TOPRIGHT", -356, -43);
-	ShaguQuest_QuestLogTitleText:SetPoint("TOP", -114, -16);
-	ShaguQuest_QuestLogVersionText:SetPoint("TOPRIGHT", -395, -16);
-	ShaguQuest_QuestFrameOptionsButton:SetPoint("BOTTOMRIGHT", -354, 5);
+function EQL3_Minimize()
+	EQL3_QuestLogFrameCloseButton:Show();
+	EQL3_QuestLogFrameMaximizeButton:Show();
+	EQL3_QuestLogCountRight:SetPoint("TOPRIGHT", -356, -43);
+	EQL3_QuestLogTitleText:SetPoint("TOP", -114, -16);
+	EQL3_QuestLogVersionText:SetPoint("TOPRIGHT", -395, -16);
+	EQL3_QuestFrameOptionsButton:SetPoint("BOTTOMRIGHT", -354, 5);
 	
-	ShaguQuest_Top_Switch_On:Hide();
-	ShaguQuest_Bottom_Switch_On:Hide();
-	ShaguQuest_Top_Switch_Off:Show();
-	ShaguQuest_Bottom_Switch_Off:Show();
-	-- ShaguQuest_Top_Switch:SetTexture("Interface\Addons\ShaguQuest\Images\ShaguQuest_TopSwitchOff");
-	-- ShaguQuest_Bottom_Switch:SetTexture("Interface\Addons\ShaguQuest\Images\ShaguQuest_BottomSwitchOff");
+	EQL3_Top_Switch_On:Hide();
+	EQL3_Bottom_Switch_On:Hide();
+	EQL3_Top_Switch_Off:Show();
+	EQL3_Bottom_Switch_Off:Show();
+	-- EQL3_Top_Switch:SetTexture("Interface\Addons\ShaguQuest\Images\EQL3_TopSwitchOff");
+	-- EQL3_Bottom_Switch:SetTexture("Interface\Addons\ShaguQuest\Images\EQL3_BottomSwitchOff");
 	
-	QuestlogOptions[ShaguQuest_Player].WindowState = 0;
-	HideUIPanel(ShaguQuest_QuestLogFrame_Description);
+	QuestlogOptions[EQL3_Player].WindowState = 0;
+	HideUIPanel(EQL3_QuestLogFrame_Description);
 end
 
 -- Toggle
 local old_ToggleQuestLog = ToggleQuestLog;
 function ToggleQuestLog()
-	if ( ShaguQuest_QuestLogFrame:IsVisible() ) then
-		HideUIPanel(ShaguQuest_QuestLogFrame);
+	if ( EQL3_QuestLogFrame:IsVisible() ) then
+		HideUIPanel(EQL3_QuestLogFrame);
 	else
-		ShowUIPanel(ShaguQuest_QuestLogFrame);
+		ShowUIPanel(EQL3_QuestLogFrame);
 	end
 end
 
@@ -63,233 +63,233 @@ end
 -- OnEvent
 function EQL_QuestLog_OnEvent(event)
 	if (event == "VARIABLES_LOADED") then
-		ShaguQuest_Player = UnitName("player").."-"..GetRealmName();
+		EQL3_Player = UnitName("player").."-"..GetRealmName();
 		
-		DEFAULT_CHAT_FRAME:AddMessage("Extended QuestLog "..ShaguQuest_QUESTLOG_VERSION.." Loaded for "..UnitName("player").. " of "..GetRealmName()..".", 1, 1, 1, 1);
+		DEFAULT_CHAT_FRAME:AddMessage("Extended QuestLog "..EQL3_QUESTLOG_VERSION.." Loaded for "..UnitName("player").. " of "..GetRealmName()..".", 1, 1, 1, 1);
 		
 		if(QuestlogOptions == nil) then
 			QuestlogOptions = {};
 		end
-		if(QuestlogOptions[ShaguQuest_Player] == nil) then
-			QuestlogOptions[ShaguQuest_Player] = {};
+		if(QuestlogOptions[EQL3_Player] == nil) then
+			QuestlogOptions[EQL3_Player] = {};
 		end
 		
 		-- Organizer
 		
-		if (QuestlogOptions[ShaguQuest_Player].OrganizerSettings == nil) then
-			QuestlogOptions[ShaguQuest_Player].OrganizerSettings = {};
+		if (QuestlogOptions[EQL3_Player].OrganizerSettings == nil) then
+			QuestlogOptions[EQL3_Player].OrganizerSettings = {};
 		end
 		
-		if (QuestlogOptions[ShaguQuest_Player].WindowState == nil) then
-			QuestlogOptions[ShaguQuest_Player].WindowState = 0;
+		if (QuestlogOptions[EQL3_Player].WindowState == nil) then
+			QuestlogOptions[EQL3_Player].WindowState = 0;
 		end
-		if(QuestlogOptions[ShaguQuest_Player].WindowState == 1) then
-			ShaguQuest_Maximize();
-		end
-		
-		if(QuestlogOptions[ShaguQuest_Player].QuestWatches == nil) then
-			QuestlogOptions[ShaguQuest_Player].QuestWatches = {};
+		if(QuestlogOptions[EQL3_Player].WindowState == 1) then
+			EQL3_Maximize();
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].ShowQuestLevels == nil) then
-			QuestlogOptions[ShaguQuest_Player].ShowQuestLevels = 1;
+		if(QuestlogOptions[EQL3_Player].QuestWatches == nil) then
+			QuestlogOptions[EQL3_Player].QuestWatches = {};
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].RestoreUponSelect == nil) then
-			QuestlogOptions[ShaguQuest_Player].RestoreUponSelect = 1;
+		if(QuestlogOptions[EQL3_Player].ShowQuestLevels == nil) then
+			QuestlogOptions[EQL3_Player].ShowQuestLevels = 1;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].MinimizeUponClose == nil) then
-			QuestlogOptions[ShaguQuest_Player].MinimizeUponClose = 1;
+		if(QuestlogOptions[EQL3_Player].RestoreUponSelect == nil) then
+			QuestlogOptions[EQL3_Player].RestoreUponSelect = 1;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].LockQuestLog == nil) then
-			QuestlogOptions[ShaguQuest_Player].LockQuestLog = 1;
+		if(QuestlogOptions[EQL3_Player].MinimizeUponClose == nil) then
+			QuestlogOptions[EQL3_Player].MinimizeUponClose = 1;
+		end
+		
+		if(QuestlogOptions[EQL3_Player].LockQuestLog == nil) then
+			QuestlogOptions[EQL3_Player].LockQuestLog = 1;
 		end
 			-- Make It movable if so...
-			if(QuestlogOptions[ShaguQuest_Player].LockQuestLog == 1) then
-				ShaguQuest_QuestLogFrame:RegisterForDrag(0);
-				ShaguQuest_QuestLogFrame_Description:RegisterForDrag(0);
+			if(QuestlogOptions[EQL3_Player].LockQuestLog == 1) then
+				EQL3_QuestLogFrame:RegisterForDrag(0);
+				EQL3_QuestLogFrame_Description:RegisterForDrag(0);
 			else
-				ShaguQuest_QuestLogFrame:RegisterForDrag("LeftButton");
-				ShaguQuest_QuestLogFrame_Description:RegisterForDrag("LeftButton");
+				EQL3_QuestLogFrame:RegisterForDrag("LeftButton");
+				EQL3_QuestLogFrame_Description:RegisterForDrag("LeftButton");
 			end
 			
-		if (QuestlogOptions[ShaguQuest_Player].LogLockPoints and
-							QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointone and
-							QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointtwo) then
-			ShaguQuest_QuestLogFrame:ClearAllPoints();
-			ShaguQuest_QuestLogFrame:SetPoint("TOPLEFT","UIParent","BOTTOMLEFT",QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointone,QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointtwo);
+		if (QuestlogOptions[EQL3_Player].LogLockPoints and
+							QuestlogOptions[EQL3_Player].LogLockPoints.pointone and
+							QuestlogOptions[EQL3_Player].LogLockPoints.pointtwo) then
+			EQL3_QuestLogFrame:ClearAllPoints();
+			EQL3_QuestLogFrame:SetPoint("TOPLEFT","UIParent","BOTTOMLEFT",QuestlogOptions[EQL3_Player].LogLockPoints.pointone,QuestlogOptions[EQL3_Player].LogLockPoints.pointtwo);
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].LogOpacity == nil) then
-			QuestlogOptions[ShaguQuest_Player].LogOpacity = 1.0;
+		if(QuestlogOptions[EQL3_Player].LogOpacity == nil) then
+			QuestlogOptions[EQL3_Player].LogOpacity = 1.0;
 		end
-		ShaguQuest_QuestLogFrame:SetAlpha(QuestlogOptions[ShaguQuest_Player].LogOpacity);
+		EQL3_QuestLogFrame:SetAlpha(QuestlogOptions[EQL3_Player].LogOpacity);
 		
-		if(QuestlogOptions[ShaguQuest_Player].ShowZonesInTracker == nil) then
-			QuestlogOptions[ShaguQuest_Player].ShowZonesInTracker = 1;
-		end
-		
-		if(QuestlogOptions[ShaguQuest_Player].SortTrackerItems == nil) then
-			QuestlogOptions[ShaguQuest_Player].SortTrackerItems = 0;
+		if(QuestlogOptions[EQL3_Player].ShowZonesInTracker == nil) then
+			QuestlogOptions[EQL3_Player].ShowZonesInTracker = 1;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].CustomZoneColor == nil) then
-			QuestlogOptions[ShaguQuest_Player].CustomZoneColor = 0;
+		if(QuestlogOptions[EQL3_Player].SortTrackerItems == nil) then
+			QuestlogOptions[EQL3_Player].SortTrackerItems = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].CustomHeaderColor == nil) then
-			QuestlogOptions[ShaguQuest_Player].CustomHeaderColor = 0;
+		if(QuestlogOptions[EQL3_Player].CustomZoneColor == nil) then
+			QuestlogOptions[EQL3_Player].CustomZoneColor = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].CustomObjetiveColor == nil) then
-			QuestlogOptions[ShaguQuest_Player].CustomObjetiveColor = 0;
+		if(QuestlogOptions[EQL3_Player].CustomHeaderColor == nil) then
+			QuestlogOptions[EQL3_Player].CustomHeaderColor = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].FadeHeaderColor == nil) then
-			QuestlogOptions[ShaguQuest_Player].FadeHeaderColor = 0;
+		if(QuestlogOptions[EQL3_Player].CustomObjetiveColor == nil) then
+			QuestlogOptions[EQL3_Player].CustomObjetiveColor = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].FadeObjectiveColor == nil) then
-			QuestlogOptions[ShaguQuest_Player].FadeObjectiveColor = 0;
+		if(QuestlogOptions[EQL3_Player].FadeHeaderColor == nil) then
+			QuestlogOptions[EQL3_Player].FadeHeaderColor = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].CustomTrackerBGColor == nil) then
-			QuestlogOptions[ShaguQuest_Player].CustomTrackerBGColor = 0;
+		if(QuestlogOptions[EQL3_Player].FadeObjectiveColor == nil) then
+			QuestlogOptions[EQL3_Player].FadeObjectiveColor = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].UseTrackerListing == nil) then
-			QuestlogOptions[ShaguQuest_Player].UseTrackerListing = 0;
+		if(QuestlogOptions[EQL3_Player].CustomTrackerBGColor == nil) then
+			QuestlogOptions[EQL3_Player].CustomTrackerBGColor = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].TrackerList == nil) then
-			QuestlogOptions[ShaguQuest_Player].TrackerList = 0;
+		if(QuestlogOptions[EQL3_Player].UseTrackerListing == nil) then
+			QuestlogOptions[EQL3_Player].UseTrackerListing = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].TrackerSymbol == nil) then
-			QuestlogOptions[ShaguQuest_Player].TrackerSymbol = 0;
+		if(QuestlogOptions[EQL3_Player].TrackerList == nil) then
+			QuestlogOptions[EQL3_Player].TrackerList = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].Color == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color = {};
+		if(QuestlogOptions[EQL3_Player].TrackerSymbol == nil) then
+			QuestlogOptions[EQL3_Player].TrackerSymbol = 0;
+		end
+		
+		if(QuestlogOptions[EQL3_Player].Color == nil) then
+			QuestlogOptions[EQL3_Player].Color = {};
 		end
 		
 		-- Colors
 		
-		if(QuestlogOptions[ShaguQuest_Player].Color["TrackerBG"] == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color["TrackerBG"] = {	r = TOOLTIP_DEFAULT_BACKGROUND_COLOR.r,
+		if(QuestlogOptions[EQL3_Player].Color["TrackerBG"] == nil) then
+			QuestlogOptions[EQL3_Player].Color["TrackerBG"] = {	r = TOOLTIP_DEFAULT_BACKGROUND_COLOR.r,
 																													g = TOOLTIP_DEFAULT_BACKGROUND_COLOR.g,
 																													b = TOOLTIP_DEFAULT_BACKGROUND_COLOR.b,
 																													a = 0.0};
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].Color["TrackerBG"].a == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color["TrackerBG"].a = 0.0;
+		if(QuestlogOptions[EQL3_Player].Color["TrackerBG"].a == nil) then
+			QuestlogOptions[EQL3_Player].Color["TrackerBG"].a = 0.0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].Color["Zone"] == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color["Zone"] = {r = 1.0, g = 1.0, b = 1.0};
+		if(QuestlogOptions[EQL3_Player].Color["Zone"] == nil) then
+			QuestlogOptions[EQL3_Player].Color["Zone"] = {r = 1.0, g = 1.0, b = 1.0};
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].Color["HeaderEmpty"] == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color["HeaderEmpty"] = {r = 0.75, g = 0.61, b = 0.0};
+		if(QuestlogOptions[EQL3_Player].Color["HeaderEmpty"] == nil) then
+			QuestlogOptions[EQL3_Player].Color["HeaderEmpty"] = {r = 0.75, g = 0.61, b = 0.0};
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].Color["HeaderComplete"] == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color["HeaderComplete"] = {r = NORMAL_FONT_COLOR.r,
+		if(QuestlogOptions[EQL3_Player].Color["HeaderComplete"] == nil) then
+			QuestlogOptions[EQL3_Player].Color["HeaderComplete"] = {r = NORMAL_FONT_COLOR.r,
 																															g = NORMAL_FONT_COLOR.g,
 																															b = NORMAL_FONT_COLOR.b};
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].Color["ObjectiveEmpty"] == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color["ObjectiveEmpty"] = {r = 0.8, g = 0.8, b = 0.8};
+		if(QuestlogOptions[EQL3_Player].Color["ObjectiveEmpty"] == nil) then
+			QuestlogOptions[EQL3_Player].Color["ObjectiveEmpty"] = {r = 0.8, g = 0.8, b = 0.8};
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].Color["ObjectiveComplete"] == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color["ObjectiveComplete"] = {r = HIGHLIGHT_FONT_COLOR.r,
+		if(QuestlogOptions[EQL3_Player].Color["ObjectiveComplete"] == nil) then
+			QuestlogOptions[EQL3_Player].Color["ObjectiveComplete"] = {r = HIGHLIGHT_FONT_COLOR.r,
 																																 g = HIGHLIGHT_FONT_COLOR.g,
 																																 b = HIGHLIGHT_FONT_COLOR.b};
 		end
 		
 		
 		
-		if(QuestlogOptions[ShaguQuest_Player].LockTracker == nil) then
-			QuestlogOptions[ShaguQuest_Player].LockTracker = 0;
+		if(QuestlogOptions[EQL3_Player].LockTracker == nil) then
+			QuestlogOptions[EQL3_Player].LockTracker = 0;
 		end
-		if(QuestlogOptions[ShaguQuest_Player].LockPoints == nil) then
-			QuestlogOptions[ShaguQuest_Player].LockPoints = {};
-		end
-		
-		if(QuestlogOptions[ShaguQuest_Player].AddNew == nil) then
-			QuestlogOptions[ShaguQuest_Player].AddNew = 0;
-		end
-		if(QuestlogOptions[ShaguQuest_Player].RemoveFinished == nil) then
-			QuestlogOptions[ShaguQuest_Player].RemoveFinished = 0;
-		end
-		if(QuestlogOptions[ShaguQuest_Player].MinimizeFinished == nil) then
-			QuestlogOptions[ShaguQuest_Player].MinimizeFinished = 0;
-		end
-		if(QuestlogOptions[ShaguQuest_Player].AddUntracked == nil) then
-			QuestlogOptions[ShaguQuest_Player].AddUntracked = 0;
+		if(QuestlogOptions[EQL3_Player].LockPoints == nil) then
+			QuestlogOptions[EQL3_Player].LockPoints = {};
 		end
 		
-		
-		if(QuestlogOptions[ShaguQuest_Player].TrackerFontHeight == nil) then
-			QuestlogOptions[ShaguQuest_Player].TrackerFontHeight = 12;
+		if(QuestlogOptions[EQL3_Player].AddNew == nil) then
+			QuestlogOptions[EQL3_Player].AddNew = 0;
+		end
+		if(QuestlogOptions[EQL3_Player].RemoveFinished == nil) then
+			QuestlogOptions[EQL3_Player].RemoveFinished = 0;
+		end
+		if(QuestlogOptions[EQL3_Player].MinimizeFinished == nil) then
+			QuestlogOptions[EQL3_Player].MinimizeFinished = 0;
+		end
+		if(QuestlogOptions[EQL3_Player].AddUntracked == nil) then
+			QuestlogOptions[EQL3_Player].AddUntracked = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].TrackerShowMinimizer == nil) then
-			QuestlogOptions[ShaguQuest_Player].TrackerShowMinimizer = 0;
+		
+		if(QuestlogOptions[EQL3_Player].TrackerFontHeight == nil) then
+			QuestlogOptions[EQL3_Player].TrackerFontHeight = 12;
 		end
-		if(QuestlogOptions[ShaguQuest_Player].TrackerIsMinimized == nil) then
-			QuestlogOptions[ShaguQuest_Player].TrackerIsMinimized = 0;
+		
+		if(QuestlogOptions[EQL3_Player].TrackerShowMinimizer == nil) then
+			QuestlogOptions[EQL3_Player].TrackerShowMinimizer = 0;
+		end
+		if(QuestlogOptions[EQL3_Player].TrackerIsMinimized == nil) then
+			QuestlogOptions[EQL3_Player].TrackerIsMinimized = 0;
 		end
 		
 		-- 3.5.6b
-		if( QuestlogOptions[ShaguQuest_Player].AutoCompleteQuests == nil ) then
-			QuestlogOptions[ShaguQuest_Player].AutoCompleteQuests = 0;
+		if( QuestlogOptions[EQL3_Player].AutoCompleteQuests == nil ) then
+			QuestlogOptions[EQL3_Player].AutoCompleteQuests = 0;
 		end
-		if( QuestlogOptions[ShaguQuest_Player].RemoveCompletedObjectives == nil ) then
-			QuestlogOptions[ShaguQuest_Player].RemoveCompletedObjectives = 0;
+		if( QuestlogOptions[EQL3_Player].RemoveCompletedObjectives == nil ) then
+			QuestlogOptions[EQL3_Player].RemoveCompletedObjectives = 0;
 		end
-		if( QuestlogOptions[ShaguQuest_Player].ShowObjectiveMarkers == nil ) then
-			QuestlogOptions[ShaguQuest_Player].ShowObjectiveMarkers = 1;
+		if( QuestlogOptions[EQL3_Player].ShowObjectiveMarkers == nil ) then
+			QuestlogOptions[EQL3_Player].ShowObjectiveMarkers = 1;
 		end
-		if( QuestlogOptions[ShaguQuest_Player].OnlyLevelsInLog == nil ) then
-			QuestlogOptions[ShaguQuest_Player].OnlyLevelsInLog = 0;
+		if( QuestlogOptions[EQL3_Player].OnlyLevelsInLog == nil ) then
+			QuestlogOptions[EQL3_Player].OnlyLevelsInLog = 0;
 		end
 		
 		-- 3.5.9
-		if( QuestlogOptions[ShaguQuest_Player].ItemTooltip == nil ) then
-			QuestlogOptions[ShaguQuest_Player].ItemTooltip = 1;
+		if( QuestlogOptions[EQL3_Player].ItemTooltip == nil ) then
+			QuestlogOptions[EQL3_Player].ItemTooltip = 1;
 		end
-		if( QuestlogOptions[ShaguQuest_Player].MobTooltip == nil ) then
-			QuestlogOptions[ShaguQuest_Player].MobTooltip = 1;
+		if( QuestlogOptions[EQL3_Player].MobTooltip == nil ) then
+			QuestlogOptions[EQL3_Player].MobTooltip = 1;
 		end
-		if( QuestlogOptions[ShaguQuest_Player].InfoOnQuestCompletion == nil ) then
-			QuestlogOptions[ShaguQuest_Player].InfoOnQuestCompletion = 0;
-		end
-		
-		
-		if(QuestlogOptions[ShaguQuest_Player].Color["Tooltip"] == nil) then
-			QuestlogOptions[ShaguQuest_Player].Color["Tooltip"] = {r = 1.0, g = 0.8, b = 0.0};
+		if( QuestlogOptions[EQL3_Player].InfoOnQuestCompletion == nil ) then
+			QuestlogOptions[EQL3_Player].InfoOnQuestCompletion = 0;
 		end
 		
-		if(QuestlogOptions[ShaguQuest_Player].CustomTooltipColor == nil) then
-			QuestlogOptions[ShaguQuest_Player].CustomTooltipColor = 0;
+		
+		if(QuestlogOptions[EQL3_Player].Color["Tooltip"] == nil) then
+			QuestlogOptions[EQL3_Player].Color["Tooltip"] = {r = 1.0, g = 0.8, b = 0.0};
+		end
+		
+		if(QuestlogOptions[EQL3_Player].CustomTooltipColor == nil) then
+			QuestlogOptions[EQL3_Player].CustomTooltipColor = 0;
 		end
 		
 		
 		
 	elseif	( event == "QUEST_PROGRESS" ) then
-		if ( QuestlogOptions[ShaguQuest_Player].AutoCompleteQuests == 1 ) then
+		if ( QuestlogOptions[EQL3_Player].AutoCompleteQuests == 1 ) then
 			if ( IsQuestCompletable() ) then
 				CompleteQuest();
 			end
 		end
 	elseif ( event == "QUEST_COMPLETE" ) then
-		if ( QuestlogOptions[ShaguQuest_Player].AutoCompleteQuests == 1 and GetNumQuestChoices() == 0 ) then
+		if ( QuestlogOptions[EQL3_Player].AutoCompleteQuests == 1 and GetNumQuestChoices() == 0 ) then
 			GetQuestReward(QuestFrameRewardPanel.itemChoice);
 		end
 	end
@@ -300,12 +300,12 @@ function QuestLog_OnEvent(event)
 	if ( event == "QUEST_LOG_UPDATE" or event == "UPDATE_FACTION" or (event == "UNIT_QUEST_LOG_CHANGED" and arg1 == "player") ) then
 		QuestLog_Update();
 		QuestWatch_Update();
-		if ( ShaguQuest_QuestLogFrame:IsVisible() ) then
+		if ( EQL3_QuestLogFrame:IsVisible() ) then
 			QuestLog_UpdateQuestDetails(1);
 		end
 		
 		if(event == "QUEST_LOG_UPDATE") then
-			if(QuestlogOptions[ShaguQuest_Player].InfoOnQuestCompletion == 1) then
+			if(QuestlogOptions[EQL3_Player].InfoOnQuestCompletion == 1) then
 				LookForCompletedQuests();
 			end
 		end
@@ -314,9 +314,9 @@ function QuestLog_OnEvent(event)
 		if ( event == "PARTY_MEMBERS_CHANGED" ) then
 			-- Determine whether the selected quest is pushable or not
 			if ( GetQuestLogPushable() and GetNumPartyMembers() > 0 ) then
-				ShaguQuest_QuestFramePushQuestButton:Enable();
+				EQL3_QuestFramePushQuestButton:Enable();
 			else
-				ShaguQuest_QuestFramePushQuestButton:Disable();
+				EQL3_QuestFramePushQuestButton:Disable();
 			end
 		end
 	end
@@ -333,13 +333,13 @@ function QuestLog_OnShow()
 		QuestLogFrame:Hide();
 	end
 	
-	ShowUIPanel(ShaguQuest_QuestLogFrame);
+	ShowUIPanel(EQL3_QuestLogFrame);
 	
-	if (QuestlogOptions[ShaguQuest_Player].LogLockPoints and
-					QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointone and
-					QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointtwo) then
-		ShaguQuest_QuestLogFrame:ClearAllPoints();
-		ShaguQuest_QuestLogFrame:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointone,QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointtwo);
+	if (QuestlogOptions[EQL3_Player].LogLockPoints and
+					QuestlogOptions[EQL3_Player].LogLockPoints.pointone and
+					QuestlogOptions[EQL3_Player].LogLockPoints.pointtwo) then
+		EQL3_QuestLogFrame:ClearAllPoints();
+		EQL3_QuestLogFrame:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", QuestlogOptions[EQL3_Player].LogLockPoints.pointone,QuestlogOptions[EQL3_Player].LogLockPoints.pointtwo);
 	end
 	
 	UpdateMicroButtons();
@@ -351,24 +351,24 @@ end
 -- OnHide
 local old_QuestLog_OnHide = QuestLog_OnHide;
 function QuestLog_OnHide()
-	HideUIPanel(ShaguQuest_QuestLogFrame);
+	HideUIPanel(EQL3_QuestLogFrame);
 	UpdateMicroButtons();
 	PlaySound("igQuestLogClose");
-	ShaguQuest_Organize_Popup:Hide();
-	ShaguQuest_OptionsFrame:Hide();
-	if ( QuestlogOptions[ShaguQuest_Player].MinimizeUponClose == 1 ) then
-		ShaguQuest_Minimize();
+	EQL3_Organize_Popup:Hide();
+	EQL3_OptionsFrame:Hide();
+	if ( QuestlogOptions[EQL3_Player].MinimizeUponClose == 1 ) then
+		EQL3_Minimize();
 	end
 end
 
 -- OnUpdate
 local old_QuestLog_OnUpdate = QuestLog_OnUpdate;
 function QuestLog_OnUpdate(elapsed)
-	if ( ShaguQuest_QuestLogFrame.hasTimer ) then
-		ShaguQuest_QuestLogFrame.timePassed = ShaguQuest_QuestLogFrame.timePassed + elapsed;
-		if ( ShaguQuest_QuestLogFrame.timePassed > UPDATE_DELAY ) then
-			ShaguQuest_QuestLogTimerText:SetText(TEXT(TIME_REMAINING).." "..SecondsToTime(GetQuestLogTimeLeft()));
-			ShaguQuest_QuestLogFrame.timePassed = 0;		
+	if ( EQL3_QuestLogFrame.hasTimer ) then
+		EQL3_QuestLogFrame.timePassed = EQL3_QuestLogFrame.timePassed + elapsed;
+		if ( EQL3_QuestLogFrame.timePassed > UPDATE_DELAY ) then
+			EQL3_QuestLogTimerText:SetText(TEXT(TIME_REMAINING).." "..SecondsToTime(GetQuestLogTimeLeft()));
+			EQL3_QuestLogFrame.timePassed = 0;		
 		end
 	end
 end
@@ -380,41 +380,41 @@ local normal_QuestLog_Update = QuestLog_Update;
 function QuestLog_Update()
 	local numEntries, numQuests = GetNumQuestLogEntries();
 	if ( numEntries == 0 ) then
-		ShaguQuest_EmptyQuestLogFrame:Show();
-		ShaguQuest_QuestLogFrameAbandonButton:Disable();
+		EQL3_EmptyQuestLogFrame:Show();
+		EQL3_QuestLogFrameAbandonButton:Disable();
 		QuestLogFrame.hasTimer = nil;
-		ShaguQuest_QuestLogDetailScrollFrame:Hide();
-		ShaguQuest_QuestLogExpandButtonFrame:Hide();
+		EQL3_QuestLogDetailScrollFrame:Hide();
+		EQL3_QuestLogExpandButtonFrame:Hide();
 	else
-		ShaguQuest_EmptyQuestLogFrame:Hide();
-		ShaguQuest_QuestLogFrameAbandonButton:Enable();
-		ShaguQuest_QuestLogDetailScrollFrame:Show();
-		ShaguQuest_QuestLogExpandButtonFrame:Show();
+		EQL3_EmptyQuestLogFrame:Hide();
+		EQL3_QuestLogFrameAbandonButton:Enable();
+		EQL3_QuestLogDetailScrollFrame:Show();
+		EQL3_QuestLogExpandButtonFrame:Show();
 	end
 
 	-- Update Quest Count
-	ShaguQuest_QuestLogQuestCount:SetText(format(QUEST_LOG_COUNT_TEMPLATE, numQuests, MAX_QUESTLOG_QUESTS));
-	ShaguQuest_QuestLogCountMiddle:SetWidth(ShaguQuest_QuestLogQuestCount:GetWidth());
+	EQL3_QuestLogQuestCount:SetText(format(QUEST_LOG_COUNT_TEMPLATE, numQuests, MAX_QUESTLOG_QUESTS));
+	EQL3_QuestLogCountMiddle:SetWidth(EQL3_QuestLogQuestCount:GetWidth());
 
 	-- ScrollFrame update
-	FauxScrollFrame_Update(ShaguQuest_QuestLogListScrollFrame, numEntries, ShaguQuest_QUESTS_DISPLAYED, QUESTLOG_QUEST_HEIGHT, nil, nil, nil, ShaguQuest_QuestLogHighlightFrame, 293, 316 )
+	FauxScrollFrame_Update(EQL3_QuestLogListScrollFrame, numEntries, EQL3_QUESTS_DISPLAYED, QUESTLOG_QUEST_HEIGHT, nil, nil, nil, EQL3_QuestLogHighlightFrame, 293, 316 )
 	
 	-- Update the quest listing
-	ShaguQuest_QuestLogHighlightFrame:Hide();
+	EQL3_QuestLogHighlightFrame:Hide();
 	
 	local questIndex, questLogTitle, questTitleTag, questNumGroupMates, questNormalText, questHighlightText, questDisabledText, questHighlight, questCheck;
 	local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, color;
 	local numPartyMembers, partyMembersOnQuest, tempWidth, textWidth, tempLevel;
-	for i=1, ShaguQuest_QUESTS_DISPLAYED, 1 do
-		questIndex = i + FauxScrollFrame_GetOffset(ShaguQuest_QuestLogListScrollFrame);
-		questLogTitle = getglobal("ShaguQuest_QuestLogTitle"..i);
-		questTitleTag = getglobal("ShaguQuest_QuestLogTitle"..i.."Tag");
-		questNumGroupMates = getglobal("ShaguQuest_QuestLogTitle"..i.."GroupMates");
-		questCheck = getglobal("ShaguQuest_QuestLogTitle"..i.."Check");
-		questNormalText = getglobal("ShaguQuest_QuestLogTitle"..i.."NormalText");
-		questHighlightText = getglobal("ShaguQuest_QuestLogTitle"..i.."NormalText");
-		questDisabledText = getglobal("ShaguQuest_QuestLogTitle"..i.."NormalText");
-		questHighlight = getglobal("ShaguQuest_QuestLogTitle"..i.."Highlight");
+	for i=1, EQL3_QUESTS_DISPLAYED, 1 do
+		questIndex = i + FauxScrollFrame_GetOffset(EQL3_QuestLogListScrollFrame);
+		questLogTitle = getglobal("EQL3_QuestLogTitle"..i);
+		questTitleTag = getglobal("EQL3_QuestLogTitle"..i.."Tag");
+		questNumGroupMates = getglobal("EQL3_QuestLogTitle"..i.."GroupMates");
+		questCheck = getglobal("EQL3_QuestLogTitle"..i.."Check");
+		questNormalText = getglobal("EQL3_QuestLogTitle"..i.."NormalText");
+		questHighlightText = getglobal("EQL3_QuestLogTitle"..i.."NormalText");
+		questDisabledText = getglobal("EQL3_QuestLogTitle"..i.."NormalText");
+		questHighlight = getglobal("EQL3_QuestLogTitle"..i.."Highlight");
 		if ( questIndex <= numEntries ) then
 			questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete = GetQuestLogTitle(questIndex);
 			if(not questLogTitleText) then questLogTitleText = "Please report this error!" end
@@ -433,14 +433,14 @@ function QuestLog_Update()
 				end
 				]]--
 				
-				questLogTitle:SetNormalTexture("Interface\\Addons\\ShaguQuest\\Images\\ShaguQuest_Header_Icon");
+				questLogTitle:SetNormalTexture("Interface\\Addons\\EQL3\\Images\\EQL3_Header_Icon");
 				
 				questHighlight:SetTexture("Interface\\Buttons\\UI-PlusButton-Hilight");
 				questNumGroupMates:SetText("");
 				questCheck:Hide();
 			else
 				
-				if(QuestlogOptions[ShaguQuest_Player].ShowQuestLevels == 1) then
+				if(QuestlogOptions[EQL3_Player].ShowQuestLevels == 1) then
 					tempLevel = level;
 					if (questTag ~= NIL) then
 						tempLevel = tempLevel.."+";
@@ -540,9 +540,9 @@ function QuestLog_Update()
 			questLogTitle:Show();
 			
 			-- Place the highlight and lock the highlight state
-			if ( ShaguQuest_QuestLogFrame.selectedButtonID and GetQuestLogSelection() == questIndex ) then
-				ShaguQuest_QuestLogHighlightFrame:SetPoint("TOPLEFT", "ShaguQuest_QuestLogTitle"..i, "TOPLEFT", 0, 0);
-				ShaguQuest_QuestLogHighlightFrame:Show();
+			if ( EQL3_QuestLogFrame.selectedButtonID and GetQuestLogSelection() == questIndex ) then
+				EQL3_QuestLogHighlightFrame:SetPoint("TOPLEFT", "EQL3_QuestLogTitle"..i, "TOPLEFT", 0, 0);
+				EQL3_QuestLogHighlightFrame:Show();
 				questTitleTag:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 				questLogTitle:LockHighlight();
 			else
@@ -569,16 +569,16 @@ function QuestLog_Update()
 	end
 	-- If all headers are not expanded then show collapse button, otherwise show the expand button
 	if ( notExpanded ~= numHeaders ) then
-		ShaguQuest_QuestLogCollapseAllButton.collapsed = nil;
-		ShaguQuest_QuestLogCollapseAllButton:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-Up");
+		EQL3_QuestLogCollapseAllButton.collapsed = nil;
+		EQL3_QuestLogCollapseAllButton:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-Up");
 	else
-		ShaguQuest_QuestLogCollapseAllButton.collapsed = 1;
-		ShaguQuest_QuestLogCollapseAllButton:SetNormalTexture("Interface\\Buttons\\UI-PlusButton-Up");
+		EQL3_QuestLogCollapseAllButton.collapsed = 1;
+		EQL3_QuestLogCollapseAllButton:SetNormalTexture("Interface\\Buttons\\UI-PlusButton-Up");
 	end
 
 	-- Update Quest Count
-	ShaguQuest_QuestLogQuestCount:SetText(format(QUEST_LOG_COUNT_TEMPLATE, numQuests, MAX_QUESTLOG_QUESTS));
-	ShaguQuest_QuestLogCountMiddle:SetWidth(ShaguQuest_QuestLogQuestCount:GetWidth());
+	EQL3_QuestLogQuestCount:SetText(format(QUEST_LOG_COUNT_TEMPLATE, numQuests, MAX_QUESTLOG_QUESTS));
+	EQL3_QuestLogCountMiddle:SetWidth(EQL3_QuestLogQuestCount:GetWidth());
 
 	-- If no selection then set it to the first available quest
 	if ( GetQuestLogSelection() == 0 ) then
@@ -587,11 +587,11 @@ function QuestLog_Update()
 
 	-- Determine whether the selected quest is pushable or not
 	if ( numEntries == 0 ) then
-		ShaguQuest_QuestFramePushQuestButton:Disable();
+		EQL3_QuestFramePushQuestButton:Disable();
 	elseif ( GetQuestLogPushable() and GetNumPartyMembers() > 0 ) then
-		ShaguQuest_QuestFramePushQuestButton:Enable();
+		EQL3_QuestFramePushQuestButton:Enable();
 	else
-		ShaguQuest_QuestFramePushQuestButton:Disable();
+		EQL3_QuestFramePushQuestButton:Disable();
 	end
 end
 
@@ -602,16 +602,16 @@ local normal_QuestLog_SetSelection = QuestLog_SetSelection;
 function QuestLog_SetSelection(questID)
 	local selectedQuest;
 	if ( questID == 0 ) then
-		ShaguQuest_QuestLogDetailScrollFrame:Hide();
+		EQL3_QuestLogDetailScrollFrame:Hide();
 		return 0;
 	end
 
 	-- Get xml id
-	local id = questID - FauxScrollFrame_GetOffset(ShaguQuest_QuestLogListScrollFrame);
+	local id = questID - FauxScrollFrame_GetOffset(EQL3_QuestLogListScrollFrame);
 	
 	SelectQuestLogEntry(questID);
-	local titleButton = getglobal("ShaguQuest_QuestLogTitle"..id);
-	local titleButtonTag = getglobal("ShaguQuest_QuestLogTitle"..id.."Tag");
+	local titleButton = getglobal("EQL3_QuestLogTitle"..id);
+	local titleButtonTag = getglobal("EQL3_QuestLogTitle"..id.."Tag");
 	
 	local questLogTitleText, level, questTag, isHeader, isCollapsed = GetQuestLogTitle(questID);
 	if ( isHeader ) then
@@ -626,15 +626,15 @@ function QuestLog_SetSelection(questID)
 		end
 	else
 		-- Set newly selected quest and highlight it
-		ShaguQuest_QuestLogFrame.selectedButtonID = questID;
-		local scrollFrameOffset = FauxScrollFrame_GetOffset(ShaguQuest_QuestLogListScrollFrame);
-		if ( questID > scrollFrameOffset and questID <= (scrollFrameOffset + ShaguQuest_QUESTS_DISPLAYED) and questID <= GetNumQuestLogEntries() ) then
+		EQL3_QuestLogFrame.selectedButtonID = questID;
+		local scrollFrameOffset = FauxScrollFrame_GetOffset(EQL3_QuestLogListScrollFrame);
+		if ( questID > scrollFrameOffset and questID <= (scrollFrameOffset + EQL3_QUESTS_DISPLAYED) and questID <= GetNumQuestLogEntries() ) then
 			titleButton:LockHighlight();
 			titleButtonTag:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 			
-			ShaguQuest_QuestLogSkillHighlight:SetVertexColor(titleButton.r, titleButton.g, titleButton.b);
-			ShaguQuest_QuestLogHighlightFrame:SetPoint("TOPLEFT", "ShaguQuest_QuestLogTitle"..id, "TOPLEFT", 5, 0);
-			ShaguQuest_QuestLogHighlightFrame:Show();
+			EQL3_QuestLogSkillHighlight:SetVertexColor(titleButton.r, titleButton.g, titleButton.b);
+			EQL3_QuestLogHighlightFrame:SetPoint("TOPLEFT", "EQL3_QuestLogTitle"..id, "TOPLEFT", 5, 0);
+			EQL3_QuestLogHighlightFrame:Show();
 		end
 	end
 	if ( GetQuestLogSelection() > GetNumQuestLogEntries() ) then
@@ -656,31 +656,31 @@ function QuestLog_UpdateQuestDetails(doNotScroll)
 	if ( IsCurrentQuestFailed() ) then
 		questTitle = questTitle.." - ("..TEXT(FAILED)..")";
 	end
-	ShaguQuest_QuestLogQuestTitle:SetText(questTitle);
+	EQL3_QuestLogQuestTitle:SetText(questTitle);
 
 	local questDescription;
 	local questObjectives;
 	questDescription, questObjectives = GetQuestLogQuestText();
-	ShaguQuest_QuestLogObjectivesText:SetText(questObjectives);
+	EQL3_QuestLogObjectivesText:SetText(questObjectives);
 	
 	local questTimer = GetQuestLogTimeLeft();
 	if ( questTimer ) then
-		ShaguQuest_QuestLogFrame.hasTimer = 1;
-		ShaguQuest_QuestLogFrame.timePassed = 0;
-		ShaguQuest_QuestLogTimerText:Show();
-		ShaguQuest_QuestLogTimerText:SetText(TEXT(TIME_REMAINING).." "..SecondsToTime(questTimer));
-		ShaguQuest_QuestLogObjective1:SetPoint("TOPLEFT", "ShaguQuest_QuestLogTimerText", "BOTTOMLEFT", 0, -10);
+		EQL3_QuestLogFrame.hasTimer = 1;
+		EQL3_QuestLogFrame.timePassed = 0;
+		EQL3_QuestLogTimerText:Show();
+		EQL3_QuestLogTimerText:SetText(TEXT(TIME_REMAINING).." "..SecondsToTime(questTimer));
+		EQL3_QuestLogObjective1:SetPoint("TOPLEFT", "EQL3_QuestLogTimerText", "BOTTOMLEFT", 0, -10);
 	else
-		ShaguQuest_QuestLogFrame.hasTimer = nil;
-		ShaguQuest_QuestLogTimerText:Hide();
-		ShaguQuest_QuestLogObjective1:SetPoint("TOPLEFT", "ShaguQuest_QuestLogObjectivesText", "BOTTOMLEFT", 0, -10);
+		EQL3_QuestLogFrame.hasTimer = nil;
+		EQL3_QuestLogTimerText:Hide();
+		EQL3_QuestLogObjective1:SetPoint("TOPLEFT", "EQL3_QuestLogObjectivesText", "BOTTOMLEFT", 0, -10);
 	end
 	
 	-- Show Quest Watch if track quest is checked
 	local numObjectives = GetNumQuestLeaderBoards();
 	
 	for i=1, numObjectives, 1 do
-		local string = getglobal("ShaguQuest_QuestLogObjective"..i);
+		local string = getglobal("EQL3_QuestLogObjective"..i);
 		local text;
 		local type;
 		local finished;
@@ -700,65 +700,65 @@ function QuestLog_UpdateQuestDetails(doNotScroll)
 	end
 
 	for i=numObjectives + 1, MAX_OBJECTIVES, 1 do
-		getglobal("ShaguQuest_QuestLogObjective"..i):Hide();
+		getglobal("EQL3_QuestLogObjective"..i):Hide();
 	end
 
 	-- If there's money required then anchor and display it
 	if ( GetQuestLogRequiredMoney() > 0 ) then
 		if ( numObjectives > 0 ) then
-			ShaguQuest_QuestLogRequiredMoneyText:SetPoint("TOPLEFT", "ShaguQuest_QuestLogObjective"..numObjectives, "BOTTOMLEFT", 0, -4);
+			EQL3_QuestLogRequiredMoneyText:SetPoint("TOPLEFT", "EQL3_QuestLogObjective"..numObjectives, "BOTTOMLEFT", 0, -4);
 		else
-			ShaguQuest_QuestLogRequiredMoneyText:SetPoint("TOPLEFT", "ShaguQuest_QuestLogObjectivesText", "BOTTOMLEFT", 0, -10);
+			EQL3_QuestLogRequiredMoneyText:SetPoint("TOPLEFT", "EQL3_QuestLogObjectivesText", "BOTTOMLEFT", 0, -10);
 		end
 		
-		MoneyFrame_Update("ShaguQuest_QuestLogRequiredMoneyFrame", GetQuestLogRequiredMoney());
+		MoneyFrame_Update("EQL3_QuestLogRequiredMoneyFrame", GetQuestLogRequiredMoney());
 		
 		if ( GetQuestLogRequiredMoney() > GetMoney() ) then
 			-- Not enough money
-			ShaguQuest_QuestLogRequiredMoneyText:SetTextColor(0, 0, 0);
-			SetMoneyFrameColor("ShaguQuest_QuestLogRequiredMoneyFrame", 1.0, 0.1, 0.1);
+			EQL3_QuestLogRequiredMoneyText:SetTextColor(0, 0, 0);
+			SetMoneyFrameColor("EQL3_QuestLogRequiredMoneyFrame", 1.0, 0.1, 0.1);
 		else
-			ShaguQuest_QuestLogRequiredMoneyText:SetTextColor(0.2, 0.2, 0.2);
-			SetMoneyFrameColor("ShaguQuest_QuestLogRequiredMoneyFrame", 1.0, 1.0, 1.0);
+			EQL3_QuestLogRequiredMoneyText:SetTextColor(0.2, 0.2, 0.2);
+			SetMoneyFrameColor("EQL3_QuestLogRequiredMoneyFrame", 1.0, 1.0, 1.0);
 		end
-		ShaguQuest_QuestLogRequiredMoneyText:Show();
-		ShaguQuest_QuestLogRequiredMoneyFrame:Show();
+		EQL3_QuestLogRequiredMoneyText:Show();
+		EQL3_QuestLogRequiredMoneyFrame:Show();
 	else
-		ShaguQuest_QuestLogRequiredMoneyText:Hide();
-		ShaguQuest_QuestLogRequiredMoneyFrame:Hide();
+		EQL3_QuestLogRequiredMoneyText:Hide();
+		EQL3_QuestLogRequiredMoneyFrame:Hide();
 	end
 
 	if ( GetQuestLogRequiredMoney() > 0 ) then
-		ShaguQuest_QuestLogDescriptionTitle:SetPoint("TOPLEFT", "ShaguQuest_QuestLogRequiredMoneyText", "BOTTOMLEFT", 0, -10);
+		EQL3_QuestLogDescriptionTitle:SetPoint("TOPLEFT", "EQL3_QuestLogRequiredMoneyText", "BOTTOMLEFT", 0, -10);
 	elseif ( numObjectives > 0 ) then
-		ShaguQuest_QuestLogDescriptionTitle:SetPoint("TOPLEFT", "ShaguQuest_QuestLogObjective"..numObjectives, "BOTTOMLEFT", 0, -10);
+		EQL3_QuestLogDescriptionTitle:SetPoint("TOPLEFT", "EQL3_QuestLogObjective"..numObjectives, "BOTTOMLEFT", 0, -10);
 	else
 		if ( questTimer ) then
-			ShaguQuest_QuestLogDescriptionTitle:SetPoint("TOPLEFT", "ShaguQuest_QuestLogTimerText", "BOTTOMLEFT", 0, -10);
+			EQL3_QuestLogDescriptionTitle:SetPoint("TOPLEFT", "EQL3_QuestLogTimerText", "BOTTOMLEFT", 0, -10);
 		else
-			ShaguQuest_QuestLogDescriptionTitle:SetPoint("TOPLEFT", "ShaguQuest_QuestLogObjectivesText", "BOTTOMLEFT", 0, -10);
+			EQL3_QuestLogDescriptionTitle:SetPoint("TOPLEFT", "EQL3_QuestLogObjectivesText", "BOTTOMLEFT", 0, -10);
 		end
 	end
 	if ( questDescription ) then
-		ShaguQuest_QuestLogQuestDescription:SetText(questDescription);
-		QuestFrame_SetAsLastShown(ShaguQuest_QuestLogQuestDescription);
+		EQL3_QuestLogQuestDescription:SetText(questDescription);
+		QuestFrame_SetAsLastShown(EQL3_QuestLogQuestDescription);
 	end
 	local numRewards = GetNumQuestLogRewards();
 	local numChoices = GetNumQuestLogChoices();
 	local money = GetQuestLogRewardMoney();
 
 	if ( (numRewards + numChoices + money) > 0 ) then
-		ShaguQuest_QuestLogRewardTitleText:Show();
-		QuestFrame_SetAsLastShown(ShaguQuest_QuestLogRewardTitleText);
+		EQL3_QuestLogRewardTitleText:Show();
+		QuestFrame_SetAsLastShown(EQL3_QuestLogRewardTitleText);
 	else
-		ShaguQuest_QuestLogRewardTitleText:Hide();
+		EQL3_QuestLogRewardTitleText:Hide();
 	end
 
 	QuestFrameItems_Update("QuestLog");
 	if ( not doNotScroll ) then
-		ShaguQuest_QuestLogDetailScrollFrameScrollBar:SetValue(0);
+		EQL3_QuestLogDetailScrollFrameScrollBar:SetValue(0);
 	end
-	ShaguQuest_QuestLogDetailScrollFrame:UpdateScrollChildRect();
+	EQL3_QuestLogDetailScrollFrame:UpdateScrollChildRect();
 end
 
 
@@ -766,7 +766,7 @@ end
 local normal_QuestFrame_SetAsLastShown = QuestFrame_SetAsLastShown;
 function QuestFrame_SetAsLastShown(frame, spacerFrame)
 	if ( not spacerFrame ) then
-		spacerFrame = ShaguQuest_QuestLogSpacerFrame;
+		spacerFrame = EQL3_QuestLogSpacerFrame;
 	end
 	spacerFrame:SetPoint("TOP", frame, "BOTTOM", 0, 0);
 end
@@ -776,7 +776,7 @@ end
 local normal_QuestLogTitleButton_OnClick = QuestLogTitleButton_OnClick;
 function QuestLogTitleButton_OnClick(button)
 	local questName = this:GetText();
-	local questIndex = this:GetID() + FauxScrollFrame_GetOffset(ShaguQuest_QuestLogListScrollFrame);
+	local questIndex = this:GetID() + FauxScrollFrame_GetOffset(EQL3_QuestLogListScrollFrame);
 	
 	if(button == "LeftButton") then
 		if ( IsShiftKeyDown() ) then
@@ -785,7 +785,7 @@ function QuestLogTitleButton_OnClick(button)
 					return;
 				end
 				if ( not ChatFrameEditBox:IsVisible() ) then
-					ShaguQuest_ClearTracker();
+					EQL3_ClearTracker();
 					AddQuestWatch(questIndex);
 					QuestWatch_Update();
 				end
@@ -867,20 +867,20 @@ function QuestLogTitleButton_OnClick(button)
 		end
 		
 		if(this.isHeader) then
-			if ( ShaguQuest_OrganizeFrame:IsVisible() ) then
-				ShaguQuest_OrganizeFrame_Text:SetText(questName);
-				ShaguQuest_OrganizeFrame_Text:ClearFocus();
+			if ( EQL3_OrganizeFrame:IsVisible() ) then
+				EQL3_OrganizeFrame_Text:SetText(questName);
+				EQL3_OrganizeFrame_Text:ClearFocus();
 				
-				ShaguQuest_OrganizeFunctions(questName);
-				ShaguQuest_OrganizeFrame:Hide();
+				EQL3_OrganizeFunctions(questName);
+				EQL3_OrganizeFrame:Hide();
 			end
 		end
 		
 	end
 	
 	if(QuestLog_SetSelection(questIndex) == 1) then
-		if(not ShaguQuest_QuestLogFrame_Description:IsVisible() and not IsShiftKeyDown() and not IsControlKeyDown() and QuestlogOptions[ShaguQuest_Player].RestoreUponSelect == 1) then
-			ShaguQuest_Maximize();
+		if(not EQL3_QuestLogFrame_Description:IsVisible() and not IsShiftKeyDown() and not IsControlKeyDown() and QuestlogOptions[EQL3_Player].RestoreUponSelect == 1) then
+			EQL3_Maximize();
 		end
 	end
 	
@@ -893,15 +893,15 @@ function QuestLogTitleButton_OnClick(button)
 		end
 	else
 		if ( not this.isHeader ) then
-			if ( ShaguQuest_IsQuestWatched(questIndex) ) then
-				ShaguQuest_Organize_Popup_Track_Text:SetText(ShaguQuest_POPUP_UNTRACK);
+			if ( EQL3_IsQuestWatched(questIndex) ) then
+				EQL3_Organize_Popup_Track_Text:SetText(EQL3_POPUP_UNTRACK);
 			else
-				ShaguQuest_Organize_Popup_Track_Text:SetText(ShaguQuest_POPUP_TRACK);
+				EQL3_Organize_Popup_Track_Text:SetText(EQL3_POPUP_TRACK);
 			end
-			ShaguQuest_Organize_Popup:ClearAllPoints();
-			ShaguQuest_Organize_Popup:SetPoint("TOPLEFT", this, "TOPLEFT", 24, 0);
-			ShaguQuest_Organize_Popup:Raise();
-			ShaguQuest_Organize_Popup:Show();
+			EQL3_Organize_Popup:ClearAllPoints();
+			EQL3_Organize_Popup:SetPoint("TOPLEFT", this, "TOPLEFT", 24, 0);
+			EQL3_Organize_Popup:Raise();
+			EQL3_Organize_Popup:Show();
 		end
 	end
 
@@ -941,11 +941,11 @@ end
 -- Only called on load
 function ManageQuestHeaders()
 	QuestLog_SetSelection(GetQuestLogSelection());
-	ShaguQuest_Temp.hasManaged = true;
-	if(QuestlogOptions[ShaguQuest_Player].HeaderList) then
+	EQL3_Temp.hasManaged = true;
+	if(QuestlogOptions[EQL3_Player].HeaderList) then
 					
 		local questLogTitleText, isHeader, isCollapsed;
-		local numHeaders = table.getn(QuestlogOptions[ShaguQuest_Player].HeaderList);
+		local numHeaders = table.getn(QuestlogOptions[EQL3_Player].HeaderList);
 		local numEntries = GetNumQuestLogEntries();
 		
 		if(numHeaders > 0) then
@@ -955,7 +955,7 @@ function ManageQuestHeaders()
 				
 				if(isHeader) then
 					for j=1, numHeaders, 1 do
-						if(questLogTitleText == QuestlogOptions[ShaguQuest_Player].HeaderList[j]) then
+						if(questLogTitleText == QuestlogOptions[EQL3_Player].HeaderList[j]) then
 							CollapseQuestHeader(i);
 						end
 					end
@@ -968,7 +968,7 @@ function ManageQuestHeaders()
 end
 
 function MakeQuestHeaderList()
-	QuestlogOptions[ShaguQuest_Player].HeaderList = {};
+	QuestlogOptions[EQL3_Player].HeaderList = {};
 
 	local numEntries = GetNumQuestLogEntries();
 	local questLogTitleText, isHeader, isCollapsed;
@@ -976,7 +976,7 @@ function MakeQuestHeaderList()
 	for j=numEntries, 1, -1 do
 		questLogTitleText, _, _, isHeader, isCollapsed = GetQuestLogTitle(j);
 		if (isHeader and isCollapsed) then
-			table.insert(QuestlogOptions[ShaguQuest_Player].HeaderList, questLogTitleText);
+			table.insert(QuestlogOptions[EQL3_Player].HeaderList, questLogTitleText);
 		end
 	end
 end
@@ -987,7 +987,7 @@ end
 local normal_QuestLog_UpdatePartyInfoTooltip = QuestLog_UpdatePartyInfoTooltip;
 
 function QuestLog_UpdatePartyInfoTooltip()
-	local index = this:GetID() + FauxScrollFrame_GetOffset(ShaguQuest_QuestLogListScrollFrame);
+	local index = this:GetID() + FauxScrollFrame_GetOffset(EQL3_QuestLogListScrollFrame);
 	local numPartyMembers = GetNumPartyMembers();
 	if ( numPartyMembers == 0 or this.isHeader ) then
 		return;
@@ -1022,7 +1022,7 @@ function QuestLogCollapseAllButton_OnClick()
 		MakeQuestHeaderList();
 	else
 		this.collapsed = 1;
-		ShaguQuest_QuestLogListScrollFrameScrollBar:SetValue(0);
+		EQL3_QuestLogListScrollFrameScrollBar:SetValue(0);
 		CollapseQuestHeader(0);
 		MakeQuestHeaderList();
 	end
@@ -1034,14 +1034,14 @@ function GetQuestLogTitle(questIndex)
 	local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete;
 	
 	
-	if (not ShaguQuest_UpdateDB()) then
+	if (not EQL3_UpdateDB()) then
 		questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete =  old_GetQuestLogTitle(questIndex);
 	end
-	if(ShaguQuest_Temp.savedQuestIDMap and ShaguQuest_Temp.savedQuestIDMap[questIndex]) then
-		if(ShaguQuest_Temp.savedQuestIDMap[questIndex].questID) then
-			questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete = old_GetQuestLogTitle(ShaguQuest_Temp.savedQuestIDMap[questIndex].questID);
+	if(EQL3_Temp.savedQuestIDMap and EQL3_Temp.savedQuestIDMap[questIndex]) then
+		if(EQL3_Temp.savedQuestIDMap[questIndex].questID) then
+			questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete = old_GetQuestLogTitle(EQL3_Temp.savedQuestIDMap[questIndex].questID);
 		else
-			return ShaguQuest_Temp.savedQuestIDMap[questIndex].header, 0, nil, true, nil, nil;
+			return EQL3_Temp.savedQuestIDMap[questIndex].header, 0, nil, true, nil, nil;
 		end
 	end
 	
@@ -1088,7 +1088,7 @@ function QuestFrameItems_Update(questState)
 	local isQuestLog = 0;
 	if ( questState == "QuestLog" ) then
 		isQuestLog = 1;
-		questState = "ShaguQuest_QuestLog";
+		questState = "EQL3_QuestLog";
 	end
 	local numQuestRewards;
 	local numQuestChoices;
@@ -1102,7 +1102,7 @@ function QuestFrameItems_Update(questState)
 			numQuestSpellRewards = 1;
 		end
 		money = GetQuestLogRewardMoney();
-		spacerFrame = ShaguQuest_QuestLogSpacerFrame;
+		spacerFrame = EQL3_QuestLogSpacerFrame;
 	else
 		numQuestRewards = GetNumQuestRewards();
 		numQuestChoices = GetNumQuestChoices();
@@ -1268,27 +1268,27 @@ end
 
 
 function QuestLogFrame_LockCorner()
-	local Left = ShaguQuest_QuestLogFrame:GetLeft();
-	local Top = ShaguQuest_QuestLogFrame:GetTop();
+	local Left = EQL3_QuestLogFrame:GetLeft();
+	local Top = EQL3_QuestLogFrame:GetTop();
 	if (Left and Top) then
-		ShaguQuest_QuestLogFrame:ClearAllPoints();
-		ShaguQuest_QuestLogFrame:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", Left , Top);
-		QuestlogOptions[ShaguQuest_Player].LogLockPoints = {};
-		QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointone = Left;
-		QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointtwo = Top;
-	elseif (QuestlogOptions[ShaguQuest_Player].LogLockPoints and
-					QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointone and
-					QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointtwo) then
-		ShaguQuest_QuestLogFrame:ClearAllPoints();
-		ShaguQuest_QuestLogFrame:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointone,QuestlogOptions[ShaguQuest_Player].LogLockPoints.pointtwo);
+		EQL3_QuestLogFrame:ClearAllPoints();
+		EQL3_QuestLogFrame:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", Left , Top);
+		QuestlogOptions[EQL3_Player].LogLockPoints = {};
+		QuestlogOptions[EQL3_Player].LogLockPoints.pointone = Left;
+		QuestlogOptions[EQL3_Player].LogLockPoints.pointtwo = Top;
+	elseif (QuestlogOptions[EQL3_Player].LogLockPoints and
+					QuestlogOptions[EQL3_Player].LogLockPoints.pointone and
+					QuestlogOptions[EQL3_Player].LogLockPoints.pointtwo) then
+		EQL3_QuestLogFrame:ClearAllPoints();
+		EQL3_QuestLogFrame:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", QuestlogOptions[EQL3_Player].LogLockPoints.pointone,QuestlogOptions[EQL3_Player].LogLockPoints.pointtwo);
 	end
 end
 
 
 
 function LookForCompletedQuests(ding)
-	if ( not QuestlogOptions[ShaguQuest_Player].CompletedQuests ) then
-		QuestlogOptions[ShaguQuest_Player].CompletedQuests = {};
+	if ( not QuestlogOptions[EQL3_Player].CompletedQuests ) then
+		QuestlogOptions[EQL3_Player].CompletedQuests = {};
 	end
 
 	local questID;
@@ -1299,15 +1299,15 @@ function LookForCompletedQuests(ding)
 		questID = i;
 		questTitle, _, _, isHeader, _, isComplete = GetQuestLogTitle(questID);
 		
-		if(QuestlogOptions[ShaguQuest_Player].CompletedQuests[questTitle]) then
-			QuestlogOptions[ShaguQuest_Player].CompletedQuests[questTitle].isOk = true;
+		if(QuestlogOptions[EQL3_Player].CompletedQuests[questTitle]) then
+			QuestlogOptions[EQL3_Player].CompletedQuests[questTitle].isOk = true;
 		else
-			QuestlogOptions[ShaguQuest_Player].CompletedQuests[questTitle] = {};
-			QuestlogOptions[ShaguQuest_Player].CompletedQuests[questTitle].isOk = true;
+			QuestlogOptions[EQL3_Player].CompletedQuests[questTitle] = {};
+			QuestlogOptions[EQL3_Player].CompletedQuests[questTitle].isOk = true;
 		end
 		
-		if ( (not isHeader) and isComplete and ( not QuestlogOptions[ShaguQuest_Player].CompletedQuests[questTitle].isCompleted ) ) then
-			QuestlogOptions[ShaguQuest_Player].CompletedQuests[questTitle].isCompleted = true;
+		if ( (not isHeader) and isComplete and ( not QuestlogOptions[EQL3_Player].CompletedQuests[questTitle].isCompleted ) ) then
+			QuestlogOptions[EQL3_Player].CompletedQuests[questTitle].isCompleted = true;
 			if( (ding == nil) or (ding~=false)) then
 				UIErrorsFrame:AddMessage(questTitle.." Completed!", 1.0, 0.8, 0.0, 1.0, UIERRORS_HOLD_TIME);
 				PlaySound("GnomeExploration");
@@ -1316,11 +1316,11 @@ function LookForCompletedQuests(ding)
 	end
 	
 	--clean up
-	for quest in QuestlogOptions[ShaguQuest_Player].CompletedQuests do
-		if ( QuestlogOptions[ShaguQuest_Player].CompletedQuests[quest].isOk ) then
-			QuestlogOptions[ShaguQuest_Player].CompletedQuests[quest].isOk = false;
+	for quest in QuestlogOptions[EQL3_Player].CompletedQuests do
+		if ( QuestlogOptions[EQL3_Player].CompletedQuests[quest].isOk ) then
+			QuestlogOptions[EQL3_Player].CompletedQuests[quest].isOk = false;
 		else
-			QuestlogOptions[ShaguQuest_Player].CompletedQuests[quest] = nil;
+			QuestlogOptions[EQL3_Player].CompletedQuests[quest] = nil;
 		end
 	end
 end

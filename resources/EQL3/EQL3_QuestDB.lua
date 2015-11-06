@@ -141,7 +141,7 @@ local function QuestLevel_AddLevelFromTable(questname)
 end
 
 function GetTitleText()
-	if ( QuestlogOptions[ShaguQuest_Player].ShowQuestLevels == 1 and QuestlogOptions[ShaguQuest_Player].OnlyLevelsInLog == 0 ) then
+	if ( QuestlogOptions[EQL3_Player].ShowQuestLevels == 1 and QuestlogOptions[EQL3_Player].OnlyLevelsInLog == 0 ) then
 		local titletext = QuestLevel_original_GetTitleText();
 	--	if( DEFAULT_CHAT_FRAME ) then
 	--		DEFAULT_CHAT_FRAME:AddMessage("[QuestLevel] DEBUG: GetTitleText -> "..titletext);
@@ -190,7 +190,7 @@ function GetGossipAvailableQuests()
 -- 	if( DEFAULT_CHAT_FRAME ) then
 -- 		DEFAULT_CHAT_FRAME:AddMessage("[QuestLevel] DEBUG: |cffffff00GetGossipAvailableQuests|r called");
 -- 	end
-	if ( QuestlogOptions[ShaguQuest_Player].ShowQuestLevels == 1 and QuestlogOptions[ShaguQuest_Player].OnlyLevelsInLog == 0 ) then
+	if ( QuestlogOptions[EQL3_Player].ShowQuestLevels == 1 and QuestlogOptions[EQL3_Player].OnlyLevelsInLog == 0 ) then
 		return QuestLevel_addLevelGossip(QuestLevel_original_GetGossipAvailableQuests());
 	else
 		return QuestLevel_original_GetGossipAvailableQuests();
@@ -201,7 +201,7 @@ function GetGossipActiveQuests()
 -- 	if( DEFAULT_CHAT_FRAME ) then
 -- 		DEFAULT_CHAT_FRAME:AddMessage("[QuestLevel] DEBUG: |cffffff00GetGossipActiveQuests|r called");
 -- 	end
-	if ( QuestlogOptions[ShaguQuest_Player].ShowQuestLevels == 1 and QuestlogOptions[ShaguQuest_Player].OnlyLevelsInLog == 0 ) then
+	if ( QuestlogOptions[EQL3_Player].ShowQuestLevels == 1 and QuestlogOptions[EQL3_Player].OnlyLevelsInLog == 0 ) then
 		return QuestLevel_addLevelGossip(QuestLevel_original_GetGossipActiveQuests());
 	else
 		return QuestLevel_original_GetGossipActiveQuests();
@@ -219,7 +219,7 @@ function GetActiveTitle(i)
 -- 	if( DEFAULT_CHAT_FRAME ) then
 -- 		DEFAULT_CHAT_FRAME:AddMessage("[QuestLevel] DEBUG: |cffffff00GetActiveTitle("..i..")|r called");
 -- 	end
-	if ( QuestlogOptions[ShaguQuest_Player].ShowQuestLevels == 1 and QuestlogOptions[ShaguQuest_Player].OnlyLevelsInLog == 0 ) then
+	if ( QuestlogOptions[EQL3_Player].ShowQuestLevels == 1 and QuestlogOptions[EQL3_Player].OnlyLevelsInLog == 0 ) then
 		return QuestLevel_AddLevelFromTable(QuestLevel_original_GetActiveTitle(i));
 	else
 		return QuestLevel_original_GetActiveTitle(i);
@@ -230,7 +230,7 @@ function GetAvailableTitle(i)
 -- 	if( DEFAULT_CHAT_FRAME ) then
 -- 		DEFAULT_CHAT_FRAME:AddMessage("[QuestLevel] DEBUG: |cffffff00GetAvailableTitle("..i..")|r called");
 -- 	end
-	if ( QuestlogOptions[ShaguQuest_Player].ShowQuestLevels == 1 and QuestlogOptions[ShaguQuest_Player].OnlyLevelsInLog == 0 ) then
+	if ( QuestlogOptions[EQL3_Player].ShowQuestLevels == 1 and QuestlogOptions[EQL3_Player].OnlyLevelsInLog == 0 ) then
 		return QuestLevel_AddLevelFromTable(QuestLevel_original_GetAvailableTitle(i));
 	else
 		return QuestLevel_original_GetAvailableTitle(i);
