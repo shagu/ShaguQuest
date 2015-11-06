@@ -87,8 +87,13 @@ install:
 
 
 zip:
-	# building release zip"
+	# building complete zip
 	cd build/deDE && zip -qr9 ../../release/ShaguDB-$(VERSION)-deDE-complete.zip *
 	cd build/enGB && zip -qr9 ../../release/ShaguDB-$(VERSION)-enGB-complete.zip *
 	cd build/deMIX && zip -qr9 ../../release/ShaguDB-$(VERSION)-deMIX-complete.zip *
+
+	# building release zip
+	cd build/deDE && zip -qr9 ../../release/ShaguDB-$(VERSION)-deDE.zip ShaguDB Cartographer
+	cd build/enGB && zip -qr9 ../../release/ShaguDB-$(VERSION)-enGB.zip ShaguDB Cartographer
+	cd build/deMIX && zip -qr9 ../../release/ShaguDB-$(VERSION)-deMIX.zip ShaguDB Cartographer
 
