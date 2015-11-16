@@ -1,8 +1,6 @@
-if ShaguQuestSettings == nil then
-	ShaguQuestSettings = {
-		["autoPlot"] = false,
-	}
-end
+ShaguQuestSettings = {
+	["autoPlot"] = false,
+}
 
 -- Register on event for "PLAYER_ENTERING_WORLD"
 ShaguQuestAutoPlot = CreateFrame("Frame")

@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: |cff33ffccShagu|cffffffffQuest |cffaaaaaa[EQL3]
 ## Notes: ShaguDB integration via. EQL3     Extended QuestLog is an extension of the questlog. Choose from different layouts as well as many nice features.
-## SavedVariables: QuestlogOptions, QuestLevel_Quest2Level, ShaguQuestSettings
+## SavedVariables: QuestlogOptions, QuestLevel_Quest2Level
 ## RequiredDeps: ShaguDB
 ## Version: 3.6.1.11200
 localization_en.lua
