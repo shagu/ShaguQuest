@@ -52,6 +52,12 @@ ShaguDB_VARIABLES_LOADED:SetScript("OnEvent", function(self, event, ...)
         text = "Quest",
         path = "Interface\\AddOns\\ShaguDB\\symbols\\vendor",
       })
+
+    if ShaguMinimapEnabled == nil then
+      ShaguMinimapEnabled = true
+    elseif ShaguMinimapEnabled == false then
+      SDBG.minimapButton:Hide()
+    end
   end)
 
 -- Register on event for "PLAYER_ENTERING_WORLD"
