@@ -72,12 +72,14 @@ SlashCmdList["SHAGU"] = function(input, editbox)
   if (input == "" or input == nil) then
     ShaguDB_Print("|cff33ff88ShaguDB|cffffffff oooVersionooo |cff00ccff[" .. UnitFactionGroup("player") .. "]|cffaaaaaa [oooLocaleooo]");
     ShaguDB_Print("Available Commands:");
-    ShaguDB_Print("/shagu spawn <mob|gameobject>");
-    ShaguDB_Print("/shagu item <item>");
-    ShaguDB_Print("/shagu vendor <item>");
-    ShaguDB_Print("/shagu quests <map>");
-    ShaguDB_Print("/shagu quest <questname>");
-    ShaguDB_Print("/shagu clean");
+    ShaguDB_Print("/shagu spawn <mob|gameobject> |cffaaaaaa - search objects");
+    ShaguDB_Print("/shagu item <item> |cffaaaaaa - search loot");
+    ShaguDB_Print("/shagu vendor <item> |cffaaaaaa - vendors for item");
+    ShaguDB_Print("/shagu quests <map> |cffaaaaaa - show questgivers");
+    ShaguDB_Print("/shagu quest <questname> |cffaaaaaa - show specific questgiver");
+    ShaguDB_Print("/shagu clean |cffaaaaaa - clean map");
+    ShaguDB_Print("/shagu minimap |cffaaaaaa - toggle minimap icon");
+    ShaguDB_Print("/shagu db |cffaaaaaa - show database interface");
   end
 
   local commandlist = { }
@@ -154,6 +156,26 @@ SlashCmdList["SHAGU"] = function(input, editbox)
   if (arg1 == "clean") then
     ShaguDB_CleanMap();
   end
+
+  -- argument: minimap
+  if (arg1 == "minimap") then
+      if (SDBG.minimapButton:IsShown()) then
+        SDBG.minimapButton:Hide()
+        ShaguMinimapEnabled = false
+      else
+        SDBG.minimapButton:Show()
+        ShaguMinimapEnabled = true
+      end
+  end
+
+  -- argument: db
+  if (arg1 == "db") then
+      if (SDBG:IsShown()) then
+        SDBG:Hide()
+      else
+        SDBG:Show()
+      end
+  end
 end;
 
 
@@ -205,7 +227,7 @@ function ShaguDB_ShowMap()
 
           -- deDE fix
           if (GetLocale() == "deDE") then
-            local BZ = AceLibrary("Babble-Zone-2.2")      
+            local BZ = AceLibrary("Babble-Zone-2.2")
             showM = BZ:GetReverseTranslation(bestZone)
           end
 
@@ -256,7 +278,7 @@ function ShaguDB_searchMonster(monsterName,questTitle,questGiver)
   if (monsterName ~= nil and spawnDB[monsterName] ~= nil and spawnDB[monsterName]["coords"] ~= nil) then
     ShaguDB_NextCMark()
 
-    -- show chat header if not EQL    
+    -- show chat header if not EQL
     if(questTitle == nil) then
       ShaguDB_Print("|cffffcc33ShaguDB: |cffffffffSpawns of |cff33ff88"..monsterName.."|cffffffff can be found at:" );
     end
@@ -386,7 +408,7 @@ function ShaguDB_searchVendor(itemName,questTitle)
             end
             oldZone = zoneName
           end
-          
+
           if (strfind(zoneList,GetZoneText()) ~= nil) then
             bestZone = GetZoneText();
           else

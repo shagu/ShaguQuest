@@ -234,6 +234,10 @@ if (ShaguMinimapPosition == nil) then
   ShaguMinimapPosition = 125
 end
 
+if (ShaguMinimapEnabled == nil) then
+  ShaguMinimapEnabled = true
+end
+
 SDBG.minimapButton:SetMovable(true)
 SDBG.minimapButton:EnableMouse(true)
 SDBG.minimapButton:RegisterForDrag('LeftButton')

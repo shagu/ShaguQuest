@@ -1,11 +1,11 @@
-## Interface: 11200 
+## Interface: 11200
 ## Title: |cff33ffccShagu|cffffffffDB
 ## Author: Eric (Shagu) Mauser, 2015
 ## Notes: A Quest-, Item-, Vendor- and Spawn-database. Notes are shown via Cartographer.
 ## Version: oooVersionooo-oooLocaleooo
 ## RequiredDeps: Cartographer
 ## OptionalDeps: ShaguQuest
-## SavedVariables: ShaguMinimapPosition SDBG_Favourites
+## SavedVariables: ShaguMinimapPosition ShaguMinimapEnabled SDBG_Favourites
 
 # database
 db\zoneDB.lua
