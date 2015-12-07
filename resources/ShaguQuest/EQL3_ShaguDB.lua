@@ -1,6 +1,4 @@
-ShaguQuestSettings = {
-	["autoPlot"] = false,
-}
+local autoPlot = false
 
 -- Register on event for "PLAYER_ENTERING_WORLD"
 ShaguQuestAutoPlot = CreateFrame("Frame")
@@ -11,13 +9,13 @@ ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cff44ff44On")
 ShaguQuestAutoPlot.Button:SetPoint("TOPLEFT", 75,-42)
 ShaguQuestAutoPlot:SetFrameStrata("TOOLTIP")
 ShaguQuestAutoPlot.Button:SetScript("OnClick", function()
-	if ShaguQuestSettings["autoPlot"] == false then
-		ShaguQuestSettings["autoPlot"] = true
+	if autoPlot == false then
+		autoPlot = true
 		UIErrorsFrame:AddMessage("ShaguQuest: Enabled auto track")
 		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
 		ShaguQuestAutoPlot:ShowAll()
 	else
-		ShaguQuestSettings["autoPlot"] = false
+		autoPlot = false
 		UIErrorsFrame:AddMessage("ShaguQuest: Disabled auto track")
 		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
 		ShaguDB_CleanMap();
@@ -34,13 +32,13 @@ ShaguQuestAutoPlot:SetScript("OnEvent", function(self, event, ...)
   end)
 
 function ShaguQuestAutoPlot:ShowAll()
-	if ShaguQuestSettings["autoPlot"] == false then
+	if autoPlot == false then
 		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
 	else
 		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
 	end
 
-if ShaguQuestSettings["autoPlot"] == true then
+	if autoPlot == true then
 	local questLogID=1;
   ShaguDB_MAP_NOTES = {};
 	ShaguDB_CleanMap();
