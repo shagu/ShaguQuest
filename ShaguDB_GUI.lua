@@ -248,7 +248,7 @@ SDBG.minimapButton:SetScript("OnDragStop", function()
     SDBG.minimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 52-(80*cos(ShaguMinimapPosition)),(80*sin(ShaguMinimapPosition))-52)
   end)
 
-SDBG.minimapButton:SetFrameStrata('HIGH')
+SDBG.minimapButton:SetFrameStrata('LOW')
 SDBG.minimapButton:SetWidth(31)
 SDBG.minimapButton:SetHeight(31)
 SDBG.minimapButton:SetFrameLevel(9)
