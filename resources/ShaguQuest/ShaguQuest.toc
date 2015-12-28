@@ -4,6 +4,7 @@
 ## SavedVariables: QuestlogOptions, QuestLevel_Quest2Level
 ## RequiredDeps: ShaguDB
 ## Version: 3.6.1.11200
+EQL3_Unload.lua
 localization_en.lua
 localization_de.lua
 localization_fr.lua
