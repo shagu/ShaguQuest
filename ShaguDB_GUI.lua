@@ -229,7 +229,7 @@ SDBG.favButton:SetScript("OnClick", function()
 -- }}}
 -- }}}
 -- {{{ Minimap
-SDBG.minimapButton = CreateFrame('Button', nil, Minimap)
+SDBG.minimapButton = CreateFrame('Button', "ShaguDB_Minimap", Minimap)
 if (ShaguMinimapPosition == nil) then
   ShaguMinimapPosition = 125
 end
