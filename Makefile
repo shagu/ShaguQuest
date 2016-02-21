@@ -3,10 +3,23 @@ PREFIX2 = ~/games/classic\ wow/Interface/AddOns
 VERSION = $(shell git rev-parse --abbrev-ref HEAD)
 LANG = enGB
 
-all: clean addon install
+all: clean db addon install
 
 clean: 
 	rm -rf build
+
+db:
+	cd ./database && php ./itemDB.php deDE
+	cd ./database && php ./itemDB.php enGB
+
+	cd ./database && php ./questDB.php deDE
+	cd ./database && php ./questDB.php enGB
+
+	cd ./database && php ./vendorDB.php deDE
+	cd ./database && php ./vendorDB.php enGB
+
+	cd ./database && php ./spawnDB.php deDE
+	cd ./database && php ./spawnDB.php enGB
 
 addon:
 	# create directories
