@@ -68,7 +68,7 @@ SDBG:SetScript("OnEvent", function(self, event, ...)
 
 -- {{{ Main Frame
 SDBG:Hide()
-SDBG:SetFrameStrata("TOOLTIP")
+SDBG:SetFrameStrata("DIALOG")
 SDBG:SetWidth(600)
 SDBG:SetHeight(425)
 
@@ -340,9 +340,21 @@ end
 -- {{{ SearchItem
 function SDBG_SearchItem(search)
   local itemCount = 1;
-  for spawn in pairs(itemDB) do
-    if (strfind(strlower(spawn), strlower(search))) then
+  for itemName in pairs(itemDB) do
+    if (strfind(strlower(itemName), strlower(search))) then
       if ( itemCount <= 13) then
+        local itemColor
+	    local itemID = itemDB[itemName]['id']
+        GameTooltip:SetHyperlink("item:" .. itemID .. ":0:0:0")
+        GameTooltip:Hide()
+
+	    local _, itemLink, itemQuality, _, _, _, _, _, itemTexture = GetItemInfo(itemID)
+        if itemQuality then itemColor = "|c" .. string.format("%02x%02x%02x%02x", 255, 
+								    ITEM_QUALITY_COLORS[itemQuality].r * 255, 
+								    ITEM_QUALITY_COLORS[itemQuality].g * 255, 
+								    ITEM_QUALITY_COLORS[itemQuality].b * 255)
+        else itemColor = "|cffffffff" end
+
         SDBG_ItemButtons["Button_"..itemCount] = CreateFrame("Button","mybutton",SDBG,"UIPanelButtonTemplate")
         SDBG_ItemButtons["Button_"..itemCount]:SetPoint("TOP", 0, -itemCount*22-55)
         SDBG_ItemButtons["Button_"..itemCount]:SetWidth(200)
@@ -350,12 +362,33 @@ function SDBG_SearchItem(search)
         SDBG_ItemButtons["Button_"..itemCount]:SetFont("Fonts\\FRIZQT__.TTF", 10)
         SDBG_ItemButtons["Button_"..itemCount]:SetNormalTexture(nil)
         SDBG_ItemButtons["Button_"..itemCount]:SetPushedTexture(nil)
-        SDBG_ItemButtons["Button_"..itemCount]:SetTextColor(1,1,1)
-        SDBG_ItemButtons["Button_"..itemCount]:SetText(spawn)
+        SDBG_ItemButtons["Button_"..itemCount].itemName = itemName
+        SDBG_ItemButtons["Button_"..itemCount].itemColor = itemColor
+        SDBG_ItemButtons["Button_"..itemCount].itemID = itemID
+        SDBG_ItemButtons["Button_"..itemCount].itemLink = itemLink
+
+        SDBG_ItemButtons["Button_"..itemCount]:SetText(itemColor .."|Hitem:"..itemID..":0:0:0|h["..itemName.."]|h|r")
+        SDBG_ItemButtons["Button_"..itemCount]:SetScript("OnEnter", function(self)
+            GameTooltip:SetOwner(SDBG, "ANCHOR_CURSOR")
+            GameTooltip:SetHyperlink("item:" .. itemID .. ":0:0:0")
+            GameTooltip:Show()
+        end)
+
+        SDBG_ItemButtons["Button_"..itemCount]:SetScript("OnLeave", function(self)
+            GameTooltip:Hide()
+        end)
+
         SDBG_ItemButtons["Button_"..itemCount]:SetScript("OnClick", function(self)
-            ShaguDB_MAP_NOTES = {};
-            ShaguDB_searchItem(this:GetText(),nil)
-            ShaguDB_ShowMap();
+            if IsShiftKeyDown() then
+                if not ChatFrameEditBox:IsVisible() then
+                    ChatFrameEditBox:Show()
+                end
+	            ChatFrameEditBox:Insert(this.itemColor .."|Hitem:"..this.itemID..":0:0:0|h["..this.itemName.."]|h|r")
+            else
+                ShaguDB_MAP_NOTES = {};
+                ShaguDB_searchItem(this.itemName,nil)
+                ShaguDB_ShowMap();
+            end
           end)
         itemCount = itemCount + 1
       end
@@ -366,9 +399,22 @@ end
 -- {{{ SearchVenador
 function SDBG_SearchVendor(search)
   local vendorCount = 1;
-  for spawn in pairs(vendorDB) do
-    if (strfind(strlower(spawn), strlower(search))) then
-      if ( vendorCount <= 13) then
+  for itemName in pairs(vendorDB) do
+    if (strfind(strlower(itemName), strlower(search))) then
+      if vendorCount <= 13 and itemDB[itemName] then
+        local itemColor
+	    local itemID = itemDB[itemName]['id']
+
+        GameTooltip:SetHyperlink("item:" .. itemID .. ":0:0:0")
+        GameTooltip:Hide()
+
+	    local _, itemLink, itemQuality, _, _, _, _, _, itemTexture = GetItemInfo(itemID)
+        if itemQuality then itemColor = "|c" .. string.format("%02x%02x%02x%02x", 255, 
+								    ITEM_QUALITY_COLORS[itemQuality].r * 255, 
+								    ITEM_QUALITY_COLORS[itemQuality].g * 255, 
+								    ITEM_QUALITY_COLORS[itemQuality].b * 255)
+        else itemColor = "|cffffffff" end
+
         SDBG_VendorButtons["Button_"..vendorCount] = CreateFrame("Button","mybutton",SDBG,"UIPanelButtonTemplate")
         SDBG_VendorButtons["Button_"..vendorCount]:SetPoint("TOPRIGHT", -10, -vendorCount*22-55)
         SDBG_VendorButtons["Button_"..vendorCount]:SetWidth(200)
@@ -376,12 +422,34 @@ function SDBG_SearchVendor(search)
         SDBG_VendorButtons["Button_"..vendorCount]:SetFont("Fonts\\FRIZQT__.TTF", 10)
         SDBG_VendorButtons["Button_"..vendorCount]:SetNormalTexture(nil)
         SDBG_VendorButtons["Button_"..vendorCount]:SetPushedTexture(nil)
-        SDBG_VendorButtons["Button_"..vendorCount]:SetTextColor(1,1,1)
-        SDBG_VendorButtons["Button_"..vendorCount]:SetText(spawn)
+
+        SDBG_VendorButtons["Button_"..vendorCount].itemName = itemName
+        SDBG_VendorButtons["Button_"..vendorCount].itemColor = itemColor
+        SDBG_VendorButtons["Button_"..vendorCount].itemID = itemID
+        SDBG_VendorButtons["Button_"..vendorCount].itemLink = itemLink
+
+        SDBG_VendorButtons["Button_"..vendorCount]:SetText(itemColor .."|Hitem:"..itemID..":0:0:0|h["..itemName.."]|h|r")
+        SDBG_VendorButtons["Button_"..vendorCount]:SetScript("OnEnter", function(self)
+            GameTooltip:SetOwner(SDBG, "ANCHOR_CURSOR")
+            GameTooltip:SetHyperlink("item:" .. itemID .. ":0:0:0")
+            GameTooltip:Show()
+        end)
+
+        SDBG_VendorButtons["Button_"..vendorCount]:SetScript("OnLeave", function(self)
+            GameTooltip:Hide()
+        end)
+
         SDBG_VendorButtons["Button_"..vendorCount]:SetScript("OnClick", function(self)
+            if IsShiftKeyDown() then
+                if not ChatFrameEditBox:IsVisible() then
+                    ChatFrameEditBox:Show()
+                end
+	            ChatFrameEditBox:Insert(this.itemColor .."|Hitem:"..this.itemID..":0:0:0|h["..this.itemName.."]|h|r")
+            else
             ShaguDB_MAP_NOTES = {};
-            ShaguDB_searchVendor(this:GetText(),nil)
+            ShaguDB_searchVendor(this.itemName,nil)
             ShaguDB_ShowMap();
+            end
           end)
         vendorCount = vendorCount + 1
       end

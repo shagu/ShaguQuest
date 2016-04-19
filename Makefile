@@ -3,7 +3,7 @@ PREFIX2 = ~/games/classic\ wow/Interface/AddOns
 VERSION = $(shell git rev-parse --abbrev-ref HEAD)
 LANG = enGB
 
-all: clean db addon install
+all: clean addon install
 
 clean: 
 	rm -rf build
