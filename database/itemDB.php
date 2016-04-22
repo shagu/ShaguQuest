@@ -60,7 +60,7 @@ LEFT JOIN gameobject_template ON gameobject_template.data1 = gameobject_loot_tem
 LEFT JOIN locales_item 	   ON locales_item.entry = item_template.entry
 LEFT JOIN locales_gameobject ON gameobject_template.entry = locales_gameobject.entry
 
-ORDER BY item_id, chance, id DESC
+ORDER BY item_id, chance DESC, id
 ";
 
 

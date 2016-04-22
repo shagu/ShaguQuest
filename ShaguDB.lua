@@ -325,6 +325,7 @@ end
 function ShaguDB_searchItem(itemName,questTitle)
   local runonce = false;
   firstIsBest = false;
+  local showmax = 0;
   ShaguDB_NextCMark();
 
   if (itemName ~= nil and itemDB[itemName] ~= nil) then
@@ -336,36 +337,39 @@ function ShaguDB_searchItem(itemName,questTitle)
 
       if(spawnDB[monsterName] ~= nil) then
         zoneList = " "
-        for cid, cdata in pairs(spawnDB[monsterName]["coords"]) do
-          hasResult = true;
-          local f, t, coordx, coordy, zone = strfind(spawnDB[monsterName]["coords"][cid], "(.*),(.*),(.*)");
-          zoneName = zoneDB[tonumber(zone)];
+        if(questTitle == nil and runonce == false) then
+          ShaguDB_Print("|cffffcc33ShaguDB: |cffffffffDropchances for |cff33ff88"..itemName.."|cffffffff at:" );
+          showmax = 0;
+          runonce = true
+        end
+        if spawnDB[monsterName]["coords"] then
+          for cid, cdata in pairs(spawnDB[monsterName]["coords"]) do
+            hasResult = true;
+            local f, t, coordx, coordy, zone = strfind(spawnDB[monsterName]["coords"][cid], "(.*),(.*),(.*)");
+            zoneName = zoneDB[tonumber(zone)];
 
-          if(questTitle == nil and runonce == false) then
-            ShaguDB_Print("|cffffcc33ShaguDB: |cffffffffDropchances for |cff33ff88"..itemName.."|cffffffff at:" );
-            showmax = 0;
-            runonce = true
-          end
+            if(questTitle ~= nil) then
+              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. "\nLoot: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
+            else
+              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nDrop: " .. dropRate, cMark, 0});
+            end
 
-          if(questTitle ~= nil) then
-            table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. "\nLoot: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
-          else
-            table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nDrop: " .. dropRate, cMark, 0});
-          end
+            -- set best map
+            bestZone = zoneDB[tonumber(spawnDB[monsterName]["zone"])];
+            if(firstIsBest ~= true) then
+              globalBestZone = zoneDB[tonumber(spawnDB[monsterName]["zone"])];
+            end
 
-          -- set best map
-          bestZone = zoneDB[tonumber(spawnDB[monsterName]["zone"])];
-          if(firstIsBest ~= true) then
-            globalBestZone = zoneDB[tonumber(spawnDB[monsterName]["zone"])];
-          end
-
-          -- build zone string
-          if (zoneName ~= oldZone and strfind(zoneList, zoneName) == nil) then
-            zoneList = zoneList .. "[" .. zoneName .. "] "
-            oldZone = zoneName
+            -- build zone string
+            if (zoneName ~= oldZone and strfind(zoneList, zoneName) == nil) then
+              zoneList = zoneList .. "[" .. zoneName .. "] "
+              oldZone = zoneName
+            end
           end
         end
         if(questTitle == nil and showmax < 5) then
+          if dropRate == "0.00%" then dropRate = "N/A" end
+          if zoneList == " " then zoneList = "[unknown]" end
           ShaguDB_Print(" |cffffffff (" .. dropRate .. ")" .. " |cffffff00" .. monsterName .. "|caaaaaaaa " .. zoneList);
         end
         if(questTitle == nil) then
@@ -395,32 +399,37 @@ function ShaguDB_searchVendor(itemName,questTitle)
       if (dropRate == "0") then dropRate = "Infinite"; else dropRate = dropRate; end
 
       if(spawnDB[monsterName] ~= nil and strfind(spawnDB[monsterName]["faction"], faction) ~= nil) then
-        for cid, cdata in pairs(spawnDB[monsterName]["coords"]) do
-          local f, t, coordx, coordy, zone = strfind(spawnDB[monsterName]["coords"][cid], "(.*),(.*),(.*)");
-          zoneName = zoneDB[tonumber(zone)];
+        if spawnDB[monsterName]["coords"] then
+          for cid, cdata in pairs(spawnDB[monsterName]["coords"]) do
+            local f, t, coordx, coordy, zone = strfind(spawnDB[monsterName]["coords"][cid], "(.*),(.*),(.*)");
+            zoneName = zoneDB[tonumber(zone)];
 
-          if(questTitle ~= nil) then
-            table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. "\nBuy: " ..itemName .. "\nCount: " .. dropRate, "vendor", 0});
-          else
-            table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nSells: " .. dropRate, "vendor", 0});
-          end
-
-          -- build zone string
-          if (strfind(zoneList, zoneName) == nil) then
-            zoneList = zoneList .. zoneName .. ", "
-            if(questTitle == nil and showmax < 5) then
-              ShaguDB_Print(" |cffffffff (" .. coordx .. " , ".. coordy .. ")" .. " |cffffff00" .. monsterName .. "|caaaaaaaa [" .. zoneName.."]");
-              showmax = showmax + 1;
+            if(questTitle ~= nil) then
+              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. "\nBuy: " ..itemName .. "\nCount: " .. dropRate, "vendor", 0});
+            else
+              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nSells: " .. dropRate, "vendor", 0});
             end
-            oldZone = zoneName
-          end
 
-          if (strfind(zoneList,GetZoneText()) ~= nil) then
-            bestZone = GetZoneText();
-          else
-            bestZone = zoneName
+            -- build zone string
+            if (strfind(zoneList, zoneName) == nil) then
+              zoneList = zoneList .. zoneName .. ", "
+              if(questTitle == nil and showmax < 5) then
+                ShaguDB_Print(" |cffffffff (" .. coordx .. " , ".. coordy .. ")" .. " |cffffff00" .. monsterName .. "|caaaaaaaa [" .. zoneName.."]");
+                showmax = showmax + 1;
+              end
+              oldZone = zoneName
+            end
+
+            if (strfind(zoneList,GetZoneText()) ~= nil) then
+              bestZone = GetZoneText();
+            else
+              bestZone = zoneName
+            end
           end
         end
+      end
+      if(questTitle == nil and showmax < 1) then
+        ShaguDB_Print(" |cffffffff (??,??)" .. " |cffffff00" .. monsterName .. "|caaaaaaaa [unknown]");
       end
     end
   end
