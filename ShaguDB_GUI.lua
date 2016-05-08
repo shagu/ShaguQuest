@@ -9,6 +9,10 @@ local backdrop_noborder = {
   insets = {left = 0, right = 0, top = 0, bottom = 0},
 }
 
+if not SDBG_Favs then
+SDBG_Favs = { ["spawn"] = {}, ["item"] = {}, ["quest"] = {} }
+end
+
 SDBG = CreateFrame("Frame",nil,UIParent)
 SDBG:RegisterEvent("PLAYER_ENTERING_WORLD");
 SDBG:SetScript("OnEvent", function(self, event, ...)
@@ -31,8 +35,6 @@ SDBG:SetScript("OnMouseDown",function()
 SDBG:SetScript("OnMouseUp",function()
     SDBG:StopMovingOrSizing()
   end)
-
-
 
 SDBG.minimapButton = CreateFrame('Button', "ShaguDB_Minimap", Minimap)
 if (ShaguMinimapPosition == nil) then
@@ -126,18 +128,22 @@ SDBG.inputField:SetPoint("TOPLEFT", 15, -10)
 SDBG.inputField:SetFontObject(GameFontNormal)
 SDBG.inputField:SetAutoFocus(false)
 SDBG.inputField:SetText("Search")
-SDBG.inputField:SetScript("OnTextChanged", function(self)
-  local query = SDBG.inputField:GetText()
+SDBG.inputField.updateSearch = function()
   SDBG:HideButtons()
-  if (strlen(query) >= 3) and query ~= "Search" then
+  local query = SDBG.inputField:GetText()
+  if query ~= "Search" then
     SDBG:SearchSpawn(query)
     SDBG:SearchItem(query)
     SDBG:SearchQuest(query)
   else
-    SDBG.buttonSpawn.text:SetText("Mobs & Objects")
-    SDBG.buttonItem.text:SetText("Items")
-    SDBG.buttonQuest.text:SetText("Quests")
+    SDBG:SearchSpawn("")
+    SDBG:SearchItem("")
+    SDBG:SearchQuest("")
   end
+end
+
+SDBG.inputField:SetScript("OnTextChanged", function(self)
+SDBG.inputField:updateSearch()
 end)
 
 SDBG.inputField:SetScript("OnEditFocusGained", function(self)
@@ -210,7 +216,6 @@ SDBG.buttonItem:SetScript("OnClick", function()
   SDBG.item:Show()
   SDBG.spawn:Hide()
   SDBG.quest:Hide()
-
 end)
 
 SDBG.buttonQuest = CreateFrame("Button", nil, SDBG)
@@ -234,7 +239,6 @@ SDBG.buttonQuest:SetScript("OnClick", function()
   SDBG.quest:Show()
   SDBG.item:Hide()
   SDBG.spawn:Hide()
-
 end)
 
 SDBG.spawn = CreateFrame("Frame",nil,SDBG)
@@ -282,8 +286,12 @@ end
 
 function SDBG:SearchSpawn(search)
   local spawnCount = 1;
-  for spawn in pairs(spawnDB) do
-    if (strfind(strlower(spawn), strlower(search))) then
+
+  local database = SDBG_Favs["spawn"]
+  if strlen(search) > 2 then database = spawnDB end
+
+  for spawn in pairs(database) do
+    if (strfind(strlower(spawn), strlower(search))) or strlen(search) <= 3 then
       if ( spawnCount <= 14) then
         SDBG.spawn.buttons[spawnCount] = CreateFrame("Button","mybutton",SDBG.spawn,"UIPanelButtonTemplate")
         SDBG.spawn.buttons[spawnCount]:SetPoint("TOP", 0, -spawnCount*21+11)
@@ -309,6 +317,7 @@ function SDBG:SearchSpawn(search)
         else
           SDBG.spawn.buttons[spawnCount]:SetText(spawn)
         end
+
         SDBG.spawn.buttons[spawnCount].spawnName = spawn
         SDBG.spawn.buttons[spawnCount]:SetScript("OnClick", function(self)
             ShaguDB_MAP_NOTES = {};
@@ -328,12 +337,11 @@ function SDBG:SearchSpawn(search)
           end
         end)
 
-
         -- show faction icons
         local faction = spawnDB[SDBG.spawn.buttons[spawnCount].spawnName]['faction']
         if strfind(faction, "H") and faction ~= "HA" then
           SDBG.spawn.buttons[spawnCount].horde = CreateFrame("Frame", nil, SDBG.spawn.buttons[spawnCount])
-          SDBG.spawn.buttons[spawnCount].horde:SetPoint("RIGHT", -15, 0)
+          SDBG.spawn.buttons[spawnCount].horde:SetPoint("RIGHT", -5, 0)
           SDBG.spawn.buttons[spawnCount].horde:SetWidth(20)
           SDBG.spawn.buttons[spawnCount].horde:SetHeight(20)
           SDBG.spawn.buttons[spawnCount].horde.icon = SDBG.spawn.buttons[spawnCount].horde:CreateTexture(nil,"BACKGROUND")
@@ -344,9 +352,9 @@ function SDBG:SearchSpawn(search)
         if strfind(faction, "A") and faction ~= "HA" then
           SDBG.spawn.buttons[spawnCount].alliance = CreateFrame("Frame", nil, SDBG.spawn.buttons[spawnCount])
           if SDBG.spawn.buttons[spawnCount].horde then
-          SDBG.spawn.buttons[spawnCount].alliance:SetPoint("RIGHT", -40, 0)
+          SDBG.spawn.buttons[spawnCount].alliance:SetPoint("RIGHT", -30, 0)
           else
-          SDBG.spawn.buttons[spawnCount].alliance:SetPoint("RIGHT", -15, 0)
+          SDBG.spawn.buttons[spawnCount].alliance:SetPoint("RIGHT", -5, 0)
           end
           SDBG.spawn.buttons[spawnCount].alliance:SetWidth(20)
           SDBG.spawn.buttons[spawnCount].alliance:SetHeight(20)
@@ -354,21 +362,58 @@ function SDBG:SearchSpawn(search)
           SDBG.spawn.buttons[spawnCount].alliance.icon:SetTexture("Interface\\AddOns\\ShaguDB\\symbols\\icon_alliance")
           SDBG.spawn.buttons[spawnCount].alliance.icon:SetAllPoints(SDBG.spawn.buttons[spawnCount].alliance)
         end
+
+        -- show fav button
+        SDBG.spawn.buttons[spawnCount].fav = CreateFrame("Button","mybutton",SDBG.spawn.buttons[spawnCount],"UIPanelButtonTemplate")
+        SDBG.spawn.buttons[spawnCount].fav:SetPoint("LEFT", 5, 0)
+        SDBG.spawn.buttons[spawnCount].fav:SetWidth(20)
+        SDBG.spawn.buttons[spawnCount].fav:SetHeight(20)
+        SDBG.spawn.buttons[spawnCount].fav:SetNormalTexture(nil)
+        SDBG.spawn.buttons[spawnCount].fav:SetPushedTexture(nil)
+        SDBG.spawn.buttons[spawnCount].fav:SetHighlightTexture(nil)
+        SDBG.spawn.buttons[spawnCount].fav.icon = SDBG.spawn.buttons[spawnCount].fav:CreateTexture(nil,"BACKGROUND")
+        SDBG.spawn.buttons[spawnCount].fav.icon:SetTexture("Interface\\AddOns\\ShaguDB\\img\\fav")
+
+        if SDBG_Favs["spawn"][spawn] then
+          SDBG.spawn.buttons[spawnCount].fav.icon:SetVertexColor(1,1,1,1)
+        else
+          SDBG.spawn.buttons[spawnCount].fav.icon:SetVertexColor(0,0,0,1)
+        end
+
+        SDBG.spawn.buttons[spawnCount].fav.icon:SetAllPoints(SDBG.spawn.buttons[spawnCount].fav)
+
+        SDBG.spawn.buttons[spawnCount].fav:SetScript("OnClick", function(self)
+          if SDBG_Favs["spawn"][this:GetParent().spawnName] then
+            SDBG_Favs["spawn"][this:GetParent().spawnName] = nil
+            this.icon:SetVertexColor(0,0,0,1)
+            SDBG.inputField:updateSearch()
+          else
+            SDBG_Favs["spawn"][this:GetParent().spawnName] = true
+            this.icon:SetVertexColor(1,1,1,1)
+          end
+        end)
         spawnCount = spawnCount + 1
       end
     end
   end
   
   if spawnCount >= 14 then spawnCount = "*" else spawnCount = spawnCount -1 end
-  SDBG.buttonSpawn.text:SetText("Mobs & Objects |cffaaaaaa(" .. spawnCount .. ")")
+  if spawnCount == 0 then 
+    SDBG.buttonSpawn.text:SetText("Mobs & Objects")
+  else
+    SDBG.buttonSpawn.text:SetText("Mobs & Objects |cffaaaaaa(" .. spawnCount .. ")")
+  end
 
 end
 -- }}}
 -- {{{ SearchItem
 function SDBG:SearchItem(search)
   local itemCount = 1;
-  for itemName in pairs(itemDB) do
-    if (strfind(strlower(itemName), strlower(search))) then
+  local database = SDBG_Favs["item"]
+  if strlen(search) > 2 then database = itemDB end
+
+  for itemName in pairs(database) do
+    if (strfind(strlower(itemName), strlower(search))) or strlen(search) <= 3 then
       if ( itemCount <= 14) then
         local itemColor
 	    local itemID = itemDB[itemName]['id']
@@ -429,23 +474,18 @@ function SDBG:SearchItem(search)
             elseif IsControlKeyDown() then
               DressUpItemLink(this.itemID);
             else
-   ShowUIPanel(ItemRefTooltip);
-   if ( not ItemRefTooltip:IsVisible() ) then
-     ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE");
-   end
-	 ItemRefTooltip:SetHyperlink("item:" .. itemID .. ":0:0:0")
-
---                ShaguDB_MAP_NOTES = {};
---                ShaguDB_searchItem(this.itemName,nil)
---                ShaguDB_ShowMap();
+               ShowUIPanel(ItemRefTooltip);
+               if ( not ItemRefTooltip:IsVisible() ) then
+                 ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE");
+               end
+            	 ItemRefTooltip:SetHyperlink("item:" .. itemID .. ":0:0:0")
             end
           end)
-
 
         -- show loot button
         if itemDB[itemName][1] or itemDB[itemName][2] then
           SDBG.item.buttons[itemCount].loot = CreateFrame("Button","mybutton",SDBG.item.buttons[itemCount],"UIPanelButtonTemplate")
-          SDBG.item.buttons[itemCount].loot:SetPoint("RIGHT", -15, 0)
+          SDBG.item.buttons[itemCount].loot:SetPoint("RIGHT", -5, 0)
           SDBG.item.buttons[itemCount].loot:SetWidth(20)
           SDBG.item.buttons[itemCount].loot:SetHeight(20)
           SDBG.item.buttons[itemCount].loot:SetNormalTexture(nil)
@@ -478,9 +518,9 @@ function SDBG:SearchItem(search)
         if vendorDB[itemName] then
           SDBG.item.buttons[itemCount].vendor = CreateFrame("Button","mybutton",SDBG.item.buttons[itemCount],"UIPanelButtonTemplate")
           if SDBG.item.buttons[itemCount].loot then
-            SDBG.item.buttons[itemCount].vendor:SetPoint("RIGHT", -40, 0)
+            SDBG.item.buttons[itemCount].vendor:SetPoint("RIGHT", -30, 0)
           else
-            SDBG.item.buttons[itemCount].vendor:SetPoint("RIGHT", -15, 0)
+            SDBG.item.buttons[itemCount].vendor:SetPoint("RIGHT", -5, 0)
           end
           SDBG.item.buttons[itemCount].vendor:SetWidth(20)
           SDBG.item.buttons[itemCount].vendor:SetHeight(20)
@@ -497,20 +537,56 @@ function SDBG:SearchItem(search)
           end)
         end
 
+        -- show fav button
+        SDBG.item.buttons[itemCount].fav = CreateFrame("Button","mybutton",SDBG.item.buttons[itemCount],"UIPanelButtonTemplate")
+        SDBG.item.buttons[itemCount].fav:SetPoint("LEFT", 5, 0)
+        SDBG.item.buttons[itemCount].fav:SetWidth(20)
+        SDBG.item.buttons[itemCount].fav:SetHeight(20)
+        SDBG.item.buttons[itemCount].fav:SetNormalTexture(nil)
+        SDBG.item.buttons[itemCount].fav:SetPushedTexture(nil)
+        SDBG.item.buttons[itemCount].fav:SetHighlightTexture(nil)
+        SDBG.item.buttons[itemCount].fav.icon = SDBG.item.buttons[itemCount].fav:CreateTexture(nil,"BACKGROUND")
+        SDBG.item.buttons[itemCount].fav.icon:SetTexture("Interface\\AddOns\\ShaguDB\\img\\fav")
+
+        if SDBG_Favs["item"][itemName] then
+          SDBG.item.buttons[itemCount].fav.icon:SetVertexColor(1,1,1,1)
+        else
+          SDBG.item.buttons[itemCount].fav.icon:SetVertexColor(0,0,0,1)
+        end
+
+        SDBG.item.buttons[itemCount].fav.icon:SetAllPoints(SDBG.item.buttons[itemCount].fav)
+
+        SDBG.item.buttons[itemCount].fav:SetScript("OnClick", function(self)
+          if SDBG_Favs["item"][this:GetParent().itemName] then
+            SDBG_Favs["item"][this:GetParent().itemName] = nil
+            this.icon:SetVertexColor(0,0,0,1)
+            SDBG.inputField:updateSearch()
+          else
+            SDBG_Favs["item"][this:GetParent().itemName] = true
+            this.icon:SetVertexColor(1,1,1,1)
+          end
+        end)
 
         itemCount = itemCount + 1
       end
     end
   end
   if itemCount >= 14 then itemCount = "*" else itemCount = itemCount -1 end
-  SDBG.buttonItem.text:SetText("Items |cffaaaaaa(" .. itemCount .. ")")
+  if itemCount == 0 then
+    SDBG.buttonItem.text:SetText("Items")
+  else
+    SDBG.buttonItem.text:SetText("Items |cffaaaaaa(" .. itemCount .. ")")
+  end
 end
 -- }}}a
 -- {{{ SearchVenador
 function SDBG:SearchQuest(search)
   local questCount = 1;
-  for questName in pairs(questDB) do
-    if (strfind(strlower(questName), strlower(search))) then
+  local database = SDBG_Favs["quest"]
+  if strlen(search) > 2 then database = questDB end
+
+  for questName in pairs(database) do
+    if (strfind(strlower(questName), strlower(search))) or strlen(search) <= 3 then
       if questCount <= 14 and questDB[questName] then
       
         SDBG.quest.buttons[questCount] = CreateFrame("Button","mybutton",SDBG.quest,"UIPanelButtonTemplate")
@@ -549,7 +625,7 @@ function SDBG:SearchQuest(search)
                 if not ChatFrameEditBox:IsVisible() then
                     ChatFrameEditBox:Show()
                 end
-	            ChatFrameEditBox:Insert("|cffffff00|Hitem:0:0:0:0|h["..this.questName.."]|h|r")
+	            ChatFrameEditBox:Insert("|cffffff00|Hquest:0:0:0:0|h["..this.questName.."]|h|r")
             else
 
             ShaguDB_MAP_NOTES = {};
@@ -573,7 +649,7 @@ function SDBG:SearchQuest(search)
 
           if strfind(faction, "H") and faction ~= "HA" then
             SDBG.quest.buttons[questCount].horde = CreateFrame("Frame", nil, SDBG.quest.buttons[questCount])
-            SDBG.quest.buttons[questCount].horde:SetPoint("RIGHT", -15, 0)
+            SDBG.quest.buttons[questCount].horde:SetPoint("RIGHT", -5, 0)
             SDBG.quest.buttons[questCount].horde:SetWidth(20)
             SDBG.quest.buttons[questCount].horde:SetHeight(20)
             SDBG.quest.buttons[questCount].horde.icon = SDBG.quest.buttons[questCount].horde:CreateTexture(nil,"BACKGROUND")
@@ -584,9 +660,9 @@ function SDBG:SearchQuest(search)
           if strfind(faction, "A") and faction ~= "HA" then
             SDBG.quest.buttons[questCount].alliance = CreateFrame("Frame", nil, SDBG.quest.buttons[questCount])
             if SDBG.quest.buttons[questCount].horde then
-            SDBG.quest.buttons[questCount].alliance:SetPoint("RIGHT", -40, 0)
+            SDBG.quest.buttons[questCount].alliance:SetPoint("RIGHT", -30, 0)
             else
-            SDBG.quest.buttons[questCount].alliance:SetPoint("RIGHT", -15, 0)
+            SDBG.quest.buttons[questCount].alliance:SetPoint("RIGHT", -5, 0)
             end
             SDBG.quest.buttons[questCount].alliance:SetWidth(20)
             SDBG.quest.buttons[questCount].alliance:SetHeight(20)
@@ -595,10 +671,43 @@ function SDBG:SearchQuest(search)
             SDBG.quest.buttons[questCount].alliance.icon:SetAllPoints(SDBG.quest.buttons[questCount].alliance)
           end
   
+        -- show fav button
+        SDBG.quest.buttons[questCount].fav = CreateFrame("Button","mybutton",SDBG.quest.buttons[questCount],"UIPanelButtonTemplate")
+        SDBG.quest.buttons[questCount].fav:SetPoint("LEFT", 5, 0)
+        SDBG.quest.buttons[questCount].fav:SetWidth(20)
+        SDBG.quest.buttons[questCount].fav:SetHeight(20)
+        SDBG.quest.buttons[questCount].fav:SetNormalTexture(nil)
+        SDBG.quest.buttons[questCount].fav:SetPushedTexture(nil)
+        SDBG.quest.buttons[questCount].fav:SetHighlightTexture(nil)
+        SDBG.quest.buttons[questCount].fav.icon = SDBG.quest.buttons[questCount].fav:CreateTexture(nil,"BACKGROUND")
+        SDBG.quest.buttons[questCount].fav.icon:SetTexture("Interface\\AddOns\\ShaguDB\\img\\fav")
+
+        if SDBG_Favs["quest"][questName] then
+          SDBG.quest.buttons[questCount].fav.icon:SetVertexColor(1,1,1,1)
+        else
+          SDBG.quest.buttons[questCount].fav.icon:SetVertexColor(0,0,0,1)
+        end
+
+        SDBG.quest.buttons[questCount].fav.icon:SetAllPoints(SDBG.quest.buttons[questCount].fav)
+
+        SDBG.quest.buttons[questCount].fav:SetScript("OnClick", function(self)
+          if SDBG_Favs["quest"][this:GetParent().questName] then
+            SDBG_Favs["quest"][this:GetParent().questName] = nil
+            this.icon:SetVertexColor(0,0,0,1)
+            SDBG.inputField:updateSearch()
+          else
+            SDBG_Favs["quest"][this:GetParent().questName] = true
+            this.icon:SetVertexColor(1,1,1,1)
+          end
+        end)
         questCount = questCount + 1
       end
     end
   end
   if questCount >= 14 then questCount = "*" else questCount = questCount -1 end
-  SDBG.buttonQuest.text:SetText("Quests |cffaaaaaa(" .. questCount .. ")")
+  if questCount == 0 then
+    SDBG.buttonQuest.text:SetText("Quests")
+  else
+    SDBG.buttonQuest.text:SetText("Quests |cffaaaaaa(" .. questCount .. ")")
+  end
 end
