@@ -300,11 +300,18 @@ function ShaguDB_searchMonster(monsterName,questTitle,questGiver)
       local f, t, coordx, coordy, zone = strfind(spawnDB[monsterName]["coords"][cid], "(.*),(.*),(.*)");
       zoneName = zoneDB[tonumber(zone)];
 
+      local level = spawnDB[monsterName]["level"]
+      if level ~= 0 then 
+        level = "\nLevel: " .. level 
+      else
+        level = ""
+      end
+
       if(questTitle ~= nil) then
         if(questGiver ~= nil) then
-          table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName, "quest", 0});
+          table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. level, "quest", 0});
         else
-          table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, "Kill: "..monsterName, cMark, 0});
+          table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, "Kill: "..monsterName .. level, cMark, 0});
         end
       else
         if (zoneName ~= oldZone and strfind(zoneList, zoneName) == nil) then
@@ -315,7 +322,7 @@ function ShaguDB_searchMonster(monsterName,questTitle,questGiver)
             showmax = showmax + 1;
           end
         end
-        table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, monsterName, coordx..","..coordy, cMark, 0});
+        table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, monsterName, "Coords: " .. coordx..","..coordy .. level, cMark, 0});
       end
     end
   end
@@ -347,11 +354,17 @@ function ShaguDB_searchItem(itemName,questTitle)
             hasResult = true;
             local f, t, coordx, coordy, zone = strfind(spawnDB[monsterName]["coords"][cid], "(.*),(.*),(.*)");
             zoneName = zoneDB[tonumber(zone)];
+            local level = spawnDB[monsterName]["level"]
+            if level ~= 0 then 
+              level = "\nLevel: " .. level 
+            else
+              level = ""
+            end
 
             if(questTitle ~= nil) then
-              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. "\nLoot: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
+              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. level .. "\nLoot: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
             else
-              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. "\nDrop: " .. dropRate, cMark, 0});
+              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. level .. "\nDrop: " .. dropRate, cMark, 0});
             end
 
             -- set best map
@@ -449,7 +462,7 @@ function ShaguDB_searchQuests(zoneName)
     if(zone ~= nil) then
       for questTitle, questGiver in pairs(questDB) do
         for questGiver in pairs(questGiver) do
-          if (questGiver ~= "" and questGiver ~= nil and spawnDB[questGiver] ~= nil and strfind(spawnDB[questGiver]["faction"], faction) ~= nil) then
+          if (questGiver ~= "" and questGiver ~= nil and spawnDB[questGiver] ~= nil and strfind(spawnDB[questGiver]["faction"], faction) ~= nil) and spawnDB[questGiver]["coords"] then
             for cid, cdata in pairs(spawnDB[questGiver]["coords"]) do
               local f, t, coordx, coordy, zoneGiver = strfind(spawnDB[questGiver]["coords"][cid], "(.*),(.*),(.*)");
 
@@ -461,5 +474,87 @@ function ShaguDB_searchQuests(zoneName)
         end
       end
     end
+  end
+end
+
+local HookSetItemRef = SetItemRef
+SetItemRef = function (link, text, button)
+  isQuest, _, questID = string.find(link, "quest:(%d+):.*");
+  isQuest2, _, _ = string.find(link, "quest2:.*");
+
+  _, _, questLevel = string.find(link, "quest:%d+:(%d+)");
+  local playerHasQuest = false
+
+  if isQuest then
+    -- A usual Quest Link introduced in 2.0x
+    ShowUIPanel(ItemRefTooltip);
+    ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE");
+
+    hasTitle, _, questTitle = string.find(text, ".*|h%[(.*)%]|h.*");
+    if hasTitle then
+      ItemRefTooltip:AddLine(questTitle, 1,1,0)
+    end
+
+    for i=1, GetNumQuestLogEntries() do
+      local questlogTitle, level, questTag, suggestedGroup, isHeader, isCollapsed, isComplete, isDaily, questID = GetQuestLogTitle(i);
+      if questTitle == questlogTitle then
+        playerHasQuest = true
+        SelectQuestLogEntry(i)
+        local _, text = GetQuestLogQuestText()
+        ItemRefTooltip:AddLine(text,1,1,1,true)
+
+        for j=1, GetNumQuestLeaderBoards() do
+          if j == 1 and GetNumQuestLeaderBoards() > 0 then ItemRefTooltip:AddLine("|cffffffff ") end
+          local desc, type, done = GetQuestLogLeaderBoard(j)
+          if done then ItemRefTooltip:AddLine("|cffaaffaa"..desc.."|r")
+          else ItemRefTooltip:AddLine("|cffffffff"..desc.."|r") end
+        end
+      end
+    end
+
+    if playerHasQuest == false then
+      ItemRefTooltip:AddLine("You don't have this quest.", 1, .8, .8)
+    end
+
+    if questLevel ~= 0 and questLevel ~= "0" then
+      local color = GetDifficultyColor(questLevel)
+      ItemRefTooltip:AddLine("Quest Level " .. questLevel, color.r, color.g, color.b)
+    end
+
+    ItemRefTooltip:Show()
+
+  elseif isQuest2 then
+    -- QuestLink Compatibility
+      ShowUIPanel(ItemRefTooltip);
+      ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE");
+      hasTitle, _, questTitle = string.find(text, ".*|h%[(.*)%]|h.*");
+      if hasTitle then
+        ItemRefTooltip:AddLine(questTitle, 1,1,0)
+      end
+      ItemRefTooltip:AddLine("(Unknown QuestLink).", 1, .3, .3)
+
+      for i=1, GetNumQuestLogEntries() do
+        local questlogTitle, level, questTag, suggestedGroup, isHeader, isCollapsed, isComplete, isDaily, questID = GetQuestLogTitle(i);
+        if questTitle == questlogTitle then
+          playerHasQuest = true
+          SelectQuestLogEntry(i)
+          local _, text = GetQuestLogQuestText()
+          ItemRefTooltip:AddLine(text,1,1,1,true)
+
+          for j=1, GetNumQuestLeaderBoards() do
+            if j == 1 and GetNumQuestLeaderBoards() > 0 then ItemRefTooltip:AddLine("|cffffffff ") end
+            local desc, type, done = GetQuestLogLeaderBoard(j)
+            if done then ItemRefTooltip:AddLine("|cffaaffaa"..desc.."|r")
+            else ItemRefTooltip:AddLine("|cffffffff"..desc.."|r") end
+          end
+        end
+      end
+
+      if playerHasQuest == false then
+        ItemRefTooltip:AddLine("You don't have this quest.", 1, .8, .8)
+      end
+      ItemRefTooltip:Show()
+  else
+    HookSetItemRef(link, text, button)
   end
 end
