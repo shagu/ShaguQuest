@@ -1,5 +1,5 @@
 -- Log Script file for Extended Questlog 3.5
--- Copyright © 2006 Daniel Rehn
+-- Copyright ï¿½ 2006 Daniel Rehn
 
 function EQL3_Maximize()
 	EQL3_QuestLogFrameCloseButton:Hide();
@@ -841,8 +841,9 @@ function QuestLogTitleButton_OnClick(button)
 				
 				-- Otherwise try to track it or put it into chat
 				if ( ChatFrameEditBox:IsVisible() ) then
-					-- Trim leading whitespace
-					ChatFrameEditBox:Insert(gsub(this:GetText(), " *(.*)", "%1"));
+          local questTitle, questLevel, _ = GetQuestLogTitle(questIndex);
+          ChatFrameEditBox:Insert("|cfffff000|Hquest:0:" .. questLevel .. "|h[" .. questTitle .. "]|h|r")
+
 				else
 					-- Shift-click toggles quest-watch on this quest.
 					if ( IsQuestWatched(questIndex) ) then
