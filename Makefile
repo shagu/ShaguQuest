@@ -38,10 +38,6 @@ addon:
 	cp -rf resources/ShaguQuest build/deMIX
 	cp -rf resources/ShaguQuest build/enGB
 
-	# patch deDE cartographer
-	cd build/deDE && patch -s -p 1 < ../../resources/Cartographer_deDE.patch
-	cd build/deMIX && patch -s -p 1 < ../../resources/Cartographer_deDE.patch
-
 	# copy language specific databases
 	# deDE
 	cp resources/zoneDB.lua_deDE build/deDE/ShaguDB/db/zoneDB.lua
