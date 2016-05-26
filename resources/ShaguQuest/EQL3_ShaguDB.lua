@@ -5,7 +5,7 @@ ShaguQuestAutoPlot = CreateFrame("Frame")
 ShaguQuestAutoPlot.Button = CreateFrame("Button", nil, EQL3_QuestLogFrame, "UIPanelButtonTemplate")
 ShaguQuestAutoPlot.Button:SetWidth(120)
 ShaguQuestAutoPlot.Button:SetHeight(20)
-ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cff44ff44On")
+ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cff44ff44Off")
 ShaguQuestAutoPlot.Button:SetPoint("TOPLEFT", 75,-42)
 ShaguQuestAutoPlot:SetFrameStrata("TOOLTIP")
 ShaguQuestAutoPlot.Button:SetScript("OnClick", function()
@@ -24,9 +24,7 @@ end)
 
 ShaguQuestAutoPlot.Button:Show()
 
-ShaguQuestAutoPlot:RegisterEvent("QUEST_WATCH_UPDATE");
 ShaguQuestAutoPlot:RegisterEvent("QUEST_LOG_UPDATE");
-ShaguQuestAutoPlot:RegisterEvent("UNIT_QUEST_LOG_CHANGED");
 ShaguQuestAutoPlot:SetScript("OnEvent", function(self, event, ...)
 	ShaguQuestAutoPlot:ShowAll()
   end)
@@ -47,7 +45,6 @@ function ShaguQuestAutoPlot:ShowAll()
 
 
 		local questTitle, level, questTag, isHeader, isCollapsed, isComplete = GetQuestLogTitle(questLogID);
-	
 		if (not isHeader and questTitle ~= nil) then
 			local numObjectives = GetNumQuestLeaderBoards(questLogID);
 			if (numObjectives ~= nil) then
