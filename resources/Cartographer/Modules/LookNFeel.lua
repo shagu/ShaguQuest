@@ -25,6 +25,8 @@ L:RegisterTranslations("enUS", function() return {
 	
 	["Shift-MouseWheel to change transparency"] = true,
 	["Ctrl-MouseWheel to change scale"] = true,
+	["Alt-MouseWheel to change note size"] = true,
+	["Ctrl-Left-Click to move map"] = true,
 	
 	["Lock the World Map"] = true,
 	
@@ -53,6 +55,8 @@ L:RegisterTranslations("koKR", function() return {
 	
 	["Shift-MouseWheel to change transparency"] = "Shift-스크롤 : 투명도 변경",
 	["Ctrl-MouseWheel to change scale"] = "Ctrl-스크롤 : 크기 변경",
+	["Alt-MouseWheel to change note size"] = "Alt-스크롤 : change note size", -- TODO
+	["Ctrl-Left-Click to move map"] = "Ctrl-왼쪽-클릭 : move map", -- TODO
 	
 	["Lock the World Map"] = "세계 지도의 위치를 잠금니다.",
 	
@@ -155,7 +159,7 @@ function Cartographer_LookNFeel:OnInitialize()
 				desc = L["Scale of the World Map"],
 				type = 'range',
 				min = 0.2,
-				max = 1,
+				max = 10, -- was 1
 				step = 0.05,
 				isPercent = true,
 				get = "GetScale",
@@ -239,8 +243,11 @@ local cities = {
 }
 
 function Cartographer_LookNFeel:OnEnable()
-	Cartographer:AddToMagnifyingGlass(L["Shift-MouseWheel to change transparency"])
+	
+	Cartographer:AddToMagnifyingGlass(L["Ctrl-Left-Click to move map"]) -- WHDB related
 	Cartographer:AddToMagnifyingGlass(L["Ctrl-MouseWheel to change scale"])
+	Cartographer:AddToMagnifyingGlass(L["Alt-MouseWheel to change note size"]) -- WHDB related
+	Cartographer:AddToMagnifyingGlass(L["Shift-MouseWheel to change transparency"])
 	UIPanelWindows["WorldMapFrame"] = nil
 	WorldMapFrame:SetFrameStrata("HIGH")
 	WorldMapFrame:EnableMouse(not self.db.profile.locked)
@@ -268,15 +275,30 @@ function Cartographer_LookNFeel:OnEnable()
 		this:ClearAllPoints()
 		this:SetPoint("CENTER", "UIParent", "CENTER", x, y)
 	end)
+	local isMoving = false; -- WHDB related
+	WorldMapButton:SetScript("OnMouseDown", function() -- WHDB related
+		if arg1 == "LeftButton" and IsControlKeyDown() then
+			WorldMapFrame:StartMoving();
+			isMoving = true;
+		end
+	end)
+	local oldOnMouseUp = WorldMapButton:GetScript("OnMouseUp"); -- WHDB related
+	WorldMapButton:SetScript("OnMouseUp", function() -- WHDB related
+		if arg1 == "LeftButton" and isMoving then
+			WorldMapFrame:StopMovingOrSizing();
+			isMoving = false;
+		else
+			oldOnMouseUp();
+		end
+	end)
 	WorldMapFrame:SetScript("OnMouseWheel", function()
 		local up = (arg1 == 1)
-		
 		if IsControlKeyDown() then
 			local scale = self:GetScale()
 			if up then
 				scale = scale + 0.1
-				if scale > 1 then
-					scale = 1
+				if scale > 10 then  -- WHDB related, was 1
+					scale = 10;  -- was 1
 				end
 			else
 				scale = scale - 0.1
@@ -299,6 +321,27 @@ function Cartographer_LookNFeel:OnEnable()
 				end
 			end
 			self:SetAlpha(alpha)
+		elseif IsAltKeyDown() then -- WHDB related.
+			local size = Cartographer_Notes:GetIconSize()
+			if up then
+				size = size + 0.05
+				if size > 5 then
+					size = 5;
+				end
+			else
+				size = size - 0.05
+				if size < 0.05 then
+					size = 0.05;
+				end
+			end
+			Cartographer_Notes:SetIconSize(size)
+			if self.db.profile.largePlayer then
+				size = size*1.5;
+			end
+			if size > 2.5 then
+				size = 2.5;
+			end
+			self.playerModel:SetModelScale(size);
 		end
 	end)
 	WorldMapFrame:SetResizable(true)
@@ -344,6 +387,7 @@ function Cartographer_LookNFeel:OnEnable()
 		end
 	end
 	self.playerModel:SetAlpha(self.db.profile.overlayAlpha)
+	self.playerModel:SetFrameLevel(11); -- WHDB related. Player Arrow > Normal notes. Not working right, need to investigate.
 	
 	if (GetCurrentMapZone() == 0 or cities[GetMapInfo()]) and self.db.profile.overlayAlpha > self.db.profile.alpha then
 		WorldMapDetailFrame:SetAlpha(self.db.profile.overlayAlpha)
@@ -377,7 +421,14 @@ function Cartographer_LookNFeel:OnEnable()
 		WorldMapFrameAreaLabel:Hide()
 	end
 	
-	self.playerModel:SetModelScale(self.db.profile.largePlayer and 1.5 or 1)
+	local size = Cartographer_Notes:GetIconSize(); -- WHDB related.
+	if self.db.profile.largePlayer then
+		size = size*1.5;
+	end
+	if size > 2.5 then
+		size = 2.5;
+	end
+	self.playerModel:SetModelScale(size);
 	
 	if WorldMapFrame:IsShown() then
 		ToggleWorldMap()
@@ -913,8 +964,14 @@ function Cartographer_LookNFeel:ToggleLargePlayerPOI(value)
 		value = not self.db.profile.useEscape
 	end
 	self.db.profile.largePlayer = value
-	
-	self.playerModel:SetModelScale(value and 1.5 or 1)
+	local size = Cartographer_Notes:GetIconSize(); -- WHDB related.
+	if self.db.profile.largePlayer then
+		size = size*1.5;
+	end
+	if size > 2.5 then
+		size = 2.5;
+	end
+	self.playerModel:SetModelScale(size);
 end
 
 function Cartographer_LookNFeel:OnProfileEnable()

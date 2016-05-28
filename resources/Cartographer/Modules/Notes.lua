@@ -375,8 +375,8 @@ function Cartographer_Notes:OnInitialize()
 				name = L["Icon size"],
 				desc = L["Size of the icons on the map"],
 				type = 'range',
-				min = 0.5,
-				max = 2,
+				min = 0.05, -- was 0.5
+				max = 5, -- was 2
 				step = 0.05,
 				isPercent = true,
 				get = "GetIconSize",
@@ -1193,7 +1193,7 @@ do
 		texture:SetTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcons")
 		texture:SetTexCoord(0, 0.25, 0, 0.25)
 		
-		frame:SetFrameLevel(frame:GetFrameLevel()+3)
+		frame:SetFrameLevel(9); -- WHDB related. Normal note FrameLevel.
 		frame:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 		if not OnMouseDown then
 			OnMouseDown = function()
@@ -1285,6 +1285,7 @@ do
 				if this.creator then
 					WorldMapTooltip:AddDoubleLine("Created by", this.creator)
 				end
+				WorldMapTooltip:SetFrameLevel(12); -- WHDB related. Tooltips > All Notes.
 				WorldMapTooltip:Show()
 			end
 		end
@@ -1786,6 +1787,7 @@ function Cartographer_Notes:ShowNote(zone, id, creator)
 		poi:SetWidth(t.width*self.db.profile.iconSize)
 		poi:SetHeight(t.height*self.db.profile.iconSize)
 		poi:SetAlpha(t.alpha)
+		if icon == "QuestionMark" or icon == "quest" then poi:SetFrameLevel(10); end -- WHDB related. Quest End > Normal notes.
 		poi.texture:SetTexture(t.path)
 		poi.texture:SetTexCoord(t.cLeft, t.cRight, t.cTop, t.cBottom)
 	end
