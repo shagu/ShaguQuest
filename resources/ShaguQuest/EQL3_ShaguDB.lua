@@ -1,22 +1,21 @@
-local autoPlot = false
+ShaguQuest_AutoPlot = false
 
--- Register on event for "PLAYER_ENTERING_WORLD"
 ShaguQuestAutoPlot = CreateFrame("Frame")
 ShaguQuestAutoPlot.Button = CreateFrame("Button", nil, EQL3_QuestLogFrame, "UIPanelButtonTemplate")
 ShaguQuestAutoPlot.Button:SetWidth(120)
 ShaguQuestAutoPlot.Button:SetHeight(20)
-ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cff44ff44Off")
+ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
 ShaguQuestAutoPlot.Button:SetPoint("TOPLEFT", 75,-42)
 ShaguQuestAutoPlot:SetFrameStrata("TOOLTIP")
 ShaguQuestAutoPlot.Button:SetScript("OnClick", function()
-	if autoPlot == false then
-		autoPlot = true
-		UIErrorsFrame:AddMessage("ShaguQuest: Enabled auto track")
+	if ShaguQuest_AutoPlot == false then
+		ShaguQuest_AutoPlot = true
+    QuestlogOptions[EQL3_Player].AddNew = 1
+    QuestlogOptions[EQL3_Player].AddUntracked = 1
 		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
 		ShaguQuestAutoPlot:ShowAll()
 	else
-		autoPlot = false
-		UIErrorsFrame:AddMessage("ShaguQuest: Disabled auto track")
+		ShaguQuest_AutoPlot = false
 		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
 		ShaguDB_CleanMap();
 	end
@@ -30,13 +29,13 @@ ShaguQuestAutoPlot:SetScript("OnEvent", function(self, event, ...)
   end)
 
 function ShaguQuestAutoPlot:ShowAll()
-	if autoPlot == false then
+	if ShaguQuest_AutoPlot == false then
 		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
 	else
 		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
 	end
 
-	if autoPlot == true then
+	if ShaguQuest_AutoPlot == true then
 	local questLogID=1;
   ShaguDB_MAP_NOTES = {};
 	ShaguDB_CleanMap();
@@ -83,8 +82,8 @@ function ShaguQuestAutoPlot:ShowAll()
 
         		-- item data
         		if (type == "item") then
-          		ShaguDB_searchItem(itemName,questTitle);
-     	    		ShaguDB_searchVendor(itemName,questTitle);
+			        ShaguDB_searchItem(itemName,questTitle, true);
+			        ShaguDB_searchVendor(itemName,questTitle);
      	  		end
 					end
 				end

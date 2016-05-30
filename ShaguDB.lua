@@ -329,7 +329,7 @@ function ShaguDB_searchMonster(monsterName,questTitle,questGiver)
 end
 
 
-function ShaguDB_searchItem(itemName,questTitle)
+function ShaguDB_searchItem(itemName,questTitle,autotrack)
   local runonce = false;
   firstIsBest = false;
   local showmax = 0;
@@ -361,9 +361,13 @@ function ShaguDB_searchItem(itemName,questTitle)
               level = ""
             end
 
-            if(questTitle ~= nil) then
+            if questTitle ~= nil and autotrack and showmax < 5 then
               table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. level .. "\nLoot: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
-            else
+            elseif questTitle ~= nil and not autotrack then
+              table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, "Quest: "..questTitle, monsterName .. level .. "\nLoot: " ..itemName .. "\nDropchance: " .. dropRate, cMark, 0});
+            end
+
+            if questTitle == nil then
               table.insert(ShaguDB_MAP_NOTES,{zoneName, coordx, coordy, itemName, monsterName .. level .. "\nDrop: " .. dropRate, cMark, 0});
             end
 
@@ -387,8 +391,8 @@ function ShaguDB_searchItem(itemName,questTitle)
         end
         if(questTitle == nil) then
           firstIsBest = true;
-          showmax = showmax + 1;
         end
+        showmax = showmax + 1;
       end
     end
     if(questTitle == nil) then
