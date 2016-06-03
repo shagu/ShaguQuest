@@ -1,4 +1,6 @@
 ShaguQuest_AutoPlot = false
+ShaguQuest_QueuePlot = true
+ShaguQuest_LastQueue = 0
 
 ShaguQuestAutoPlot = CreateFrame("Frame")
 ShaguQuestAutoPlot.Button = CreateFrame("Button", nil, EQL3_QuestLogFrame, "UIPanelButtonTemplate")
@@ -7,6 +9,7 @@ ShaguQuestAutoPlot.Button:SetHeight(20)
 ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
 ShaguQuestAutoPlot.Button:SetPoint("TOPLEFT", 75,-42)
 ShaguQuestAutoPlot:SetFrameStrata("TOOLTIP")
+
 ShaguQuestAutoPlot.Button:SetScript("OnClick", function()
 	if ShaguQuest_AutoPlot == false then
 		ShaguQuest_AutoPlot = true
@@ -24,9 +27,20 @@ end)
 ShaguQuestAutoPlot.Button:Show()
 
 ShaguQuestAutoPlot:RegisterEvent("QUEST_LOG_UPDATE");
-ShaguQuestAutoPlot:SetScript("OnEvent", function(self, event, ...)
-	ShaguQuestAutoPlot:ShowAll()
-  end)
+ShaguQuestAutoPlot:RegisterEvent("PLAYER_ENTERING_WORLD");
+ShaguQuestAutoPlot:RegisterEvent("ADDON_LOADED")
+
+ShaguQuestAutoPlot:SetScript("OnEvent", function()
+    ShaguQuest_LastQueue = GetTime()
+    ShaguQuest_QueuePlot = true
+end)
+
+ShaguQuestAutoPlot:SetScript("OnUpdate", function()
+    if ShaguQuest_QueuePlot == true and ShaguQuest_LastQueue + .3 <= GetTime() then
+        ShaguQuestAutoPlot:ShowAll()
+        ShaguQuest_QueuePlot = false
+    end
+end)
 
 function ShaguQuestAutoPlot:ShowAll()
 	if ShaguQuest_AutoPlot == false then
