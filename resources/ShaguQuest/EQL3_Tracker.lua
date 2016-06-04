@@ -95,16 +95,35 @@ function EQL_QuestTracker_OnEvent(event)
 	end
 end
 
-				
+-- Let QuestWatch Update only be triggered once per second
+-- in the first 10 seconds after login.
+EQL_Loader = CreateFrame("Frame",nil)
+EQL_Loader.tick = GetTime()
+EQL_Loader.step = 0
+EQL_Loader:SetScript("OnUpdate", function()
+  if EQL_Loader.tick + 1 <= GetTime() then
+	EQL_Loader.abort = false
+    QuestWatch_Update()
+	EQL_Loader.tick = GetTime()
+
+    if EQL_Loader.step < 10 then
+      EQL_Loader.step = EQL_Loader.step + 1
+    else
+      EQL_Loader:Hide()
+    end
+  end
+end)
 
 local old_QuestWatch_Update = QuestWatch_Update;
 -- QuestWatch functions
 function QuestWatch_Update()
 
-	if(not EQL3_Temp.hasManaged) then
+	if EQL_Loader.abort == nil then EQL_Loader.abort = true end
+    if(not EQL3_Temp.hasManaged) or (EQL_Loader.abort == true and EQL_Loader.step < 10) then
 		QuestWatchFrame:Hide();
 		return;
-	end
+    end
+    EQL_Loader.abort = true
 	-- MagageTrackedQuests();
 	
 	if ( QuestlogOptions[EQL3_Player].TrackerIsMinimized == 1 ) then
