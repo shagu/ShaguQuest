@@ -297,7 +297,7 @@ function SDBG:SearchSpawn(search)
         SDBG.spawn.buttons[spawnCount]:SetPoint("TOP", 0, -spawnCount*21+11)
         SDBG.spawn.buttons[spawnCount]:SetWidth(450)
         SDBG.spawn.buttons[spawnCount]:SetHeight(20)
-        SDBG.spawn.buttons[spawnCount]:SetFont("Fonts\\FRIZQT__.TTF", 10)
+        SDBG.spawn.buttons[spawnCount]:SetFont(STANDARD_TEXT_FONT, 10)
         SDBG.spawn.buttons[spawnCount]:SetTextColor(1,1,1,1)
         SDBG.spawn.buttons[spawnCount]:SetNormalTexture(nil)
         SDBG.spawn.buttons[spawnCount]:SetPushedTexture(nil)
@@ -396,9 +396,9 @@ function SDBG:SearchSpawn(search)
       end
     end
   end
-  
+
   if spawnCount >= 14 then spawnCount = "*" else spawnCount = spawnCount -1 end
-  if spawnCount == 0 then 
+  if spawnCount == 0 then
     SDBG.buttonSpawn.text:SetText("Mobs & Objects")
   else
     SDBG.buttonSpawn.text:SetText("Mobs & Objects |cffaaaaaa(" .. spawnCount .. ")")
@@ -414,16 +414,17 @@ function SDBG:SearchItem(search)
 
   for itemName in pairs(database) do
     if (strfind(strlower(itemName), strlower(search))) or strlen(search) <= 3 then
-      if ( itemCount <= 14) then
+      if ( itemCount <= 14) and itemDB[itemName] then
         local itemColor
-	    local itemID = itemDB[itemName]['id']
+
+        local itemID = itemDB[itemName]['id']
         GameTooltip:SetHyperlink("item:" .. itemID .. ":0:0:0")
         GameTooltip:Hide()
 
 	    local _, itemLink, itemQuality, _, _, _, _, _, itemTexture = GetItemInfo(itemID)
-        if itemQuality then itemColor = "|c" .. string.format("%02x%02x%02x%02x", 255, 
-								    ITEM_QUALITY_COLORS[itemQuality].r * 255, 
-								    ITEM_QUALITY_COLORS[itemQuality].g * 255, 
+        if itemQuality then itemColor = "|c" .. string.format("%02x%02x%02x%02x", 255,
+								    ITEM_QUALITY_COLORS[itemQuality].r * 255,
+								    ITEM_QUALITY_COLORS[itemQuality].g * 255,
 								    ITEM_QUALITY_COLORS[itemQuality].b * 255)
         else itemColor = "|cffffffff" end
 
@@ -431,7 +432,7 @@ function SDBG:SearchItem(search)
         SDBG.item.buttons[itemCount]:SetPoint("TOP", 0, -itemCount*21+11)
         SDBG.item.buttons[itemCount]:SetWidth(450)
         SDBG.item.buttons[itemCount]:SetHeight(20)
-        SDBG.item.buttons[itemCount]:SetFont("Fonts\\FRIZQT__.TTF", 10)
+        SDBG.item.buttons[itemCount]:SetFont(STANDARD_TEXT_FONT, 10)
         SDBG.item.buttons[itemCount]:SetNormalTexture(nil)
         SDBG.item.buttons[itemCount]:SetPushedTexture(nil)
         SDBG.item.buttons[itemCount]:SetHighlightTexture(nil)
@@ -499,7 +500,7 @@ function SDBG:SearchItem(search)
           else
             _, _, npc, _ = strfind(itemDB[itemName][2], "(.*),(.*)");
           end
-          
+
           if spawnDB[npc] and spawnDB[npc]['type'] == "NPC" then
             SDBG.item.buttons[itemCount].loot.icon:SetTexture("Interface\\AddOns\\ShaguDB\\symbols\\icon_npc")
           else
@@ -588,12 +589,12 @@ function SDBG:SearchQuest(search)
   for questName in pairs(database) do
     if (strfind(strlower(questName), strlower(search))) or strlen(search) <= 3 then
       if questCount <= 14 and questDB[questName] then
-      
+
         SDBG.quest.buttons[questCount] = CreateFrame("Button","mybutton",SDBG.quest,"UIPanelButtonTemplate")
         SDBG.quest.buttons[questCount]:SetPoint("TOP", 0, -questCount*22+11)
         SDBG.quest.buttons[questCount]:SetWidth(450)
         SDBG.quest.buttons[questCount]:SetHeight(20)
-        SDBG.quest.buttons[questCount]:SetFont("Fonts\\FRIZQT__.TTF", 10)
+        SDBG.quest.buttons[questCount]:SetFont(STANDARD_TEXT_FONT, 10)
         SDBG.quest.buttons[questCount]:SetNormalTexture(nil)
         SDBG.quest.buttons[questCount]:SetPushedTexture(nil)
         SDBG.quest.buttons[questCount]:SetHighlightTexture(nil)
@@ -670,7 +671,7 @@ function SDBG:SearchQuest(search)
             SDBG.quest.buttons[questCount].alliance.icon:SetTexture("Interface\\AddOns\\ShaguDB\\symbols\\icon_alliance")
             SDBG.quest.buttons[questCount].alliance.icon:SetAllPoints(SDBG.quest.buttons[questCount].alliance)
           end
-  
+
         -- show fav button
         SDBG.quest.buttons[questCount].fav = CreateFrame("Button","mybutton",SDBG.quest.buttons[questCount],"UIPanelButtonTemplate")
         SDBG.quest.buttons[questCount].fav:SetPoint("LEFT", 5, 0)
