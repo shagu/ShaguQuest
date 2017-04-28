@@ -404,7 +404,8 @@ vendorDB = {
 
   ['Balanced Throwing Dagger'] = 
   {
-    [1] = 'Lindsay Ashlock,0',
+    [1] = 'Nathaniel Steenwick,0',
+    [2] = 'Lindsay Ashlock,0',
   },
 
   ['Banded Buckler'] = 
@@ -746,11 +747,6 @@ vendorDB = {
   ['Black Lodestone'] = 
   {
     [1] = 'Gorzeeki Wildeyes,0',
-  },
-
-  ['Black Lotus'] = 
-  {
-    [1] = 'Lhara,2',
   },
 
   ['Black Rose'] = 
@@ -2321,27 +2317,6 @@ vendorDB = {
     [1] = 'Jeremiah Payson,0',
   },
 
-  ['Cologne Bottle'] = 
-  {
-    [1] = 'Innkeeper Faralia,0',
-    [2] = 'Innkeeper Lyshaerya,0',
-    [3] = 'Innkeeper Heather,0',
-    [4] = 'Innkeeper Thulfram,0',
-    [5] = 'Innkeeper Shyria,0',
-    [6] = 'Innkeeper Karakul,0',
-    [7] = 'Innkeeper Trelayne,0',
-    [8] = 'Innkeeper Kimlya,0',
-    [9] = 'Innkeeper Shaussiy,0',
-    [10] = 'Innkeeper Hearthstove,0',
-    [11] = 'Innkeeper Brianna,0',
-    [12] = 'Innkeeper Janene,0',
-    [13] = 'Innkeeper Firebrew,0',
-    [14] = 'Innkeeper Anderson,0',
-    [15] = 'Innkeeper Helbrek,0',
-    [16] = 'Innkeeper Belm,0',
-    [17] = 'Innkeeper Farley,0',
-  },
-
   ['Colossal Parachute'] = 
   {
     [1] = 'Kalin Windflight,0',
@@ -2615,6 +2590,11 @@ vendorDB = {
   {
     [1] = 'Yaelika Farclaw,0',
     [2] = 'Kurdrum Barleybeard,0',
+  },
+
+  ['Crude Throwing Axe'] = 
+  {
+    [1] = 'Nathaniel Steenwick,0',
   },
 
   ['Crunchy Frog'] = 
@@ -3130,6 +3110,11 @@ vendorDB = {
   {
     [1] = 'Yaelika Farclaw,0',
     [2] = 'Kurdrum Barleybeard,0',
+  },
+
+  ['Deadly Throwing Axe'] = 
+  {
+    [1] = 'Nathaniel Steenwick,0',
   },
 
   ['Deathguard\'s Cloak'] = 
@@ -5356,6 +5341,11 @@ vendorDB = {
     [15] = 'Corina Steele,0',
   },
 
+  ['Gleaming Throwing Axe'] = 
+  {
+    [1] = 'Nathaniel Steenwick,0',
+  },
+
   ['Gloom Wand'] = 
   {
     [1] = 'Katis,0',
@@ -5684,11 +5674,6 @@ vendorDB = {
   ['Great White Kodo'] = 
   {
     [1] = 'Harb Clawhoof,0',
-  },
-
-  ['Greater Frost Protection Potion'] = 
-  {
-    [1] = 'Lhara,1',
   },
 
   ['Greater Healing Potion'] = 
@@ -6631,6 +6616,7 @@ vendorDB = {
   ['Hallow\'s End Pumpkin Treat'] = 
   {
     [1] = 'Rachelle Gothena,0',
+    [2] = 'Katrina Shimmerstar,0',
   },
 
   ['Hallowed Brazier'] = 
@@ -8348,7 +8334,8 @@ vendorDB = {
 
   ['Keen Throwing Knife'] = 
   {
-    [1] = 'Lindsay Ashlock,0',
+    [1] = 'Nathaniel Steenwick,0',
+    [2] = 'Lindsay Ashlock,0',
   },
 
   ['Khadgar\'s Whisker'] = 
@@ -9470,27 +9457,6 @@ vendorDB = {
     [5] = 'Illiyana Moonblaze,0',
   },
 
-  ['Love Token'] = 
-  {
-    [1] = 'Innkeeper Faralia,0',
-    [2] = 'Innkeeper Lyshaerya,0',
-    [3] = 'Innkeeper Heather,0',
-    [4] = 'Innkeeper Thulfram,0',
-    [5] = 'Innkeeper Shyria,0',
-    [6] = 'Innkeeper Karakul,0',
-    [7] = 'Innkeeper Trelayne,0',
-    [8] = 'Innkeeper Kimlya,0',
-    [9] = 'Innkeeper Shaussiy,0',
-    [10] = 'Innkeeper Hearthstove,0',
-    [11] = 'Innkeeper Brianna,0',
-    [12] = 'Innkeeper Janene,0',
-    [13] = 'Innkeeper Firebrew,0',
-    [14] = 'Innkeeper Anderson,0',
-    [15] = 'Innkeeper Helbrek,0',
-    [16] = 'Innkeeper Belm,0',
-    [17] = 'Innkeeper Farley,0',
-  },
-
   ['Mace'] = 
   {
     [1] = 'Kelomir Ironhand,0',
@@ -10302,11 +10268,6 @@ vendorDB = {
   ['Molasses Firewater'] = 
   {
     [1] = 'Stomper Kreeg,0',
-  },
-
-  ['Mood Ring'] = 
-  {
-    [1] = 'Qixdi Goodstitch,0',
   },
 
   ['Moon Harvest Pumpkin'] = 
@@ -11765,33 +11726,12 @@ vendorDB = {
   {
     [1] = 'Selina Weston,2',
     [2] = 'Hula\'mahi,2',
-    [3] = 'Maria Lumere,2',
+    [3] = 'Maria Lumere,3',
   },
 
   ['Peeling the Onion'] = 
   {
     [1] = 'Jekyll Flandring,0',
-  },
-
-  ['Perfume Bottle'] = 
-  {
-    [1] = 'Innkeeper Faralia,0',
-    [2] = 'Innkeeper Lyshaerya,0',
-    [3] = 'Innkeeper Heather,0',
-    [4] = 'Innkeeper Thulfram,0',
-    [5] = 'Innkeeper Shyria,0',
-    [6] = 'Innkeeper Karakul,0',
-    [7] = 'Innkeeper Trelayne,0',
-    [8] = 'Innkeeper Kimlya,0',
-    [9] = 'Innkeeper Shaussiy,0',
-    [10] = 'Innkeeper Hearthstove,0',
-    [11] = 'Innkeeper Brianna,0',
-    [12] = 'Innkeeper Janene,0',
-    [13] = 'Innkeeper Firebrew,0',
-    [14] = 'Innkeeper Anderson,0',
-    [15] = 'Innkeeper Helbrek,0',
-    [16] = 'Innkeeper Belm,0',
-    [17] = 'Innkeeper Farley,0',
   },
 
   ['Pestilent Wand'] = 
@@ -12751,7 +12691,7 @@ vendorDB = {
 
   ['Recipe: Frost Oil'] = 
   {
-    [1] = 'Bro\'kin,0',
+    [1] = 'Bro\'kin,1',
   },
 
   ['Recipe: Frost Protection Potion'] = 
@@ -14186,11 +14126,6 @@ vendorDB = {
     [1] = 'Lhara,4',
   },
 
-  ['Rumsey Rum Black Label'] = 
-  {
-    [1] = 'Barkeep Kelly,0',
-  },
-
   ['Rune of Duty'] = 
   {
     [1] = 'Kelm Hargunth,0',
@@ -14754,8 +14689,7 @@ vendorDB = {
 
   ['Schematic: Accurate Scope'] = 
   {
-    [1] = 'Super-Seller 680,0',
-    [2] = 'Mazk Snipeshot,1',
+    [1] = 'Mazk Snipeshot,1',
   },
 
   ['Schematic: Bloodvine Goggles'] = 
@@ -14808,10 +14742,9 @@ vendorDB = {
 
   ['Schematic: Goblin Jumper Cables'] = 
   {
-    [1] = 'Super-Seller 680,1',
-    [2] = 'Veenix,1',
-    [3] = 'Zixil,1',
-    [4] = 'Kzixx,1',
+    [1] = 'Veenix,1',
+    [2] = 'Zixil,1',
+    [3] = 'Kzixx,1',
   },
 
   ['Schematic: Green Firework'] = 
@@ -14827,8 +14760,7 @@ vendorDB = {
 
   ['Schematic: Ice Deflector'] = 
   {
-    [1] = 'Super-Seller 680,0',
-    [2] = 'Rizz Loosebolt,1',
+    [1] = 'Rizz Loosebolt,1',
   },
 
   ['Schematic: Lovingly Crafted Boomstick'] = 

@@ -79,6 +79,10 @@ questDB = {
   { 
     ['Broken Trap'] = 'Object', 
   },
+  ['A Bubbling Cauldron'] = 
+  { 
+    ['Fragrant Cauldron'] = 'Object', 
+  },
   ['A Bump in the Road'] = 
   { 
     ['Trackmaster Zherin'] = 'NPC', 
@@ -171,6 +175,7 @@ questDB = {
     ['Clavicus Knavingham'] = 'NPC', 
     ['Mistina Steelshield'] = 'NPC', 
     ['Bubulo Acerbus'] = 'NPC', 
+    ['Raedon Duskstriker'] = 'NPC', 
     ['Rashona Straglash'] = 'NPC', 
     ['Vehena'] = 'NPC', 
     ['Rumstag Proudstrider'] = 'NPC', 
@@ -181,6 +186,7 @@ questDB = {
     ['Clavicus Knavingham'] = 'NPC', 
     ['Mistina Steelshield'] = 'NPC', 
     ['Bubulo Acerbus'] = 'NPC', 
+    ['Raedon Duskstriker'] = 'NPC', 
     ['Rashona Straglash'] = 'NPC', 
     ['Vehena'] = 'NPC', 
     ['Rumstag Proudstrider'] = 'NPC', 
@@ -1265,7 +1271,6 @@ questDB = {
   ['Attunement to the Core'] = 
   { 
     ['Lothos Riftwaker'] = 'NPC', 
-    ['Lothos Riftwaker'] = 'NPC', 
   },
   ['Augustus\' Receipt Book'] = 
   { 
@@ -1487,8 +1492,8 @@ questDB = {
   { 
     ['Beached Sea Creature'] = 'Object', 
     ['Beached Sea Creature'] = 'Object', 
-    ['Beached Sea Turtle'] = 'Object', 
-    ['Beached Sea Turtle'] = 'Object', 
+    ['Beached Sea Creature'] = 'Object', 
+    ['Beached Sea Creature'] = 'Object', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
@@ -1496,8 +1501,8 @@ questDB = {
   },
   ['Beached Sea Turtle'] = 
   { 
-    ['Beached Sea Creature'] = 'Object', 
-    ['Beached Sea Creature'] = 'Object', 
+    ['Beached Sea Turtle'] = 'Object', 
+    ['Beached Sea Turtle'] = 'Object', 
     ['Beached Sea Turtle'] = 'Object', 
     ['Beached Sea Turtle'] = 'Object', 
     ['Beached Sea Turtle'] = 'Object', 
@@ -4207,8 +4212,6 @@ questDB = {
   ['Facing Negolash'] = 
   { 
     ['Captain Hecklebury Smotts'] = 'NPC', 
-    ['Captain Hecklebury Smotts'] = 'NPC', 
-    ['Sprogger'] = 'NPC', 
     ['Sprogger'] = 'NPC', 
   },
   ['Faerie Dragon Muisek'] = 
@@ -5849,6 +5852,7 @@ questDB = {
   ['In Dreams'] = 
   { 
     ['Tirion Fordring'] = 'NPC', 
+    ['Lord Tirion Fordring'] = 'NPC', 
     ['Highlord Taelan Fordring'] = 'NPC', 
   },
   ['In Eranikus\' Own Words'] = 
@@ -6736,6 +6740,10 @@ questDB = {
     ['Crystalline Tear'] = 'Object', 
     ['Anachronos'] = 'NPC', 
   },
+  ['Look at the Size of It!'] = 
+  { 
+    ['Evonice Sootsmoker'] = 'NPC', 
+  },
   ['Look to an Old Friend'] = 
   { 
     ['Elling Trias'] = 'NPC', 
@@ -7391,7 +7399,6 @@ questDB = {
   ['Morrowgrain to Darnassus'] = 
   { 
     ['Mathrengyl Bearwalker'] = 'NPC', 
-    ['Arch Druid Fandral Staghelm'] = 'NPC', 
   },
   ['Morrowgrain to Feathermoon Stronghold'] = 
   { 
@@ -9082,13 +9089,6 @@ questDB = {
   { 
     ['Yuka Screwspigot'] = 'NPC', 
   },
-  ['Ribbons of Sacrifice'] = 
-  { 
-    ['Sentinel Farsong'] = 'NPC', 
-    ['Sentinel Farsong'] = 'NPC', 
-    ['Captain Shatterskull'] = 'NPC', 
-    ['Captain Shatterskull'] = 'NPC', 
-  },
   ['Ride to Ironforge'] = 
   { 
     ['Golnir Bouldertoe'] = 'NPC', 
@@ -9434,9 +9434,12 @@ questDB = {
   { 
     ['Illiyana'] = 'NPC', 
   },
-  ['Savage Fronds'] = 
+  ['Savage Flora'] = 
   { 
     ['Rayne'] = 'NPC', 
+  },
+  ['Savage Fronds'] = 
+  { 
     ['Rayne'] = 'NPC', 
   },
   ['Save Techbot\'s Brain!'] = 
@@ -10737,15 +10740,6 @@ questDB = {
     ['Tal'] = 'NPC', 
     ['Ahanu'] = 'NPC', 
   },
-  ['Talismans of Merit'] = 
-  { 
-    ['Sentinel Farsong'] = 'NPC', 
-    ['Sentinel Farsong'] = 'NPC', 
-    ['Sentinel Farsong'] = 'NPC', 
-    ['Sentinel Farsong'] = 'NPC', 
-    ['Sentinel Farsong'] = 'NPC', 
-    ['Sentinel Farsong'] = 'NPC', 
-  },
   ['Taming the Beast'] = 
   { 
     ['Grif Wildheart'] = 'NPC', 
@@ -11383,8 +11377,6 @@ questDB = {
   ['The Captain\'s Cutlass'] = 
   { 
     ['Sprogger'] = 'NPC', 
-    ['Sprogger'] = 'NPC', 
-    ['Captain Hecklebury Smotts'] = 'NPC', 
     ['Captain Hecklebury Smotts'] = 'NPC', 
   },
   ['The Caravan Road'] = 
@@ -12354,7 +12346,7 @@ questDB = {
   ['The Key to Scholomance'] = 
   { 
     ['High Executor Derrington'] = 'NPC', 
-    ['Commander Ashlam Valorfist'] = 'NPC', 
+    ['Alchemist Arbington'] = 'NPC', 
   },
   ['The Killing Fields'] = 
   { 
@@ -12851,12 +12843,9 @@ questDB = {
   },
   ['The Principal Source'] = 
   { 
+    ['Tonga Runetotem'] = 'NPC', 
     ['Alanndarian Nightsong'] = 'NPC', 
     ['Dendrite Starblaze'] = 'NPC', 
-  },
-  ['The Principle Source'] = 
-  { 
-    ['Tonga Runetotem'] = 'NPC', 
     ['Dendrite Starblaze'] = 'NPC', 
   },
   ['The Prison\'s Bindings'] = 
@@ -13370,8 +13359,6 @@ questDB = {
     ['Tiza Battleforge'] = 'NPC', 
     ['Tiza Battleforge'] = 'NPC', 
     ['Tiza Battleforge'] = 'NPC', 
-    ['Tiza Battleforge'] = 'NPC', 
-    ['Brandur Ironhammer'] = 'NPC', 
     ['Duthorian Rall'] = 'NPC', 
     ['Duthorian Rall'] = 'NPC', 
     ['Henze Faulk'] = 'NPC', 
@@ -13812,9 +13799,11 @@ questDB = {
     ['Duthorian Rall'] = 'NPC', 
     ['Tiza Battleforge'] = 'NPC', 
     ['Tiza Battleforge'] = 'NPC', 
+    ['Tiza Battleforge'] = 'NPC', 
     ['Brother Wilhelm'] = 'NPC', 
     ['Lord Grayson Shadowbreaker'] = 'NPC', 
     ['Azar Stronghammer'] = 'NPC', 
+    ['Brandur Ironhammer'] = 'NPC', 
     ['Brandur Ironhammer'] = 'NPC', 
   },
   ['Tome of the Cabal'] = 
@@ -13882,7 +13871,6 @@ questDB = {
   },
   ['Touch of Weakness'] = 
   { 
-    ['Aelthalyste'] = 'NPC', 
     ['Aelthalyste'] = 'NPC', 
     ['Aelthalyste'] = 'NPC', 
     ['Aelthalyste'] = 'NPC', 
@@ -14220,7 +14208,6 @@ questDB = {
   ['Unfinished Gordok Business'] = 
   { 
     ['Captain Kromcrush'] = 'NPC', 
-    ['Captain Kromcrush'] = 'NPC', 
   },
   ['Uniform Supplies'] = 
   { 
@@ -14231,7 +14218,7 @@ questDB = {
   { 
     ['Fallen Hero of the Horde'] = 'NPC', 
   },
-  ['Unraveling the Mystery (Elite)'] = 
+  ['Unraveling the Mystery'] = 
   { 
     ['Geologist Larksbane'] = 'NPC', 
     ['Rutgar Glyphshaper'] = 'NPC', 
@@ -14670,11 +14657,6 @@ questDB = {
   ['Wastewander Justice'] = 
   { 
     ['Chief Engineer Bilgewhizzle'] = 'NPC', 
-  },
-  ['Watcher Callahan'] = 
-  { 
-    ['Watcher Callahan'] = 'NPC', 
-    ['Watcher Dodds'] = 'NPC', 
   },
   ['Water Elementals'] = 
   { 

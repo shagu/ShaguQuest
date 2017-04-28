@@ -75,9 +75,13 @@ questDB = {
   { 
     ['Blutmagier Drazial'] = 'NPC', 
   },
-  ['Die beschädigte Falle'] = 
+  ['Eine beschädigte Falle'] = 
   { 
     ['Beschädigte Falle'] = 'Object', 
+  },
+  ['Ein blubbernder Kessel'] = 
+  { 
+    ['Duftender Kessel'] = 'Object', 
   },
   ['Eine Straßenunebenheit'] = 
   { 
@@ -171,6 +175,7 @@ questDB = {
     ['Clavicus Knappheim'] = 'NPC', 
     ['Mistina Stahlschild'] = 'NPC', 
     ['Bubulo Acerbus'] = 'NPC', 
+    ['Raedon Dämmersturm'] = 'NPC', 
     ['Rashona Stragschlag'] = 'NPC', 
     ['Vehena'] = 'NPC', 
     ['Rumstag Stolzschreiter'] = 'NPC', 
@@ -181,6 +186,7 @@ questDB = {
     ['Clavicus Knappheim'] = 'NPC', 
     ['Mistina Stahlschild'] = 'NPC', 
     ['Bubulo Acerbus'] = 'NPC', 
+    ['Raedon Dämmersturm'] = 'NPC', 
     ['Rashona Stragschlag'] = 'NPC', 
     ['Vehena'] = 'NPC', 
     ['Rumstag Stolzschreiter'] = 'NPC', 
@@ -222,10 +228,10 @@ questDB = {
   },
   ['Ein geschenktes Mittagessen'] = 
   { 
-    ['Wache Parker'] = 'NPC', 
-    ['Darcy'] = 'NPC', 
+    ['Wachhauptmann Parker'] = 'NPC', 
+    ['Darcy Parker'] = 'NPC', 
   },
-  ['Ein Freund in Not'] = 
+  ['Ein Freund in der Not'] = 
   { 
     ['Dirania Silberschein'] = 'NPC', 
     ['Iverron'] = 'NPC', 
@@ -285,7 +291,7 @@ questDB = {
   },
   ['Die Belohnung eines Helden'] = 
   { 
-    ['Hydraxis\' Kiste'] = 'Object', 
+    ['Hydraxis Truhe'] = 'Object', 
     ['Fürst Hydraxis'] = 'NPC', 
   },
   ['Der Empfang eines Helden'] = 
@@ -481,7 +487,7 @@ questDB = {
   },
   ['Eine heilige Bestattung'] = 
   { 
-    ['Hüter des Wissens Regentotem'] = 'NPC', 
+    ['Wissenshüter Regentotem'] = 'NPC', 
   },
   ['Eine Schleimprobe...'] = 
   { 
@@ -531,7 +537,7 @@ questDB = {
   { 
     ['Meister Vornal'] = 'NPC', 
   },
-  ['Eine schwierige Situation'] = 
+  ['Eine schleimige Angelegenheit'] = 
   { 
     ['Gilveradin Sonnenjäger'] = 'NPC', 
   },
@@ -549,7 +555,7 @@ questDB = {
   { 
     ['Gefangene Arko\'narin'] = 'NPC', 
   },
-  ['Eine seltsame Anforderung'] = 
+  ['Eine seltsame Bitte'] = 
   { 
     ['Neeru Feuerklinge'] = 'NPC', 
     ['Hexendoktor Uzer\'i'] = 'NPC', 
@@ -599,7 +605,7 @@ questDB = {
   ['Die Bedrohung von innen'] = 
   { 
     ['Marschall McBride'] = 'NPC', 
-    ['Stellvertreter Willem'] = 'NPC', 
+    ['Unteroffizier Willem'] = 'NPC', 
   },
   ['Ein tickendes Geschenk'] = 
   { 
@@ -618,7 +624,7 @@ questDB = {
   ['Ein beunruhigender Wind'] = 
   { 
     ['Gaerolas Talvethren'] = 'NPC', 
-    ['Athridas Bärenpelz'] = 'NPC', 
+    ['Athridas Bärenfell'] = 'NPC', 
   },
   ['Ein schreckliches Schicksal'] = 
   { 
@@ -699,7 +705,7 @@ questDB = {
     ['Miran'] = 'NPC', 
     ['Huldar'] = 'NPC', 
   },
-  ['Erneut im großen Ossuarium'] = 
+  ['Erneut im Großen Ossuarium'] = 
   { 
     ['Lord Grayson Schattenbruch'] = 'NPC', 
   },
@@ -717,11 +723,11 @@ questDB = {
     ['Latronicus Mondspeer'] = 'NPC', 
     ['Shandris Mondfeder'] = 'NPC', 
   },
-  ['Agammagans Beweglichkeit'] = 
+  ['Agamaggans Beweglichkeit'] = 
   { 
     ['Quetschzahn'] = 'NPC', 
   },
-  ['Agammagans Kraft'] = 
+  ['Agamaggans Kraft'] = 
   { 
     ['Quetschzahn'] = 'NPC', 
   },
@@ -1076,7 +1082,7 @@ questDB = {
   },
   ['Arkane Erfrischung'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Arkane Runen'] = 
   { 
@@ -1104,7 +1110,7 @@ questDB = {
   ['Anstecknadel der Argentumdämmerung'] = 
   { 
     ['Argentumoffizier Garush'] = 'NPC', 
-    ['Argentumoffizier Reinherz'] = 'NPC', 
+    ['Argentumoffizierin Reinherz'] = 'NPC', 
     ['Fürst Nicholas Zverenhoff'] = 'NPC', 
   },
   ['Handschuhe der Argentumdämmerung'] = 
@@ -1243,10 +1249,10 @@ questDB = {
   ['Krieg mit dem Scharlachroten Kreuzzug'] = 
   { 
     ['Exekutor Zygand'] = 'NPC', 
-    ['Exekutor Zygand'] = 'NPC', 
   },
   ['Im Krieg mit dem Scharlachroten Kreuzzug'] = 
   { 
+    ['Exekutor Zygand'] = 'NPC', 
     ['Exekutor Zygand'] = 'NPC', 
   },
   ['Atiesh, Hohestab des Wächters'] = 
@@ -1270,7 +1276,6 @@ questDB = {
   },
   ['Abstimmung mit dem Kern'] = 
   { 
-    ['Lothos Felsspalter'] = 'NPC', 
     ['Lothos Felsspalter'] = 'NPC', 
   },
   ['Augustus\' Quittungsbuch'] = 
@@ -1374,7 +1379,7 @@ questDB = {
   },
   ['Schlechte Medizin'] = 
   { 
-    ['Unteroffizier Yohwa'] = 'NPC', 
+    ['Unteroffizierin Yohwa'] = 'NPC', 
   },
   ['Reagenziensuche im Ödland'] = 
   { 
@@ -1394,7 +1399,7 @@ questDB = {
   { 
     ['Windruferin Yessendra'] = 'NPC', 
   },
-  ['Band des behüteten Geheimnisse'] = 
+  ['Band der behüteten Geheimnisse'] = 
   { 
     ['Windruferin Yessendra'] = 'NPC', 
   },
@@ -1491,10 +1496,10 @@ questDB = {
   },
   ['Gestrandete Meereskreatur'] = 
   { 
+    ['Beached Sea Creature'] = 'Object', 
     ['Gestrandete Meereskreatur'] = 'Object', 
-    ['Gestrandete Meereskreatur'] = 'Object', 
-    ['Gestrandete Meeresschildkröte'] = 'Object', 
-    ['Gestrandete Meeresschildkröte'] = 'Object', 
+    ['Beached Sea Creature'] = 'Object', 
+    ['Beached Sea Creature'] = 'Object', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
@@ -1502,11 +1507,11 @@ questDB = {
   },
   ['Gestrandete Meeresschildkröte'] = 
   { 
-    ['Gestrandete Meereskreatur'] = 'Object', 
-    ['Gestrandete Meereskreatur'] = 'Object', 
     ['Gestrandete Meeresschildkröte'] = 'Object', 
+    ['Beached Sea Turtle'] = 'Object', 
     ['Gestrandete Meeresschildkröte'] = 'Object', 
-    ['Gestrandete Meeresschildkröte'] = 'Object', 
+    ['Beached Sea Turtle'] = 'Object', 
+    ['Beached Sea Turtle'] = 'Object', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
     ['Gwennyth Bly\'Leggonde'] = 'NPC', 
@@ -1571,8 +1576,8 @@ questDB = {
   },
   ['Verraten'] = 
   { 
-    ['Kaldoreifoliant der Beschwörung'] = 'Object', 
-    ['Kaldoreifoliant der Beschwörung'] = 'Object', 
+    ['Kaldorei Tome of Summoning'] = 'Object', 
+    ['Kaldorei Tome of Summoning'] = 'Object', 
     ['Belgrom Felshammer'] = 'NPC', 
     ['Ag\'tor Blutfaust'] = 'NPC', 
     ['Ag\'tor Blutfaust'] = 'NPC', 
@@ -1618,7 +1623,7 @@ questDB = {
   },
   ['Bindung des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Bindungen des Glaubens'] = 
   { 
@@ -1630,7 +1635,7 @@ questDB = {
   },
   ['Bittere Rivalen'] = 
   { 
-    ['Unbewachtes Fass mit Donnerbier'] = 'Object', 
+    ['Unbewachtes Fass mit Donnerbräu Lager'] = 'Object', 
     ['Marleth Gerstenbräu'] = 'NPC', 
   },
   ['Austausch Eures schwarzen Widders'] = 
@@ -1641,8 +1646,8 @@ questDB = {
   { 
     ['Dämmerungsbehüter Selgorm'] = 'NPC', 
     ['Bashana Runentotem'] = 'NPC', 
-    ['Argentumwache Thaelrid'] = 'NPC', 
-    ['Argentumwache Thaelrid'] = 'NPC', 
+    ['Späher Thaelrid'] = 'NPC', 
+    ['Späher Thaelrid'] = 'NPC', 
   },
   ['Schwarzfausts Befehl'] = 
   { 
@@ -1717,7 +1722,7 @@ questDB = {
   { 
     ['Rokaro'] = 'NPC', 
   },
-  ['Blutsplitter von Agammagan'] = 
+  ['Blutsplitter von Agamaggan'] = 
   { 
     ['Quetschzahn'] = 'NPC', 
   },
@@ -1876,7 +1881,7 @@ questDB = {
   },
   ['Kopfgeld auf Garrick Schleichfuß'] = 
   { 
-    ['Stellvertreter Willem'] = 'NPC', 
+    ['Unteroffizier Willem'] = 'NPC', 
   },
   ['Kopfgeld auf die Murlocs'] = 
   { 
@@ -1904,8 +1909,8 @@ questDB = {
   },
   ['Den Hauptstein zerbrechen'] = 
   { 
-    ['Stein der inneren Bindung'] = 'Object', 
-    ['Hauptstein'] = 'Object', 
+    ['Stein der Inneren Bindung'] = 'Object', 
+    ['Schlüsselstein'] = 'Object', 
   },
   ['Den Zauberschutz brechen'] = 
   { 
@@ -1976,7 +1981,7 @@ questDB = {
   },
   ['Bruderschaft der Diebe'] = 
   { 
-    ['Stellvertreter Willem'] = 'NPC', 
+    ['Unteroffizier Willem'] = 'NPC', 
   },
   ['Das Ende der Bruderschaft'] = 
   { 
@@ -2036,7 +2041,7 @@ questDB = {
   ['Dröhnkiste 323'] = 
   { 
     ['Dröhnkiste 411'] = 'Object', 
-    ['Dröhnkiste 323'] = 'Object', 
+    ['Buzzbox 323'] = 'Object', 
   },
   ['Dröhnkiste 411'] = 
   { 
@@ -2045,7 +2050,7 @@ questDB = {
   },
   ['Dröhnkiste 525'] = 
   { 
-    ['Dröhnkiste 323'] = 'Object', 
+    ['Buzzbox 323'] = 'Object', 
     ['Dröhnkiste 525'] = 'Object', 
   },
   ['Dröhnkiste 827'] = 
@@ -2074,7 +2079,7 @@ questDB = {
   },
   ['Ruf der Lüfte - Guses Luftflotte'] = 
   { 
-    ['Schwadronskommandant Guse'] = 'NPC', 
+    ['Schwadronskommandantin Guse'] = 'NPC', 
   },
   ['Ruf der Lüfte - Ichmans Luftflotte'] = 
   { 
@@ -2082,7 +2087,7 @@ questDB = {
   },
   ['Ruf der Lüfte - Jeztors Luftflotte'] = 
   { 
-    ['Schwadronskommandant Jeztor'] = 'NPC', 
+    ['Schwadronskommandantin Jeztor'] = 'NPC', 
   },
   ['Ruf der Lüfte - Mulvericks Luftflotte'] = 
   { 
@@ -2129,8 +2134,8 @@ questDB = {
   },
   ['Ruf des Wassers'] = 
   { 
-    ['Kohlenpfanne von Everfount'] = 'Object', 
-    ['Kohlenpfanne von Everfount'] = 'Object', 
+    ['Brazier of Everfount'] = 'Object', 
+    ['Brazier of Everfount'] = 'Object', 
     ['Schwache Wassermanifestation'] = 'NPC', 
     ['Brine'] = 'NPC', 
     ['Brine'] = 'NPC', 
@@ -2211,12 +2216,9 @@ questDB = {
     ['Hauptmann Garran Mumm'] = 'NPC', 
     ['Leutnant von Theramore'] = 'NPC', 
   },
-  ['Eine Mine besetzen'] = 
+  ['Eine Mine erobern'] = 
   { 
     ['Korporal Teeka Murrblut'] = 'NPC', 
-  },
-  ['Mine besetzen'] = 
-  { 
     ['Unteroffizier Durgen Sturmlanze'] = 'NPC', 
   },
   ['Jahrmarktsstiefel'] = 
@@ -2480,7 +2482,7 @@ questDB = {
   },
   ['Kodex der Verteidigung'] = 
   { 
-    ['Hüter des Wissens Kildrath'] = 'NPC', 
+    ['Wissenshüter Kildrath'] = 'NPC', 
   },
   ['Postbeförderung im Eisklammtal'] = 
   { 
@@ -2655,7 +2657,7 @@ questDB = {
     ['Verderbte Liedblume'] = 'Object', 
     ['Verderbte Liedblume'] = 'Object', 
     ['Verderbte Liedblume'] = 'Object', 
-    ['Verderbte Liedblume'] = 'Object', 
+    ['Corrupted Songflower'] = 'Object', 
     ['Verderbte Liedblume'] = 'Object', 
     ['Verderbte Liedblume'] = 'Object', 
     ['Verderbte Liedblume'] = 'Object', 
@@ -2694,7 +2696,7 @@ questDB = {
   ['Geißelsteine des Verderbers'] = 
   { 
     ['Argentumoffizier Garush'] = 'NPC', 
-    ['Argentumoffizier Reinherz'] = 'NPC', 
+    ['Argentumoffizierin Reinherz'] = 'NPC', 
     ['Fürst Nicholas Zverenhoff'] = 'NPC', 
   },
   ['Cortellos Rätsel'] = 
@@ -2760,7 +2762,7 @@ questDB = {
   { 
     ['Rottenkommandant Steinberster'] = 'NPC', 
   },
-  ['Handwerksverfügung - Fläschchen der Versteinerung'] = 
+  ['Handwerksverfügung - Trank der Versteinerung'] = 
   { 
     ['Rottenkommandant Steinberster'] = 'NPC', 
   },
@@ -2878,15 +2880,36 @@ questDB = {
     ['Sergra Dunkeldorn'] = 'NPC', 
     ['Kargal Schlachtnarbe'] = 'NPC', 
   },
-  ['Krone der Erde'] = 
+  ['Teldrassil: Krone von Azeroth'] = 
   { 
     ['Tenaron Sturmgewalt'] = 'NPC', 
+  },
+  ['Teldrassil: Gebt das Wissen weiter'] = 
+  { 
     ['Corithras Mondzorn'] = 'NPC', 
+  },
+  ['Teldrassil: Die Verweigerung der Aspekte'] = 
+  { 
     ['Corithras Mondzorn'] = 'NPC', 
+  },
+  ['Teldrassil: Der Anbruch des Tages'] = 
+  { 
     ['Corithras Mondzorn'] = 'NPC', 
+  },
+  ['Teldrassil: Die Bürde der Kaldorei'] = 
+  { 
     ['Corithras Mondzorn'] = 'NPC', 
+  },
+  ['Die Wasser von Teldrassil'] = 
+  { 
     ['Erzdruide Fandral Hirschhaupt'] = 'NPC', 
+  },
+  ['Teldrassil: Gebt das Wissen weiter'] = 
+  { 
     ['Tenaron Sturmgewalt'] = 'NPC', 
+  },
+  ['Die Wasser von Teldrassil'] = 
+  { 
     ['Corithras Mondzorn'] = 'NPC', 
   },
   ['Trümmergratkopfgeld'] = 
@@ -2937,7 +2960,7 @@ questDB = {
   { 
     ['Jäger Leopold'] = 'NPC', 
   },
-  ['Handgelenksschutz des Gruftpirschers'] = 
+  ['Handgelenksschützer des Gruftpirschers'] = 
   { 
     ['Jäger Leopold'] = 'NPC', 
   },
@@ -2947,7 +2970,7 @@ questDB = {
   },
   ['Haufenweise Kristalle'] = 
   { 
-    ['Erzdruide Renferal'] = 'NPC', 
+    ['Erzdruidin Renferal'] = 'NPC', 
   },
   ['Kristallkraft'] = 
   { 
@@ -3004,7 +3027,7 @@ questDB = {
     ['Todespirscher Mortis'] = 'NPC', 
     ['Todespirscher Mortis'] = 'NPC', 
   },
-  ['Scharfe Zähne'] = 
+  ['Erste Erfahrungen'] = 
   { 
     ['Gornek'] = 'NPC', 
   },
@@ -3054,7 +3077,7 @@ questDB = {
   },
   ['Der Kessel von Dalsons Tränenfeld'] = 
   { 
-    ['Geißelkessel'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
   },
   ['Tanzen für Marzipan'] = 
   { 
@@ -3068,7 +3091,7 @@ questDB = {
   },
   ['Gefährlich!'] = 
   { 
-    ['Gefährlich!'] = 'Object', 
+    ['Dangerous!'] = 'Object', 
     ['Hochexekutorin Darthalia'] = 'NPC', 
   },
   ['Windfuriengefahr'] = 
@@ -3095,7 +3118,7 @@ questDB = {
   },
   ['Dunkeleisenfragmente'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Dunkle Stürme'] = 
   { 
@@ -3303,7 +3326,7 @@ questDB = {
   },
   ['Narzissen für eine Dame'] = 
   { 
-    ['Darcy'] = 'NPC', 
+    ['Darcy Parker'] = 'NPC', 
     ['Martie Jainrose'] = 'NPC', 
   },
   ['Überbringung des Relikts'] = 
@@ -3461,7 +3484,7 @@ questDB = {
     ['Hohepriester Thel\'danis'] = 'NPC', 
     ['Kommandant Ashlam Ehrenschlag'] = 'NPC', 
   },
-  ['Vereitelung der Angriffe'] = 
+  ['Die Verteidigung der Fernwacht'] = 
   { 
     ['Thork'] = 'NPC', 
   },
@@ -3598,35 +3621,35 @@ questDB = {
   },
   ['Armschienen des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Brustplatte des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Stulpen des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Helm des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Beinplatten des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Schulterstücke des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Sabatons des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Taillenschutz des Schreckenspanzers'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Schreckensross von Xoroth'] = 
   { 
@@ -3669,7 +3692,7 @@ questDB = {
   { 
     ['Rayne'] = 'NPC', 
   },
-  ['Handgelenksschutz des Traumwandlers'] = 
+  ['Handgelenksschützer des Traumwandlers'] = 
   { 
     ['Rayne'] = 'NPC', 
   },
@@ -3731,7 +3754,7 @@ questDB = {
   ['Eagan Pelzschneider'] = 
   { 
     ['Eagan Pelzschneider'] = 'NPC', 
-    ['Stellvertreter Willem'] = 'NPC', 
+    ['Unteroffizier Willem'] = 'NPC', 
   },
   ['Verdiente Ehrerbietung'] = 
   { 
@@ -3779,7 +3802,7 @@ questDB = {
   { 
     ['Rimblat Erdspalter'] = 'NPC', 
   },
-  ['Handgelenksschutz des Erdspalters'] = 
+  ['Handgelenksschützer des Erdspalters'] = 
   { 
     ['Rimblat Erdspalter'] = 'NPC', 
   },
@@ -3793,7 +3816,7 @@ questDB = {
   },
   ['Echo des Krieges'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
   ['Eiersammlung'] = 
   { 
@@ -3825,7 +3848,7 @@ questDB = {
   { 
     ['Hexknall Kurbeldreh'] = 'NPC', 
   },
-  ['Elementararmschienen'] = 
+  ['Die Rückeroberung des Mystralsees'] = 
   { 
     ['Schildwache Velene Sternenschlag'] = 'NPC', 
   },
@@ -3921,7 +3944,7 @@ questDB = {
   },
   ['Verwaiste Ställe'] = 
   { 
-    ['Stallmeisterin der Frostwölfe'] = 'NPC', 
+    ['Stallmeister der Frostwölfe'] = 'NPC', 
     ['Stallmeister der Sturmlanzen'] = 'NPC', 
   },
   ['Be-Öh-Es-Eh'] = 
@@ -3940,15 +3963,15 @@ questDB = {
   },
   ['Verzauberter Thoriumplattenpanzer: Band I'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Verzauberter Thoriumplattenpanzer: Band II'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Verzauberter Thoriumplattenpanzer: Band III'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Verschlüsselte Fragmente'] = 
   { 
@@ -3957,7 +3980,7 @@ questDB = {
   ['Eindringende Gnolle'] = 
   { 
     ['Stellvertreter Feldon'] = 'NPC', 
-    ['Wache Parker'] = 'NPC', 
+    ['Wachhauptmann Parker'] = 'NPC', 
   },
   ['Lauernde Tierwelt'] = 
   { 
@@ -4001,7 +4024,7 @@ questDB = {
   ['Verschlüsseltes Siegelzeichen'] = 
   { 
     ['Frahun Schattenflüsterer'] = 'NPC', 
-    ['Konservator Ilthalaine'] = 'NPC', 
+    ['Ilthalaine'] = 'NPC', 
   },
   ['Verschlüsselte Schrifttafel'] = 
   { 
@@ -4057,7 +4080,7 @@ questDB = {
   },
   ['Negolash anlocken'] = 
   { 
-    ['Defektes Rettungsboot'] = 'Object', 
+    ['Unbrauchbares Rettungsboot'] = 'Object', 
   },
   ['Umschlag von der Front'] = 
   { 
@@ -4150,7 +4173,7 @@ questDB = {
   ['Geätztes Siegelzeichen'] = 
   { 
     ['Ayanna Immerlauf'] = 'NPC', 
-    ['Konservator Ilthalaine'] = 'NPC', 
+    ['Ilthalaine'] = 'NPC', 
   },
   ['Geätzte Schrifttafel'] = 
   { 
@@ -4216,8 +4239,6 @@ questDB = {
   ['Negolash entgegentreten'] = 
   { 
     ['Kapitän Hecklebury Smotts'] = 'NPC', 
-    ['Kapitän Hecklebury Smotts'] = 'NPC', 
-    ['Knirpsens'] = 'NPC', 
     ['Knirpsens'] = 'NPC', 
   },
   ['Muisek von Feendrachen'] = 
@@ -4333,7 +4354,7 @@ questDB = {
   },
   ['Der Kessel des Teufelssteinfelds'] = 
   { 
-    ['Geißelkessel'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
   },
   ['Fenstads Visionen'] = 
   { 
@@ -4346,7 +4367,7 @@ questDB = {
   },
   ['Feralas: Ein historischer Abriss'] = 
   { 
-    ['Feralas: Ein historischer Abriss'] = 'Object', 
+    ['Feralas: A History'] = 'Object', 
     ['Daryn Leuchtwind'] = 'NPC', 
   },
   ['Ferocitas der Traumfresser'] = 
@@ -4384,7 +4405,7 @@ questDB = {
     ['Apotheker Johaan'] = 'NPC', 
     ['Gefangener Scharlachroter Zelot'] = 'NPC', 
     ['Apotheker Johaan'] = 'NPC', 
-    ['Todeswache Brodler'] = 'NPC', 
+    ['Todeswache Simmer'] = 'NPC', 
   },
   ['Feuerverzauberungen'] = 
   { 
@@ -4543,7 +4564,7 @@ questDB = {
   { 
     ['Feldmarschall Schneefall'] = 'NPC', 
   },
-  ['Blitzstrahlbombenanleitung'] = 
+  ['Blitzbombenanleitung'] = 
   { 
     ['Riggelfuzz'] = 'NPC', 
   },
@@ -4567,13 +4588,13 @@ questDB = {
     ['Meister der Lehren'] = 'NPC', 
     ['Geschichtenerzähler'] = 'NPC', 
   },
-  ['Lodernde Flammen in den östlichen Königreichen'] = 
+  ['Lodernde Flammen in den Östlichen Königreichen'] = 
   { 
     ['Flammenbewahrer'] = 'NPC', 
     ['Meister der Lehren'] = 'NPC', 
     ['Geschichtenerzähler'] = 'NPC', 
   },
-  ['Flug nach Auberdine'] = 
+  ['Ein unerwartetes Geschenk'] = 
   { 
     ['Laird'] = 'NPC', 
     ['Vesprystus'] = 'NPC', 
@@ -4646,7 +4667,7 @@ questDB = {
   },
   ['Forors Kompendium'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Die Hilfe der Verlassenen'] = 
   { 
@@ -4728,7 +4749,7 @@ questDB = {
   },
   ['Frostschock und Du'] = 
   { 
-    ['Hüter des Wissens Javon'] = 'NPC', 
+    ['Wissenshüter Javon'] = 'NPC', 
   },
   ['Frostfeuergürtel'] = 
   { 
@@ -4904,7 +4925,7 @@ questDB = {
   },
   ['Garona: Eine Studie über Heimlichkeit und Verrat'] = 
   { 
-    ['Hüter des Wissens Kildrath'] = 'NPC', 
+    ['Wissenshüter Kildrath'] = 'NPC', 
   },
   ['Das Tor zur Grenze'] = 
   { 
@@ -5092,7 +5113,7 @@ questDB = {
   },
   ['Die Verderbnis der Knarzklauen'] = 
   { 
-    ['Athridas Bärenpelz'] = 'NPC', 
+    ['Athridas Bärenfell'] = 'NPC', 
     ['Gaerolas Talvethren'] = 'NPC', 
   },
   ['Gnogaine'] = 
@@ -5302,7 +5323,7 @@ questDB = {
   },
   ['Das bewachte Fass mit Donnerbier'] = 
   { 
-    ['Bewachtes Fass mit Donnerbier'] = 'Object', 
+    ['Bewachtes Fass mit Donnerbräu Lager'] = 'Object', 
   },
   ['Wächter des Altars'] = 
   { 
@@ -5312,13 +5333,7 @@ questDB = {
   ['Geheimnisse bewahren'] = 
   { 
     ['Nara Wildmähne'] = 'NPC', 
-  },
-  ['Geheimnisse bewachen'] = 
-  { 
     ['Trull Scheiterbann'] = 'NPC', 
-  },
-  ['Geheimnisse bewahren'] = 
-  { 
     ['Trull Scheiterbann'] = 'NPC', 
   },
   ['Arglist des Raptors'] = 
@@ -5380,7 +5395,7 @@ questDB = {
   ['Geheiligtes Siegelzeichen'] = 
   { 
     ['Shanda'] = 'NPC', 
-    ['Konservator Ilthalaine'] = 'NPC', 
+    ['Ilthalaine'] = 'NPC', 
   },
   ['Geheiligte Schrifttafel'] = 
   { 
@@ -5434,7 +5449,7 @@ questDB = {
   },
   ['Schatten einspannen'] = 
   { 
-    ['Hüterin des Wissens Mykos'] = 'NPC', 
+    ['Wissenshüterin Mykos'] = 'NPC', 
   },
   ['Harpyien drohen'] = 
   { 
@@ -5587,7 +5602,7 @@ questDB = {
   },
   ['Hilarys Halskette'] = 
   { 
-    ['Hilary'] = 'NPC', 
+    ['Nida'] = 'NPC', 
     ['Shawn'] = 'NPC', 
   },
   ['Hinotts Hilfe'] = 
@@ -5634,14 +5649,14 @@ questDB = {
   },
   ['Heiliger Fleischklops: Was das Licht Dir nicht erzählt'] = 
   { 
-    ['Hüter des Wissens Javon'] = 'NPC', 
+    ['Wissenshüter Javon'] = 'NPC', 
   },
   ['Auf der Heimreise'] = 
   { 
     ['Motega Feuermähne'] = 'NPC', 
     ['Pao\'ka Bergrausch'] = 'NPC', 
   },
-  ['Ehrenstudenten'] = 
+  ['Ehrenlehrlinge'] = 
   { 
     ['Thorgrum Borrelson'] = 'NPC', 
     ['Brock Steinsucher'] = 'NPC', 
@@ -5856,11 +5871,15 @@ questDB = {
     ['Gebirgsjäger Feuerkiesel'] = 'NPC', 
     ['Gebirgsjäger Wallbang'] = 'NPC', 
     ['Gebirgsjäger Kieselwut'] = 'NPC', 
+  },
+  ['Ein Entscheidungsschlag'] = 
+  { 
     ['Hauptmann Rugelfuß'] = 'NPC', 
   },
   ['In den Träumen'] = 
   { 
     ['Tirion Fordring'] = 'NPC', 
+    ['Lord Tirion Fordring'] = 'NPC', 
     ['Hochlord Taelan Fordring'] = 'NPC', 
   },
   ['Mit Eranikus\' eigenen Worten'] = 
@@ -5932,7 +5951,7 @@ questDB = {
   },
   ['Auf der Suche nach Thaelrid'] = 
   { 
-    ['Argentumwache Thaelrid'] = 'NPC', 
+    ['Späher Thaelrid'] = 'NPC', 
     ['Dämmerungsbehüter Shaedlass'] = 'NPC', 
   },
   ['Auf der Suche nach dem Ausgrabungstrupp'] = 
@@ -6041,7 +6060,7 @@ questDB = {
   ['Geißelsteine des Eindringlings'] = 
   { 
     ['Argentumoffizier Garush'] = 'NPC', 
-    ['Argentumoffizier Reinherz'] = 'NPC', 
+    ['Argentumoffizierin Reinherz'] = 'NPC', 
     ['Fürst Nicholas Zverenhoff'] = 'NPC', 
   },
   ['Die Invasoren des Alteractals'] = 
@@ -6161,7 +6180,7 @@ questDB = {
   },
   ['Ivus der Waldfürst'] = 
   { 
-    ['Erzdruide Renferal'] = 'NPC', 
+    ['Erzdruidin Renferal'] = 'NPC', 
   },
   ['Gefängnisausbruch!'] = 
   { 
@@ -6175,7 +6194,7 @@ questDB = {
   ['James Hyal'] = 
   { 
     ['Vincent Hyal'] = 'NPC', 
-    ['Amtmann Lendry'] = 'NPC', 
+    ['Zahlmeister Lendry'] = 'NPC', 
     ['Connor Bach'] = 'NPC', 
     ['Vincent Hyal'] = 'NPC', 
   },
@@ -6235,7 +6254,7 @@ questDB = {
   ['Reise nach Donnerfels'] = 
   { 
     ['Cairne Bluthuf'] = 'NPC', 
-    ['Vorfahrengeist'] = 'NPC', 
+    ['Geist der Ahnen'] = 'NPC', 
   },
   ['Reise nach Astranaar'] = 
   { 
@@ -6470,7 +6489,7 @@ questDB = {
     ['Kaal Seelentod'] = 'NPC', 
     ['Wilddorn'] = 'NPC', 
   },
-  ['Säuberung im Koboldlager'] = 
+  ['140211'] = 
   { 
     ['Marschall McBride'] = 'NPC', 
   },
@@ -6539,7 +6558,7 @@ questDB = {
   { 
     ['Jorn Himmelsdeuter'] = 'NPC', 
   },
-  ['Land Ho!'] = 
+  ['Land in Sicht!'] = 
   { 
     ['Wank O\'Breen'] = 'NPC', 
     ['Lolo der Ausguck'] = 'NPC', 
@@ -6567,7 +6586,7 @@ questDB = {
   },
   ['Startet den Angriff!'] = 
   { 
-    [''] = 'NPC', 
+    ['Kriegsmeister Garrick'] = 'NPC', 
   },
   ['Faule Peons'] = 
   { 
@@ -6643,15 +6662,15 @@ questDB = {
   },
   ['Buchband des Fokus'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Buchband des Schutzes'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Buchband der Schnelligkeit'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Buchband der Abhärtung'] = 
   { 
@@ -6680,10 +6699,10 @@ questDB = {
   },
   ['Brechen des Fluchs'] = 
   { 
-    ['Verschlossene Geldkassette der INTREPID'] = 'Object', 
+    ['Verschlossene Geldkassette der \'Kühnheit\''] = 'Object', 
     ['Erster Maat Fitzsimmons'] = 'NPC', 
   },
-  ['Kapelle des hoffnungsvollen Lichts'] = 
+  ['Kapelle des Hoffnungsvollen Lichts'] = 
   { 
     ['Bewahrer der Schriften'] = 'NPC', 
     ['Argentumrekrutierungsoffizier'] = 'NPC', 
@@ -6695,7 +6714,7 @@ questDB = {
   },
   ['Lichtgeschmiedetes Eisen'] = 
   { 
-    ['Durchnässte Truhe'] = 'Object', 
+    ['Voll gelaufene Truhe'] = 'Object', 
     ['Glorin Stahlbraue'] = 'NPC', 
   },
   ['Nachrichtenwege'] = 
@@ -6747,6 +6766,10 @@ questDB = {
   { 
     ['Kristallträne'] = 'Object', 
     ['Anachronos'] = 'NPC', 
+  },
+  ['Wie groß das ist!'] = 
+  { 
+    ['Evonice Rußraucher'] = 'NPC', 
   },
   ['Auf einen alten Freund verlassen'] = 
   { 
@@ -6987,7 +7010,7 @@ questDB = {
   },
   ['Marlas letzter Wunsch'] = 
   { 
-    ['Novize Elreth'] = 'NPC', 
+    ['Novizin Elreth'] = 'NPC', 
   },
   ['Marschall Haggard'] = 
   { 
@@ -7009,7 +7032,7 @@ questDB = {
     ['Liv Ritzelflick'] = 'NPC', 
     ['Larion'] = 'NPC', 
   },
-  ['Anglermeister'] = 
+  ['Die große Beute'] = 
   { 
     ['Riggle Barschfang'] = 'NPC', 
   },
@@ -7022,8 +7045,8 @@ questDB = {
   },
   ['Meister Rysons Allsehendes Auge'] = 
   { 
-    [''] = 'NPC', 
-    [''] = 'NPC', 
+    ['Meister des Syndikats Ryson'] = 'NPC', 
+    ['Meister des Syndikats Ryson'] = 'NPC', 
   },
   ['Die Beherrschung der Elemente'] = 
   { 
@@ -7063,11 +7086,11 @@ questDB = {
   ['Mazens Befehl'] = 
   { 
     ['Behüter Mahar Ba'] = 'NPC', 
-    ['Akolyt Dellis'] = 'NPC', 
+    ['Akolyth Dellis'] = 'NPC', 
     ['Mazen Mac\'Nadir'] = 'NPC', 
-    ['Akolyt Dellis'] = 'NPC', 
+    ['Akolyth Dellis'] = 'NPC', 
   },
-  ['Mazzranache'] = 
+  ['Mazzranach'] = 
   { 
     ['Maur Regenrufer'] = 'NPC', 
   },
@@ -7178,9 +7201,9 @@ questDB = {
   },
   ['Botschaft nach Westfall'] = 
   { 
-    ['Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
     ['Magistrat Solomon'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
     ['Magistrat Solomon'] = 'NPC', 
   },
   ['Metzen das Rentier'] = 
@@ -7196,7 +7219,7 @@ questDB = {
   ['Milly Geltmark'] = 
   { 
     ['Milly Geltmark'] = 'NPC', 
-    ['Stellvertreter Willem'] = 'NPC', 
+    ['Unteroffizier Willem'] = 'NPC', 
   },
   ['Millys Ernte'] = 
   { 
@@ -7209,7 +7232,7 @@ questDB = {
   ['Geißelsteine des Dieners'] = 
   { 
     ['Argentumoffizier Garush'] = 'NPC', 
-    ['Argentumoffizier Reinherz'] = 'NPC', 
+    ['Argentumoffizierin Reinherz'] = 'NPC', 
     ['Fürst Nicholas Zverenhoff'] = 'NPC', 
   },
   ['Minshinas Schädel'] = 
@@ -7349,12 +7372,9 @@ questDB = {
     ['Todespirscher Mortis'] = 'NPC', 
     ['Todespirscher Mortis'] = 'NPC', 
   },
-  ['Mehr Spaß mit dem Funkelmaten'] = 
-  { 
-    ['Der Funkelmat 5200'] = 'Object', 
-  },
   ['Funkelmatastisch'] = 
   { 
+    ['Der Funkelmat 5200'] = 'Object', 
     ['Der Funkelmat 5200'] = 'Object', 
     ['Der Funkelmat 5200'] = 'Object', 
   },
@@ -7406,7 +7426,6 @@ questDB = {
   ['Morgenkorn nach Darnassus'] = 
   { 
     ['Mathrengyl Bärenfährte'] = 'NPC', 
-    ['Erzdruide Fandral Hirschhaupt'] = 'NPC', 
   },
   ['Morgenkorn für die Mondfederfeste'] = 
   { 
@@ -7430,7 +7449,7 @@ questDB = {
   { 
     ['Struppiger John'] = 'NPC', 
   },
-  ['Muisek von Bergriesen'] = 
+  ['Bergriesenmuisek'] = 
   { 
     ['Hexendoktor Uzer\'i'] = 'NPC', 
   },
@@ -7477,12 +7496,12 @@ questDB = {
   },
   ['Mythologie der Titanen'] = 
   { 
-    ['Bilbliothekarin Mae Bleichstaub'] = 'NPC', 
+    ['Bibliothekarin Mae Bleichstaub'] = 'NPC', 
   },
   ['Myzraels Verbündete'] = 
   { 
-    ['Hauptstein'] = 'Object', 
-    ['Hauptstein'] = 'Object', 
+    ['Schlüsselstein'] = 'Object', 
+    ['Schlüsselstein'] = 'Object', 
     ['Gerrig Knochengriff'] = 'NPC', 
     ['Zaruk'] = 'NPC', 
   },
@@ -7555,7 +7574,7 @@ questDB = {
   { 
     ['Thadius Grimmschatten'] = 'NPC', 
   },
-  ['Nessa Schattensang'] = 
+  ['Andenken an Zuhause'] = 
   { 
     ['Nessa Schattensang'] = 'NPC', 
     ['Mydrannul'] = 'NPC', 
@@ -7802,7 +7821,7 @@ questDB = {
   { 
     ['Braelyn Feuerhand'] = 'NPC', 
   },
-  ['Ordnung muss wieder hergestellt werden'] = 
+  ['Ordnung muss wiederhergestellt werden'] = 
   { 
     ['Hochlord Bolvar Fordragon'] = 'NPC', 
   },
@@ -7859,23 +7878,32 @@ questDB = {
     ['Thurman Schneider'] = 'NPC', 
     ['Rema Schneider'] = 'NPC', 
   },
-  ['Seite von der Front'] = 
+  ['Nachricht von der Front'] = 
   { 
     ['Bewahrer der Schriften'] = 'NPC', 
   },
   ['Austausch Eures Palominos'] = 
   { 
-    ['Katie Waidmann'] = 'NPC', 
+    ['Katie Weidmann'] = 'NPC', 
   },
   ['Pamelas Puppe'] = 
   { 
     ['Pamela Rotpfad'] = 'NPC', 
   },
-  ['Beherrschen der Pantherjagd'] = 
+  ['Pantherjagd'] = 
   { 
     ['Sire S. J. Erlgadin'] = 'NPC', 
+  },
+  ['Pantherpirsch'] = 
+  { 
     ['Sire S. J. Erlgadin'] = 'NPC', 
+  },
+  ['Pantherhatz'] = 
+  { 
     ['Sire S. J. Erlgadin'] = 'NPC', 
+  },
+  ['Beherrschen der Pantherjagd'] = 
+  { 
     ['Sire S. J. Erlgadin'] = 'NPC', 
   },
   ['Symbole der Macht: Der Gürtel des Weissagers'] = 
@@ -8160,7 +8188,7 @@ questDB = {
     ['Jern Hornhelm'] = 'NPC', 
     ['Ausgrabungsleiter Sturmlanze'] = 'NPC', 
   },
-  ['Macht in Uldaman'] = 
+  ['Kraft in Uldaman'] = 
   { 
     ['Tabetha'] = 'NPC', 
   },
@@ -8303,7 +8331,7 @@ questDB = {
   { 
     ['Sven Yorgen'] = 'NPC', 
   },
-  ['Streuner des Brachlandes'] = 
+  ['Jagt die Jägerin'] = 
   { 
     ['Sergra Dunkeldorn'] = 'NPC', 
   },
@@ -8357,22 +8385,73 @@ questDB = {
   { 
     ['Verborgener Schrein'] = 'Object', 
     ['Verborgener Schrein'] = 'Object', 
+  },
+  ['Der verlorene Stein'] = 
+  { 
     ['Raene Wolfsläufer'] = 'NPC', 
+  },
+  ['Rückkehr zu Raene'] = 
+  { 
     ['Raene Wolfsläufer'] = 'NPC', 
+  },
+  ['Die wahre Macht der Rute'] = 
+  { 
     ['Raene Wolfsläufer'] = 'NPC', 
+  },
+  ['Findet Teronis'] = 
+  { 
     ['Teronis\' Leichnam'] = 'NPC', 
+  },
+  ['Dartols Rute'] = 
+  { 
     ['Krolg'] = 'NPC', 
+  },
+  ['Eine neue Verzierung'] = 
+  { 
     ['Krolg'] = 'NPC', 
+  },
+  ['Dryadenlieferung'] = 
+  { 
     ['Shael\'dryn'] = 'NPC', 
+  },
+  ['Durchsucht den Baumstamm'] = 
+  { 
     ['Shael\'dryn'] = 'NPC', 
+  },
+  ['Sich tot stellen'] = 
+  { 
     ['Shael\'dryn'] = 'NPC', 
+  },
+  ['Raenes Säuberung'] = 
+  { 
     ['Shael\'dryn'] = 'NPC', 
+  },
+  ['Findet Teronis'] = 
+  { 
     ['Raene Wolfsläufer'] = 'NPC', 
+  },
+  ['Dryadenlieferung'] = 
+  { 
     ['Raene Wolfsläufer'] = 'NPC', 
+  },
+  ['Dartols Rute'] = 
+  { 
     ['Raene Wolfsläufer'] = 'NPC', 
+  },
+  ['Der verlorene Stein'] = 
+  { 
     ['Teronis\' Leichnam'] = 'NPC', 
+  },
+  ['Die wahre Macht der Rute'] = 
+  { 
     ['Krolg'] = 'NPC', 
+  },
+  ['Raenes Säuberung'] = 
+  { 
     ['Shael\'dryn'] = 'NPC', 
+  },
+  ['Rückkehr zu Raene'] = 
+  { 
     ['Shael\'dryn'] = 'NPC', 
   },
   ['Wut der Zeiten'] = 
@@ -8396,9 +8475,12 @@ questDB = {
   { 
     ['Uthek die Weise'] = 'NPC', 
   },
-  ['Mut machen'] = 
+  ['Stimmungsaufheller'] = 
   { 
     ['Tor\'gan'] = 'NPC', 
+  },
+  ['Mut machen'] = 
+  { 
     ['Tor\'gan'] = 'NPC', 
     ['Gor\'mul'] = 'NPC', 
     ['Tor\'gan'] = 'NPC', 
@@ -8419,7 +8501,7 @@ questDB = {
   },
   ['Ramaladnis eisiger Griff'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Tobende Riesen'] = 
   { 
@@ -8434,18 +8516,27 @@ questDB = {
     ['Frisch aufgewühlter Dreck'] = 'Object', 
     ['Narain Pfauentraum'] = 'NPC', 
   },
-  ['Raptorhörner'] = 
+  ['Es muss im Horn stecken'] = 
   { 
     ['Mebok Mizzyrix'] = 'NPC', 
+  },
+  ['Raptorenjagd'] = 
+  { 
+    ['Hemet Nesingwary Jr.'] = 'NPC', 
+  },
+  ['Raptorenpirsch'] = 
+  { 
+    ['Hemet Nesingwary Jr.'] = 'NPC', 
+  },
+  ['Raptorenhatz'] = 
+  { 
+    ['Hemet Nesingwary Jr.'] = 'NPC', 
   },
   ['Beherrschen der Raptorenjagd'] = 
   { 
     ['Hemet Nesingwary Jr.'] = 'NPC', 
-    ['Hemet Nesingwary Jr.'] = 'NPC', 
-    ['Hemet Nesingwary Jr.'] = 'NPC', 
-    ['Hemet Nesingwary Jr.'] = 'NPC', 
   },
-  ['Raptorendiebe'] = 
+  ['Wie man einen Dieb aufspürt'] = 
   { 
     ['Gazrog'] = 'NPC', 
   },
@@ -8482,18 +8573,12 @@ questDB = {
   { 
     ['Razzeric'] = 'NPC', 
   },
-  ['Reagenzien für die Wiederholer AG.'] = 
-  { 
-    ['Roetten Steinhammer'] = 'NPC', 
-  },
   ['Reagenzien für die Wiederholer AG'] = 
   { 
+    ['Roetten Steinhammer'] = 'NPC', 
     ['Kreldig Ungor'] = 'NPC', 
     ['Kreldig Ungor'] = 'NPC', 
     ['Kreldig Ungor'] = 'NPC', 
-  },
-  ['Reagenzien für die Wiederholer AG.'] = 
-  { 
     ['Kreldig Ungor'] = 'NPC', 
   },
   ['Patrouille zur Rückendeckung'] = 
@@ -8529,7 +8614,7 @@ questDB = {
     ['Beschädigte Kiste'] = 'Object', 
     ['Karl Boran'] = 'NPC', 
   },
-  ['Die Rückeroberung des verbrannten Tals'] = 
+  ['Die Rückeroberung des Verbrannten Tals'] = 
   { 
     ['Bewahrer Albagorm'] = 'NPC', 
     ['Falfindel Wegeshut'] = 'NPC', 
@@ -8543,7 +8628,7 @@ questDB = {
   { 
     ['Späher Galiaan'] = 'NPC', 
   },
-  ['Rote Leinenwaren'] = 
+  ['Feine Leinenwaren'] = 
   { 
     ['Sara Roderwald'] = 'NPC', 
   },
@@ -8561,35 +8646,35 @@ questDB = {
   },
   ['Stiefel der Erlösung'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
   ['Gurt der Erlösung'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
   ['Handschützer der Erlösung'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
   ['Kopfstück der Erlösung'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
   ['Beinschützer der Erlösung'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
   ['Schiftung der Erlösung'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
   ['Tunika der Erlösung'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
-  ['Handgelenksschutz der Erlösung'] = 
+  ['Handgelenksschützer der Erlösung'] = 
   { 
-    ['Kommandant Eligor Morgenbringer'] = 'NPC', 
+    ['Kreuzzugskommandant Eligor Morgenbringer'] = 'NPC', 
   },
   ['Rotkammgulasch'] = 
   { 
@@ -8649,7 +8734,7 @@ questDB = {
     ['Anastasia Hirschbrunn'] = 'NPC', 
     ['Uthel\'nay'] = 'NPC', 
   },
-  ['Meldung bei Captain Starkfaust'] = 
+  ['Meldung bei Hauptmann Starkfaust'] = 
   { 
     ['Hauptmann Starkfaust'] = 'NPC', 
     ['Valstag Eisenkiefer'] = 'NPC', 
@@ -8671,7 +8756,7 @@ questDB = {
   },
   ['Meldung bei Gryan Starkmantel'] = 
   { 
-    ['Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
     ['Wache Thomas'] = 'NPC', 
   },
   ['Meldung bei Hadrec'] = 
@@ -8699,7 +8784,7 @@ questDB = {
     ['Kadrak'] = 'NPC', 
     ['Kadrak'] = 'NPC', 
     ['Thork'] = 'NPC', 
-    ['Darn Klauengriff'] = 'NPC', 
+    ['Scholli Klauengriff'] = 'NPC', 
   },
   ['Meldung bei Marschall Himmelswand'] = 
   { 
@@ -8746,7 +8831,7 @@ questDB = {
     ['Glotz Widrikus'] = 'NPC', 
     ['Leitroboter OOX-17/TN'] = 'NPC', 
   },
-  ['Die Rettung von OOX-22/FE'] = 
+  ['Rettet OOX-22/FE'] = 
   { 
     ['Glotz Widrikus'] = 'NPC', 
     ['Leitroboter OOX-22/FE'] = 'NPC', 
@@ -8762,7 +8847,7 @@ questDB = {
   },
   ['In Stücken begraben'] = 
   { 
-    ['Flaches Grab'] = 'Object', 
+    ['Shallow Grave'] = 'Object', 
   },
   ['Nachschub an feurigem Fluxus: Schweres Leder'] = 
   { 
@@ -8838,16 +8923,16 @@ questDB = {
     ['Bodley'] = 'NPC', 
     ['Geist von Lord Valthalak'] = 'NPC', 
   },
-  ['Rückkehr zu Brock'] = 
+  ['Rückkehr zu Gremlock'] = 
   { 
     ['Brock Steinsucher'] = 'NPC', 
     ['Gryth Thurden'] = 'NPC', 
   },
   ['Rückkehr zum Zugwindlager'] = 
   { 
-    ['Geißelkessel'] = 'Object', 
-    ['Geißelkessel'] = 'Object', 
-    ['Geißelkessel'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
     ['Hohepriesterin MacDonnell'] = 'NPC', 
     ['Hohepriesterin MacDonnell'] = 'NPC', 
     ['Hohepriesterin MacDonnell'] = 'NPC', 
@@ -8859,7 +8944,7 @@ questDB = {
     ['Chromie'] = 'NPC', 
     ['Carlin Rotpfad'] = 'NPC', 
   },
-  ['Rückkehr zu Korporal Kaleb'] = 
+  ['Kehrt zu Korporal Kaleb zurück'] = 
   { 
     ['Korporal Kaleb'] = 'NPC', 
     ['Krazek'] = 'NPC', 
@@ -8876,7 +8961,7 @@ questDB = {
   },
   ['Kehrt zur Mondfederfeste zurück'] = 
   { 
-    ['Solarsal Pavillon'] = 'Object', 
+    ['Pavillon von Solarsal'] = 'Object', 
     ['Shandris Mondfeder'] = 'NPC', 
   },
   ['Rückkehr zu Fel\'Zerul'] = 
@@ -8889,7 +8974,7 @@ questDB = {
     ['Podest von Uldum'] = 'Object', 
     ['Historiker Karnik'] = 'NPC', 
   },
-  ['Rückkehr zu Jahan'] = 
+  ['Rückkehr zu Varg'] = 
   { 
     ['Jahan Falkenschwinge'] = 'NPC', 
     ['Tal'] = 'NPC', 
@@ -8916,7 +9001,7 @@ questDB = {
   },
   ['Rückkehr zu Marleth'] = 
   { 
-    ['Unbewachtes Fass mit Donnerbier'] = 'Object', 
+    ['Unbewachtes Fass mit Donnerbräu Lager'] = 'Object', 
     ['Marleth Gerstenbräu'] = 'NPC', 
   },
   ['Rückkehr zu Milton'] = 
@@ -8939,17 +9024,17 @@ questDB = {
     ['Nathanos Pestrufer'] = 'NPC', 
     ['Kreuzfahrerlord Valdelmar'] = 'NPC', 
   },
-  ['Rückkehr zu Nessa'] = 
+  ['Rückkehr zu Nyoma'] = 
   { 
     ['Nessa Schattensang'] = 'NPC', 
     ['Laird'] = 'NPC', 
   },
   ['Rückkehr zu Onu'] = 
   { 
-    ['Zwielichtfoliant'] = 'Object', 
+    ['Twilight Tome'] = 'Object', 
     ['Onu'] = 'NPC', 
   },
-  ['Rückkehr zu Podrig'] = 
+  ['Rückkehr zu Morris'] = 
   { 
     ['Todeswache Podrig'] = 'NPC', 
     ['Michael Garrett'] = 'NPC', 
@@ -8969,23 +9054,23 @@ questDB = {
     ['Sven Yorgen'] = 'NPC', 
     ['Bibbers'] = 'NPC', 
   },
-  ['Rückkehr in die verwüsteten Lande'] = 
+  ['Rückkehr in die Verwüsteten Lande'] = 
   { 
     ['Gefallener Held der Horde'] = 'NPC', 
     ['Galvan der Alte'] = 'NPC', 
   },
   ['Rückkehr zum Bollwerk'] = 
   { 
+    ['Scourge Cauldron'] = 'Object', 
     ['Geißelkessel'] = 'Object', 
-    ['Geißelkessel'] = 'Object', 
-    ['Geißelkessel'] = 'Object', 
-    ['Geißelkessel'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
     ['Schattenpriesterin Vandis'] = 'NPC', 
     ['Schattenpriesterin Vandis'] = 'NPC', 
     ['Schattenpriesterin Vandis'] = 'NPC', 
     ['Schattenpriesterin Vandis'] = 'NPC', 
   },
-  ['Kehrt zum Wegekreuz zurück'] = 
+  ['Kehrt nach Klingenhügel zurück'] = 
   { 
     ['Zargh'] = 'NPC', 
     ['Doras'] = 'NPC', 
@@ -9097,13 +9182,6 @@ questDB = {
   { 
     ['Yuka Schraubstutz'] = 'NPC', 
   },
-  ['Aufopferungsabzeichen'] = 
-  { 
-    ['Schildwache Weltensang'] = 'NPC', 
-    ['Schildwache Weltensang'] = 'NPC', 
-    ['Hauptmann Schädelbrecher'] = 'NPC', 
-    ['Hauptmann Schädelbrecher'] = 'NPC', 
-  },
   ['Flug nach Eisenschmiede'] = 
   { 
     ['Golnir Geröllzeh'] = 'NPC', 
@@ -9203,7 +9281,7 @@ questDB = {
     ['Häuptling Falkenwind'] = 'NPC', 
     ['Seher Grauzunge'] = 'NPC', 
   },
-  ['Ritus der Sicht'] = 
+  ['Ritus der Vision'] = 
   { 
     ['Seher Weisenpfad'] = 'NPC', 
     ['Zarlman Zwillingsmond'] = 'NPC', 
@@ -9213,7 +9291,7 @@ questDB = {
   },
   ['Ritus der Weisheit'] = 
   { 
-    ['Vorfahrengeist'] = 'NPC', 
+    ['Geist der Ahnen'] = 'NPC', 
     ['Seher Weisenpfad'] = 'NPC', 
   },
   ['Riten der Erdenmutter'] = 
@@ -9273,7 +9351,7 @@ questDB = {
   },
   ['Auf den Spuren der Moderfelle'] = 
   { 
-    ['Boot mit Leichen'] = 'Object', 
+    ['Corpse Laden Boat'] = 'Object', 
     ['Hochexekutor Hadrec'] = 'NPC', 
   },
   ['Moderfellsekret'] = 
@@ -9531,7 +9609,7 @@ questDB = {
     ['Hochexekutor Derrington'] = 'NPC', 
     ['Kommandant Ashlam Ehrenschlag'] = 'NPC', 
   },
-  ['Geißel der Niederungen'] = 
+  ['Geißel der Hügel'] = 
   { 
     ['Belnistrasz'] = 'NPC', 
   },
@@ -9564,13 +9642,13 @@ questDB = {
   },
   ['Siegel des Aufstiegs'] = 
   { 
-    ['Vaelan'] = 'NPC', 
-    ['Vaelan'] = 'NPC', 
+    ['Acride'] = 'NPC', 
+    ['Acride'] = 'NPC', 
   },
   ['Siegel der Erde'] = 
   { 
-    ['Siegel der Erde'] = 'Object', 
-    ['Siegel der Erde'] = 'Object', 
+    ['Seal of the Earth'] = 'Object', 
+    ['Seal of the Earth'] = 'Object', 
   },
   ['Die versiegelte azurblaue Tasche'] = 
   { 
@@ -9595,7 +9673,7 @@ questDB = {
     ['Maur Grimmtotem'] = 'NPC', 
     ['Rahauro'] = 'NPC', 
   },
-  ['Gewürzter Wolfskebab'] = 
+  ['Gewürzte Wolfkebabs'] = 
   { 
     ['Küchenchef Grual'] = 'NPC', 
   },
@@ -9647,7 +9725,7 @@ questDB = {
     ['Historiker Karnik'] = 'NPC', 
     ['Nara Wildmähne'] = 'NPC', 
   },
-  ['Aufsuchen des SI: 7'] = 
+  ['Aufsuchen des SI:7'] = 
   { 
     ['Meister Mathias Shaw'] = 'NPC', 
     ['Keryn Sylvius'] = 'NPC', 
@@ -9778,12 +9856,12 @@ questDB = {
   ['Splitter eines Teufelshundes'] = 
   { 
     ['Menara Leerbringer'] = 'NPC', 
-    ['Akolyt Wytula'] = 'NPC', 
+    ['Akolythin Wytula'] = 'NPC', 
   },
   ['Splitter einer Höllenbestie'] = 
   { 
     ['Menara Leerbringer'] = 'NPC', 
-    ['Akolyt Magaz'] = 'NPC', 
+    ['Akolythin Magaz'] = 'NPC', 
   },
   ['Die Splitter der Teufelsranke'] = 
   { 
@@ -9942,7 +10020,7 @@ questDB = {
   ['Einfaches Siegelzeichen'] = 
   { 
     ['Alyissia'] = 'NPC', 
-    ['Konservator Ilthalaine'] = 'NPC', 
+    ['Ilthalaine'] = 'NPC', 
   },
   ['Einfache List'] = 
   { 
@@ -10161,7 +10239,7 @@ questDB = {
     ['Ruga Rachtotem'] = 'NPC', 
     ['Sorek'] = 'NPC', 
   },
-  ['Gespräch mit Sevren'] = 
+  ['Sprecht mit Sevren'] = 
   { 
     ['Magistrat Sevren'] = 'NPC', 
     ['Coleman Heller'] = 'NPC', 
@@ -10206,7 +10284,7 @@ questDB = {
   ['Spezialtruppe'] = 
   { 
     ['Leutnant Doren'] = 'NPC', 
-    ['Unteroffizier Yohwa'] = 'NPC', 
+    ['Unteroffizierin Yohwa'] = 'NPC', 
   },
   ['Roben des Zauberfeuers'] = 
   { 
@@ -10326,7 +10404,7 @@ questDB = {
   { 
     ['Windruferin Prachthorn'] = 'NPC', 
   },
-  ['Stewvul, Ex-B.F.F.I.'] = 
+  ['Stewvul, ehemals allerbester Freund'] = 
   { 
     ['Unscheinbare Kiste'] = 'Object', 
     ['Narain Pfauentraum'] = 'NPC', 
@@ -10408,13 +10486,13 @@ questDB = {
   ['Steine der Bindung'] = 
   { 
     ['Regenbogenfarbene Splitter'] = 'Object', 
-    ['Stein der inneren Bindung'] = 'Object', 
+    ['Stein der Inneren Bindung'] = 'Object', 
   },
   ['Urahne Steinkeil'] = 
   { 
     ['Urahne Steinkeil'] = 'NPC', 
   },
-  ['Stillstand am Steinkrallenpfad'] = 
+  ['Und dann langsam abkühlen lassen'] = 
   { 
     ['Mastok Wutfauch'] = 'NPC', 
   },
@@ -10561,7 +10639,13 @@ questDB = {
     ['Wank O\'Breen'] = 'NPC', 
     ['Wank O\'Breen'] = 'NPC', 
     ['Doktor Drechselknacks'] = 'NPC', 
+  },
+  ['Versunkene Schätze'] = 
+  { 
     ['Doktor Drechselknacks'] = 'NPC', 
+  },
+  ['Versunkener Schatz'] = 
+  { 
     ['Flottenmeister Seehorn'] = 'NPC', 
     ['Wank O\'Breen'] = 'NPC', 
     ['Professor Prasseltrop'] = 'NPC', 
@@ -10644,7 +10728,7 @@ questDB = {
     ['Thorvald Tiefenschmied'] = 'NPC', 
     ['Tormus Tiefenschmied'] = 'NPC', 
   },
-  ['Nachschub für das Grabmal'] = 
+  ['Nachschub für Brill'] = 
   { 
     ['Karos Razok'] = 'NPC', 
     ['Todeswache Podrig'] = 'NPC', 
@@ -10666,12 +10750,12 @@ questDB = {
   },
   ['Svens Lager'] = 
   { 
-    ['Ein Haufen lockere Erde'] = 'Object', 
+    ['Mound of loose dirt'] = 'Object', 
     ['Sven Yorgen'] = 'NPC', 
   },
   ['Svens Rache'] = 
   { 
-    ['Ein Haufen lockere Erde'] = 'Object', 
+    ['Mound of loose dirt'] = 'Object', 
     ['Sven Yorgen'] = 'NPC', 
   },
   ['Goldbrauner Samt'] = 
@@ -10720,7 +10804,7 @@ questDB = {
     ['Drusilla La Salle'] = 'NPC', 
     ['Marschall McBride'] = 'NPC', 
   },
-  ['Besudeltes Memorandum'] = 
+  ['Besudelte Rune'] = 
   { 
     ['Alamar Grimm'] = 'NPC', 
     ['Sten Starkarm'] = 'NPC', 
@@ -10755,15 +10839,6 @@ questDB = {
     ['Tal'] = 'NPC', 
     ['Ahanu'] = 'NPC', 
   },
-  ['Verdienstabzeichen'] = 
-  { 
-    ['Schildwache Weltensang'] = 'NPC', 
-    ['Schildwache Weltensang'] = 'NPC', 
-    ['Schildwache Weltensang'] = 'NPC', 
-    ['Schildwache Weltensang'] = 'NPC', 
-    ['Schildwache Weltensang'] = 'NPC', 
-    ['Schildwache Weltensang'] = 'NPC', 
-  },
   ['Die Zähmung der Bestie'] = 
   { 
     ['Grif Wildherz'] = 'NPC', 
@@ -10790,15 +10865,15 @@ questDB = {
   },
   ['Ziel: Dalsons Tränenfeld'] = 
   { 
-    ['Geißelkessel'] = 'Object', 
-    ['Geißelkessel'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
     ['Hohepriesterin MacDonnell'] = 'NPC', 
     ['Schattenpriesterin Vandis'] = 'NPC', 
   },
   ['Ziel: Teufelssteinfeld'] = 
   { 
-    ['Geißelkessel'] = 'Object', 
-    ['Geißelkessel'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
     ['Hohepriesterin MacDonnell'] = 'NPC', 
     ['Schattenpriesterin Vandis'] = 'NPC', 
   },
@@ -10857,10 +10932,10 @@ questDB = {
   { 
     ['Kommandant Mar\'alith'] = 'NPC', 
   },
-  ['Ziel: Das trostlose Feld'] = 
+  ['Ziel: Das Trostlose Feld'] = 
   { 
-    ['Geißelkessel'] = 'Object', 
-    ['Geißelkessel'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
     ['Hohepriesterin MacDonnell'] = 'NPC', 
     ['Schattenpriesterin Vandis'] = 'NPC', 
   },
@@ -11137,11 +11212,11 @@ questDB = {
   { 
     ['Vartrus der Uralte'] = 'NPC', 
   },
-  ['Die antike Statuette'] = 
+  ['Die antiken Statuetten'] = 
   { 
     ['Talen'] = 'NPC', 
   },
-  ['Die wütenden Sensenklauen'] = 
+  ['In die Höhle des Raptors'] = 
   { 
     ['Sergra Dunkeldorn'] = 'NPC', 
   },
@@ -11160,7 +11235,7 @@ questDB = {
   },
   ['Das Arkanistenkochbuch'] = 
   { 
-    ['Hüter des Wissens Kildrath'] = 'NPC', 
+    ['Wissenshüter Kildrath'] = 'NPC', 
   },
   ['Der Archivar'] = 
   { 
@@ -11215,8 +11290,11 @@ questDB = {
   },
   ['Das Gleichgewicht der Natur'] = 
   { 
-    ['Konservator Ilthalaine'] = 'NPC', 
-    ['Konservator Ilthalaine'] = 'NPC', 
+    ['Ilthalaine'] = 'NPC', 
+  },
+  ['Das Gesetz der Natur'] = 
+  { 
+    ['Ilthalaine'] = 'NPC', 
   },
   ['Balnirs Bauernhof'] = 
   { 
@@ -11295,17 +11373,8 @@ questDB = {
   ['Der schwarze Schild'] = 
   { 
     ['Schwarzer Schild'] = 'Object', 
-  },
-  ['Der Schwarze Schild'] = 
-  { 
     ['Schwarzer Schild'] = 'Object', 
-  },
-  ['Der schwarze Schild'] = 
-  { 
     ['Krog'] = 'NPC', 
-  },
-  ['Der Schwarze Schild'] = 
-  { 
     ['Krog'] = 'NPC', 
     ['Caz Doppelspross'] = 'NPC', 
     ['Mosarn'] = 'NPC', 
@@ -11356,7 +11425,7 @@ questDB = {
   { 
     ['Menschenwaisenkind'] = 'NPC', 
   },
-  ['Die Arten von Teldrassil'] = 
+  ['Auf nach Darnassus'] = 
   { 
     ['Vesprystus'] = 'NPC', 
     ['Nessa Schattensang'] = 'NPC', 
@@ -11413,8 +11482,6 @@ questDB = {
   ['Der Entersäbel des Kapitäns'] = 
   { 
     ['Knirpsens'] = 'NPC', 
-    ['Knirpsens'] = 'NPC', 
-    ['Kapitän Hecklebury Smotts'] = 'NPC', 
     ['Kapitän Hecklebury Smotts'] = 'NPC', 
   },
   ['Die Karawanenstraße'] = 
@@ -11566,7 +11633,7 @@ questDB = {
   },
   ['Die Verdammten'] = 
   { 
-    ['Novize Elreth'] = 'NPC', 
+    ['Novizin Elreth'] = 'NPC', 
   },
   ['Der Dunkeleisenkrieg'] = 
   { 
@@ -11622,7 +11689,7 @@ questDB = {
   },
   ['Die verfallene Fähre'] = 
   { 
-    ['Boot mit Leichen'] = 'Object', 
+    ['Corpse Laden Boat'] = 'Object', 
     ['Hochexekutor Hadrec'] = 'NPC', 
   },
   ['Die Verteidigung von Grom\'gol'] = 
@@ -11632,15 +11699,15 @@ questDB = {
   },
   ['Die Bruderschaft der Defias'] = 
   { 
-    ['Gryan Starkmantel'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
     ['Wiley der Schwarze'] = 'NPC', 
     ['Meister Mathias Shaw'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
     ['Wiley der Schwarze'] = 'NPC', 
     ['Meister Mathias Shaw'] = 'NPC', 
     ['Der Verräter der Defias'] = 'NPC', 
@@ -11684,7 +11751,7 @@ questDB = {
     ['Zentralenkommandant Ruag'] = 'NPC', 
     ['Gefallener Held der Horde'] = 'NPC', 
   },
-  ['Das Ende der Unterbrechungen'] = 
+  ['Der Angriff der Fernwacht'] = 
   { 
     ['Thork'] = 'NPC', 
   },
@@ -11696,7 +11763,7 @@ questDB = {
   { 
     ['Lord Grayson Schattenbruch'] = 'NPC', 
   },
-  ['Die verlorene Flotte'] = 
+  ['Die Verlorene Flotte'] = 
   { 
     ['Glorin Stahlbraue'] = 'NPC', 
     ['Bischof Heller'] = 'NPC', 
@@ -11725,11 +11792,11 @@ questDB = {
     ['Leonidas Bartholomäus der Geachtete'] = 'NPC', 
     ['Magistrat Marduk'] = 'NPC', 
   },
-  ['Das östliche Königreich'] = 
+  ['Die Östlichen Königreiche'] = 
   { 
     ['Thrall'] = 'NPC', 
   },
-  ['Die östlichen Pestländer'] = 
+  ['Die Östlichen Pestländer'] = 
   { 
     ['Flint Schattenmoor'] = 'NPC', 
   },
@@ -11757,7 +11824,7 @@ questDB = {
   },
   ['Der Smaragdgrüne Traum'] = 
   { 
-    ['Hüter des Wissens Javon'] = 'NPC', 
+    ['Wissenshüter Javon'] = 'NPC', 
   },
   ['Der smaragdgrüne Traumfänger'] = 
   { 
@@ -11795,7 +11862,7 @@ questDB = {
   ['Der Bericht der Ewigen Warte'] = 
   { 
     ['Argentumoffizier Garush'] = 'NPC', 
-    ['Argentumoffizier Reinherz'] = 'NPC', 
+    ['Argentumoffizierin Reinherz'] = 'NPC', 
     ['Gregor Graustein'] = 'NPC', 
     ['Gregor Graustein'] = 'NPC', 
   },
@@ -11814,7 +11881,7 @@ questDB = {
   },
   ['Das Auge von Paleth'] = 
   { 
-    ['Verschlossene Geldkassette der INTREPID'] = 'Object', 
+    ['Verschlossene Geldkassette der \'Kühnheit\''] = 'Object', 
     ['Glorin Stahlbraue'] = 'NPC', 
   },
   ['Das Auge von Zuldazar'] = 
@@ -11853,7 +11920,7 @@ questDB = {
   },
   ['Ramaladnis Schicksal'] = 
   { 
-    ['Korfax, Held des Lichts'] = 'NPC', 
+    ['Kreuzzugskommandant Korfax'] = 'NPC', 
   },
   ['Das Schicksal des Königreichs'] = 
   { 
@@ -11912,14 +11979,14 @@ questDB = {
   },
   ['Das Schmieden von Quel\'Serrar'] = 
   { 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
-    ['Hüter des Wissens Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
+    ['Wissenshüter Lydros'] = 'NPC', 
   },
   ['Das vergessene Erbstück'] = 
   { 
     ['Bauer Brauenwirbel'] = 'NPC', 
   },
-  ['Die vergessenen Teiche'] = 
+  ['Die Vergessenen Teiche'] = 
   { 
     ['Tonga Runentotem'] = 'NPC', 
   },
@@ -11963,7 +12030,7 @@ questDB = {
   { 
     ['Narain Pfauentraum'] = 'NPC', 
   },
-  ['Feine Sachen'] = 
+  ['Das gute Zeug'] = 
   { 
     ['Oralius'] = 'NPC', 
   },
@@ -12012,7 +12079,7 @@ questDB = {
   },
   ['Das größte Volk von Jägern'] = 
   { 
-    ['Hüterin des Wissens Mykos'] = 'NPC', 
+    ['Wissenshüterin Mykos'] = 'NPC', 
   },
   ['Der grüne Drache'] = 
   { 
@@ -12027,11 +12094,11 @@ questDB = {
     ['Rethiel der Sumpfhüter'] = 'NPC', 
     ['Erster Maat Fitzsimmons'] = 'NPC', 
   },
-  ['Der Graufelsbau'] = 
+  ['Zum Zusehen verdammt'] = 
   { 
     ['Pilot Steinsegel'] = 'NPC', 
   },
-  ['Die Kanonen von Nordwacht'] = 
+  ['Die Rache des Kapitäns'] = 
   { 
     ['Kapitän Thalo\'thas Blendsonn'] = 'NPC', 
   },
@@ -12058,7 +12125,7 @@ questDB = {
     ['Baron Revilgaz'] = 'NPC', 
     ['Krazek'] = 'NPC', 
   },
-  ['Die Spukmühle'] = 
+  ['Die Spukmühlen'] = 
   { 
     ['Coleman Heller'] = 'NPC', 
   },
@@ -12109,10 +12176,10 @@ questDB = {
   },
   ['Die versteckte Nische'] = 
   { 
-    ['Flaches Grab'] = 'Object', 
+    ['Shallow Grave'] = 'Object', 
     ['Staubiges Regal'] = 'Object', 
   },
-  ['Die obere Wildnis'] = 
+  ['Die Obere Wildnis'] = 
   { 
     ['Angelas Mondhauch'] = 'NPC', 
   },
@@ -12182,7 +12249,7 @@ questDB = {
   },
   ['Die Horde braucht mehr Runenstoffverbände!'] = 
   { 
-    ['Steinwache Lehmhuf'] = 'NPC', 
+    ['Steingardist Lehmhuf'] = 'NPC', 
   },
   ['Die Horde braucht mehr Tüpfelgelbschwänze!'] = 
   { 
@@ -12218,7 +12285,7 @@ questDB = {
   },
   ['Die Horde braucht Runenstoffverbände!'] = 
   { 
-    ['Steinwache Lehmhuf'] = 'NPC', 
+    ['Steingardist Lehmhuf'] = 'NPC', 
   },
   ['Die Horde braucht Tüpfelgelbschwänze!'] = 
   { 
@@ -12249,7 +12316,7 @@ questDB = {
   { 
     ['Gebirgsjägerin Feinkiesel'] = 'NPC', 
   },
-  ['Das heulende Tal'] = 
+  ['Das Heulende Tal'] = 
   { 
     ['Schildwache Melyria Frostschatten'] = 'NPC', 
   },
@@ -12387,7 +12454,7 @@ questDB = {
   ['Der Schlüssel zur Scholomance'] = 
   { 
     ['Hochexekutor Derrington'] = 'NPC', 
-    ['Kommandant Ashlam Ehrenschlag'] = 'NPC', 
+    ['Alchemist Arbington'] = 'NPC', 
   },
   ['Tod auf den Feldern'] = 
   { 
@@ -12461,7 +12528,7 @@ questDB = {
   },
   ['Vom Licht und wie man es schwingt'] = 
   { 
-    ['Hüterin des Wissens Mykos'] = 'NPC', 
+    ['Wissenshüterin Mykos'] = 'NPC', 
   },
   ['Der Herrscher des Schwarzfels'] = 
   { 
@@ -12487,7 +12554,7 @@ questDB = {
   },
   ['Die verlorenen Blöcke'] = 
   { 
-    ['Durchnässte Truhe'] = 'Object', 
+    ['Voll gelaufene Truhe'] = 'Object', 
     ['Glorin Stahlbraue'] = 'NPC', 
   },
   ['Die verlorenen Seiten'] = 
@@ -12658,7 +12725,7 @@ questDB = {
     ['Galvan der Alte'] = 'NPC', 
     ['McGavan'] = 'NPC', 
   },
-  ['Der geschmolzene Kern'] = 
+  ['Der Geschmolzene Kern'] = 
   { 
     ['Fürst Hydraxis'] = 'NPC', 
   },
@@ -12816,9 +12883,9 @@ questDB = {
   },
   ['Die Volksmiliz'] = 
   { 
-    ['Gryan Starkmantel'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
-    ['Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
+    ['Marschall Gryan Starkmantel'] = 'NPC', 
   },
   ['Die Tiara von Perenolde'] = 
   { 
@@ -12884,9 +12951,9 @@ questDB = {
   },
   ['Die eigentliche Ursache'] = 
   { 
+    ['Tonga Runentotem'] = 'NPC', 
     ['Alanndarian Nachtweise'] = 'NPC', 
     ['Dendrite Sternenschauer'] = 'NPC', 
-    ['Tonga Runentotem'] = 'NPC', 
     ['Dendrite Sternenschauer'] = 'NPC', 
   },
   ['Das Fundament des Gefängnisses'] = 
@@ -12936,7 +13003,7 @@ questDB = {
   { 
     ['Nathanos Pestrufer'] = 'NPC', 
   },
-  ['Die überfallene Karawane'] = 
+  ['Die Überfallene Karawane'] = 
   { 
     ['Versiegelte Vorratskiste'] = 'Object', 
     ['Versiegelte Vorratskiste'] = 'Object', 
@@ -12965,7 +13032,7 @@ questDB = {
   },
   ['Die Relikte des Erwachens'] = 
   { 
-    ['Athridas Bärenpelz'] = 'NPC', 
+    ['Athridas Bärenfell'] = 'NPC', 
   },
   ['Die Überreste von Trey Lichtschmied'] = 
   { 
@@ -13029,7 +13096,7 @@ questDB = {
   },
   ['Die Ruinen von Solarsal'] = 
   { 
-    ['Solarsal Pavillon'] = 'Object', 
+    ['Pavillon von Solarsal'] = 'Object', 
     ['Shandris Mondfeder'] = 'NPC', 
   },
   ['Die Sternenstaubruinen'] = 
@@ -13096,7 +13163,7 @@ questDB = {
   { 
     ['Leitender Feldmesser Rutenwünschels'] = 'NPC', 
   },
-  ['Die Sense von Elune'] = 
+  ['Die Sichel von Elune'] = 
   { 
     ['Jonathan Treuwein'] = 'NPC', 
   },
@@ -13107,7 +13174,7 @@ questDB = {
   },
   ['Die zweite Rebellion'] = 
   { 
-    ['Unteroffizier Yohwa'] = 'NPC', 
+    ['Unteroffizierin Yohwa'] = 'NPC', 
   },
   ['Der abgetrennte Kopf'] = 
   { 
@@ -13229,7 +13296,7 @@ questDB = {
     ['Buchmacher Herods Geldkassette'] = 'Object', 
     ['Leutnant Doren'] = 'NPC', 
   },
-  ['Die brackige Oase'] = 
+  ['Die Brackige Oase'] = 
   { 
     ['Tonga Runentotem'] = 'NPC', 
   },
@@ -13247,7 +13314,7 @@ questDB = {
   { 
     ['Aufseher Thelwasser'] = 'NPC', 
   },
-  ['Das gestohlene Tagebuch'] = 
+  ['Eis und Feuer'] = 
   { 
     ['Grelin Weißbart'] = 'NPC', 
   },
@@ -13293,8 +13360,8 @@ questDB = {
   },
   ['Der Super-Ei-o-Mat'] = 
   { 
-    ['Ei-o-Mat'] = 'Object', 
-    ['Ei-o-Mat'] = 'Object', 
+    ['Egg-O-Matic'] = 'Object', 
+    ['Egg-O-Matic'] = 'Object', 
   },
   ['Der Superschnapper FX'] = 
   { 
@@ -13400,14 +13467,6 @@ questDB = {
     ['Tiza Kriegshammer'] = 'NPC', 
     ['Tiza Kriegshammer'] = 'NPC', 
     ['Tiza Kriegshammer'] = 'NPC', 
-  },
-  ['Foliant der Offenbarung'] = 
-  { 
-    ['Tiza Kriegshammer'] = 'NPC', 
-    ['Brandur Eisenhammer'] = 'NPC', 
-  },
-  ['Der Foliant der Offenbarung'] = 
-  { 
     ['Duthorian Rall'] = 'NPC', 
     ['Duthorian Rall'] = 'NPC', 
     ['Henze Faulk'] = 'NPC', 
@@ -13429,7 +13488,7 @@ questDB = {
     ['Brandur Eisenhammer'] = 'NPC', 
     ['Arthur der Treue'] = 'NPC', 
   },
-  ['Der Foliant der Ehre'] = 
+  ['Der Foliant der Tapferkeit'] = 
   { 
     ['Brandur Eisenhammer'] = 'NPC', 
     ['Duthorian Rall'] = 'NPC', 
@@ -13484,7 +13543,7 @@ questDB = {
   { 
     ['Hauptmann Rugelfuß'] = 'NPC', 
   },
-  ['Die Trollhöhle'] = 
+  ['Die Trollbedrohung'] = 
   { 
     ['Grelin Weißbart'] = 'NPC', 
   },
@@ -13513,13 +13572,13 @@ questDB = {
   ['Das Lager des Schattenhammers'] = 
   { 
     ['Wahrsageschale'] = 'Object', 
-    ['Zwielichtfoliant'] = 'Object', 
+    ['Twilight Tome'] = 'Object', 
   },
-  ['Das Lexikon des Schattenhammerklans'] = 
+  ['Das Zwielichtlexikon'] = 
   { 
     ['Ortell der Einsiedler'] = 'NPC', 
   },
-  ['Das Geheimnis des Schattenhammerklans'] = 
+  ['Das Geheimnis des Zwielichts'] = 
   { 
     ['Geologin Lerchenbann'] = 'NPC', 
   },
@@ -13550,7 +13609,7 @@ questDB = {
     ['Gregan Hopfenspei'] = 'NPC', 
     ['Donova Schneeweh'] = 'NPC', 
   },
-  ['Das finstere Riff'] = 
+  ['Das Finstere Riff'] = 
   { 
     ['Kin\'weelay'] = 'NPC', 
   },
@@ -13589,7 +13648,13 @@ questDB = {
   ['Die Beschützerin des Waldlandes'] = 
   { 
     ['Tarindrella'] = 'NPC', 
+  },
+  ['Dämonische Diebe'] = 
+  { 
     ['Tarindrella'] = 'NPC', 
+  },
+  ['Die Beschützerin des Waldlandes'] = 
+  { 
     ['Melithar Hirschhaupt'] = 'NPC', 
   },
   ['Die Waldpfotengnolle'] = 
@@ -13615,7 +13680,7 @@ questDB = {
     ['Anachronos'] = 'NPC', 
     ['Narain Pfauentraum'] = 'NPC', 
   },
-  ['Die verwundene Tiefe'] = 
+  ['Die Gewundene Tiefe'] = 
   { 
     ['Große Lederrucksäcke'] = 'Object', 
     ['Kapsel der Zukk\'ash'] = 'Object', 
@@ -13752,11 +13817,20 @@ questDB = {
   { 
     ['Andorgos'] = 'NPC', 
   },
-  ['Beherrschen der Tigerjagd'] = 
+  ['Tigerjagd'] = 
   { 
     ['Ajeck Rouack'] = 'NPC', 
+  },
+  ['Tigerpirsch'] = 
+  { 
     ['Ajeck Rouack'] = 'NPC', 
+  },
+  ['Tigerhatz'] = 
+  { 
     ['Ajeck Rouack'] = 'NPC', 
+  },
+  ['Beherrschen der Tigerjagd'] = 
+  { 
     ['Ajeck Rouack'] = 'NPC', 
   },
   ['Bäumlingssamenkörner'] = 
@@ -13848,9 +13922,11 @@ questDB = {
     ['Duthorian Rall'] = 'NPC', 
     ['Tiza Kriegshammer'] = 'NPC', 
     ['Tiza Kriegshammer'] = 'NPC', 
+    ['Tiza Kriegshammer'] = 'NPC', 
     ['Bruder Wilhelm'] = 'NPC', 
     ['Lord Grayson Schattenbruch'] = 'NPC', 
     ['Azar Hammerkraft'] = 'NPC', 
+    ['Brandur Eisenhammer'] = 'NPC', 
     ['Brandur Eisenhammer'] = 'NPC', 
   },
   ['Foliant der Kabale'] = 
@@ -13919,13 +13995,6 @@ questDB = {
   ['Berührung der Schwäche'] = 
   { 
     ['Aelthalyste'] = 'NPC', 
-  },
-  ['<NYI> Berührung der Schwäche'] = 
-  { 
-    ['Aelthalyste'] = 'NPC', 
-  },
-  ['Berührung der Schwäche'] = 
-  { 
     ['Aelthalyste'] = 'NPC', 
     ['Aelthalyste'] = 'NPC', 
     ['Aelthalyste'] = 'NPC', 
@@ -14137,7 +14206,7 @@ questDB = {
   { 
     ['Ortell der Einsiedler'] = 'NPC', 
   },
-  ['Tumore'] = 
+  ['Moosartige Tumore'] = 
   { 
     ['Rellian Grünwipfel'] = 'NPC', 
   },
@@ -14145,11 +14214,11 @@ questDB = {
   { 
     ['Tundra MacGrann'] = 'NPC', 
   },
-  ['Schlachtordnungen des Schattenhammerklans'] = 
+  ['Zwielichtschlachtbefehle'] = 
   { 
     ['Kommandant Mar\'alith'] = 'NPC', 
   },
-  ['Schatten des Hammers'] = 
+  ['Die Stunde der Finsternis'] = 
   { 
     ['Argentumwache Manados'] = 'NPC', 
   },
@@ -14161,7 +14230,7 @@ questDB = {
   { 
     ['Windruferin Prachthorn'] = 'NPC', 
   },
-  ['Herrschaftsring des Schattenhammerklans'] = 
+  ['Zwielichtherrschaftsring'] = 
   { 
     ['Aurel Goldblatt'] = 'NPC', 
   },
@@ -14259,7 +14328,6 @@ questDB = {
   ['Die offene Rechnung der Gordok'] = 
   { 
     ['Hauptmann Krombruch'] = 'NPC', 
-    ['Hauptmann Krombruch'] = 'NPC', 
   },
   ['Uniformnachschub'] = 
   { 
@@ -14299,7 +14367,7 @@ questDB = {
   },
   ['Ursal der Raufer'] = 
   { 
-    ['Athridas Bärenpelz'] = 'NPC', 
+    ['Athridas Bärenfell'] = 'NPC', 
   },
   ['Ursangus\' Tatze'] = 
   { 
@@ -14384,7 +14452,7 @@ questDB = {
   ['Tiefgrünes Siegelzeichen'] = 
   { 
     ['Mardant Starkeiche'] = 'NPC', 
-    ['Konservator Ilthalaine'] = 'NPC', 
+    ['Ilthalaine'] = 'NPC', 
   },
   ['Die Verderbnis überprüfen'] = 
   { 
@@ -14450,7 +14518,7 @@ questDB = {
   ['Besuch im Kräuterladen'] = 
   { 
     ['Martie Jainrose'] = 'NPC', 
-    ['Wache Parker'] = 'NPC', 
+    ['Wachhauptmann Parker'] = 'NPC', 
   },
   ['Entscheidende Informationen'] = 
   { 
@@ -14576,21 +14644,22 @@ questDB = {
   ['GESUCHT: Andre Feuerbart'] = 
   { 
     ['Steckbrief'] = 'Object', 
+    ['Wanted Poster'] = 'Object', 
     ['Sicherheitschef Bilgenritzel'] = 'NPC', 
   },
-  ['GESUCHT: Baron Küstenschipper'] = 
+  ['GESUCHT: Käpt\'n Garvey'] = 
   { 
     ['GESUCHT'] = 'Object', 
     ['Gazlowe'] = 'NPC', 
   },
   ['GESUCHT: Baron Vardus'] = 
   { 
-    ['GESUCHT'] = 'Object', 
+    ['WANTED'] = 'Object', 
     ['Hochexekutorin Darthalia'] = 'NPC', 
   },
   ['GESUCHT: Kalif Skorpidstich'] = 
   { 
-    ['Steckbrief'] = 'Object', 
+    ['Wanted Poster'] = 'Object', 
     ['Chefingenieur Bilgenritzel'] = 'NPC', 
   },
   ['GESUCHT: Chok\'sul'] = 
@@ -14609,17 +14678,17 @@ questDB = {
   },
   ['GESUCHT: Leutnant Fangor'] = 
   { 
-    ['GESUCHT: Leutnant Fangor'] = 'Object', 
+    ['GESUCHT:'] = 'Object', 
     ['Magistrat Solomon'] = 'NPC', 
   },
   ['GESUCHT: Madenauge'] = 
   { 
-    ['GESUCHT!'] = 'Object', 
+    ['Wanted!'] = 'Object', 
     ['Exekutor Zygand'] = 'NPC', 
   },
   ['GESUCHT: Gurgelbacke!'] = 
   { 
-    ['GESUCHT: Gurgelbacke!'] = 'Object', 
+    ['WANTED: Murkdeep!'] = 'Object', 
     ['Schildwache Glynda Nal\'Shea'] = 'NPC', 
   },
   ['GESUCHT: ORCS!'] = 
@@ -14629,11 +14698,11 @@ questDB = {
   ['GESUCHT: Vorarbeiter Maltorius'] = 
   { 
     ['Gesucht/Vermisst/Verloren & Gefunden'] = 'Object', 
-    ['Hauptmann des Ausgucks Lolo Langhieb'] = 'NPC', 
+    ['Aufklärerhauptmann Lolo Langhieb'] = 'NPC', 
   },
   ['GESUCHT: Syndikatspersonal'] = 
   { 
-    ['GESUCHT'] = 'Object', 
+    ['WANTED'] = 'Object', 
     ['Hochexekutorin Darthalia'] = 'NPC', 
   },
   ['GESUCHT: Üble Priesterin Hexx und ihre Diener'] = 
@@ -14707,11 +14776,6 @@ questDB = {
   { 
     ['Chefingenieur Bilgenritzel'] = 'NPC', 
   },
-  ['Verwüster auftanken'] = 
-  { 
-    ['Behüter Callahan'] = 'NPC', 
-    ['Behüter Dodds'] = 'NPC', 
-  },
   ['Wasserelementare'] = 
   { 
     ['Baron Revilgaz'] = 'NPC', 
@@ -14749,7 +14813,7 @@ questDB = {
   { 
     ['Gilshalan Windspäher'] = 'NPC', 
   },
-  ['Waldwebergift'] = 
+  ['Verderbnis der Waldweber'] = 
   { 
     ['Gilshalan Windspäher'] = 'NPC', 
   },
@@ -14848,13 +14912,13 @@ questDB = {
   },
   ['Austausch Eures Schimmels'] = 
   { 
-    ['Katie Waidmann'] = 'NPC', 
+    ['Katie Weidmann'] = 'NPC', 
   },
   ['Glühende Feuer in Kalimdor'] = 
   { 
     ['Flammenbewahrer'] = 'NPC', 
   },
-  ['Glühende Feuer in den östlichen Königreichen'] = 
+  ['Glühende Feuer in den Östlichen Königreichen'] = 
   { 
     ['Flammenbewahrer'] = 'NPC', 
   },
@@ -14993,7 +15057,7 @@ questDB = {
   { 
     ['Urahne Winterhuf'] = 'NPC', 
   },
-  ['Weisheit von Agammagan'] = 
+  ['Weisheit von Agamaggan'] = 
   { 
     ['Quetschzahn'] = 'NPC', 
   },
@@ -15035,7 +15099,7 @@ questDB = {
     ['Calor'] = 'NPC', 
     ['Calor'] = 'NPC', 
   },
-  ['Das Gewicht in Gold wert'] = 
+  ['Sein Gewicht in Gold'] = 
   { 
     ['Lehrling Kryten'] = 'NPC', 
   },
@@ -15059,9 +15123,9 @@ questDB = {
     ['Einsatzkommandant Metz'] = 'NPC', 
     ['Wache Didier'] = 'NPC', 
   },
-  ['Der Kessel des trostlosen Felds'] = 
+  ['Der Kessel des Trostlosen Felds'] = 
   { 
-    ['Geißelkessel'] = 'Object', 
+    ['Scourge Cauldron'] = 'Object', 
   },
   ['Xorothianischer Sternenstaub'] = 
   { 
@@ -15117,7 +15181,7 @@ questDB = {
   { 
     ['Geheimnisvolle Schatztruhe aus den Todesminen'] = 'Object', 
     ['Geheimnisvoller Heuhaufen des Osttals'] = 'Object', 
-    [''] = 'Object', 
+    ['Mysterious Wailing Caverns Chest'] = 'Object', 
     ['Geheimnisvoller Baumstumpf'] = 'Object', 
   },
   ['Euer Platz in der Welt'] = 
