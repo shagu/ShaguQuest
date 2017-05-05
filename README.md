@@ -31,17 +31,20 @@ Some parts of the Addon itself are taken from the WHDB Addon. ShaguQuest is basi
 # Video
 If you want to see it in Action, here is a example video, showing the most common features of ShaguDB
 
-[![Youtube Video](http://img.youtube.com/vi/h_U3vbYcRpE/0.jpg)](https://www.youtube.com/watch?v=h_U3vbYcRpE)
+[![Youtube Video](https://img.youtube.com/vi/SYrCEI_2Axg/0.jpg)](https://www.youtube.com/watch?v=SYrCEI_2Axg)
 
 # Download
-If you want to test it, visit the following links:
+If you want to check it out, visit one of the following links:
 
-[Official Website](http://shaguquest.ericmauser.de/)
+[Official Website](http://shagu.org/shaguquest/)
 
-[Download of enGB Client](http://shaguquest.ericmauser.de/files/ShaguDB-6.1-enGB-complete.zip)
+[Github Releases](https://github.com/shagu/ShaguQuest/releases)
 
-[Download of deDE Client](http://shaguquest.ericmauser.de/files/ShaguDB-6.1-deDE-complete.zip)
-
-# Build from git
-If you're running a Linux Machine, just execute the "./build.sh" to create a deDE and enGB release.
-The files will be placed in ./releases called ShaguDB-<version>-<locale>-complete.zip
+# Build it Yourself
+If you're running a Linux Machine:
+    
+    $ git clone https://github.com/shagu/ShaguQuest
+    $ cd ShaguQuest
+    $ make
+    
+After that, all Addons will be built and can then be found in the directory: _./releases_
