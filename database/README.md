@@ -3,7 +3,7 @@
 ### ClassicDB: (Core Entries)
     git clone https://github.com/cmangos/classic-db.git classicdb
 
-###Elysium: (Translations)
+### Elysium: (Translations)
     git clone https://github.com/elysium-project/database.git elysiumdb
 
 # Create Database Structure
