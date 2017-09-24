@@ -9,6 +9,8 @@ EQL3_Unload.lua
 localization_en.lua
 localization_de.lua
 localization_fr.lua
+localization_es.lua
+localization_ru.lua
 EQL3_Main.lua
 EQL3_QuestDB.xml
 EQL3_Log.xml
