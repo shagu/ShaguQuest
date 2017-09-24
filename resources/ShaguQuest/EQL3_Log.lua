@@ -1064,11 +1064,11 @@ function GetQuestLogTitle(questIndex)
 			else
 				levelmax = tonumber(levelmax);
 			end
-			if (levelmin > level) then
+			if ( (levelmin or 0) > ( level or 0 )) then
 				queststorage = QuestLevel_StorageSet(queststorage, "levelmin", level);
 				queststorage = QuestLevel_StorageSet(queststorage, "levelmax", levelmax);
 			end
-			if (levelmax < level) then
+			if ( (levelmax or 0) < ( level or 0 )) then
 				queststorage = QuestLevel_StorageSet(queststorage, "levelmax", level);
 			end
 			if (questTag ~= NIL and QuestLevel_StorageGet(queststorage, "elite") == nil) then

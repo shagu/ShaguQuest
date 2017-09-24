@@ -345,7 +345,7 @@ function QuestWatch_Update()
 				else
 					if ( isComplete or  objectivesCompleted == numObjectives ) then
 							watchText:SetTextColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
-					else
+					elseif watchText then
 							watchText:SetTextColor(0.75, 0.61, 0);
 					end
 				end
