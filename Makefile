@@ -1,6 +1,6 @@
 VERSION = $(shell git rev-parse --abbrev-ref HEAD)
 BUILD_DIR = $(shell pwd)/build
-all: clean enGB koKR frFR deDE zhCN ruRU
+all: clean enGB koKR frFR deDE zhCN esES ruRU
 
 clean:
 	rm -rf build
@@ -12,7 +12,7 @@ db:
 	cd ./database && php ./spawnDB.php
 	cd ./database && php ./zoneDB.php
 
-enGB koKR frFR deDE zhCN ruRU:
+enGB koKR frFR deDE zhCN esES ruRU:
 	# create dir
 	install -d release
 
