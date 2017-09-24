@@ -24,10 +24,6 @@ foreach ($locales as $loc_id => $loc_name) {
     if ($loc_id == 5 )
       continue;
 
-    // skip Spanish (esES)
-    if ($loc_id == 6 )
-      continue;
-
     // skip Mexico (esMX)
     if ($loc_id == 7 )
       continue;
