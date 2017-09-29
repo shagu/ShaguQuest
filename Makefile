@@ -1,6 +1,6 @@
 VERSION = $(shell git rev-parse --abbrev-ref HEAD)
 BUILD_DIR = $(shell pwd)/build
-all: clean enGB koKR frFR deDE zhCN esES ruRU
+all: clean enUS koKR frFR deDE zhCN esES ruRU
 
 clean:
 	rm -rf build
@@ -12,11 +12,11 @@ db:
 	cd ./database && php ./spawnDB.php
 	cd ./database && php ./zoneDB.php
 
-enGB koKR frFR deDE zhCN esES ruRU:
+enUS koKR frFR deDE zhCN esES ruRU:
 	# create dir
 	install -d release
 
-	# build enGB
+	# build shagudb
 	install -d build/$@/ShaguDB/db
 	cp -rf resources/Cartographer build/$@
 	cp -rf resources/ShaguQuest build/$@

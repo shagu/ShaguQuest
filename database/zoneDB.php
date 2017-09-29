@@ -2,7 +2,7 @@
 <?php
 ini_set('memory_limit', '-1');
 
-$locales = array("enGB", "koKR", "frFR", "deDE", "zhCN", "zhTW", "esES", "esMX", "ruRU" );
+$locales = array("enUS", "koKR", "frFR", "deDE", "zhCN", "zhTW", "esES", "esMX", "ruRU" );
 
 $all_locales = false;
 $build_locale = 0;
