@@ -43,6 +43,17 @@ elseif GetLocale() == "frFR" then
 	OPTION_HANDLER_NOT_FOUND = "Le gestionnaire d'option |cffffff7f%q|r n'a pas \195\169t\195\169 trouv\195\169."
 	OPTION_HANDLER_NOT_VALID = "Le gestionnaire d'option n'est pas valide."
 	OPTION_IS_DISABLED = "L'option |cffffff7f%s|r est d\195\169sactiv\195\169e."
+elseif  GetLocale() == "esES" then
+	MAP_ONOFF = { [false] = "|cffff0000Inactivo|r", [true] = "|cff00ff00Activo|r" }
+	USAGE = "Uso"
+	IS_CURRENTLY_SET_TO = "|cffffff7f%s|r es asignado a |cffffff7f[|r%s|cffffff7f]|r"
+	IS_NOW_SET_TO = "|cffffff7f%s|r es asignado a |cffffff7f[|r%s|cffffff7f]|r"
+	IS_NOT_A_VALID_OPTION_FOR = "[|cffffff7f%s|r] no es opción válida para |cffffff7f%s|r"
+	IS_NOT_A_VALID_VALUE_FOR = "[|cffffff7f%s|r] no es valor válido para |cffffff7f%s|r"
+	NO_OPTIONS_AVAILABLE = "No hay opciones"
+	OPTION_HANDLER_NOT_FOUND = "Operario de opción |cffffff7f%q|r no se encuentra."
+	OPTION_HANDLER_NOT_VALID = "Operario de opción no es válido."
+	OPTION_IS_DISABLED = "La opción |cffffff7f%s|r es desactivado."
 elseif GetLocale() == "koKR" then
 	MAP_ONOFF = { [false] = "|cffff0000끔|r", [true] = "|cff00ff00켬|r" }
 	USAGE = "사용법"

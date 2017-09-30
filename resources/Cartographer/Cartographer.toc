@@ -42,5 +42,6 @@ Modules\Professions.lua
 Modules\ZoneInfo.lua
 Modules\InstanceNotes\enUS.lua
 Modules\InstanceNotes\koKR.lua
+Modules\InstanceNotes\esES.lua
 Modules\InstanceNotes\module.lua
 Modules\InstanceNotes\notes.lua

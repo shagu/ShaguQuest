@@ -27,6 +27,14 @@ L:RegisterTranslations("koKR", function() return {
 	["Change the color of the unexplored areas"] = "탐험하지 못한 지역의 색상을 변경합니다.",
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Foglight"] = "Revelar",
+	["Module to show unexplored areas on the map."] = "Módulo que revela áreas inexploradas en el mapa del mundo.",
+	
+	["Unexplored color"] = "Color inexplorado",
+	["Change the color of the unexplored areas"] = "Cambiar el color de las áreas inexploradas",
+} end)
+
 local math_mod = math.fmod or math.mod
 local math_floor = math.floor
 local math_ceil = math.ceil

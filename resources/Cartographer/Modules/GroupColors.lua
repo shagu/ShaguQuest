@@ -37,6 +37,10 @@ L:RegisterTranslations("zhTW", function() return {
 --	["Module which turns all your party's and your raid's POIs into circles colored based on class, and shows a number on them based on their raid group."] = true,
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Group Colors"] = "Colores del Grupo",
+	["Module which turns all your party's and your raid's POIs into circles colored based on class, and shows a number on them based on their raid group."] = "Módulo que cambia los identificadores (POI) de tu grupo y banda en círculos coloreados basados en clase y muestra un número basado en su grupo."
+} end)
 Cartographer_GroupColors = Cartographer:NewModule("GroupColors", "AceEvent-2.0")
 
 local _G = getfenv(0)

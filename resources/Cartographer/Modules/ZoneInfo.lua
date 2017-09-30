@@ -23,6 +23,13 @@ L:RegisterTranslations("koKR", function() return {
 	["%d-man"] = "%d명",
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Zone Info"] = "Información de Zona",
+	["Module which on hovering over a zone, will show the levels of the zone, the instances in the zone, their levels, and the number of men the instance is made for (e.g. 5-man, 40-man)."] = "Módulo que muestra el nivel de una zona, las instancias de la zona, sus niveles, y el número de jugadores para la instancia (por ejemplo 5-jugadores, 40-jugadores).",
+	["Instances"] = "Instancias",
+	["%d-man"] = "%d-Jugadores",
+} end)
+
 local Tourist = AceLibrary("Tourist-2.0")
 
 Cartographer_ZoneInfo = Cartographer:NewModule("ZoneInfo")

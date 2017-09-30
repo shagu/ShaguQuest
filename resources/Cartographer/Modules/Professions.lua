@@ -21,6 +21,13 @@ L:RegisterTranslations("koKR", function() return {
 	["Unable to load addon `%s': %s"] = "%s 애드온 로드 실패: %s",
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Professions"] = "Profesiones",
+
+	["Stub for loading Cartographer module addons based on your professions."] = "Se usa para cargar los addons de módulo de Cartographer que están basados en tus profesiones",
+	["Unable to load addon `%s': %s"] = "No se puede cargar el addon `%s': %s",
+} end)
+
 local mod = Cartographer:NewModule('Professions', 'AceEvent-2.0', 'AceConsole-2.0')
 
 function mod:OnInitialize()

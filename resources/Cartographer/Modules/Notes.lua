@@ -123,6 +123,64 @@ L:RegisterTranslations("koKR", function() return {
 	["Size of the icons on the map"] = "노트의 아이콘 크기를 변경합니다.",
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Notes"] = "Notas",
+	["Module which allows you to put notes on the map."] = "Módulo que te permite poner notas en el mapa.",
+	
+	["White"] = "Blanco",
+	["Gray"] = "Gris",
+	["Red"] = "Rojo",
+	["Pink"] = "Rosa",
+	["Yellow"] = "Amarillo",
+	["Orange"] = "Anaranjado",
+	["Green"] = "Verde",
+	["Lime"] = "Verde Lima",
+	["Blue"] = "Azul",
+	["Pale blue"] = "Azul Pálido",
+	["Cyan"] = "Cian",
+	["Purple"] = "Morado",
+	
+	["Unknown"] = "Desconocido",
+	["Custom icon"] = "Icono a medida",
+	
+	["Create a new note"] = "Crear una nueva nota",
+	["New note"] = "Nueva nota",
+	["Delete note"] = "Borrar nota",
+	["Edit note"] = "Editar nota",
+	["Send note"] = "Enviar nota",
+	["Send to party"] = "Enviar al grupo",
+	["Send to raid"] = "Enviar a la banda",
+	["Send to guild"] = "Enviar a la hermandad",
+	["Send to player"] = "Enviar al jugador",
+	
+	["Note: This may be blocked by Blizzard's spam filter and cause problems. It is recommended to send to your party/raid/guild instead."] = "Aviso: Puede ser bloqueado por el filtro de spam de Blizzard y causar problemas. Se recomienda que la envias a tu grupo/banda/hermandad.",
+	
+	["X position"] = "Posición X",
+	["Y position"] = "Posición Y",
+	["Title"] = "Título",
+	["Info line 1 (optional)"] = "Línea de información 1 (opcional)",
+	["Info line 2 (optional)"] = "Línea de información 2 (opcional)",
+	["Creator (optional)"] = "Creador (opcional)",
+	
+	["Ctrl-Right-Click on map to add a note"] = "Ctrl-Clic-Derecho en el mapa para añadir una nota",
+	
+	["%s from Guild"] = "%s de la Hermandad",
+	["%s from Raid"] = "%s de la Banda",
+	["%s from Party"] = "%s del Grupo",
+	
+	["Error: %s sent you a note with an unknown zone: %q"] = "Error: %s te envia una nota con una zona desconocida: %q",
+	["Error: %s sent you a note at %q : %.1f, %.1f with the title %q created by %q, but you already have a note at this location."] = "Error: %s te envia una nota al %q : %.1f, %.1f con el título %q creado por %q, pero ya tienes una nota en esta ubicación.",
+	["%s sent you a note at %q : %.1f, %.1f with the title %q created by %q."] = "%s te envia una nota al %q : %.1f, %.1f con el título %q creado por %q.",
+
+	["Created by"] = "Creado por",
+	
+	["Show note creator"] = "Mostrar el creador de la nota",
+	["Show the `Created By:' line in notes"] = "Mostrar la línea 'Creado por:' en las notas",
+	
+	["Icon size"] = "Tamaño del icono",
+	["Size of the icons on the map"] = "Tamaño de los iconos en el mapa",
+} end)
+
 local icons = {}
 local function getIconTitle(icon)
 	if icons[icon] then

@@ -34,6 +34,19 @@ L:RegisterTranslations("frFR", function() return {
 --	["Toggle the module on and off."] = true,
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Active"] = "Activo",
+	["Suspend/resume this module."] = "Activar/desactivar este módulo",
+	
+	["Right-Click on map to zoom out"] = "Clic-Derecho en el mapa para alejarse",
+	["Left-Click on map to zoom in"] = "Clic-Izquierdo en el mapa para acercarse",
+	
+	["Go to %s"] = "Va a %s",
+	
+	["Azeroth"] = "Azeroth",
+	["Cosmic map"] = "Mapa cósmico",
+} end)
+
 L:RegisterTranslations("koKR", function() return {
 	["Active"] = "활성화",
 	["Suspend/resume this module."] = "모듈을 켜거나 끔니다.",

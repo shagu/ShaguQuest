@@ -37,6 +37,11 @@ L:RegisterTranslations("zhCN", function() return {
 --	["Module which provides maps of battlegrounds."] = true,
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Battlegrounds"] = "Campos de Batalla",
+	["Module which provides maps of battlegrounds."] = "Módulo que muestra mapas de los campos de batalla.",
+} end)
+
 Cartographer_Battlegrounds = Cartographer:NewModule("Battlegrounds", "AceHook-2.1", "AceEvent-2.0")
 
 local lua51 = loadstring("return function(...) return ... end") and true or false

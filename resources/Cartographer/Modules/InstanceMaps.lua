@@ -41,6 +41,12 @@ L:RegisterTranslations("zhCN", function() return {
 --	["Module which provides maps of instances."] = true,
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Instance Maps"] = "Mapas de las Instancias",
+	["Module which provides maps of instances."] = "Módulo que muestra mapas de las instancias.",
+	["Instances"] = "Instancias",
+} end)
+
 Cartographer_InstanceMaps = Cartographer:NewModule("InstanceMaps", "AceHook-2.1")
 
 local lua51 = loadstring("return function(...) return ... end") and true or false

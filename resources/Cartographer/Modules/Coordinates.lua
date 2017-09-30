@@ -47,6 +47,14 @@ L:RegisterTranslations("zhTW", function() return {
 	["Player:"] = "玩家:",
 } end)
 
+L:RegisterTranslations("esES", function() return {
+	["Coordinates"] = "Coordenadas",
+	["Module to add coordinates to the bottom of the world map of the player and the cursor."] =  "Módulo para añadir coordenadas de jugador y puntero en la parte inferior del mapa del mundo.",
+	
+	["Cursor:"] = "Puntero",
+	["Player:"] = "Jugador",
+} end)
+
 Cartographer_Coordinates = Cartographer:NewModule("Coordinates")
 
 function Cartographer_Coordinates:OnInitialize()
