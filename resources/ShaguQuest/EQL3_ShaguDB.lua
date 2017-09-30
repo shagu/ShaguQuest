@@ -11,17 +11,17 @@ ShaguQuestAutoPlot.Button:SetPoint("TOPLEFT", 75,-42)
 ShaguQuestAutoPlot:SetFrameStrata("TOOLTIP")
 
 ShaguQuestAutoPlot.Button:SetScript("OnClick", function()
-	if ShaguQuest_AutoPlot == false then
-		ShaguQuest_AutoPlot = true
+  if ShaguQuest_AutoPlot == false then
+    ShaguQuest_AutoPlot = true
     QuestlogOptions[EQL3_Player].AddNew = 1
     QuestlogOptions[EQL3_Player].AddUntracked = 1
-		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
-		ShaguQuestAutoPlot:ShowAll()
-	else
-		ShaguQuest_AutoPlot = false
-		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
-		ShaguDB_CleanMap();
-	end
+    ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
+    ShaguQuestAutoPlot:ShowAll()
+  else
+    ShaguQuest_AutoPlot = false
+    ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
+    ShaguDB_CleanMap();
+  end
 end)
 
 ShaguQuestAutoPlot.Button:Show()
@@ -43,69 +43,77 @@ ShaguQuestAutoPlot:SetScript("OnUpdate", function()
 end)
 
 function ShaguQuestAutoPlot:ShowAll()
-	if ShaguQuest_AutoPlot == false then
-		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
-	else
-		ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
-	end
+  if ShaguQuest_AutoPlot == false then
+    ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffffaaaaOff")
+  else
+    ShaguQuestAutoPlot.Button:SetText("|cffffffffAutotrack: |cffaaffaaOn")
+  end
 
-	if ShaguQuest_AutoPlot == true then
-	local questLogID=1;
+  if ShaguQuest_AutoPlot == true then
+  local questLogID=1;
   ShaguDB_MAP_NOTES = {};
-	ShaguDB_CleanMap();
-	while (GetQuestLogTitle(questLogID) ~= nil) do
-		questLogID = questLogID + 1;
+  ShaguDB_CleanMap();
+  while (GetQuestLogTitle(questLogID) ~= nil) do
+    questLogID = questLogID + 1;
 
 
-		local questTitle, level, questTag, isHeader, isCollapsed, isComplete = GetQuestLogTitle(questLogID);
-		if (not isHeader and questTitle ~= nil) then
-			local numObjectives = GetNumQuestLeaderBoards(questLogID);
-			if (numObjectives ~= nil) then
+    local questTitle, level, questTag, isHeader, isCollapsed, isComplete = GetQuestLogTitle(questLogID);
+    if (not isHeader and questTitle ~= nil) then
+      local numObjectives = GetNumQuestLeaderBoards(questLogID);
+      if (numObjectives ~= nil) then
 
-    		-- quest data
-    		if (questDB[questTitle] ~= nil) then
-      		for monsterName, monsterDrop in pairs(questDB[questTitle]) do
-        		if (spawnDB[monsterName] ~= nil and strfind(spawnDB[monsterName]["faction"], faction) ~= nil) then
-          		ShaguDB_searchMonster(monsterName,questTitle,true);
-        		end
-      		end
-    		end
+        -- quest data
+        if (questDB[questTitle] ~= nil) then
+          for monsterName, monsterDrop in pairs(questDB[questTitle]) do
+            if (spawnDB[monsterName] ~= nil and strfind(spawnDB[monsterName]["faction"], faction) ~= nil) then
+              ShaguDB_searchMonster(monsterName,questTitle,true);
+            end
+          end
+        end
 
-				for i=1, numObjectives, 1 do
-					local text, type, finished = GetQuestLogLeaderBoard(i, questLogID);
-					local i, j, itemName, numItems, numNeeded = strfind(text, "(.*):%s*([%d]+)%s*/%s*([%d]+)");
+        for i=1, numObjectives, 1 do
+          local text, type, finished = GetQuestLogLeaderBoard(i, questLogID);
+          local i, j, itemName, numItems, numNeeded = strfind(text, "(.*):%s*([%d]+)%s*/%s*([%d]+)");
 
-					if (not finished) then
-     				-- spawn data
-        		if (type == "monster") then
-          		-- enGB
-          		local i, j, monsterName = strfind(itemName, "(.*) killed");
-          		ShaguDB_searchMonster(monsterName,questTitle);
+          if (not finished) then
+             -- spawn data
+            if (type == "monster") then
+              local locale = GetLocale()
 
-          		local i, j, monsterName = strfind(itemName, "(.*) slain");
-          		ShaguDB_searchMonster(monsterName,questTitle);
+              if locale == "deDE" then
+              -- deDE
+                local i, j, monsterName = strfind(itemName, "(.*) getötet");
+                ShaguDB_searchMonster(monsterName,questTitle);
+              elseif locale == "esES" then
+                -- esES
+                local i, j, monsterName = strfind(itemName, "Muertes de (.*)");
+                ShaguDB_searchMonster(monsterName,questTitle);
+              else
+                -- enUS
+                local i, j, monsterName = strfind(itemName, "(.*) killed");
+                ShaguDB_searchMonster(monsterName,questTitle);
 
-          		-- deDE
-          		local i, j, monsterName = strfind(itemName, "(.*) getötet");
-          		ShaguDB_searchMonster(monsterName,questTitle);
+                local i, j, monsterName = strfind(itemName, "(.*) slain");
+                ShaguDB_searchMonster(monsterName,questTitle);
+             end
 
-          		-- whatever
-          		local i, j, monsterName = strfind(itemName, "(.*)");
-          		ShaguDB_searchMonster(monsterName,questTitle);
-        		end
+               -- whatever
+              local i, j, monsterName = strfind(itemName, "(.*)");
+              ShaguDB_searchMonster(monsterName,questTitle);
+            end
 
-        		-- item data
-        		if (type == "item") then
-			        ShaguDB_searchItem(itemName,questTitle, true);
-			        ShaguDB_searchVendor(itemName,questTitle);
-     	  		end
-					end
-				end
+            -- item data
+            if (type == "item") then
+              ShaguDB_searchItem(itemName,questTitle, true);
+              ShaguDB_searchVendor(itemName,questTitle);
+             end
+          end
+        end
 
-			end
-		end
-		ShaguDB_PlotNotesOnMap()
-	end
+      end
+    end
+    ShaguDB_PlotNotesOnMap()
+  end
 end
 
 end
