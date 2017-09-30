@@ -194,16 +194,23 @@ function ShaguDB_QuestLog_UpdateQuestDetails(prefix, doNotScroll)
         string:SetTextColor(0, 0, 0);
         -- spawn data
         if (type == "monster") then
-          -- enGB
-          local i, j, monsterName = strfind(itemName, "(.*) killed");
-          ShaguDB_searchMonster(monsterName,questTitle);
+          local locale = GetLocale()
+          if locale == "deDE" then
+            -- deDE
+            local i, j, monsterName = strfind(itemName, "(.*) getötet");
+            ShaguDB_searchMonster(monsterName,questTitle);
+          elseif locale == "esES" then
+            -- esES
+            local i, j, monsterName = strfind(itemName, "Muertes de (.*)");
+            ShaguDB_searchMonster(monsterName,questTitle);
+          else
+            -- enUS
+            local i, j, monsterName = strfind(itemName, "(.*) killed");
+            ShaguDB_searchMonster(monsterName,questTitle);
 
-          local i, j, monsterName = strfind(itemName, "(.*) slain");
-          ShaguDB_searchMonster(monsterName,questTitle);
-
-          -- deDE
-          local i, j, monsterName = strfind(itemName, "(.*) getötet");
-          ShaguDB_searchMonster(monsterName,questTitle);
+            local i, j, monsterName = strfind(itemName, "(.*) slain");
+            ShaguDB_searchMonster(monsterName,questTitle);
+          end
 
           -- whatever
           local i, j, monsterName = strfind(itemName, "(.*)");
