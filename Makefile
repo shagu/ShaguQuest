@@ -10,7 +10,7 @@ db:
 	cd ./database && php ./questDB.php
 	cd ./database && php ./vendorDB.php
 	cd ./database && php ./spawnDB.php
-	cd ./database && php ./zoneDB.php
+	# cd ./database && php ./zoneDB_deprecated.php
 
 enUS koKR frFR deDE zhCN esES ruRU:
 	# create dir
