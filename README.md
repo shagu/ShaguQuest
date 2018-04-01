@@ -37,9 +37,9 @@ If you want to see it in Action, here is a example video, showing the most commo
 [![Youtube Video](https://img.youtube.com/vi/SYrCEI_2Axg/0.jpg)](https://www.youtube.com/watch?v=SYrCEI_2Axg)
 
 ## Download
-If you want to check it out, visit one of the following links:
+**This project is dead and won't receive any updates and bugfixes**
 
-[Official Website](http://shagu.org/shaguquest/)
+If you want to check it out anyhow, have a look at the release page:
 
 [Github Releases](https://github.com/shagu/ShaguQuest/releases)
 
